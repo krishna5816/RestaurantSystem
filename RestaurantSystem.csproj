@@ -1,0 +1,1050 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEED3520-D72B-4A0C-9F78-D3DF9AFBCB94}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RestaurantSystem</RootNamespace>
+    <AssemblyName>RestaurantSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl, Version=2.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Flurl.2.8.2\lib\net40\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Flurl.Http.2.4.2\lib\net46\Flurl.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadSpreadsheet, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.WinControls.RadSpreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.WinControls.RichTextEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.WinControls.Scheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2019.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2019.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2019.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf, Version=2019.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2019.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2019.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2019.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2019.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>lib\RCWF\2019.1.115.40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\DaytoDay\CurrentRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\DaytoDay\CurrentRequests.Designer.cs">
+      <DependentUpon>CurrentRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStock\AddKitchenStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStock\AddKitchenStock.Designer.cs">
+      <DependentUpon>AddKitchenStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStock\AddStockViwer.cs" />
+    <Compile Include="Categories\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categories\Viwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Categories\Viwer.Designer.cs">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Counters\AddCounter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Counters\AddCounter.Designer.cs">
+      <DependentUpon>AddCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Counters\CounterManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Counters\CounterManager.Designer.cs">
+      <DependentUpon>CounterManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Counters\Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Counters\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Counters\Viwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Counters\Viwer.Designer.cs">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerSalesItemlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerSalesItemlist.Designer.cs">
+      <DependentUpon>CustomerSalesItemlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Details.Designer.cs">
+      <DependentUpon>Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\PaymentMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\PaymentMode.Designer.cs">
+      <DependentUpon>PaymentMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Viwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\Viwer.Designer.cs">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardUserMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardUserMenu.Designer.cs">
+      <DependentUpon>DashboardUserMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiscalYear\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiscalYear\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiscalYear\Viwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FiscalYear\Viwer.Designer.cs">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INFO.cs" />
+    <Compile Include="IssueKitchen\Issuekitchenitems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueKitchen\Issuekitchenitems.Designer.cs">
+      <DependentUpon>Issuekitchenitems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\AddItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\AddItems.Designer.cs">
+      <DependentUpon>AddItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\EditItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\EditItems.Designer.cs">
+      <DependentUpon>EditItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ItemDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ItemDetails.Designer.cs">
+      <DependentUpon>ItemDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\Viwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\Viwer.Designer.cs">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageKeys\Manage.cs" />
+    <Compile Include="Manufacture\Manage\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manufacture\Manage\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacture\Manage\Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manufacture\Manage\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacture\Manage\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manufacture\Manage\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\account.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\admin.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\bill.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\billitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\category.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\counter.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\countercloseing.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\counteropening.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\counterstatus.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\counterstock.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CustomerPartial.cs" />
+    <Compile Include="Model\customerpayment.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DatabaseConfigure.cs" />
+    <Compile Include="Model\fiscalyear.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\issueitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\manufactureditem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\manufacturingestimation.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\manufacturingitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\manufaturedsubitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Menucategories.cs" />
+    <Compile Include="Model\menuitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Munuitempartial.cs" />
+    <Compile Include="Model\order_items.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\order_tables.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\party.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PartyPartialclass.cs" />
+    <Compile Include="Model\partypayment.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\purchaseaddstock.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\purchasebillitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PurchaseCategories.cs" />
+    <Compile Include="Model\purchasecategory.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\purchaseinvoice.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\purchaseinvoiceitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\purchaseitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PurchasePartial.cs" />
+    <Compile Include="Model\purchseexpens.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Resturantmanagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resturantmanagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Resturantmanagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Resturantmanagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resturantmanagement.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ResturantPartialclass.cs" />
+    <Compile Include="Model\shadow_accounts.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_admins.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_bills.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_billsitems.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_categories.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_counterclosings.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_counteropenings.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_counters.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_counterstatus.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_counterstocks.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_customerpayments.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_fiscalyears.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_issueitems.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_menuitems.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_parties.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_partypayments.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_purchaseaddstocks.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_purchasebillitems.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_purchasecates.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_purchaseexps.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_purchaseinvoiceitems.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_purchaseinvoices.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_purchaseitems.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\shadow_systemsettings.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\systemsetting.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\AddParty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partys\AddParty.designer.cs">
+      <DependentUpon>AddParty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partys\Details.Designer.cs">
+      <DependentUpon>Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\EditParty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partys\EditParty.designer.cs">
+      <DependentUpon>EditParty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partys\List.designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\PartyPurchasseitemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partys\PartyPurchasseitemList.Designer.cs">
+      <DependentUpon>PartyPurchasseitemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\party_viwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Partys\party_viwer.Designer.cs">
+      <DependentUpon>party_viwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\PaymentMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partys\PaymentMode.Designer.cs">
+      <DependentUpon>PaymentMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseCategories\AddViwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseCategories\AddViwer.Designer.cs">
+      <DependentUpon>AddViwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseCategories\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseCategories\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseItems\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseItems\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseItems\Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseItems\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseItems\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseItems\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseItems\Viwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseItems\Viwer.Designer.cs">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportsList.Designer.cs">
+      <DependentUpon>ReportsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\AddKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\AddKey.designer.cs">
+      <DependentUpon>AddKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\AdminSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\AdminSetup.Designer.cs">
+      <DependentUpon>AdminSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\DatabaseSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\DatabaseSetup.Designer.cs">
+      <DependentUpon>DatabaseSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\DayManagement\CounterRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\DayManagement\CounterRequest.Designer.cs">
+      <DependentUpon>CounterRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\DayManagement\Daily Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\DayManagement\Daily Setting.Designer.cs">
+      <DependentUpon>Daily Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\UserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\UserRegister.designer.cs">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\PasswordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\PAsswordChange.Designer.cs">
+      <DependentUpon>PasswordChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Viwer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\Viwer.Designer.cs">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Account\DaytoDay\CurrentRequests.resx">
+      <DependentUpon>CurrentRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStock\AddKitchenStock.resx">
+      <DependentUpon>AddKitchenStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories\Viwer.resx">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Counters\AddCounter.resx">
+      <DependentUpon>AddCounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Counters\CounterManager.resx">
+      <DependentUpon>CounterManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Counters\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Counters\Viwer.resx">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerSalesItemlist.resx">
+      <DependentUpon>CustomerSalesItemlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Details.resx">
+      <DependentUpon>Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\PaymentMode.resx">
+      <DependentUpon>PaymentMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Viwer.resx">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardUserMenu.resx">
+      <DependentUpon>DashboardUserMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiscalYear\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiscalYear\Viwer.resx">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueKitchen\Issuekitchenitems.resx">
+      <DependentUpon>Issuekitchenitems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\AddItems.resx">
+      <DependentUpon>AddItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\EditItems.resx">
+      <DependentUpon>EditItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemDetails.resx">
+      <DependentUpon>ItemDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\Viwer.resx">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manufacture\Manage\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manufacture\Manage\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manufacture\Manage\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partys\AddParty.resx">
+      <DependentUpon>AddParty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partys\Details.resx">
+      <DependentUpon>Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partys\EditParty.resx">
+      <DependentUpon>EditParty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partys\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partys\PartyPurchasseitemList.resx">
+      <DependentUpon>PartyPurchasseitemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partys\party_viwer.resx">
+      <DependentUpon>party_viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partys\PaymentMode.resx">
+      <DependentUpon>PaymentMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PurchaseCategories\AddViwer.resx">
+      <DependentUpon>AddViwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseCategories\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseItems\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseItems\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseItems\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseItems\Viwer.resx">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportsList.resx">
+      <DependentUpon>ReportsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\AddKey.resx">
+      <DependentUpon>AddKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\AdminSetup.resx">
+      <DependentUpon>AdminSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\DatabaseSetup.resx">
+      <DependentUpon>DatabaseSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\DayManagement\CounterRequest.resx">
+      <DependentUpon>CounterRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\DayManagement\Daily Setting.resx">
+      <DependentUpon>Daily Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\UserRegister.resx">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\PasswordChange.resx">
+      <DependentUpon>PasswordChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Viwer.resx">
+      <DependentUpon>Viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\Resturantmanagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Resturantmanagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Resturantmanagement.edmx.diagram">
+      <DependentUpon>Resturantmanagement.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-rounded-up-30 - Copy.png" />
+    <None Include="Resources\icons8-lock-50 %281%291 - Copy.png" />
+    <None Include="Resources\icons8-lock-50 %281%29 - Copy.png" />
+    <None Include="Resources\icons8-categorize-262 - Copy.png" />
+    <None Include="Resources\icons8-categorize-261 - Copy.png" />
+    <None Include="Resources\icons8-categorize-26 - Copy.png" />
+    <None Include="Resources\icons8-categorize-26 - Copy.jpg" />
+    <None Include="Resources\icons8-categorize-26 %281%29 - Copy.png" />
+    <None Include="Resources\iconfinder_ic_close_48px_352270 - Copy.png" />
+    <None Include="Resources\download1 - Copy.png" />
+    <None Include="Resources\download - Copy.png" />
+    <None Include="Resources\download - Copy.jpg" />
+    <None Include="Resources\download %283%29 - Copy.jpg" />
+    <None Include="Resources\download %281%29 - Copy.jpg" />
+    <None Include="Resources\4172394-20 - Copy.png" />
+    <None Include="Resources\1 - Copy.png" />
+    <None Include="Resources\4172394-20 %281%29 - Copy.png" />
+    <None Include="Resources\4172394-20 %281%29.png" />
+    <None Include="Resources\lock colored1.png" />
+    <None Include="Resources\items 2.png" />
+    <None Include="Resources\items.png" />
+    <None Include="Resources\items1.png" />
+    <None Include="Resources\items11.png" />
+    <None Include="Resources\items12.png" />
+    <None Include="Resources\items2.png" />
+    <None Include="Resources\lock colored.png" />
+    <None Include="Resources\lock colored2.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\log out zoomed.png" />
+    <None Include="Resources\log out.png" />
+    <None Include="Resources\login-bg.jpg" />
+    <None Include="Resources\login-bg1.jpg" />
+    <None Include="Resources\minimize black.png" />
+    <None Include="Resources\plus.ai" />
+    <None Include="Resources\untitled-1.png" />
+    <None Include="Resources\profile-user.png" />
+    <None Include="Resources\white close.png" />
+    <None Include="Resources\icons8-try-and-buy-241.png" />
+    <None Include="Resources\icons8-try-and-buy-24.png" />
+    <None Include="Resources\icons8-try-and-buy-24 %282%29.png" />
+    <None Include="Resources\icons8-try-and-buy-24 %281%29.png" />
+    <None Include="Resources\icons8-team-24.png" />
+    <None Include="Resources\icons8-team-24 %283%29.png" />
+    <None Include="Resources\icons8-team-24 %282%29.png" />
+    <None Include="Resources\icons8-system-report-241.png" />
+    <None Include="Resources\icons8-system-report-24.png" />
+    <None Include="Resources\icons8-system-report-24 %281%29.png" />
+    <None Include="Resources\icons8-speed-64.png" />
+    <None Include="Resources\icons8-speed-242.png" />
+    <None Include="Resources\icons8-speed-241.png" />
+    <None Include="Resources\icons8-speed-24.png" />
+    <None Include="Resources\icons8-purchase-order-64.png" />
+    <None Include="Resources\icons8-logout-rounded-up-301.png" />
+    <None Include="Resources\icons8-logout-rounded-up-30.png" />
+    <None Include="Resources\icons8-lock-50 %281%291.png" />
+    <None Include="Resources\icons8-lock-50 %281%29.png" />
+    <None Include="Resources\icons8-categorize-262.png" />
+    <None Include="Resources\icons8-categorize-261.png" />
+    <None Include="Resources\icons8-categorize-26.png" />
+    <None Include="Resources\icons8-categorize-26.jpg" />
+    <None Include="Resources\icons8-categorize-26 %281%29.png" />
+    <None Include="Resources\iconfinder_ic_close_48px_352270.png" />
+    <None Include="Resources\download1.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\download %283%29.jpg" />
+    <None Include="Resources\download %281%29.jpg" />
+    <None Include="Resources\4172394-20.png" />
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{489813ac-3d88-4f8e-8cca-964f6e09ff46}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS\POS.csproj">
+      <Project>{522b66a1-0d24-4e1b-b06d-1c3d63b6f07e}</Project>
+      <Name>POS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoleManagement\RoleManagement.csproj">
+      <Project>{3bce2a0a-1df9-4138-9374-130e45c79059}</Project>
+      <Name>RoleManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\" />
+    <Folder Include="Setting\OnlineKeyManagement\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Resturantmanagement.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Resturantmanagement.edmx</DependentUpon>
+      <LastGenOutput>Resturantmanagement.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Resturantmanagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Resturantmanagement.edmx</DependentUpon>
+      <LastGenOutput>Resturantmanagement.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\back_64x64.png" />
+    <None Include="Resources\white+curve.png" />
+    <None Include="Resources\lock_20x20.png" />
+    <None Include="Resources\logout_20x201.png" />
+    <None Include="Resources\logout_20x20.png" />
+    <None Include="Resources\user_dashboard_icon.png" />
+    <None Include="Resources\login_logo.png" />
+    <None Include="Resources\close_96x96.png" />
+    <None Include="Resources\panel.png" />
+    <None Include="Resources\login1.JPG" />
+    <None Include="Resources\settings_20x20.png" />
+    <None Include="Resources\reports_20x20.png" />
+    <None Include="Resources\customers_20x20.png" />
+    <None Include="Resources\parties_20x20.png" />
+    <None Include="Resources\store_20x20.png" />
+    <None Include="Resources\categories_20x20.png" />
+    <None Include="Resources\menuitems_20x20.png" />
+    <None Include="Resources\daymgnt_20x20.png" />
+    <None Include="Resources\counters_20x20.png" />
+    <None Include="Resources\Capture.JPG" />
+    <None Include="Resources\dashboard_top.png" />
+    <None Include="Resources\heart.png" />
+    <None Include="Resources\Dashboard.png" />
+    <None Include="Resources\Backgroundsecond.png" />
+    <None Include="Resources\Webp.net-resizeimage %283%29.jpg" />
+    <None Include="Resources\pos_close1.png" />
+    <None Include="Resources\srops.png" />
+    <None Include="Resources\shadow.png" />
+    <None Include="Resources\Retail_users.png" />
+    <None Include="Resources\Retail_purchase.png" />
+    <None Include="Resources\Retail_ProductManager.png" />
+    <None Include="Resources\Retail_posterminal.png" />
+    <None Include="Resources\Retail_party_btn.png" />
+    <None Include="Resources\Retail_logout.png" />
+    <None Include="Resources\Retail_lock.png" />
+    <None Include="Resources\retail_hamburger.png" />
+    <None Include="Resources\retail_fiscalyear.png" />
+    <None Include="Resources\Retail_connection_on1.png" />
+    <None Include="Resources\Retail_Connection_off1.png" />
+    <None Include="Resources\retail_close %282%29.png" />
+    <None Include="Resources\pos_close.png" />
+    <None Include="Resources\18x18minus.png" />
+    <None Include="Resources\18x18 plus.png" />
+    <None Include="Resources\14x14 plus.png" />
+    <None Include="Resources\14x14 minus.png" />
+    <None Include="Resources\12x12 plus.png" />
+    <None Include="Resources\12x12 minus.png" />
+    <None Include="Resources\stock26.png" />
+    <None Include="Resources\stock18.png" />
+    <None Include="Resources\report26.png" />
+    <None Include="Resources\report18.png" />
+    <None Include="Resources\parties26.png" />
+    <None Include="Resources\parties18.png" />
+    <None Include="Resources\manage parties26.png" />
+    <None Include="Resources\manage parties 18.png" />
+    <None Include="Resources\items26.png" />
+    <None Include="Resources\items 18.png" />
+    <None Include="Resources\fiscal year26.png" />
+    <None Include="Resources\fiscal year18.png" />
+    <None Include="Resources\day start18.png" />
+    <None Include="Resources\day manage18.png" />
+    <None Include="Resources\day manage 26.png" />
+    <None Include="Resources\dashboard18.png" />
+    <None Include="Resources\dashboard 26.png" />
+    <None Include="Resources\customer26.png" />
+    <None Include="Resources\customer 18.png" />
+    <None Include="Resources\category 26.png" />
+    <None Include="Resources\category 18.png" />
+    <None Include="Resources\add stock18x.png" />
+    <None Include="Resources\add stock 26.png" />
+    <None Include="Resources\2414047.jpg" />
+    <None Include="Resources\stock12x12.png" />
+    <None Include="Resources\stock add 20x20.png" />
+    <None Include="Resources\stock add 12x12.png" />
+    <None Include="Resources\stock 20x20.png" />
+    <None Include="Resources\report 20x20.png" />
+    <None Include="Resources\report 12x12.png" />
+    <None Include="Resources\parties 20x20.png" />
+    <None Include="Resources\parties 12x12.png" />
+    <None Include="Resources\manage parties 12x12.png" />
+    <None Include="Resources\manage  parties 20x20.png" />
+    <None Include="Resources\items 20x20.png" />
+    <None Include="Resources\items 12x12.png" />
+    <None Include="Resources\fiscal year 20x20.png" />
+    <None Include="Resources\fiscal year 12x12.png" />
+    <None Include="Resources\expences20x20.png" />
+    <None Include="Resources\expences12x12.png" />
+    <None Include="Resources\day start 20x20.png" />
+    <None Include="Resources\day start 12x12.png" />
+    <None Include="Resources\day manage20x20.png" />
+    <None Include="Resources\day manage12x12.png" />
+    <None Include="Resources\dashboard20x20.png" />
+    <None Include="Resources\dashboard 12x12.png" />
+    <None Include="Resources\customer 20x20.png" />
+    <None Include="Resources\customer 12x12.png" />
+    <None Include="Resources\RMSday start 20x20.png" />
+    <None Include="Resources\RMSday start 12x12.png" />
+    <None Include="Resources\RMSday manage20x20.png" />
+    <None Include="Resources\RMSday manage12x12.png" />
+    <None Include="Resources\RMSdashboard20x20.png" />
+    <None Include="Resources\RMSdashboard 12x12.png" />
+    <None Include="Resources\RMScategory 20x20.png" />
+    <None Include="Resources\RMScategory 12x12.png" />
+    <None Include="Resources\PMSparties 12x12.png" />
+    <None Include="Resources\RMSparties 20x20.png" />
+    <None Include="Resources\RMSlogo.png" />
+    <None Include="Resources\photo_2020-01-12_16-49-39.jpg" />
+    <None Include="Resources\retail_connection_on.png" />
+    <None Include="Resources\retail_connection_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ShouldAddDPIScalingManifest="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
