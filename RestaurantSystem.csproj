@@ -568,18 +568,6 @@
     <Compile Include="PurchaseItems\Viwer.Designer.cs">
       <DependentUpon>Viwer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Expensesreport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reports\Expensesreport.Designer.cs">
-      <DependentUpon>Expensesreport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\Purchasereport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reports\Purchasereport.Designer.cs">
-      <DependentUpon>Purchasereport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\ReportsList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -591,6 +579,12 @@
     </Compile>
     <Compile Include="Reports\Salesreport.Designer.cs">
       <DependentUpon>Salesreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Sales_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Sales_Report.Designer.cs">
+      <DependentUpon>Sales_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Setting\AddKey.cs">
       <SubType>Form</SubType>
@@ -789,14 +783,14 @@
     <EmbeddedResource Include="PurchaseItems\Viwer.resx">
       <DependentUpon>Viwer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Expensesreport.resx">
-      <DependentUpon>Expensesreport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportsList.resx">
       <DependentUpon>ReportsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Salesreport.resx">
       <DependentUpon>Salesreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales_Report.resx">
+      <DependentUpon>Sales_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting\AddKey.resx">
       <DependentUpon>AddKey.cs</DependentUpon>

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace RestaurantSystem.Reports
 {
-    public partial class Purchasereport : UserControl
+    public partial class Sales_Report : Form
     {
-        public Purchasereport()
+        public Sales_Report()
         {
             InitializeComponent();
+        }
+
+        private void materialButton_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

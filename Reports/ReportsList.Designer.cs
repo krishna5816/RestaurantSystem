@@ -29,71 +29,23 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel_top = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1_Add = new System.Windows.Forms.Label();
             this.materialButton_close = new CustomControls.MaterialButton();
+            this.materialButton1 = new CustomControls.MaterialButton();
             this.panel3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.panel_top.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.tabControl1);
+            this.panel3.Controls.Add(this.materialButton1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 40);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(984, 493);
             this.panel3.TabIndex = 2;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(984, 493);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(976, 464);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Purchase Report";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(976, 464);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Sales Report";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(976, 464);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Expenses Report";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel_top
             // 
@@ -154,6 +106,29 @@
             this.materialButton_close.userole = false;
             this.materialButton_close.UseVisualStyleBackColor = true;
             // 
+            // materialButton1
+            // 
+            this.materialButton1.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.materialButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton1.FlatAppearance.BorderSize = 0;
+            this.materialButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton1.fontIncrement = 0F;
+            this.materialButton1.FontStyle = null;
+            this.materialButton1.hoverforecolor = System.Drawing.Color.Empty;
+            this.materialButton1.hoverforefont = null;
+            this.materialButton1.hoverimage = null;
+            this.materialButton1.Location = new System.Drawing.Point(12, 6);
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.role = 0;
+            this.materialButton1.Size = new System.Drawing.Size(161, 105);
+            this.materialButton1.TabIndex = 0;
+            this.materialButton1.tempforecolor = System.Drawing.Color.Empty;
+            this.materialButton1.tempforefont = null;
+            this.materialButton1.Text = "materialButton1";
+            this.materialButton1.Totext = null;
+            this.materialButton1.userole = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
             // ReportsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,7 +144,6 @@
             this.Text = "ReportsList";
             this.Load += new System.EventHandler(this.ReportsList_Load);
             this.panel3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
             this.ResumeLayout(false);
@@ -178,13 +152,10 @@
 
         #endregion
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1_Add;
         private CustomControls.MaterialButton materialButton_close;
+        private CustomControls.MaterialButton materialButton1;
     }
 }
