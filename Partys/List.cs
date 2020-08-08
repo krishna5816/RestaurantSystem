@@ -12,10 +12,13 @@ using RestaurantSystem.Model;
 
 namespace RestaurantSystem.Parties
 {
+   
     public partial class List : Form
     {
+        Model.ResturantManagementEntities db;
         public List()
         {
+           
             InitializeComponent();
             using(var db=new Model.ResturantManagementEntities())
             foreach(var party in db.parties.ToList())

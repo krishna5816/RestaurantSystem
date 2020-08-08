@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using RestaurantSystem.Model;
 namespace RestaurantSystem.Reports
 {
     public partial class ReportsList : Form
     {
+        
+        Model.ResturantManagementEntities db= new ResturantManagementEntities();
         public ReportsList()
         {
             InitializeComponent();
+
         }
 
         private void materialButton_close_Click(object sender, EventArgs e)
