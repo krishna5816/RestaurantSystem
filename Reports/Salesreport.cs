@@ -51,37 +51,23 @@ namespace RestaurantSystem.Reports
 
         private void comboBox_sales_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBox_sales.SelectedIndex)
-            {
-                case 0:
-                    nepaliCalender_End.Visible = false;
-                    comboBox_sales_week.Visible = false;
-                    nepaliCalender_start.SelType = CustomControls.NepaliCalender.type.day;
-                    break;
-                case 1:
-                    nepaliCalender_End.Visible = false;
-                    nepaliCalender_start.SelType = CustomControls.NepaliCalender.type.week;
-                    comboBox_sales_week.Visible = true;
-                    break;
-                case 2:
-                    nepaliCalender_End.Visible = false;
-                    comboBox_sales_week.Visible = false;
-                    nepaliCalender_start.SelType =CustomControls.NepaliCalender.type.month;
-                    break;
-                case 3:
-                    comboBox_sales_week.Visible = false;
-                    nepaliCalender_start.SelType =CustomControls.NepaliCalender.type.year;
-                    nepaliCalender_End.Visible = false;
-
-                    break;
-                case 4:
-                    comboBox_sales_week.Visible = false;
-                    nepaliCalender_start.SelType =CustomControls.NepaliCalender.type.day;
-                    nepaliCalender_End.Visible = true;
-                    break;
-                default:
-                    break;
+           
             }
+        }
+
+        private void button_load_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rangeSelector1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox_categories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

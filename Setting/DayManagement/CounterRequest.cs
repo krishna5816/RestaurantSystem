@@ -36,7 +36,7 @@ namespace RestaurantSystem.Setting.DayManagement
             if(CustomControls.Comformation.show("Counter Management", "Please Check Following Detail are Correct:\n" +
                 "1. Counter Number is " + label_counterno.Text + "\n" +
                 "2. Requested Amount is " + label_amount.Text+"\n" +
-                "3. Accecpted Amount is"+betterTextBox_accecpted.Text)== DialogResult.OK)
+                "3. Accecpted Amount is"+betterTextBox_accecpted.Text)== DialogResult.Yes)
             {
                 this.Counterstatus.approved = true;
                 this.Counterstatus.status = 1;
