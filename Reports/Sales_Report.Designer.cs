@@ -29,19 +29,23 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox_grouping = new System.Windows.Forms.ComboBox();
             this.rangeSelector = new CustomControls.RangeSelector();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_export = new System.Windows.Forms.Button();
             this.button_Reset = new System.Windows.Forms.Button();
             this.button_load = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.label_totalamount = new System.Windows.Forms.Label();
             this.panel_top = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1_Add = new System.Windows.Forms.Label();
             this.materialButton_close = new CustomControls.MaterialButton();
+            this.betterListView1 = new CustomControls.BetterListView();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_top.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +53,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.rangeSelector);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -56,6 +61,43 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(380, 410);
             this.panel2.TabIndex = 31;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.comboBox_grouping);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 200);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(378, 56);
+            this.panel4.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label8.Location = new System.Drawing.Point(6, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 19);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Group Result By";
+            // 
+            // comboBox_grouping
+            // 
+            this.comboBox_grouping.FormattingEnabled = true;
+            this.comboBox_grouping.Items.AddRange(new object[] {
+            "none",
+            "Bill Wise Report",
+            "Item Wise Report",
+            "Category Wise Report",
+            "Terminal Wise Report",
+            "User Wise Report"});
+            this.comboBox_grouping.Location = new System.Drawing.Point(8, 28);
+            this.comboBox_grouping.Name = "comboBox_grouping";
+            this.comboBox_grouping.Size = new System.Drawing.Size(365, 21);
+            this.comboBox_grouping.TabIndex = 7;
             // 
             // rangeSelector
             // 
@@ -83,6 +125,7 @@
             // button_export
             // 
             this.button_export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_export.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_export.ForeColor = System.Drawing.SystemColors.Highlight;
             this.button_export.Location = new System.Drawing.Point(171, 4);
             this.button_export.Name = "button_export";
@@ -94,6 +137,7 @@
             // button_Reset
             // 
             this.button_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Reset.ForeColor = System.Drawing.SystemColors.Highlight;
             this.button_Reset.Location = new System.Drawing.Point(88, 4);
             this.button_Reset.Name = "button_Reset";
@@ -105,6 +149,7 @@
             // button_load
             // 
             this.button_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_load.ForeColor = System.Drawing.SystemColors.Highlight;
             this.button_load.Location = new System.Drawing.Point(5, 4);
             this.button_load.Name = "button_load";
@@ -112,19 +157,7 @@
             this.button_load.TabIndex = 0;
             this.button_load.Text = "Load";
             this.button_load.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(380, 40);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(566, 410);
-            this.listView1.TabIndex = 32;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.button_load.Click += new System.EventHandler(this.button_load_Click);
             // 
             // label2
             // 
@@ -175,9 +208,9 @@
             this.label1_Add.ForeColor = System.Drawing.Color.White;
             this.label1_Add.Location = new System.Drawing.Point(48, 12);
             this.label1_Add.Name = "label1_Add";
-            this.label1_Add.Size = new System.Drawing.Size(75, 17);
+            this.label1_Add.Size = new System.Drawing.Size(84, 17);
             this.label1_Add.TabIndex = 56;
-            this.label1_Add.Text = "Report List";
+            this.label1_Add.Text = "Sales Report";
             // 
             // materialButton_close
             // 
@@ -206,13 +239,27 @@
             this.materialButton_close.UseVisualStyleBackColor = true;
             this.materialButton_close.Click += new System.EventHandler(this.materialButton_close_Click);
             // 
+            // betterListView1
+            // 
+            this.betterListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.betterListView1.FullRowSelect = true;
+            this.betterListView1.GridLines = true;
+            this.betterListView1.HideSelection = false;
+            this.betterListView1.Location = new System.Drawing.Point(380, 40);
+            this.betterListView1.Name = "betterListView1";
+            this.betterListView1.Size = new System.Drawing.Size(566, 410);
+            this.betterListView1.sortable = false;
+            this.betterListView1.TabIndex = 36;
+            this.betterListView1.UseCompatibleStateImageBehavior = false;
+            this.betterListView1.View = System.Windows.Forms.View.Details;
+            // 
             // Sales_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(946, 450);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.betterListView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_top);
             this.Controls.Add(this.label2);
@@ -221,6 +268,8 @@
             this.Name = "Sales_Report";
             this.Text = "Sales_Report";
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
@@ -237,12 +286,15 @@
         private System.Windows.Forms.Button button_export;
         private System.Windows.Forms.Button button_Reset;
         private System.Windows.Forms.Button button_load;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_totalamount;
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1_Add;
         private CustomControls.MaterialButton materialButton_close;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.ComboBox comboBox_grouping;
+        private CustomControls.BetterListView betterListView1;
     }
 }

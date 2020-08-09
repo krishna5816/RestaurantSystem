@@ -29,23 +29,50 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.materialButton_salesreport = new CustomControls.MaterialButton();
             this.panel_top = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1_Add = new System.Windows.Forms.Label();
             this.materialButton_close = new CustomControls.MaterialButton();
-            this.materialButton1 = new CustomControls.MaterialButton();
             this.panel3.SuspendLayout();
             this.panel_top.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.materialButton1);
+            this.panel3.Controls.Add(this.materialButton_salesreport);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 40);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(984, 493);
             this.panel3.TabIndex = 2;
+            // 
+            // materialButton_salesreport
+            // 
+            this.materialButton_salesreport.BackColor = System.Drawing.Color.White;
+            this.materialButton_salesreport.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.materialButton_salesreport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton_salesreport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.materialButton_salesreport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_salesreport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton_salesreport.fontIncrement = 0F;
+            this.materialButton_salesreport.FontStyle = null;
+            this.materialButton_salesreport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.materialButton_salesreport.hoverforecolor = System.Drawing.Color.Empty;
+            this.materialButton_salesreport.hoverforefont = null;
+            this.materialButton_salesreport.hoverimage = null;
+            this.materialButton_salesreport.Location = new System.Drawing.Point(12, 13);
+            this.materialButton_salesreport.Name = "materialButton_salesreport";
+            this.materialButton_salesreport.role = 0;
+            this.materialButton_salesreport.Size = new System.Drawing.Size(150, 50);
+            this.materialButton_salesreport.TabIndex = 0;
+            this.materialButton_salesreport.tempforecolor = System.Drawing.Color.Empty;
+            this.materialButton_salesreport.tempforefont = null;
+            this.materialButton_salesreport.Text = "Sales Report";
+            this.materialButton_salesreport.Totext = null;
+            this.materialButton_salesreport.userole = false;
+            this.materialButton_salesreport.UseVisualStyleBackColor = false;
+            this.materialButton_salesreport.Click += new System.EventHandler(this.materialButton_salesreport_Click);
             // 
             // panel_top
             // 
@@ -106,29 +133,6 @@
             this.materialButton_close.userole = false;
             this.materialButton_close.UseVisualStyleBackColor = true;
             // 
-            // materialButton1
-            // 
-            this.materialButton1.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
-            this.materialButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialButton1.FlatAppearance.BorderSize = 0;
-            this.materialButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialButton1.fontIncrement = 0F;
-            this.materialButton1.FontStyle = null;
-            this.materialButton1.hoverforecolor = System.Drawing.Color.Empty;
-            this.materialButton1.hoverforefont = null;
-            this.materialButton1.hoverimage = null;
-            this.materialButton1.Location = new System.Drawing.Point(12, 6);
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.role = 0;
-            this.materialButton1.Size = new System.Drawing.Size(161, 105);
-            this.materialButton1.TabIndex = 0;
-            this.materialButton1.tempforecolor = System.Drawing.Color.Empty;
-            this.materialButton1.tempforefont = null;
-            this.materialButton1.Text = "materialButton1";
-            this.materialButton1.Totext = null;
-            this.materialButton1.userole = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
             // ReportsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +160,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1_Add;
         private CustomControls.MaterialButton materialButton_close;
-        private CustomControls.MaterialButton materialButton1;
+        private CustomControls.MaterialButton materialButton_salesreport;
     }
 }

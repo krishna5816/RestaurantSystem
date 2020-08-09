@@ -574,11 +574,8 @@
     <Compile Include="Reports\ReportsList.Designer.cs">
       <DependentUpon>ReportsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Salesreport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reports\Salesreport.Designer.cs">
-      <DependentUpon>Salesreport.cs</DependentUpon>
+    <Compile Include="Reports\Sales_Report_Partial.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Sales_Report.cs">
       <SubType>Form</SubType>
@@ -785,9 +782,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportsList.resx">
       <DependentUpon>ReportsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Salesreport.resx">
-      <DependentUpon>Salesreport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Sales_Report.resx">
       <DependentUpon>Sales_Report.cs</DependentUpon>

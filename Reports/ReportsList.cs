@@ -29,5 +29,12 @@ namespace RestaurantSystem.Reports
         {
 
         }
+
+        private void materialButton_salesreport_Click(object sender, EventArgs e)
+        {
+            var s = new Sales_Report();
+            var t = new CustomControls.Modal(s);
+            t.Show();
+        }
     }
 }
