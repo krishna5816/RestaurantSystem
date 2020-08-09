@@ -533,7 +533,6 @@
         private CustomControls.MaterialButton materialButton_daymanage;
         private System.Windows.Forms.Panel panel3;
         private CustomControls.GradientPanel gradientPanel1;
-        private CustomControls.GradientPanel panel_menu;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.LinkLabel linkLabel_link;
         private System.Windows.Forms.Label label6;
@@ -543,5 +542,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox_dashboardusermenu;
         private System.Windows.Forms.Label label_username;
+        public CustomControls.GradientPanel panel_menu;
     }
 }

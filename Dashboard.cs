@@ -14,6 +14,7 @@ namespace RestaurantSystem
     {
         public static Dashboard instance;
         DashboardUserMenu u = new DashboardUserMenu();
+      
 
         public Dashboard()
         {
@@ -21,6 +22,13 @@ namespace RestaurantSystem
             label_username.Text = RoleManagement.CurrentRole.instance.roles.username;
             u.materialButton_logout.Click += materialButton2_logout_Click;
             u.materialButton_setting.Click += MaterialButton_setting_Click;
+            instance = this;
+            FormClosed += Dashboard_FormClosed;
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instance = null;
         }
 
         private void MaterialButton_setting_Click(object sender, EventArgs e)

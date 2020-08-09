@@ -28,28 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
             this.materialButton_salesreport = new CustomControls.MaterialButton();
             this.panel_top = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1_Add = new System.Windows.Forms.Label();
             this.materialButton_close = new CustomControls.MaterialButton();
-            this.panel3.SuspendLayout();
             this.panel_top.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.materialButton_salesreport);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 40);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(984, 493);
-            this.panel3.TabIndex = 2;
-            // 
             // materialButton_salesreport
             // 
-            this.materialButton_salesreport.BackColor = System.Drawing.Color.White;
+            this.materialButton_salesreport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
             this.materialButton_salesreport.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
             this.materialButton_salesreport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialButton_salesreport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
@@ -57,11 +46,11 @@
             this.materialButton_salesreport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton_salesreport.fontIncrement = 0F;
             this.materialButton_salesreport.FontStyle = null;
-            this.materialButton_salesreport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.materialButton_salesreport.ForeColor = System.Drawing.Color.White;
             this.materialButton_salesreport.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_salesreport.hoverforefont = null;
             this.materialButton_salesreport.hoverimage = null;
-            this.materialButton_salesreport.Location = new System.Drawing.Point(12, 13);
+            this.materialButton_salesreport.Location = new System.Drawing.Point(7, 46);
             this.materialButton_salesreport.Name = "materialButton_salesreport";
             this.materialButton_salesreport.role = 0;
             this.materialButton_salesreport.Size = new System.Drawing.Size(150, 50);
@@ -132,6 +121,7 @@
             this.materialButton_close.Totext = null;
             this.materialButton_close.userole = false;
             this.materialButton_close.UseVisualStyleBackColor = true;
+            this.materialButton_close.Click += new System.EventHandler(this.materialButton_close_Click_1);
             // 
             // ReportsList
             // 
@@ -139,15 +129,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 533);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel_top);
+            this.Controls.Add(this.materialButton_salesreport);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportsList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportsList";
             this.Load += new System.EventHandler(this.ReportsList_Load);
-            this.panel3.ResumeLayout(false);
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
             this.ResumeLayout(false);
@@ -155,7 +144,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1_Add;

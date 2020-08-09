@@ -32,18 +32,18 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox_grouping = new System.Windows.Forms.ComboBox();
-            this.rangeSelector = new CustomControls.RangeSelector();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_export = new System.Windows.Forms.Button();
             this.button_Reset = new System.Windows.Forms.Button();
             this.button_load = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label_totalamount = new System.Windows.Forms.Label();
-            this.panel_top = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1_Add = new System.Windows.Forms.Label();
-            this.materialButton_close = new CustomControls.MaterialButton();
             this.betterListView1 = new CustomControls.BetterListView();
+            this.rangeSelector = new CustomControls.RangeSelector();
+            this.materialButton_close = new CustomControls.MaterialButton();
+            this.label1_Add = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_top = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -98,17 +98,6 @@
             this.comboBox_grouping.Name = "comboBox_grouping";
             this.comboBox_grouping.Size = new System.Drawing.Size(365, 21);
             this.comboBox_grouping.TabIndex = 7;
-            // 
-            // rangeSelector
-            // 
-            this.rangeSelector.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rangeSelector.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rangeSelector.fYViwers = null;
-            this.rangeSelector.Location = new System.Drawing.Point(0, 0);
-            this.rangeSelector.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.rangeSelector.Name = "rangeSelector";
-            this.rangeSelector.Size = new System.Drawing.Size(378, 200);
-            this.rangeSelector.TabIndex = 28;
             // 
             // panel3
             // 
@@ -179,38 +168,30 @@
             this.label_totalamount.TabIndex = 34;
             this.label_totalamount.Text = "0";
             // 
-            // panel_top
+            // betterListView1
             // 
-            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.panel_top.Controls.Add(this.panel1);
-            this.panel_top.Controls.Add(this.label1_Add);
-            this.panel_top.Controls.Add(this.materialButton_close);
-            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_top.ForeColor = System.Drawing.Color.White;
-            this.panel_top.Location = new System.Drawing.Point(0, 0);
-            this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(946, 40);
-            this.panel_top.TabIndex = 35;
+            this.betterListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.betterListView1.FullRowSelect = true;
+            this.betterListView1.GridLines = true;
+            this.betterListView1.HideSelection = false;
+            this.betterListView1.Location = new System.Drawing.Point(380, 40);
+            this.betterListView1.Name = "betterListView1";
+            this.betterListView1.Size = new System.Drawing.Size(566, 410);
+            this.betterListView1.sortable = false;
+            this.betterListView1.TabIndex = 36;
+            this.betterListView1.UseCompatibleStateImageBehavior = false;
+            this.betterListView1.View = System.Windows.Forms.View.Details;
             // 
-            // panel1
+            // rangeSelector
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(946, 1);
-            this.panel1.TabIndex = 57;
-            // 
-            // label1_Add
-            // 
-            this.label1_Add.AutoSize = true;
-            this.label1_Add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1_Add.ForeColor = System.Drawing.Color.White;
-            this.label1_Add.Location = new System.Drawing.Point(48, 12);
-            this.label1_Add.Name = "label1_Add";
-            this.label1_Add.Size = new System.Drawing.Size(84, 17);
-            this.label1_Add.TabIndex = 56;
-            this.label1_Add.Text = "Sales Report";
+            this.rangeSelector.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rangeSelector.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rangeSelector.fYViwers = null;
+            this.rangeSelector.Location = new System.Drawing.Point(0, 0);
+            this.rangeSelector.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rangeSelector.Name = "rangeSelector";
+            this.rangeSelector.Size = new System.Drawing.Size(378, 200);
+            this.rangeSelector.TabIndex = 28;
             // 
             // materialButton_close
             // 
@@ -239,19 +220,38 @@
             this.materialButton_close.UseVisualStyleBackColor = true;
             this.materialButton_close.Click += new System.EventHandler(this.materialButton_close_Click);
             // 
-            // betterListView1
+            // label1_Add
             // 
-            this.betterListView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.betterListView1.FullRowSelect = true;
-            this.betterListView1.GridLines = true;
-            this.betterListView1.HideSelection = false;
-            this.betterListView1.Location = new System.Drawing.Point(380, 40);
-            this.betterListView1.Name = "betterListView1";
-            this.betterListView1.Size = new System.Drawing.Size(566, 410);
-            this.betterListView1.sortable = false;
-            this.betterListView1.TabIndex = 36;
-            this.betterListView1.UseCompatibleStateImageBehavior = false;
-            this.betterListView1.View = System.Windows.Forms.View.Details;
+            this.label1_Add.AutoSize = true;
+            this.label1_Add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1_Add.ForeColor = System.Drawing.Color.White;
+            this.label1_Add.Location = new System.Drawing.Point(48, 12);
+            this.label1_Add.Name = "label1_Add";
+            this.label1_Add.Size = new System.Drawing.Size(84, 17);
+            this.label1_Add.TabIndex = 56;
+            this.label1_Add.Text = "Sales Report";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(946, 1);
+            this.panel1.TabIndex = 57;
+            // 
+            // panel_top
+            // 
+            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.panel_top.Controls.Add(this.panel1);
+            this.panel_top.Controls.Add(this.label1_Add);
+            this.panel_top.Controls.Add(this.materialButton_close);
+            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_top.ForeColor = System.Drawing.Color.White;
+            this.panel_top.Location = new System.Drawing.Point(0, 0);
+            this.panel_top.Name = "panel_top";
+            this.panel_top.Size = new System.Drawing.Size(946, 40);
+            this.panel_top.TabIndex = 35;
             // 
             // Sales_Report
             // 
@@ -288,13 +288,13 @@
         private System.Windows.Forms.Button button_load;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_totalamount;
-        private System.Windows.Forms.Panel panel_top;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1_Add;
-        private CustomControls.MaterialButton materialButton_close;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.ComboBox comboBox_grouping;
         private CustomControls.BetterListView betterListView1;
+        private CustomControls.MaterialButton materialButton_close;
+        private System.Windows.Forms.Label label1_Add;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_top;
     }
 }

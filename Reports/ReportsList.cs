@@ -32,9 +32,18 @@ namespace RestaurantSystem.Reports
 
         private void materialButton_salesreport_Click(object sender, EventArgs e)
         {
-            var s = new Sales_Report();
-            var t = new CustomControls.Modal(s);
-            t.Show();
+            var i = new Sales_Report();
+            i.TopLevel = false;
+            i.Dock = DockStyle.Fill;
+            Dashboard.instance.panel_menu.Controls.Add(i);
+            i.Show();
+            i.BringToFront();
+
+        }
+
+        private void materialButton_close_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
