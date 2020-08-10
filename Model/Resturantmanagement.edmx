@@ -45,11 +45,7 @@
           <Property Name="date" Type="int" />
           <Property Name="name" Type="nvarchar(max)" />
           <Property Name="unitrate" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="unitdiscount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="nettotal" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="discount" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="grosstotal" Type="decimal" Precision="18" Scale="2" />
           <Property Name="bill_id" Type="int" />
           <Property Name="item_id" Type="int" />
           <Property Name="counter_id" Type="int" />
@@ -57,6 +53,7 @@
           <Property Name="updated_at" Type="datetime" Nullable="false" />
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
+          <Property Name="nettotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="bills">
           <Key>
@@ -64,12 +61,10 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fiscal_year" Type="nvarchar" MaxLength="20" />
-          <Property Name="bill_no" Type="int" Nullable="false" />
           <Property Name="customer_name" Type="nvarchar(max)" />
           <Property Name="customer_address" Type="nvarchar(max)" />
           <Property Name="customer_phone" Type="nvarchar" MaxLength="20" />
           <Property Name="cystomer_PAN" Type="nvarchar" MaxLength="30" />
-          <Property Name="bill_Date" Type="nvarchar" MaxLength="12" />
           <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="discount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="taxble_amount" Type="decimal" Precision="18" Scale="2" />
@@ -3019,11 +3014,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <Property Name="date" Type="Int32" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="unitrate" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="unitdiscount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="nettotal" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="discount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="grosstotal" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="bill_id" Type="Int32" />
           <Property Name="item_id" Type="Int32" />
           <Property Name="counter_id" Type="Int32" />
@@ -3031,6 +3022,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
+          <Property Name="nettotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__billitems__admin__31B762FC" FromRole="billitem" ToRole="admin" />
           <NavigationProperty Name="bill" Relationship="ResturantManagementModel.FK__billitems__bill___2EDAF651" FromRole="billitem" ToRole="bill" />
           <NavigationProperty Name="counter" Relationship="ResturantManagementModel.FK__billitems__count__30C33EC3" FromRole="billitem" ToRole="counter" />
@@ -3042,12 +3034,10 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fiscal_year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="bill_no" Type="Int32" Nullable="false" />
           <Property Name="customer_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="customer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="customer_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="cystomer_PAN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="bill_Date" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="discount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="taxble_amount" Type="Decimal" Precision="18" Scale="2" />
@@ -4973,6 +4963,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <EntitySetMapping Name="billitems">
             <EntityTypeMapping TypeName="ResturantManagementModel.billitem">
               <MappingFragment StoreEntitySet="billitems">
+                <ScalarProperty Name="nettotal" ColumnName="nettotal" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />
                 <ScalarProperty Name="updated_at" ColumnName="updated_at" />
@@ -4980,11 +4971,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
                 <ScalarProperty Name="counter_id" ColumnName="counter_id" />
                 <ScalarProperty Name="item_id" ColumnName="item_id" />
                 <ScalarProperty Name="bill_id" ColumnName="bill_id" />
-                <ScalarProperty Name="grosstotal" ColumnName="grosstotal" />
-                <ScalarProperty Name="discount" ColumnName="discount" />
-                <ScalarProperty Name="nettotal" ColumnName="nettotal" />
                 <ScalarProperty Name="qty" ColumnName="qty" />
-                <ScalarProperty Name="unitdiscount" ColumnName="unitdiscount" />
                 <ScalarProperty Name="unitrate" ColumnName="unitrate" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="date" ColumnName="date" />
@@ -5018,12 +5005,10 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
                 <ScalarProperty Name="taxble_amount" ColumnName="taxble_amount" />
                 <ScalarProperty Name="discount" ColumnName="discount" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="bill_Date" ColumnName="bill_Date" />
                 <ScalarProperty Name="cystomer_PAN" ColumnName="cystomer_PAN" />
                 <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
                 <ScalarProperty Name="customer_address" ColumnName="customer_address" />
                 <ScalarProperty Name="customer_name" ColumnName="customer_name" />
-                <ScalarProperty Name="bill_no" ColumnName="bill_no" />
                 <ScalarProperty Name="fiscal_year" ColumnName="fiscal_year" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

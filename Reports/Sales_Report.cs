@@ -73,10 +73,10 @@ namespace RestaurantSystem.Reports
 
                GroupByBill(data);
             }
-            //else if (comboBox_grouping.SelectedIndex == 2)
-            //{
-            //    GroupByItem(data.Select(o => o.id).ToList());
-            //}
+            else if (comboBox_grouping.SelectedIndex == 2)
+            {
+                GroupByItem(data.Select(o => o.id).ToList());
+            }
             //else if (comboBox_grouping.SelectedIndex == 3)
             //{
             //    GroupByCategory(data.Select(o => o.id).ToList());

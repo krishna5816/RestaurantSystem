@@ -140,7 +140,7 @@ namespace RestaurantSystem.Customer
                 var loaddata = new ListViewItem(new string[]
                 {
                     sn.ToString(),list.grosstotal.ToString(),list.discount.ToString(),list.tax_amount.ToString(),list.nettotal.ToString(),
-                    list.paidamount.ToString(),list.dueamount.ToString(),list.bill_Date
+                    list.paidamount.ToString(),list.dueamount.ToString(),//list.bill_Date
                 });
             }
         }

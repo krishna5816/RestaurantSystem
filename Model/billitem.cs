@@ -18,11 +18,7 @@ namespace RestaurantSystem.Model
         public Nullable<int> date { get; set; }
         public string name { get; set; }
         public Nullable<decimal> unitrate { get; set; }
-        public Nullable<decimal> unitdiscount { get; set; }
         public Nullable<decimal> qty { get; set; }
-        public Nullable<decimal> nettotal { get; set; }
-        public Nullable<decimal> discount { get; set; }
-        public Nullable<decimal> grosstotal { get; set; }
         public Nullable<int> bill_id { get; set; }
         public Nullable<int> item_id { get; set; }
         public Nullable<int> counter_id { get; set; }
@@ -30,6 +26,7 @@ namespace RestaurantSystem.Model
         public System.DateTime updated_at { get; set; }
         public System.DateTime created_at { get; set; }
         public Nullable<int> sync_id { get; set; }
+        public decimal nettotal { get; set; }
     
         public virtual admin admin { get; set; }
         public virtual bill bill { get; set; }

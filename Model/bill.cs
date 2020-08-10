@@ -22,12 +22,10 @@ namespace RestaurantSystem.Model
     
         public int id { get; set; }
         public string fiscal_year { get; set; }
-        public int bill_no { get; set; }
         public string customer_name { get; set; }
         public string customer_address { get; set; }
         public string customer_phone { get; set; }
         public string cystomer_PAN { get; set; }
-        public string bill_Date { get; set; }
         public Nullable<decimal> amount { get; set; }
         public Nullable<decimal> discount { get; set; }
         public Nullable<decimal> taxble_amount { get; set; }

@@ -1,0 +1,1 @@
+﻿										alter table billitems add nettotal decimal(18,2) not null  default 0
