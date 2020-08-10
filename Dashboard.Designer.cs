@@ -413,6 +413,7 @@
             this.panel_menu.Controls.Add(this.linkLabel_link);
             this.panel_menu.Controls.Add(this.label6);
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_menu.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_menu.Location = new System.Drawing.Point(246, 50);
             this.panel_menu.Name = "panel_menu";
             this.panel_menu.Size = new System.Drawing.Size(706, 578);

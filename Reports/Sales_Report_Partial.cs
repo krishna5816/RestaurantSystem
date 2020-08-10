@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using RestaurantSystem.Model;
 using CustomControls;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace RestaurantSystem.Reports
 {
@@ -65,7 +66,7 @@ namespace RestaurantSystem.Reports
         }
 
         List<RItemviwer> rItemviwers;
-        private void GroupByItem(List<int> billsid) 
+        private void GroupByItem(List<int> billsid)
         {
             rItemviwers = new List<RItemviwer>();
             betterListView1.AddColumns(new string[] { "Item", "Qty", "Pricing", "Net Total" });
@@ -112,8 +113,62 @@ namespace RestaurantSystem.Reports
             }
             betterListView1.Add(new string[] { "Total", rItemviwers.Sum(o => o.qty).ToString("0.###"), "--", rItemviwers.Sum(o => o.nettotal).ToString("0.###") });
         }
-    }
-        #endregion
 
-    
+        #endregion
+        #region
+        public class RCategoryViwer
+        {
+            public int Id { get; set; }
+            public string name { get; set; }
+            public decimal amount { get; set; }
+
+            public decimal total { get; set; }
+        }
+        public void GroupByCategory(List<int> bills)
+        {
+            decimal nettotal = 0;
+            betterListView1.AddColumns(new string[] { "Category", "Total Qty", "Net Total" });
+            var billitems = db.billitems.Where(o => bills.Contains(o.bill_id.Value)).Join(db.menuitems, o => o.item_id, p => p.id, (o, p) =>
+                       new
+                       {
+                           o.qty,
+                           o.nettotal,
+                           p.category_id
+                       }).Join(db.categories, o => o.category_id, p => p.id, (o, p) =>
+                       new
+                       {
+                           p.id,
+                           o.qty,
+                           p.name,
+                           o.nettotal
+                       }).GroupBy(o => o.id).Select(o => new RCategoryViwer()
+                       {
+                           Id = o.Key,
+                           amount = o.Sum(x => x.qty).Value,
+                           total = o.Sum(x => x.nettotal),
+                           name = o.FirstOrDefault(x => x.id == o.Key).name
+                       }).ToList();
+
+
+
+
+            foreach (var bi in billitems)
+            {
+                betterListView1.Add(new string[] { bi.name, bi.amount.ToString("0.###"), bi.total.ToString("0.##") });
+            }
+            betterListView1.Add(new ListViewItem(new string[] { "Total", billitems.Sum(o => o.amount).ToString("0.###"), billitems.Sum(o => o.total).ToString("0.##") })
+            {
+                BackColor = Color.Blue,
+                ForeColor = Color.White
+            });
+
+
+
+        }
+    #endregion
+    }
 }
+
+
+
+

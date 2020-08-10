@@ -95,6 +95,7 @@
             // betterTextBox_search
             // 
             this.betterTextBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.betterTextBox_search.append = "";
             this.betterTextBox_search.decVal = new decimal(new int[] {
             0,
             0,
@@ -104,6 +105,8 @@
             this.betterTextBox_search.intVal = 0;
             this.betterTextBox_search.Location = new System.Drawing.Point(842, 11);
             this.betterTextBox_search.Name = "betterTextBox_search";
+            this.betterTextBox_search.prepend = "";
+            this.betterTextBox_search.Rules = null;
             this.betterTextBox_search.Size = new System.Drawing.Size(215, 24);
             this.betterTextBox_search.TabIndex = 3;
             this.betterTextBox_search.textboxType = CustomControls.TextboxType.Text;
@@ -271,7 +274,7 @@
             this.materialButton_issuestock.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_issuestock.hoverforefont = null;
             this.materialButton_issuestock.hoverimage = null;
-            this.materialButton_issuestock.Location = new System.Drawing.Point(328, 56);
+            this.materialButton_issuestock.Location = new System.Drawing.Point(490, 57);
             this.materialButton_issuestock.Name = "materialButton_issuestock";
             this.materialButton_issuestock.role = 0;
             this.materialButton_issuestock.Size = new System.Drawing.Size(157, 30);
@@ -298,7 +301,7 @@
             this.materialButton_refresh.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_refresh.hoverforefont = null;
             this.materialButton_refresh.hoverimage = null;
-            this.materialButton_refresh.Location = new System.Drawing.Point(654, 56);
+            this.materialButton_refresh.Location = new System.Drawing.Point(653, 57);
             this.materialButton_refresh.Name = "materialButton_refresh";
             this.materialButton_refresh.role = 0;
             this.materialButton_refresh.Size = new System.Drawing.Size(157, 30);
@@ -324,7 +327,7 @@
             this.materialButton_addstock.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_addstock.hoverforefont = null;
             this.materialButton_addstock.hoverimage = null;
-            this.materialButton_addstock.Location = new System.Drawing.Point(491, 56);
+            this.materialButton_addstock.Location = new System.Drawing.Point(328, 57);
             this.materialButton_addstock.Name = "materialButton_addstock";
             this.materialButton_addstock.role = 0;
             this.materialButton_addstock.Size = new System.Drawing.Size(157, 30);

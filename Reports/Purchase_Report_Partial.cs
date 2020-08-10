@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RestaurantSystem.Reports
 {
-    class Purchase_Report_Partial
+    public partial class Purchase_Report_partial : Form
     {
+        public Purchase_Report_partial()
+        {
+            InitializeComponent();
+        }
     }
 }

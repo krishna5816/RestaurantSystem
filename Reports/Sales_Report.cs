@@ -77,14 +77,19 @@ namespace RestaurantSystem.Reports
             {
                 GroupByItem(data.Select(o => o.id).ToList());
             }
-            //else if (comboBox_grouping.SelectedIndex == 3)
-            //{
-            //    GroupByCategory(data.Select(o => o.id).ToList());
-            //}
+            else if (comboBox_grouping.SelectedIndex == 3)
+            {
+                GroupByCategory(data.Select(o => o.id).ToList());
+            }
             //else if (comboBox_grouping.SelectedIndex == 4)
             //{
             //   GroupByCounter(data);
             //}
+        }
+
+        private void materialButton_close_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
