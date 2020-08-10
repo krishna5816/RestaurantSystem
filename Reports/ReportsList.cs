@@ -45,5 +45,15 @@ namespace RestaurantSystem.Reports
         {
             this.Close();
         }
+
+        private void materialButton_purchasereport_Click(object sender, EventArgs e)
+        {
+            var p = new Purchase_Report();
+            p.TopLevel = false;
+            p.Dock = DockStyle.Fill;
+            Dashboard.instance.panel_menu.Controls.Add(p);
+            p.Show();
+            p.BringToFront();
+        }
     }
 }

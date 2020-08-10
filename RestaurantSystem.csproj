@@ -577,9 +577,6 @@
     <Compile Include="Reports\Purchase_Report_Partial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Purchase_Report_partial.Designer.cs">
-      <DependentUpon>Purchase_Report_Partial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\ReportsList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -794,9 +791,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Purchase_Report.resx">
       <DependentUpon>Purchase_Report.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Purchase_Report_Partial.resx">
-      <DependentUpon>Purchase_Report_Partial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportsList.resx">
       <DependentUpon>ReportsList.cs</DependentUpon>

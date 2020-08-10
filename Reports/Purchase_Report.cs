@@ -33,7 +33,7 @@ namespace RestaurantSystem.Reports
 
         private void button_load_Click(object sender, EventArgs e)
         {
-            var data = db.bills.Where(o => o.id > 0);
+            var data = db.purchaseinvoices.Where(o => o.id > 0);
             if (!rangeSelector.valid)
             {
                 Comformation.show(Text, "Please select a Duration", 1);
@@ -68,11 +68,11 @@ namespace RestaurantSystem.Reports
 
             betterListView1.Clear();
 
-            //if (comboBox_grouping.SelectedIndex == 1)
-            //{
+            if (comboBox_grouping.SelectedIndex == 1)
+            {
 
-            //    GroupByBill(data);
-            //}
+                GroupByBill(data);
+            }
             //else if (comboBox_grouping.SelectedIndex == 2)
             //{
             //    GroupByItem(data.Select(o => o.id).ToList());

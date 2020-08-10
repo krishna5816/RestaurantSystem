@@ -223,9 +223,9 @@
             this.label1_Add.ForeColor = System.Drawing.Color.White;
             this.label1_Add.Location = new System.Drawing.Point(48, 12);
             this.label1_Add.Name = "label1_Add";
-            this.label1_Add.Size = new System.Drawing.Size(75, 17);
+            this.label1_Add.Size = new System.Drawing.Size(84, 17);
             this.label1_Add.TabIndex = 56;
-            this.label1_Add.Text = "Report List";
+            this.label1_Add.Text = "Sales Report";
             // 
             // materialButton_close
             // 

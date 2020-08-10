@@ -149,6 +149,7 @@
             this.materialButton_purchasereport.Totext = null;
             this.materialButton_purchasereport.userole = false;
             this.materialButton_purchasereport.UseVisualStyleBackColor = false;
+            this.materialButton_purchasereport.Click += new System.EventHandler(this.materialButton_purchasereport_Click);
             // 
             // ReportsList
             // 

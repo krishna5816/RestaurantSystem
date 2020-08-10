@@ -1,1 +1,1 @@
-﻿select * from billitems
+﻿select * from purchaseinvoiceitems
