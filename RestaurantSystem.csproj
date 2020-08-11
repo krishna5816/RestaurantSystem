@@ -568,11 +568,11 @@
     <Compile Include="PurchaseItems\Viwer.Designer.cs">
       <DependentUpon>Viwer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Purchase_Report.cs">
+    <Compile Include="Reports\Purchase_Reports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Purchase_Report.Designer.cs">
-      <DependentUpon>Purchase_Report.cs</DependentUpon>
+    <Compile Include="Reports\Purchase_Reports.Designer.cs">
+      <DependentUpon>Purchase_Reports.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\Purchase_Report_Partial.cs">
       <SubType>Form</SubType>
@@ -789,8 +789,8 @@
     <EmbeddedResource Include="PurchaseItems\Viwer.resx">
       <DependentUpon>Viwer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Purchase_Report.resx">
-      <DependentUpon>Purchase_Report.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\Purchase_Reports.resx">
+      <DependentUpon>Purchase_Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportsList.resx">
       <DependentUpon>ReportsList.cs</DependentUpon>

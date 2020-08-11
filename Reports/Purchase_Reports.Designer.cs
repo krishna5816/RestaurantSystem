@@ -1,6 +1,6 @@
 ﻿namespace RestaurantSystem.Reports
 {
-    partial class Purchase_Report
+    partial class Purchase_Reports
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_export = new System.Windows.Forms.Button();
             this.button_Reset = new System.Windows.Forms.Button();
-            this.button_load = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label_totalamount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1_Add = new System.Windows.Forms.Label();
             this.panel_top = new System.Windows.Forms.Panel();
             this.materialButton_close = new CustomControls.MaterialButton();
+            this.button_load = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -58,9 +58,9 @@
             this.betterListView1.HideSelection = false;
             this.betterListView1.Location = new System.Drawing.Point(380, 40);
             this.betterListView1.Name = "betterListView1";
-            this.betterListView1.Size = new System.Drawing.Size(481, 410);
+            this.betterListView1.Size = new System.Drawing.Size(492, 410);
             this.betterListView1.sortable = false;
-            this.betterListView1.TabIndex = 41;
+            this.betterListView1.TabIndex = 46;
             this.betterListView1.UseCompatibleStateImageBehavior = false;
             this.betterListView1.View = System.Windows.Forms.View.Details;
             // 
@@ -74,7 +74,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(380, 410);
-            this.panel2.TabIndex = 37;
+            this.panel2.TabIndex = 42;
             // 
             // panel4
             // 
@@ -127,9 +127,9 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button_load);
             this.panel3.Controls.Add(this.button_export);
             this.panel3.Controls.Add(this.button_Reset);
-            this.panel3.Controls.Add(this.button_load);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 367);
             this.panel3.Name = "panel3";
@@ -160,37 +160,24 @@
             this.button_Reset.Text = "Reset";
             this.button_Reset.UseVisualStyleBackColor = true;
             // 
-            // button_load
-            // 
-            this.button_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_load.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button_load.Location = new System.Drawing.Point(5, 4);
-            this.button_load.Name = "button_load";
-            this.button_load.Size = new System.Drawing.Size(77, 30);
-            this.button_load.TabIndex = 0;
-            this.button_load.Text = "Load";
-            this.button_load.UseVisualStyleBackColor = true;
-            this.button_load.Click += new System.EventHandler(this.button_load_Click);
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 453);
+            this.label2.Location = new System.Drawing.Point(10, 445);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 38;
+            this.label2.TabIndex = 43;
             this.label2.Text = "Total Amount:";
             // 
             // label_totalamount
             // 
             this.label_totalamount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label_totalamount.AutoSize = true;
-            this.label_totalamount.Location = new System.Drawing.Point(112, 453);
+            this.label_totalamount.Location = new System.Drawing.Point(112, 445);
             this.label_totalamount.Name = "label_totalamount";
             this.label_totalamount.Size = new System.Drawing.Size(13, 13);
-            this.label_totalamount.TabIndex = 39;
+            this.label_totalamount.TabIndex = 44;
             this.label_totalamount.Text = "0";
             // 
             // panel1
@@ -199,7 +186,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(861, 1);
+            this.panel1.Size = new System.Drawing.Size(872, 1);
             this.panel1.TabIndex = 57;
             // 
             // label1_Add
@@ -223,8 +210,8 @@
             this.panel_top.ForeColor = System.Drawing.Color.White;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(861, 40);
-            this.panel_top.TabIndex = 40;
+            this.panel_top.Size = new System.Drawing.Size(872, 40);
+            this.panel_top.TabIndex = 45;
             // 
             // materialButton_close
             // 
@@ -251,14 +238,26 @@
             this.materialButton_close.Totext = null;
             this.materialButton_close.userole = false;
             this.materialButton_close.UseVisualStyleBackColor = true;
-            this.materialButton_close.Click += new System.EventHandler(this.materialButton_close_Click);
+            // 
+            // button_load
+            // 
+            this.button_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_load.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button_load.Location = new System.Drawing.Point(5, 4);
+            this.button_load.Name = "button_load";
+            this.button_load.Size = new System.Drawing.Size(77, 30);
+            this.button_load.TabIndex = 4;
+            this.button_load.Text = "Load";
+            this.button_load.UseVisualStyleBackColor = true;
+            this.button_load.Click += new System.EventHandler(this.button_load_Click);
             // 
             // Purchase_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(861, 450);
+            this.ClientSize = new System.Drawing.Size(872, 450);
             this.Controls.Add(this.betterListView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
@@ -289,12 +288,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button_export;
         private System.Windows.Forms.Button button_Reset;
-        private System.Windows.Forms.Button button_load;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_totalamount;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1_Add;
         private System.Windows.Forms.Panel panel_top;
         private CustomControls.MaterialButton materialButton_close;
+        private System.Windows.Forms.Button button_load;
     }
 }

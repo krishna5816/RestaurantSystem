@@ -10,25 +10,19 @@ using System.Windows.Forms;
 using CustomControls;
 namespace RestaurantSystem.Reports
 {
-    
-    public partial class Purchase_Report : Form
+    public partial class Purchase_Reports : Form
     {
         Model.ResturantManagementEntities db = Model.DatabaseConfigure.getConfigure();
-        public Purchase_Report()
+        public Purchase_Reports()
         {
             InitializeComponent();
             rangeSelector.comboBox_fy.Items.AddRange(db.fiscalyears.Select(o => new RangeSelector.FYViwer()
             {
                 id = o.id,
+                enddate = o.enddate,
                 name = o.name,
-                enddate=o.enddate,
-                startdate=o.startdate
+                startdate = o.startdate
             }).ToArray());
-        }
-
-        private void materialButton_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void button_load_Click(object sender, EventArgs e)
@@ -73,10 +67,14 @@ namespace RestaurantSystem.Reports
 
                 GroupByBill(data);
             }
-            //else if (comboBox_grouping.SelectedIndex == 2)
-            //{
-            //    GroupByItem(data.Select(o => o.id).ToList());
-            //}
+            else if (comboBox_grouping.SelectedIndex == 2)
+            {
+                GroupByItem(data.Select(o => o.id).ToList());
+            }
+            else if (comboBox_grouping.SelectedIndex == 3)
+            {
+                GroupByCategory(data.Select(o => o.id).ToList());
+            }
         }
     }
 }
