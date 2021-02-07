@@ -12,10 +12,11 @@ namespace RestaurantSystem.AddStock
 {
     public partial class AddKitchenStock : Form
     {
-        Model.ResturantManagementEntities db = new ResturantManagementEntities();
+        Model.ResturantManagementEntities db;
         int purchase_id;
         public AddKitchenStock()
         {
+            db = Model.DatabaseConfigure.getConfigure();
             InitializeComponent();
             foreach (var pitem in db.purchaseitems.ToList())
             {
@@ -77,7 +78,7 @@ namespace RestaurantSystem.AddStock
                 betterTextBox_quantity.Focus();
             }
             var party_Details = (party)comboBox_party.SelectedItem;
-          
+
 
         }
 
@@ -168,11 +169,11 @@ namespace RestaurantSystem.AddStock
         {
             if (betterListView1.Items == null)
             {
-                CustomControls.Alert.show("Empty Items", "Please selcet item and enter price and quantity",3000);
+                CustomControls.Alert.show("Empty Items", "Please selcet item and enter price and quantity", 3000);
                 return;
             }
-          
-           Model.purchaseinvoice addnew = new Model.purchaseinvoice()
+
+            Model.purchaseinvoice addnew = new Model.purchaseinvoice()
             {
                 grosstotal = betterTextBox_grosstotal.decVal,
                 discount = betterTextBox_discount.decVal,
@@ -184,10 +185,10 @@ namespace RestaurantSystem.AddStock
                 admin_id = INFO.admin_id,
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now,
-                date=INFO.currentdate
-                
+                date = INFO.currentdate
+
             };
-           
+
             if (checkBox_party.Checked)
             {
                 if (comboBox_party.SelectedIndex < 0)
@@ -226,45 +227,45 @@ namespace RestaurantSystem.AddStock
                     db.Entry(vender).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
-               
+
             }
             db.purchaseinvoices.Add(addnew);
             db.SaveChanges();
             purchase_id = addnew.id;
             foreach (ListViewItem item in betterListView1.Items)
-                {
-                 
-                    var quantity = Convert.ToDecimal(item.SubItems[3].Text);
-                    var rate = Convert.ToInt32(item.SubItems[4].Text);
-                    var total = Convert.ToInt32(item.SubItems[5].Text);
-                    var item_id = Convert.ToInt32(item.SubItems[6].Text);
-                    var purchase_item = db.purchaseitems.Find(item_id);
-                    purchase_item.qty += quantity;
-                    db.Entry(purchase_item).State = System.Data.Entity.EntityState.Modified;
-                    purchaseinvoiceitem newstock = new purchaseinvoiceitem()
-                    {
-                        purchaseitems_id = item_id,
-                        price = rate,
-                        qty = quantity,
-                        purchaseinvoice_id = purchase_id,                    
-                        admin_id = INFO.admin_id,
-                        updated_at = DateTime.Now,
-                        created_at = DateTime.Now,
+            {
 
-                    };
-                    db.purchaseinvoiceitems.Add(newstock);
-                    db.SaveChanges();
-                }
+                var quantity = Convert.ToDecimal(item.SubItems[3].Text);
+                var rate = Convert.ToInt32(item.SubItems[4].Text);
+                var total = Convert.ToInt32(item.SubItems[5].Text);
+                var item_id = Convert.ToInt32(item.SubItems[6].Text);
+                var purchase_item = db.purchaseitems.Find(item_id);
+                purchase_item.qty += quantity;
+                db.Entry(purchase_item).State = System.Data.Entity.EntityState.Modified;
+                purchaseinvoiceitem newstock = new purchaseinvoiceitem()
+                {
+                    purchaseitems_id = item_id,
+                    price = rate,
+                    qty = quantity,
+                    purchaseinvoice_id = purchase_id,
+                    admin_id = INFO.admin_id,
+                    updated_at = DateTime.Now,
+                    created_at = DateTime.Now,
+
+                };
+                db.purchaseinvoiceitems.Add(newstock);
+                db.SaveChanges();
+            }
             foreach (ListViewItem item in betterListView_Exp.Items)
             {
                 var item_name = item.SubItems[0].Text;
-                var amount =Convert.ToDecimal( item.SubItems[1].Text);
+                var amount = Convert.ToDecimal(item.SubItems[1].Text);
 
-                purchseexpens  exp= new Model.purchseexpens()
+                purchseexpens exp = new Model.purchseexpens()
                 {
-                   purchaseinvoice_id = purchase_id,
+                    purchaseinvoice_id = purchase_id,
                     name = item_name,
-                    amount =  amount,
+                    amount = amount,
                     date = INFO.currentdate,
                     admin_id = INFO.admin_id,
                     updated_at = DateTime.Now,
@@ -275,10 +276,10 @@ namespace RestaurantSystem.AddStock
             }
             betterListView1.Items.Clear();
             betterListView_Exp.Items.Clear();
-                if (checkBox_party.Checked) 
-                {
-                    comboBox_party.SelectedIndex = -1;
-                }
+            if (checkBox_party.Checked)
+            {
+                comboBox_party.SelectedIndex = -1;
+            }
             betterTextBox_rate.Clear();
             betterTextBox_quantity.Clear();
             betterTextBox_grosstotal.Clear();
@@ -328,8 +329,8 @@ namespace RestaurantSystem.AddStock
             foreach (ListViewItem sel in betterListView1.SelectedItems)
             {
                 betterListView1.Items.Remove(sel);
-                decimal total=Convert.ToDecimal(sel.SubItems[5].Text);
-                betterTextBox_grosstotal.decVal= betterTextBox_grosstotal.decVal - total;
+                decimal total = Convert.ToDecimal(sel.SubItems[5].Text);
+                betterTextBox_grosstotal.decVal = betterTextBox_grosstotal.decVal - total;
             }
         }
 

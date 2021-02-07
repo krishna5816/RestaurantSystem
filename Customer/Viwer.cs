@@ -13,10 +13,11 @@ namespace RestaurantSystem.Customer
 {
     public partial class Viwer : UserControl
     {
-       Model.ResturantManagementEntities db = new ResturantManagementEntities();
+       Model.ResturantManagementEntities db;
         public Viwer()
         {
             InitializeComponent();
+            db = Model.DatabaseConfigure.getConfigure();
         }
         public int id { get; set; }
         public string name

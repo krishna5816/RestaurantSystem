@@ -17,12 +17,12 @@ namespace RestaurantSystem.Customer
     {
         public delegate void edithandler(Model.account account);
         public event edithandler edit;
-        Model.ResturantManagementEntities db= new ResturantManagementEntities();
+        Model.ResturantManagementEntities db;
         int id;
         public Edit()
         {
             InitializeComponent();
-           
+            db = Model.DatabaseConfigure.getConfigure();
         }
 
         private void materialButton_close_Click(object sender, EventArgs e)

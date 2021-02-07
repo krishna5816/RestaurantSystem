@@ -18,10 +18,14 @@ namespace RestaurantSystem.Counters
         public Viwer(int id)
         {
             InitializeComponent();
-            nepaliCalender.Datestamp = INFO.currentdate;
             db = Model.DatabaseConfigure.getConfigure();
+            using (var db = Model.DatabaseConfigure.getConfigure())
+            {
             this.Counter = db.counters.Find(id);
             label_counter.Text = this.Counter.name;
+
+            }
+            nepaliCalender.Datestamp = INFO.currentdate;
             if (this.Counter.counterstatus == 1)
             {
                 pictureBox.Image = Properties.Resources.Rms_connection_on;
@@ -39,7 +43,7 @@ namespace RestaurantSystem.Counters
         {
             var date = nepaliCalender.Datestamp;
             var counter_id = this.Counter.id;
-
+           
             if(db.counterstatuses.Count(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id) > 0)
             {
                 var counterstatus= db.counterstatuses.First(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id);

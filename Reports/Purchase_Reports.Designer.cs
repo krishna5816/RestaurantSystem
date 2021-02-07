@@ -35,6 +35,7 @@
             this.comboBox_grouping = new System.Windows.Forms.ComboBox();
             this.rangeSelector = new CustomControls.RangeSelector();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button_load = new System.Windows.Forms.Button();
             this.button_export = new System.Windows.Forms.Button();
             this.button_Reset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.label1_Add = new System.Windows.Forms.Label();
             this.panel_top = new System.Windows.Forms.Panel();
             this.materialButton_close = new CustomControls.MaterialButton();
-            this.button_load = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -135,6 +135,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(378, 41);
             this.panel3.TabIndex = 27;
+            // 
+            // button_load
+            // 
+            this.button_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_load.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button_load.Location = new System.Drawing.Point(5, 4);
+            this.button_load.Name = "button_load";
+            this.button_load.Size = new System.Drawing.Size(77, 30);
+            this.button_load.TabIndex = 4;
+            this.button_load.Text = "Load";
+            this.button_load.UseVisualStyleBackColor = true;
+            this.button_load.Click += new System.EventHandler(this.button_load_Click);
             // 
             // button_export
             // 
@@ -238,21 +251,9 @@
             this.materialButton_close.Totext = null;
             this.materialButton_close.userole = false;
             this.materialButton_close.UseVisualStyleBackColor = true;
+            this.materialButton_close.Click += new System.EventHandler(this.materialButton_close_Click);
             // 
-            // button_load
-            // 
-            this.button_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_load.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button_load.Location = new System.Drawing.Point(5, 4);
-            this.button_load.Name = "button_load";
-            this.button_load.Size = new System.Drawing.Size(77, 30);
-            this.button_load.TabIndex = 4;
-            this.button_load.Text = "Load";
-            this.button_load.UseVisualStyleBackColor = true;
-            this.button_load.Click += new System.EventHandler(this.button_load_Click);
-            // 
-            // Purchase_Report
+            // Purchase_Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -264,7 +265,7 @@
             this.Controls.Add(this.label_totalamount);
             this.Controls.Add(this.panel_top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Purchase_Report";
+            this.Name = "Purchase_Reports";
             this.Text = "Purchase_Report";
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

@@ -16,12 +16,13 @@ namespace RestaurantSystem.Customer
     {
         public delegate void addhandler(Model.account account);
         public event addhandler add;
-        Model.ResturantManagementEntities db = new ResturantManagementEntities();
+        Model.ResturantManagementEntities db;
 
 
         public Add()
         {
             InitializeComponent();
+            db = Model.DatabaseConfigure.getConfigure();
         }
 
         private void Add_Load(object sender, EventArgs e)

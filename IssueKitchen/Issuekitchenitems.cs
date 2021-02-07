@@ -12,10 +12,12 @@ namespace RestaurantSystem.IssueKitchen
 {
     public partial class Issuekitchenitems : Form
     {
-        ResturantManagementEntities db = new ResturantManagementEntities();
+        ResturantManagementEntities db;
         public Issuekitchenitems()
         {
+
             InitializeComponent();
+            db = Model.DatabaseConfigure.getConfigure();
             foreach (var purchaseitem in db.purchaseitems.ToList())
             {
                 comboBox_itemlist.Items.Add(purchaseitem);

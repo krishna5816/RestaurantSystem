@@ -84,6 +84,7 @@
             // betterTextBox_search
             // 
             this.betterTextBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.betterTextBox_search.append = "";
             this.betterTextBox_search.decVal = new decimal(new int[] {
             0,
             0,
@@ -92,6 +93,8 @@
             this.betterTextBox_search.intVal = 0;
             this.betterTextBox_search.Location = new System.Drawing.Point(619, 12);
             this.betterTextBox_search.Name = "betterTextBox_search";
+            this.betterTextBox_search.prepend = "";
+            this.betterTextBox_search.Rules = null;
             this.betterTextBox_search.Size = new System.Drawing.Size(217, 25);
             this.betterTextBox_search.TabIndex = 2;
             this.betterTextBox_search.textboxType = CustomControls.TextboxType.Text;
@@ -185,12 +188,12 @@
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.eDITToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(99, 26);
+            this.contextMenuStrip.Size = new System.Drawing.Size(98, 26);
             // 
             // eDITToolStripMenuItem
             // 
             this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
-            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.eDITToolStripMenuItem.Text = "EDIT";
             // 
             // panel_fill
@@ -226,7 +229,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CounterManager";
-            this.Text = "CounterManager";
+            this.Text = "f";
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
             this.contextMenuStrip.ResumeLayout(false);

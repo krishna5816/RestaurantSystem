@@ -54,23 +54,17 @@ namespace RestaurantSystem.Model
         public virtual DbSet<purchaseinvoice> purchaseinvoices { get; set; }
         public virtual DbSet<purchaseitem> purchaseitems { get; set; }
         public virtual DbSet<purchseexpens> purchseexpenses { get; set; }
-        public virtual DbSet<systemsetting> systemsettings { get; set; }
         public virtual DbSet<shadow_accounts> shadow_accounts { get; set; }
-        public virtual DbSet<shadow_admins> shadow_admins { get; set; }
         public virtual DbSet<shadow_bills> shadow_bills { get; set; }
         public virtual DbSet<shadow_billsitems> shadow_billsitems { get; set; }
-        public virtual DbSet<shadow_categories> shadow_categories { get; set; }
         public virtual DbSet<shadow_counterclosings> shadow_counterclosings { get; set; }
         public virtual DbSet<shadow_counteropenings> shadow_counteropenings { get; set; }
         public virtual DbSet<shadow_counters> shadow_counters { get; set; }
         public virtual DbSet<shadow_counterstatus> shadow_counterstatus { get; set; }
         public virtual DbSet<shadow_counterstocks> shadow_counterstocks { get; set; }
-        public virtual DbSet<shadow_customerpayments> shadow_customerpayments { get; set; }
         public virtual DbSet<shadow_fiscalyears> shadow_fiscalyears { get; set; }
         public virtual DbSet<shadow_issueitems> shadow_issueitems { get; set; }
-        public virtual DbSet<shadow_menuitems> shadow_menuitems { get; set; }
         public virtual DbSet<shadow_parties> shadow_parties { get; set; }
-        public virtual DbSet<shadow_partypayments> shadow_partypayments { get; set; }
         public virtual DbSet<shadow_purchaseaddstocks> shadow_purchaseaddstocks { get; set; }
         public virtual DbSet<shadow_purchasebillitems> shadow_purchasebillitems { get; set; }
         public virtual DbSet<shadow_purchasecates> shadow_purchasecates { get; set; }
@@ -79,5 +73,11 @@ namespace RestaurantSystem.Model
         public virtual DbSet<shadow_purchaseinvoices> shadow_purchaseinvoices { get; set; }
         public virtual DbSet<shadow_purchaseitems> shadow_purchaseitems { get; set; }
         public virtual DbSet<shadow_systemsettings> shadow_systemsettings { get; set; }
+        public virtual DbSet<systemsetting> systemsettings { get; set; }
+        public virtual DbSet<shadow_admins> shadow_admins { get; set; }
+        public virtual DbSet<shadow_categories> shadow_categories { get; set; }
+        public virtual DbSet<shadow_customerpayments> shadow_customerpayments { get; set; }
+        public virtual DbSet<shadow_menuitems> shadow_menuitems { get; set; }
+        public virtual DbSet<shadow_partypayments> shadow_partypayments { get; set; }
     }
 }

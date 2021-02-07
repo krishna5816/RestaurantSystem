@@ -20,7 +20,7 @@ namespace RestaurantSystem.Parties
         {
            
             InitializeComponent();
-            using(var db=new Model.ResturantManagementEntities())
+            db = Model.DatabaseConfigure.getConfigure();
             foreach(var party in db.parties.ToList())
             {
                 add(party);

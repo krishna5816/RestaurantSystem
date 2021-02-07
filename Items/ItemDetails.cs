@@ -14,9 +14,10 @@ namespace RestaurantSystem.Items
     public partial class ItemDetails : Form
     {
         int sn = 1;
-        Model.ResturantManagementEntities db = new Model.ResturantManagementEntities();
+        Model.ResturantManagementEntities db;
         public ItemDetails(int id)
         {
+            db = Model.DatabaseConfigure.getConfigure();
             InitializeComponent();
             var i = db.menuitems.Find(id);
             label_itemname.Text = i.name;

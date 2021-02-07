@@ -366,7 +366,7 @@
           <Property Name="paidamount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="dueamount" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
-        <EntityType Name="purchaseaddstock">
+        <EntityType Name="purchaseaddstocks">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -476,8 +476,6 @@
           <Property Name="sync_id" Type="int" />
           <Property Name="purchaseinvoice_id" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_accounts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_accounts">
           <Key>
             <PropertyRef Name="id" />
@@ -506,7 +504,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_accounts' does not 
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_admins' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'RMS.dbo.shadow_admins' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_admins">
           <Key>
             <PropertyRef Name="id" />
@@ -530,8 +528,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_admins' does not ha
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_bills' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_bills">
           <Key>
             <PropertyRef Name="id" />
@@ -582,8 +578,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_bills' does not hav
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_billsitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_billsitems">
           <Key>
             <PropertyRef Name="id" />
@@ -614,7 +608,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_billsitems' does no
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_categories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'RMS.dbo.shadow_categories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_categories">
           <Key>
             <PropertyRef Name="id" />
@@ -637,8 +631,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_categories' does no
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_counterclosings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_counterclosings">
           <Key>
             <PropertyRef Name="id" />
@@ -663,8 +655,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_counterclosings' do
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_counteropenings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_counteropenings">
           <Key>
             <PropertyRef Name="id" />
@@ -689,8 +679,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_counteropenings' do
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_counters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_counters">
           <Key>
             <PropertyRef Name="id" />
@@ -717,8 +705,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_counters' does not 
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_counterstatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_counterstatus">
           <Key>
             <PropertyRef Name="id" />
@@ -749,8 +735,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_counterstatus' does
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_counterstocks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_counterstocks">
           <Key>
             <PropertyRef Name="id" />
@@ -776,7 +760,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_counterstocks' does
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_customerpayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'RMS.dbo.shadow_customerpayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_customerpayments">
           <Key>
             <PropertyRef Name="id" />
@@ -807,8 +791,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_customerpayments' d
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_fiscalyears' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_fiscalyears">
           <Key>
             <PropertyRef Name="id" />
@@ -830,8 +812,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_fiscalyears' does n
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_issueitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_issueitems">
           <Key>
             <PropertyRef Name="id" />
@@ -857,7 +837,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_issueitems' does no
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_menuitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'RMS.dbo.shadow_menuitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_menuitems">
           <Key>
             <PropertyRef Name="id" />
@@ -882,8 +862,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_menuitems' does not
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_parties' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_parties">
           <Key>
             <PropertyRef Name="id" />
@@ -915,7 +893,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_parties' does not h
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_partypayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_partypayments">
           <Key>
             <PropertyRef Name="id" />
@@ -946,8 +924,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_partypayments' does
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseaddstocks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_purchaseaddstocks">
           <Key>
             <PropertyRef Name="id" />
@@ -970,8 +946,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseaddstocks' 
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchasebillitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_purchasebillitems">
           <Key>
             <PropertyRef Name="id" />
@@ -995,8 +969,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchasebillitems' 
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchasecates' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_purchasecates">
           <Key>
             <PropertyRef Name="id" />
@@ -1017,8 +989,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchasecates' does
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseexps' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_purchaseexps">
           <Key>
             <PropertyRef Name="id" />
@@ -1041,8 +1011,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseexps' does 
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseinvoiceitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_purchaseinvoiceitems">
           <Key>
             <PropertyRef Name="id" />
@@ -1069,8 +1037,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseinvoiceitem
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseinvoices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_purchaseinvoices">
           <Key>
             <PropertyRef Name="id" />
@@ -1106,8 +1072,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseinvoices' d
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_purchaseitems">
           <Key>
             <PropertyRef Name="id" />
@@ -1132,8 +1096,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_purchaseitems' does
           <Property Name="actiontype" Type="int" Nullable="false" />
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_systemsettings">
           <Key>
             <PropertyRef Name="id" />
@@ -1692,24 +1654,24 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
         </Association>
         <Association Name="FK__purchasea__admin__634EBE90">
           <End Role="admins" Type="Self.admins" Multiplicity="0..1" />
-          <End Role="purchaseaddstock" Type="Self.purchaseaddstock" Multiplicity="*" />
+          <End Role="purchaseaddstocks" Type="Self.purchaseaddstocks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="admins">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="purchaseaddstock">
+            <Dependent Role="purchaseaddstocks">
               <PropertyRef Name="admin_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__purchasea__purch__625A9A57">
           <End Role="purchaseitems" Type="Self.purchaseitems" Multiplicity="0..1" />
-          <End Role="purchaseaddstock" Type="Self.purchaseaddstock" Multiplicity="*" />
+          <End Role="purchaseaddstocks" Type="Self.purchaseaddstocks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="purchaseitems">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="purchaseaddstock">
+            <Dependent Role="purchaseaddstocks">
               <PropertyRef Name="purchaseitem_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -1929,35 +1891,33 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <EntitySet Name="order_tables" EntityType="Self.order_tables" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="parties" EntityType="Self.parties" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="partypayments" EntityType="Self.partypayments" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="purchaseaddstock" EntityType="Self.purchaseaddstock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="purchaseaddstocks" EntityType="Self.purchaseaddstocks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="purchasebillitems" EntityType="Self.purchasebillitems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="purchasecategories" EntityType="Self.purchasecategories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="purchaseinvoiceitems" EntityType="Self.purchaseinvoiceitems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="purchaseinvoices" EntityType="Self.purchaseinvoices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="purchaseitems" EntityType="Self.purchaseitems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="purchseexpenses" EntityType="Self.purchseexpenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_accounts" EntityType="Self.shadow_accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_bills" EntityType="Self.shadow_bills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_billsitems" EntityType="Self.shadow_billsitems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_counterclosings" EntityType="Self.shadow_counterclosings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_counteropenings" EntityType="Self.shadow_counteropenings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_counters" EntityType="Self.shadow_counters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_counterstatus" EntityType="Self.shadow_counterstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_counterstocks" EntityType="Self.shadow_counterstocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_fiscalyears" EntityType="Self.shadow_fiscalyears" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_issueitems" EntityType="Self.shadow_issueitems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_parties" EntityType="Self.shadow_parties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_purchaseaddstocks" EntityType="Self.shadow_purchaseaddstocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_purchasebillitems" EntityType="Self.shadow_purchasebillitems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_purchasecates" EntityType="Self.shadow_purchasecates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_purchaseexps" EntityType="Self.shadow_purchaseexps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_purchaseinvoiceitems" EntityType="Self.shadow_purchaseinvoiceitems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_purchaseinvoices" EntityType="Self.shadow_purchaseinvoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_purchaseitems" EntityType="Self.shadow_purchaseitems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shadow_systemsettings" EntityType="Self.shadow_systemsettings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="systemsettings" EntityType="Self.systemsettings" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="shadow_accounts" EntityType="Self.shadow_accounts" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_accounts].[id] AS [id], 
-    [shadow_accounts].[account_id] AS [account_id], 
-    [shadow_accounts].[name] AS [name], 
-    [shadow_accounts].[address] AS [address], 
-    [shadow_accounts].[panno] AS [panno], 
-    [shadow_accounts].[phone] AS [phone], 
-    [shadow_accounts].[email] AS [email], 
-    [shadow_accounts].[totaltransaction] AS [totaltransaction], 
-    [shadow_accounts].[currentdue] AS [currentdue], 
-    [shadow_accounts].[currentadvance] AS [currentadvance], 
-    [shadow_accounts].[nationlity] AS [nationlity], 
-    [shadow_accounts].[admin_id] AS [admin_id], 
-    [shadow_accounts].[updated_at] AS [updated_at], 
-    [shadow_accounts].[created_at] AS [created_at], 
-    [shadow_accounts].[sync_id] AS [sync_id], 
-    [shadow_accounts].[actiontype] AS [actiontype], 
-    [shadow_accounts].[C_V] AS [C_V]
-    FROM [dbo].[shadow_accounts] AS [shadow_accounts]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="shadow_admins" EntityType="Self.shadow_admins" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [shadow_admins].[id] AS [id], 
@@ -1972,67 +1932,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
     [shadow_admins].[C_V] AS [C_V]
     FROM [dbo].[shadow_admins] AS [shadow_admins]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="shadow_bills" EntityType="Self.shadow_bills" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_bills].[id] AS [id], 
-    [shadow_bills].[bill_id] AS [bill_id], 
-    [shadow_bills].[fiscal_year] AS [fiscal_year], 
-    [shadow_bills].[bill_no] AS [bill_no], 
-    [shadow_bills].[customer_name] AS [customer_name], 
-    [shadow_bills].[customer_address] AS [customer_address], 
-    [shadow_bills].[customer_phone] AS [customer_phone], 
-    [shadow_bills].[cystomer_PAN] AS [cystomer_PAN], 
-    [shadow_bills].[bill_Date] AS [bill_Date], 
-    [shadow_bills].[amount] AS [amount], 
-    [shadow_bills].[discount] AS [discount], 
-    [shadow_bills].[taxble_amount] AS [taxble_amount], 
-    [shadow_bills].[tax_amount] AS [tax_amount], 
-    [shadow_bills].[is_printetd] AS [is_printetd], 
-    [shadow_bills].[is_active] AS [is_active], 
-    [shadow_bills].[printed_time] AS [printed_time], 
-    [shadow_bills].[entered_by] AS [entered_by], 
-    [shadow_bills].[printed_by] AS [printed_by], 
-    [shadow_bills].[counter_id] AS [counter_id], 
-    [shadow_bills].[cusotomer_id] AS [cusotomer_id], 
-    [shadow_bills].[admin_id] AS [admin_id], 
-    [shadow_bills].[updated_at] AS [updated_at], 
-    [shadow_bills].[created_at] AS [created_at], 
-    [shadow_bills].[sync_id] AS [sync_id], 
-    [shadow_bills].[date] AS [date], 
-    [shadow_bills].[reprintamount] AS [reprintamount], 
-    [shadow_bills].[fiscalyear_id] AS [fiscalyear_id], 
-    [shadow_bills].[paidamount] AS [paidamount], 
-    [shadow_bills].[nettotal] AS [nettotal], 
-    [shadow_bills].[grosstotal] AS [grosstotal], 
-    [shadow_bills].[dueamount] AS [dueamount], 
-    [shadow_bills].[returnamount] AS [returnamount], 
-    [shadow_bills].[actiontype] AS [actiontype], 
-    [shadow_bills].[C_V] AS [C_V]
-    FROM [dbo].[shadow_bills] AS [shadow_bills]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_billsitems" EntityType="Self.shadow_billsitems" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_billsitems].[id] AS [id], 
-    [shadow_billsitems].[billsitems_id] AS [billsitems_id], 
-    [shadow_billsitems].[date] AS [date], 
-    [shadow_billsitems].[name] AS [name], 
-    [shadow_billsitems].[unitrate] AS [unitrate], 
-    [shadow_billsitems].[unitdiscount] AS [unitdiscount], 
-    [shadow_billsitems].[qty] AS [qty], 
-    [shadow_billsitems].[nettotal] AS [nettotal], 
-    [shadow_billsitems].[discount] AS [discount], 
-    [shadow_billsitems].[grosstotal] AS [grosstotal], 
-    [shadow_billsitems].[bill_id] AS [bill_id], 
-    [shadow_billsitems].[item_id] AS [item_id], 
-    [shadow_billsitems].[counter_id] AS [counter_id], 
-    [shadow_billsitems].[admin_id] AS [admin_id], 
-    [shadow_billsitems].[updated_at] AS [updated_at], 
-    [shadow_billsitems].[created_at] AS [created_at], 
-    [shadow_billsitems].[sync_id] AS [sync_id], 
-    [shadow_billsitems].[actiontype] AS [actiontype], 
-    [shadow_billsitems].[C_V] AS [C_V]
-    FROM [dbo].[shadow_billsitems] AS [shadow_billsitems]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="shadow_categories" EntityType="Self.shadow_categories" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [shadow_categories].[id] AS [id], 
@@ -2046,94 +1945,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
     [shadow_categories].[actiontype] AS [actiontype], 
     [shadow_categories].[C_V] AS [C_V]
     FROM [dbo].[shadow_categories] AS [shadow_categories]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_counterclosings" EntityType="Self.shadow_counterclosings" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_counterclosings].[id] AS [id], 
-    [shadow_counterclosings].[counterclosing_id] AS [counterclosing_id], 
-    [shadow_counterclosings].[date] AS [date], 
-    [shadow_counterclosings].[amount] AS [amount], 
-    [shadow_counterclosings].[state] AS [state], 
-    [shadow_counterclosings].[ip] AS [ip], 
-    [shadow_counterclosings].[counter_id] AS [counter_id], 
-    [shadow_counterclosings].[admin_id] AS [admin_id], 
-    [shadow_counterclosings].[updated_at] AS [updated_at], 
-    [shadow_counterclosings].[created_at] AS [created_at], 
-    [shadow_counterclosings].[sync_id] AS [sync_id], 
-    [shadow_counterclosings].[actiontype] AS [actiontype], 
-    [shadow_counterclosings].[C_V] AS [C_V]
-    FROM [dbo].[shadow_counterclosings] AS [shadow_counterclosings]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_counteropenings" EntityType="Self.shadow_counteropenings" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_counteropenings].[id] AS [id], 
-    [shadow_counteropenings].[cointeropening_id] AS [cointeropening_id], 
-    [shadow_counteropenings].[date] AS [date], 
-    [shadow_counteropenings].[amount] AS [amount], 
-    [shadow_counteropenings].[state] AS [state], 
-    [shadow_counteropenings].[ip] AS [ip], 
-    [shadow_counteropenings].[counter_id] AS [counter_id], 
-    [shadow_counteropenings].[admin_id] AS [admin_id], 
-    [shadow_counteropenings].[updated_at] AS [updated_at], 
-    [shadow_counteropenings].[created_at] AS [created_at], 
-    [shadow_counteropenings].[sync_id] AS [sync_id], 
-    [shadow_counteropenings].[actiontype] AS [actiontype], 
-    [shadow_counteropenings].[C_V] AS [C_V]
-    FROM [dbo].[shadow_counteropenings] AS [shadow_counteropenings]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_counters" EntityType="Self.shadow_counters" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_counters].[id] AS [id], 
-    [shadow_counters].[counter_id] AS [counter_id], 
-    [shadow_counters].[name] AS [name], 
-    [shadow_counters].[enabled] AS [enabled], 
-    [shadow_counters].[accessiplist] AS [accessiplist], 
-    [shadow_counters].[admin_id] AS [admin_id], 
-    [shadow_counters].[updated_at] AS [updated_at], 
-    [shadow_counters].[created_at] AS [created_at], 
-    [shadow_counters].[sync_id] AS [sync_id], 
-    [shadow_counters].[enabledcheck] AS [enabledcheck], 
-    [shadow_counters].[counterstatus] AS [counterstatus], 
-    [shadow_counters].[actiontype] AS [actiontype], 
-    [shadow_counters].[C_V] AS [C_V]
-    FROM [dbo].[shadow_counters] AS [shadow_counters]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_counterstatus" EntityType="Self.shadow_counterstatus" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_counterstatus].[id] AS [id], 
-    [shadow_counterstatus].[counterstatus_id] AS [counterstatus_id], 
-    [shadow_counterstatus].[counter_id] AS [counter_id], 
-    [shadow_counterstatus].[date] AS [date], 
-    [shadow_counterstatus].[requestedamount] AS [requestedamount], 
-    [shadow_counterstatus].[approved] AS [approved], 
-    [shadow_counterstatus].[status] AS [status], 
-    [shadow_counterstatus].[state] AS [state], 
-    [shadow_counterstatus].[ip] AS [ip], 
-    [shadow_counterstatus].[closeingamount] AS [closeingamount], 
-    [shadow_counterstatus].[sync_id] AS [sync_id], 
-    [shadow_counterstatus].[crated_at] AS [crated_at], 
-    [shadow_counterstatus].[updated_at] AS [updated_at], 
-    [shadow_counterstatus].[admin_id] AS [admin_id], 
-    [shadow_counterstatus].[actiontype] AS [actiontype], 
-    [shadow_counterstatus].[C_V] AS [C_V]
-    FROM [dbo].[shadow_counterstatus] AS [shadow_counterstatus]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_counterstocks" EntityType="Self.shadow_counterstocks" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_counterstocks].[id] AS [id], 
-    [shadow_counterstocks].[counterstock_id] AS [counterstock_id], 
-    [shadow_counterstocks].[date] AS [date], 
-    [shadow_counterstocks].[amount] AS [amount], 
-    [shadow_counterstocks].[state] AS [state], 
-    [shadow_counterstocks].[ip] AS [ip], 
-    [shadow_counterstocks].[counter_id] AS [counter_id], 
-    [shadow_counterstocks].[admin_id] AS [admin_id], 
-    [shadow_counterstocks].[updated_at] AS [updated_at], 
-    [shadow_counterstocks].[created_at] AS [created_at], 
-    [shadow_counterstocks].[sync_id] AS [sync_id], 
-    [shadow_counterstocks].[actiontype] AS [actiontype], 
-    [shadow_counterstocks].[C_V] AS [C_V]
-    FROM [dbo].[shadow_counterstocks] AS [shadow_counterstocks]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="shadow_customerpayments" EntityType="Self.shadow_customerpayments" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2157,37 +1968,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
     [shadow_customerpayments].[C_V] AS [C_V]
     FROM [dbo].[shadow_customerpayments] AS [shadow_customerpayments]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="shadow_fiscalyears" EntityType="Self.shadow_fiscalyears" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_fiscalyears].[id] AS [id], 
-    [shadow_fiscalyears].[fiscalyear_id] AS [fiscalyear_id], 
-    [shadow_fiscalyears].[name] AS [name], 
-    [shadow_fiscalyears].[startdate] AS [startdate], 
-    [shadow_fiscalyears].[enddate] AS [enddate], 
-    [shadow_fiscalyears].[admin_id] AS [admin_id], 
-    [shadow_fiscalyears].[updated_at] AS [updated_at], 
-    [shadow_fiscalyears].[created_at] AS [created_at], 
-    [shadow_fiscalyears].[sync_id] AS [sync_id], 
-    [shadow_fiscalyears].[actiontype] AS [actiontype], 
-    [shadow_fiscalyears].[C_V] AS [C_V]
-    FROM [dbo].[shadow_fiscalyears] AS [shadow_fiscalyears]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_issueitems" EntityType="Self.shadow_issueitems" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_issueitems].[id] AS [id], 
-    [shadow_issueitems].[issueitem_id] AS [issueitem_id], 
-    [shadow_issueitems].[purchaseitem_id] AS [purchaseitem_id], 
-    [shadow_issueitems].[quantity] AS [quantity], 
-    [shadow_issueitems].[issuedby] AS [issuedby], 
-    [shadow_issueitems].[date] AS [date], 
-    [shadow_issueitems].[issuetime] AS [issuetime], 
-    [shadow_issueitems].[admin_id] AS [admin_id], 
-    [shadow_issueitems].[created_at] AS [created_at], 
-    [shadow_issueitems].[updated_at] AS [updated_at], 
-    [shadow_issueitems].[actiontype] AS [actiontype], 
-    [shadow_issueitems].[C_V] AS [C_V]
-    FROM [dbo].[shadow_issueitems] AS [shadow_issueitems]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="shadow_menuitems" EntityType="Self.shadow_menuitems" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [shadow_menuitems].[id] AS [id], 
@@ -2204,29 +1984,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
     [shadow_menuitems].[actiontype] AS [actiontype], 
     [shadow_menuitems].[C_V] AS [C_V]
     FROM [dbo].[shadow_menuitems] AS [shadow_menuitems]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_parties" EntityType="Self.shadow_parties" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_parties].[id] AS [id], 
-    [shadow_parties].[party_id] AS [party_id], 
-    [shadow_parties].[name] AS [name], 
-    [shadow_parties].[address] AS [address], 
-    [shadow_parties].[phone] AS [phone], 
-    [shadow_parties].[email] AS [email], 
-    [shadow_parties].[pannumber] AS [pannumber], 
-    [shadow_parties].[gender] AS [gender], 
-    [shadow_parties].[postalcode] AS [postalcode], 
-    [shadow_parties].[nationality] AS [nationality], 
-    [shadow_parties].[advance] AS [advance], 
-    [shadow_parties].[due] AS [due], 
-    [shadow_parties].[role] AS [role], 
-    [shadow_parties].[admin_id] AS [admin_id], 
-    [shadow_parties].[created_at] AS [created_at], 
-    [shadow_parties].[updated_at] AS [updated_at], 
-    [shadow_parties].[sync_id] AS [sync_id], 
-    [shadow_parties].[actiontype] AS [actiontype], 
-    [shadow_parties].[C_V] AS [C_V]
-    FROM [dbo].[shadow_parties] AS [shadow_parties]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="shadow_partypayments" EntityType="Self.shadow_partypayments" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2249,142 +2006,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
     [shadow_partypayments].[actiontype] AS [actiontype], 
     [shadow_partypayments].[C_V] AS [C_V]
     FROM [dbo].[shadow_partypayments] AS [shadow_partypayments]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_purchaseaddstocks" EntityType="Self.shadow_purchaseaddstocks" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_purchaseaddstocks].[id] AS [id], 
-    [shadow_purchaseaddstocks].[purchasedstock_id] AS [purchasedstock_id], 
-    [shadow_purchaseaddstocks].[date] AS [date], 
-    [shadow_purchaseaddstocks].[amount] AS [amount], 
-    [shadow_purchaseaddstocks].[updated_at] AS [updated_at], 
-    [shadow_purchaseaddstocks].[created_at] AS [created_at], 
-    [shadow_purchaseaddstocks].[purchaseitem_id] AS [purchaseitem_id], 
-    [shadow_purchaseaddstocks].[admin_id] AS [admin_id], 
-    [shadow_purchaseaddstocks].[sync_id] AS [sync_id], 
-    [shadow_purchaseaddstocks].[actiontype] AS [actiontype], 
-    [shadow_purchaseaddstocks].[C_V] AS [C_V]
-    FROM [dbo].[shadow_purchaseaddstocks] AS [shadow_purchaseaddstocks]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_purchasebillitems" EntityType="Self.shadow_purchasebillitems" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_purchasebillitems].[id] AS [id], 
-    [shadow_purchasebillitems].[purchasebillitems_id] AS [purchasebillitems_id], 
-    [shadow_purchasebillitems].[quantity] AS [quantity], 
-    [shadow_purchasebillitems].[costprice] AS [costprice], 
-    [shadow_purchasebillitems].[purchaseitem_id] AS [purchaseitem_id], 
-    [shadow_purchasebillitems].[admin_id] AS [admin_id], 
-    [shadow_purchasebillitems].[created_at] AS [created_at], 
-    [shadow_purchasebillitems].[updated_at] AS [updated_at], 
-    [shadow_purchasebillitems].[sync_id] AS [sync_id], 
-    [shadow_purchasebillitems].[actiontype] AS [actiontype], 
-    [shadow_purchasebillitems].[C_V] AS [C_V]
-    FROM [dbo].[shadow_purchasebillitems] AS [shadow_purchasebillitems]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_purchasecates" EntityType="Self.shadow_purchasecates" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_purchasecates].[id] AS [id], 
-    [shadow_purchasecates].[purchasecate_id] AS [purchasecate_id], 
-    [shadow_purchasecates].[name] AS [name], 
-    [shadow_purchasecates].[updated_at] AS [updated_at], 
-    [shadow_purchasecates].[created_at] AS [created_at], 
-    [shadow_purchasecates].[sync_id] AS [sync_id], 
-    [shadow_purchasecates].[admin_id] AS [admin_id], 
-    [shadow_purchasecates].[party_id] AS [party_id], 
-    [shadow_purchasecates].[actiontype] AS [actiontype], 
-    [shadow_purchasecates].[C_V] AS [C_V]
-    FROM [dbo].[shadow_purchasecates] AS [shadow_purchasecates]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_purchaseexps" EntityType="Self.shadow_purchaseexps" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_purchaseexps].[id] AS [id], 
-    [shadow_purchaseexps].[purchaseexp_id] AS [purchaseexp_id], 
-    [shadow_purchaseexps].[date] AS [date], 
-    [shadow_purchaseexps].[name] AS [name], 
-    [shadow_purchaseexps].[amount] AS [amount], 
-    [shadow_purchaseexps].[admin_id] AS [admin_id], 
-    [shadow_purchaseexps].[updated_at] AS [updated_at], 
-    [shadow_purchaseexps].[created_at] AS [created_at], 
-    [shadow_purchaseexps].[sync_id] AS [sync_id], 
-    [shadow_purchaseexps].[purchaseinvoice_id] AS [purchaseinvoice_id], 
-    [shadow_purchaseexps].[actiontype] AS [actiontype], 
-    [shadow_purchaseexps].[C_V] AS [C_V]
-    FROM [dbo].[shadow_purchaseexps] AS [shadow_purchaseexps]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_purchaseinvoiceitems" EntityType="Self.shadow_purchaseinvoiceitems" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_purchaseinvoiceitems].[id] AS [id], 
-    [shadow_purchaseinvoiceitems].[purchaseinvoiceitem_id] AS [purchaseinvoiceitem_id], 
-    [shadow_purchaseinvoiceitems].[price] AS [price], 
-    [shadow_purchaseinvoiceitems].[qty] AS [qty], 
-    [shadow_purchaseinvoiceitems].[unit] AS [unit], 
-    [shadow_purchaseinvoiceitems].[image] AS [image], 
-    [shadow_purchaseinvoiceitems].[admin_id] AS [admin_id], 
-    [shadow_purchaseinvoiceitems].[updated_at] AS [updated_at], 
-    [shadow_purchaseinvoiceitems].[created_at] AS [created_at], 
-    [shadow_purchaseinvoiceitems].[sync_id] AS [sync_id], 
-    [shadow_purchaseinvoiceitems].[party_id] AS [party_id], 
-    [shadow_purchaseinvoiceitems].[purchaseitems_id] AS [purchaseitems_id], 
-    [shadow_purchaseinvoiceitems].[purchaseinvoice_id] AS [purchaseinvoice_id], 
-    [shadow_purchaseinvoiceitems].[date] AS [date], 
-    [shadow_purchaseinvoiceitems].[actiontype] AS [actiontype], 
-    [shadow_purchaseinvoiceitems].[C_V] AS [C_V]
-    FROM [dbo].[shadow_purchaseinvoiceitems] AS [shadow_purchaseinvoiceitems]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_purchaseinvoices" EntityType="Self.shadow_purchaseinvoices" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_purchaseinvoices].[id] AS [id], 
-    [shadow_purchaseinvoices].[purchaseinvoice_id] AS [purchaseinvoice_id], 
-    [shadow_purchaseinvoices].[billno] AS [billno], 
-    [shadow_purchaseinvoices].[transactionmode] AS [transactionmode], 
-    [shadow_purchaseinvoices].[transationdate] AS [transationdate], 
-    [shadow_purchaseinvoices].[total] AS [total], 
-    [shadow_purchaseinvoices].[discount] AS [discount], 
-    [shadow_purchaseinvoices].[tax] AS [tax], 
-    [shadow_purchaseinvoices].[due] AS [due], 
-    [shadow_purchaseinvoices].[paid] AS [paid], 
-    [shadow_purchaseinvoices].[enabled] AS [enabled], 
-    [shadow_purchaseinvoices].[fiscalyear_id] AS [fiscalyear_id], 
-    [shadow_purchaseinvoices].[grosstotal] AS [grosstotal], 
-    [shadow_purchaseinvoices].[taxable] AS [taxable], 
-    [shadow_purchaseinvoices].[admin_id] AS [admin_id], 
-    [shadow_purchaseinvoices].[parties_id] AS [parties_id], 
-    [shadow_purchaseinvoices].[updated_at] AS [updated_at], 
-    [shadow_purchaseinvoices].[created_at] AS [created_at], 
-    [shadow_purchaseinvoices].[sync_id] AS [sync_id], 
-    [shadow_purchaseinvoices].[nettotal] AS [nettotal], 
-    [shadow_purchaseinvoices].[date] AS [date], 
-    [shadow_purchaseinvoices].[actiontype] AS [actiontype], 
-    [shadow_purchaseinvoices].[C_V] AS [C_V]
-    FROM [dbo].[shadow_purchaseinvoices] AS [shadow_purchaseinvoices]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_purchaseitems" EntityType="Self.shadow_purchaseitems" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_purchaseitems].[id] AS [id], 
-    [shadow_purchaseitems].[purchaseitem_id] AS [purchaseitem_id], 
-    [shadow_purchaseitems].[name] AS [name], 
-    [shadow_purchaseitems].[unit] AS [unit], 
-    [shadow_purchaseitems].[price] AS [price], 
-    [shadow_purchaseitems].[purchase_Cat_id] AS [purchase_Cat_id], 
-    [shadow_purchaseitems].[updated_at] AS [updated_at], 
-    [shadow_purchaseitems].[created_at] AS [created_at], 
-    [shadow_purchaseitems].[sync_id] AS [sync_id], 
-    [shadow_purchaseitems].[admin_id] AS [admin_id], 
-    [shadow_purchaseitems].[qty] AS [qty], 
-    [shadow_purchaseitems].[actiontype] AS [actiontype], 
-    [shadow_purchaseitems].[C_V] AS [C_V]
-    FROM [dbo].[shadow_purchaseitems] AS [shadow_purchaseitems]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="shadow_systemsettings" EntityType="Self.shadow_systemsettings" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [shadow_systemsettings].[id] AS [id], 
-    [shadow_systemsettings].[systemsetting_id] AS [systemsetting_id], 
-    [shadow_systemsettings].[fiscalyear_id] AS [fiscalyear_id], 
-    [shadow_systemsettings].[currentmode] AS [currentmode], 
-    [shadow_systemsettings].[dateopened] AS [dateopened], 
-    [shadow_systemsettings].[currentdate] AS [currentdate], 
-    [shadow_systemsettings].[actiontype] AS [actiontype], 
-    [shadow_systemsettings].[C_V] AS [C_V]
-    FROM [dbo].[shadow_systemsettings] AS [shadow_systemsettings]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__accounts__admin___37A5467C" Association="Self.FK__accounts__admin___37A5467C">
             <End Role="admins" EntitySet="admins" />
@@ -2564,11 +2185,11 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           </AssociationSet>
           <AssociationSet Name="FK__purchasea__admin__634EBE90" Association="Self.FK__purchasea__admin__634EBE90">
             <End Role="admins" EntitySet="admins" />
-            <End Role="purchaseaddstock" EntitySet="purchaseaddstock" />
+            <End Role="purchaseaddstocks" EntitySet="purchaseaddstocks" />
           </AssociationSet>
           <AssociationSet Name="FK__purchasea__purch__625A9A57" Association="Self.FK__purchasea__purch__625A9A57">
             <End Role="purchaseitems" EntitySet="purchaseitems" />
-            <End Role="purchaseaddstock" EntitySet="purchaseaddstock" />
+            <End Role="purchaseaddstocks" EntitySet="purchaseaddstocks" />
           </AssociationSet>
           <AssociationSet Name="FK__purchaseb__admin__11158940" Association="Self.FK__purchaseb__admin__11158940">
             <End Role="admins" EntitySet="admins" />
@@ -2669,23 +2290,17 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <EntitySet Name="purchaseinvoices" EntityType="ResturantManagementModel.purchaseinvoice" />
           <EntitySet Name="purchaseitems" EntityType="ResturantManagementModel.purchaseitem" />
           <EntitySet Name="purchseexpenses" EntityType="ResturantManagementModel.purchseexpens" />
-          <EntitySet Name="systemsettings" EntityType="ResturantManagementModel.systemsetting" />
           <EntitySet Name="shadow_accounts" EntityType="ResturantManagementModel.shadow_accounts" />
-          <EntitySet Name="shadow_admins" EntityType="ResturantManagementModel.shadow_admins" />
           <EntitySet Name="shadow_bills" EntityType="ResturantManagementModel.shadow_bills" />
           <EntitySet Name="shadow_billsitems" EntityType="ResturantManagementModel.shadow_billsitems" />
-          <EntitySet Name="shadow_categories" EntityType="ResturantManagementModel.shadow_categories" />
           <EntitySet Name="shadow_counterclosings" EntityType="ResturantManagementModel.shadow_counterclosings" />
           <EntitySet Name="shadow_counteropenings" EntityType="ResturantManagementModel.shadow_counteropenings" />
           <EntitySet Name="shadow_counters" EntityType="ResturantManagementModel.shadow_counters" />
           <EntitySet Name="shadow_counterstatus" EntityType="ResturantManagementModel.shadow_counterstatus" />
           <EntitySet Name="shadow_counterstocks" EntityType="ResturantManagementModel.shadow_counterstocks" />
-          <EntitySet Name="shadow_customerpayments" EntityType="ResturantManagementModel.shadow_customerpayments" />
           <EntitySet Name="shadow_fiscalyears" EntityType="ResturantManagementModel.shadow_fiscalyears" />
           <EntitySet Name="shadow_issueitems" EntityType="ResturantManagementModel.shadow_issueitems" />
-          <EntitySet Name="shadow_menuitems" EntityType="ResturantManagementModel.shadow_menuitems" />
           <EntitySet Name="shadow_parties" EntityType="ResturantManagementModel.shadow_parties" />
-          <EntitySet Name="shadow_partypayments" EntityType="ResturantManagementModel.shadow_partypayments" />
           <EntitySet Name="shadow_purchaseaddstocks" EntityType="ResturantManagementModel.shadow_purchaseaddstocks" />
           <EntitySet Name="shadow_purchasebillitems" EntityType="ResturantManagementModel.shadow_purchasebillitems" />
           <EntitySet Name="shadow_purchasecates" EntityType="ResturantManagementModel.shadow_purchasecates" />
@@ -2694,6 +2309,12 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <EntitySet Name="shadow_purchaseinvoices" EntityType="ResturantManagementModel.shadow_purchaseinvoices" />
           <EntitySet Name="shadow_purchaseitems" EntityType="ResturantManagementModel.shadow_purchaseitems" />
           <EntitySet Name="shadow_systemsettings" EntityType="ResturantManagementModel.shadow_systemsettings" />
+          <EntitySet Name="systemsettings" EntityType="ResturantManagementModel.systemsetting" />
+          <EntitySet Name="shadow_admins" EntityType="ResturantManagementModel.shadow_admins" />
+          <EntitySet Name="shadow_categories" EntityType="ResturantManagementModel.shadow_categories" />
+          <EntitySet Name="shadow_customerpayments" EntityType="ResturantManagementModel.shadow_customerpayments" />
+          <EntitySet Name="shadow_menuitems" EntityType="ResturantManagementModel.shadow_menuitems" />
+          <EntitySet Name="shadow_partypayments" EntityType="ResturantManagementModel.shadow_partypayments" />
           <AssociationSet Name="FK__accounts__admin___37A5467C" Association="ResturantManagementModel.FK__accounts__admin___37A5467C">
             <End Role="admin" EntitySet="admins" />
             <End Role="account" EntitySet="accounts" />
@@ -3537,17 +3158,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__purchseex__admin__1AD3FDA4" FromRole="purchseexpens" ToRole="admin" />
           <NavigationProperty Name="purchaseinvoice" Relationship="ResturantManagementModel.FK__purchseex__purch__1BC821DD" FromRole="purchseexpens" ToRole="purchaseinvoice" />
         </EntityType>
-        <EntityType Name="systemsetting">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fiscalyear_id" Type="Int32" />
-          <Property Name="currentmode" Type="Int32" />
-          <Property Name="dateopened" Type="Boolean" Nullable="false" />
-          <Property Name="currentdate" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__systemset__fisca__534D60F1" FromRole="systemsetting" ToRole="fiscalyear" />
-        </EntityType>
         <EntityType Name="shadow_accounts">
           <Key>
             <PropertyRef Name="id" />
@@ -3569,29 +3179,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <Property Name="currentadvance" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="nationlity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="admin_id" Type="Int32" />
-          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="sync_id" Type="Int32" />
-          <Property Name="actiontype" Type="Int32" Nullable="false" />
-          <Property Name="C_V" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="shadow_admins">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="admins_id" />
-            <PropertyRef Name="name" />
-            <PropertyRef Name="password" />
-            <PropertyRef Name="role" />
-            <PropertyRef Name="updated_at" />
-            <PropertyRef Name="created_at" />
-            <PropertyRef Name="actiontype" />
-            <PropertyRef Name="C_V" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="admins_id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="role" Type="Int32" Nullable="false" />
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
@@ -3674,28 +3261,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
-          <Property Name="actiontype" Type="Int32" Nullable="false" />
-          <Property Name="C_V" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="shadow_categories">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="categories_id" />
-            <PropertyRef Name="name" />
-            <PropertyRef Name="updated_at" />
-            <PropertyRef Name="created_at" />
-            <PropertyRef Name="enabled" />
-            <PropertyRef Name="actiontype" />
-            <PropertyRef Name="C_V" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="categories_id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="admin_id" Type="Int32" />
-          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="sync_id" Type="Int32" />
-          <Property Name="enabled" Type="Boolean" Nullable="false" />
           <Property Name="actiontype" Type="Int32" Nullable="false" />
           <Property Name="C_V" Type="Int32" Nullable="false" />
         </EntityType>
@@ -3827,36 +3392,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <Property Name="actiontype" Type="Int32" Nullable="false" />
           <Property Name="C_V" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="shadow_customerpayments">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="customerpayment_id" />
-            <PropertyRef Name="date" />
-            <PropertyRef Name="receivedby" />
-            <PropertyRef Name="created_at" />
-            <PropertyRef Name="updated_at" />
-            <PropertyRef Name="actiontype" />
-            <PropertyRef Name="C_V" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="customerpayment_id" Type="Int32" Nullable="false" />
-          <Property Name="amountreceived" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="date" Type="Int32" Nullable="false" />
-          <Property Name="customer_id" Type="Int32" />
-          <Property Name="bankname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="accountno" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="receivedby" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="returnamount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="admin_id" Type="Int32" />
-          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="sync_id" Type="Int32" />
-          <Property Name="depositername" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="dueamount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="paidamount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="actiontype" Type="Int32" Nullable="false" />
-          <Property Name="C_V" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="shadow_fiscalyears">
           <Key>
             <PropertyRef Name="id" />
@@ -3902,30 +3437,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <Property Name="actiontype" Type="Int32" Nullable="false" />
           <Property Name="C_V" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="shadow_menuitems">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="menuitem_id" />
-            <PropertyRef Name="name" />
-            <PropertyRef Name="updated_at" />
-            <PropertyRef Name="created_at" />
-            <PropertyRef Name="actiontype" />
-            <PropertyRef Name="C_V" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="menuitem_id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="category_id" Type="Int32" />
-          <Property Name="admin_id" Type="Int32" />
-          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="sync_id" Type="Int32" />
-          <Property Name="actiontype" Type="Int32" Nullable="false" />
-          <Property Name="C_V" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="shadow_parties">
           <Key>
             <PropertyRef Name="id" />
@@ -3953,36 +3464,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
-          <Property Name="actiontype" Type="Int32" Nullable="false" />
-          <Property Name="C_V" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="shadow_partypayments">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="partypayment_id" />
-            <PropertyRef Name="date" />
-            <PropertyRef Name="receivedby" />
-            <PropertyRef Name="created_at" />
-            <PropertyRef Name="updated_at" />
-            <PropertyRef Name="actiontype" />
-            <PropertyRef Name="C_V" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="partypayment_id" Type="Int32" Nullable="false" />
-          <Property Name="amountreceived" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="date" Type="Int32" Nullable="false" />
-          <Property Name="bankname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="accountno" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="receivedby" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="returnamount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="admin_id" Type="Int32" />
-          <Property Name="party_id" Type="Int32" />
-          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="sync_id" Type="Int32" />
-          <Property Name="depositername" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="paidamount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="dueamount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="actiontype" Type="Int32" Nullable="false" />
           <Property Name="C_V" Type="Int32" Nullable="false" />
         </EntityType>
@@ -4173,6 +3654,146 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           <Property Name="currentmode" Type="Int32" />
           <Property Name="dateopened" Type="Boolean" Nullable="false" />
           <Property Name="currentdate" Type="Int32" Nullable="false" />
+          <Property Name="actiontype" Type="Int32" Nullable="false" />
+          <Property Name="C_V" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="systemsetting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fiscalyear_id" Type="Int32" />
+          <Property Name="currentmode" Type="Int32" />
+          <Property Name="dateopened" Type="Boolean" Nullable="false" />
+          <Property Name="currentdate" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__systemset__fisca__534D60F1" FromRole="systemsetting" ToRole="fiscalyear" />
+        </EntityType>
+        <EntityType Name="shadow_admins">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="admins_id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="role" />
+            <PropertyRef Name="updated_at" />
+            <PropertyRef Name="created_at" />
+            <PropertyRef Name="actiontype" />
+            <PropertyRef Name="C_V" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="admins_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sync_id" Type="Int32" />
+          <Property Name="actiontype" Type="Int32" Nullable="false" />
+          <Property Name="C_V" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shadow_categories">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="categories_id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="updated_at" />
+            <PropertyRef Name="created_at" />
+            <PropertyRef Name="enabled" />
+            <PropertyRef Name="actiontype" />
+            <PropertyRef Name="C_V" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categories_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="admin_id" Type="Int32" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sync_id" Type="Int32" />
+          <Property Name="enabled" Type="Boolean" Nullable="false" />
+          <Property Name="actiontype" Type="Int32" Nullable="false" />
+          <Property Name="C_V" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shadow_customerpayments">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="customerpayment_id" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="receivedby" />
+            <PropertyRef Name="created_at" />
+            <PropertyRef Name="updated_at" />
+            <PropertyRef Name="actiontype" />
+            <PropertyRef Name="C_V" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerpayment_id" Type="Int32" Nullable="false" />
+          <Property Name="amountreceived" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="date" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" />
+          <Property Name="bankname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="accountno" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="receivedby" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="returnamount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="admin_id" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sync_id" Type="Int32" />
+          <Property Name="depositername" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dueamount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="paidamount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="actiontype" Type="Int32" Nullable="false" />
+          <Property Name="C_V" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shadow_menuitems">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="menuitem_id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="updated_at" />
+            <PropertyRef Name="created_at" />
+            <PropertyRef Name="actiontype" />
+            <PropertyRef Name="C_V" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menuitem_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="category_id" Type="Int32" />
+          <Property Name="admin_id" Type="Int32" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sync_id" Type="Int32" />
+          <Property Name="actiontype" Type="Int32" Nullable="false" />
+          <Property Name="C_V" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shadow_partypayments">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="partypayment_id" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="receivedby" />
+            <PropertyRef Name="created_at" />
+            <PropertyRef Name="updated_at" />
+            <PropertyRef Name="actiontype" />
+            <PropertyRef Name="C_V" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="partypayment_id" Type="Int32" Nullable="false" />
+          <Property Name="amountreceived" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="date" Type="Int32" Nullable="false" />
+          <Property Name="bankname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="accountno" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="receivedby" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="returnamount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="admin_id" Type="Int32" />
+          <Property Name="party_id" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sync_id" Type="Int32" />
+          <Property Name="depositername" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="paidamount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="dueamount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="actiontype" Type="Int32" Nullable="false" />
           <Property Name="C_V" Type="Int32" Nullable="false" />
         </EntityType>
@@ -5311,7 +4932,7 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
           </EntitySetMapping>
           <EntitySetMapping Name="purchaseaddstocks">
             <EntityTypeMapping TypeName="ResturantManagementModel.purchaseaddstock">
-              <MappingFragment StoreEntitySet="purchaseaddstock">
+              <MappingFragment StoreEntitySet="purchaseaddstocks">
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="admin_id" ColumnName="admin_id" />
                 <ScalarProperty Name="purchaseitem_id" ColumnName="purchaseitem_id" />
@@ -5426,17 +5047,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="systemsettings">
-            <EntityTypeMapping TypeName="ResturantManagementModel.systemsetting">
-              <MappingFragment StoreEntitySet="systemsettings">
-                <ScalarProperty Name="currentdate" ColumnName="currentdate" />
-                <ScalarProperty Name="dateopened" ColumnName="dateopened" />
-                <ScalarProperty Name="currentmode" ColumnName="currentmode" />
-                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="shadow_accounts">
             <EntityTypeMapping TypeName="ResturantManagementModel.shadow_accounts">
               <MappingFragment StoreEntitySet="shadow_accounts">
@@ -5456,22 +5066,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="account_id" ColumnName="account_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="shadow_admins">
-            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_admins">
-              <MappingFragment StoreEntitySet="shadow_admins">
-                <ScalarProperty Name="C_V" ColumnName="C_V" />
-                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
-                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
-                <ScalarProperty Name="created_at" ColumnName="created_at" />
-                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-                <ScalarProperty Name="role" ColumnName="role" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="admins_id" ColumnName="admins_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -5537,22 +5131,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="billsitems_id" ColumnName="billsitems_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="shadow_categories">
-            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_categories">
-              <MappingFragment StoreEntitySet="shadow_categories">
-                <ScalarProperty Name="C_V" ColumnName="C_V" />
-                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
-                <ScalarProperty Name="enabled" ColumnName="enabled" />
-                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
-                <ScalarProperty Name="created_at" ColumnName="created_at" />
-                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="categories_id" ColumnName="categories_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -5655,30 +5233,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="shadow_customerpayments">
-            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_customerpayments">
-              <MappingFragment StoreEntitySet="shadow_customerpayments">
-                <ScalarProperty Name="C_V" ColumnName="C_V" />
-                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
-                <ScalarProperty Name="paidamount" ColumnName="paidamount" />
-                <ScalarProperty Name="dueamount" ColumnName="dueamount" />
-                <ScalarProperty Name="depositername" ColumnName="depositername" />
-                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
-                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-                <ScalarProperty Name="created_at" ColumnName="created_at" />
-                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-                <ScalarProperty Name="returnamount" ColumnName="returnamount" />
-                <ScalarProperty Name="receivedby" ColumnName="receivedby" />
-                <ScalarProperty Name="accountno" ColumnName="accountno" />
-                <ScalarProperty Name="bankname" ColumnName="bankname" />
-                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="amountreceived" ColumnName="amountreceived" />
-                <ScalarProperty Name="customerpayment_id" ColumnName="customerpayment_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="shadow_fiscalyears">
             <EntityTypeMapping TypeName="ResturantManagementModel.shadow_fiscalyears">
               <MappingFragment StoreEntitySet="shadow_fiscalyears">
@@ -5714,25 +5268,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="shadow_menuitems">
-            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_menuitems">
-              <MappingFragment StoreEntitySet="shadow_menuitems">
-                <ScalarProperty Name="C_V" ColumnName="C_V" />
-                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
-                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
-                <ScalarProperty Name="created_at" ColumnName="created_at" />
-                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-                <ScalarProperty Name="category_id" ColumnName="category_id" />
-                <ScalarProperty Name="unit" ColumnName="unit" />
-                <ScalarProperty Name="image" ColumnName="image" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="menuitem_id" ColumnName="menuitem_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="shadow_parties">
             <EntityTypeMapping TypeName="ResturantManagementModel.shadow_parties">
               <MappingFragment StoreEntitySet="shadow_parties">
@@ -5754,30 +5289,6 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="party_id" ColumnName="party_id" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="shadow_partypayments">
-            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_partypayments">
-              <MappingFragment StoreEntitySet="shadow_partypayments">
-                <ScalarProperty Name="C_V" ColumnName="C_V" />
-                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
-                <ScalarProperty Name="dueamount" ColumnName="dueamount" />
-                <ScalarProperty Name="paidamount" ColumnName="paidamount" />
-                <ScalarProperty Name="depositername" ColumnName="depositername" />
-                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
-                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
-                <ScalarProperty Name="created_at" ColumnName="created_at" />
-                <ScalarProperty Name="party_id" ColumnName="party_id" />
-                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-                <ScalarProperty Name="returnamount" ColumnName="returnamount" />
-                <ScalarProperty Name="receivedby" ColumnName="receivedby" />
-                <ScalarProperty Name="accountno" ColumnName="accountno" />
-                <ScalarProperty Name="bankname" ColumnName="bankname" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="amountreceived" ColumnName="amountreceived" />
-                <ScalarProperty Name="partypayment_id" ColumnName="partypayment_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -5930,6 +5441,116 @@ warning 6002: The table/view 'ResturantManagement.dbo.shadow_systemsettings' doe
                 <ScalarProperty Name="currentmode" ColumnName="currentmode" />
                 <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
                 <ScalarProperty Name="systemsetting_id" ColumnName="systemsetting_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="systemsettings">
+            <EntityTypeMapping TypeName="ResturantManagementModel.systemsetting">
+              <MappingFragment StoreEntitySet="systemsettings">
+                <ScalarProperty Name="currentdate" ColumnName="currentdate" />
+                <ScalarProperty Name="dateopened" ColumnName="dateopened" />
+                <ScalarProperty Name="currentmode" ColumnName="currentmode" />
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shadow_admins">
+            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_admins">
+              <MappingFragment StoreEntitySet="shadow_admins">
+                <ScalarProperty Name="C_V" ColumnName="C_V" />
+                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
+                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="admins_id" ColumnName="admins_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shadow_categories">
+            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_categories">
+              <MappingFragment StoreEntitySet="shadow_categories">
+                <ScalarProperty Name="C_V" ColumnName="C_V" />
+                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="categories_id" ColumnName="categories_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shadow_customerpayments">
+            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_customerpayments">
+              <MappingFragment StoreEntitySet="shadow_customerpayments">
+                <ScalarProperty Name="C_V" ColumnName="C_V" />
+                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
+                <ScalarProperty Name="paidamount" ColumnName="paidamount" />
+                <ScalarProperty Name="dueamount" ColumnName="dueamount" />
+                <ScalarProperty Name="depositername" ColumnName="depositername" />
+                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="returnamount" ColumnName="returnamount" />
+                <ScalarProperty Name="receivedby" ColumnName="receivedby" />
+                <ScalarProperty Name="accountno" ColumnName="accountno" />
+                <ScalarProperty Name="bankname" ColumnName="bankname" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="amountreceived" ColumnName="amountreceived" />
+                <ScalarProperty Name="customerpayment_id" ColumnName="customerpayment_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shadow_menuitems">
+            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_menuitems">
+              <MappingFragment StoreEntitySet="shadow_menuitems">
+                <ScalarProperty Name="C_V" ColumnName="C_V" />
+                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
+                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="menuitem_id" ColumnName="menuitem_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shadow_partypayments">
+            <EntityTypeMapping TypeName="ResturantManagementModel.shadow_partypayments">
+              <MappingFragment StoreEntitySet="shadow_partypayments">
+                <ScalarProperty Name="C_V" ColumnName="C_V" />
+                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
+                <ScalarProperty Name="dueamount" ColumnName="dueamount" />
+                <ScalarProperty Name="paidamount" ColumnName="paidamount" />
+                <ScalarProperty Name="depositername" ColumnName="depositername" />
+                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="party_id" ColumnName="party_id" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="returnamount" ColumnName="returnamount" />
+                <ScalarProperty Name="receivedby" ColumnName="receivedby" />
+                <ScalarProperty Name="accountno" ColumnName="accountno" />
+                <ScalarProperty Name="bankname" ColumnName="bankname" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="amountreceived" ColumnName="amountreceived" />
+                <ScalarProperty Name="partypayment_id" ColumnName="partypayment_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

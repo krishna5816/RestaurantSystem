@@ -15,11 +15,12 @@ namespace RestaurantSystem.Items
     {
         public delegate void edithandeler(Model.menuitem menuitem);
         public event edithandeler edit;
-       Model.ResturantManagementEntities db = new ResturantManagementEntities();
+       Model.ResturantManagementEntities db;
         int id;
         public EditItems()
         {
             InitializeComponent();
+            db = Model.DatabaseConfigure.getConfigure();
             foreach (var item in db.categories.ToList())
             {
                 comboBox1_category.Items.Add(item);

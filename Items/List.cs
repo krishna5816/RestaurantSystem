@@ -12,10 +12,11 @@ namespace RestaurantSystem.Items
 {
     public partial class List : Form
     { 
-        Model.ResturantManagementEntities db = new ResturantManagementEntities();
+        Model.ResturantManagementEntities db;
         public List()
         {
             InitializeComponent();
+            db = Model.DatabaseConfigure.getConfigure();
             foreach (var item in db.menuitems.ToList())
             {
                 add(item);

@@ -10,13 +10,14 @@ namespace RestaurantSystem.Counters
 {
     public partial class AddCounter : CustomControls.MaterialForm
     {
+        Model.ResturantManagementEntities db;
         public delegate void addHandler(Model.counter counter);
         public event addHandler add;
-        
         public AddCounter()
         {
+
             InitializeComponent();
-            
+
         }
 
         private void materialButton_addnew_Click(object sender, EventArgs e)
@@ -28,37 +29,32 @@ namespace RestaurantSystem.Counters
                 return;
             }
 
-            //if (checkBox_ipcheck.Checked)
-            //{
 
-            //    if (betterTextBox_ipaddress.Text.Trim() == "")
-            //    {
-            //        INFO.ShowAlert(Text, "Please Enter Counter No", 3000);
-            //        betterTextBox_counterno.Focus();
-            //        return;
-            //    }
-            //}
-            var db = Model.DatabaseConfigure.getConfigure();
+
             try
             {
-            var counter = new Model.counter()
-            {
-                name = betterTextBox_counterno.Text,
-                counterstatus = -1,
-                created_at=DateTime.Now,
-                updated_at=DateTime.Now,
-                admin_id=INFO.admin_id
-                
-            };
-            db.counters.Add(counter);
-            db.SaveChanges();
-            add?.Invoke(counter);
+                using (var db = Model.DatabaseConfigure.getConfigure())
+                {
 
-          
-            this.Close();
+                    var counter = new Model.counter()
+                    {
+                        name = betterTextBox_counterno.Text,
+                        counterstatus = -1,
+                        created_at = DateTime.Now,
+                        updated_at = DateTime.Now,
+                        admin_id = INFO.admin_id
+
+                    };
+                    db.counters.Add(counter);
+                    db.SaveChanges();
+                    add?.Invoke(counter);
+                }
+
+
+                this.Close();
 
             }
-            catch (Exception )
+            catch (Exception)
             {
                 CustomControls.Alert.show("Error", "this data is not saved ", 1500);
             }

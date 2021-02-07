@@ -76,5 +76,10 @@ namespace RestaurantSystem.Reports
                 GroupByCategory(data.Select(o => o.id).ToList());
             }
         }
+
+        private void materialButton_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
