@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.betterTextBox_currentstock = new CustomControls.BetterTextBox();
             this.materialButton1 = new CustomControls.MaterialButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.betterTextBox_unit = new CustomControls.BetterTextBox();
             this.SuspendLayout();
             // 
             // label_title
@@ -46,8 +48,13 @@
             // 
             this.panel_Divider.Size = new System.Drawing.Size(435, 2);
             // 
+            // materialButton_close
+            // 
+            this.materialButton_close.FlatAppearance.BorderSize = 0;
+            // 
             // betterTextBox_name
             // 
+            this.betterTextBox_name.append = "";
             this.betterTextBox_name.decVal = new decimal(new int[] {
             0,
             0,
@@ -56,6 +63,8 @@
             this.betterTextBox_name.intVal = 0;
             this.betterTextBox_name.Location = new System.Drawing.Point(12, 80);
             this.betterTextBox_name.Name = "betterTextBox_name";
+            this.betterTextBox_name.prepend = "";
+            this.betterTextBox_name.Rules = null;
             this.betterTextBox_name.Size = new System.Drawing.Size(412, 25);
             this.betterTextBox_name.TabIndex = 3;
             this.betterTextBox_name.textboxType = CustomControls.TextboxType.Text;
@@ -97,6 +106,7 @@
             // 
             // betterTextBox_currentstock
             // 
+            this.betterTextBox_currentstock.append = "";
             this.betterTextBox_currentstock.decVal = new decimal(new int[] {
             0,
             0,
@@ -105,7 +115,9 @@
             this.betterTextBox_currentstock.intVal = 0;
             this.betterTextBox_currentstock.Location = new System.Drawing.Point(12, 179);
             this.betterTextBox_currentstock.Name = "betterTextBox_currentstock";
-            this.betterTextBox_currentstock.Size = new System.Drawing.Size(412, 25);
+            this.betterTextBox_currentstock.prepend = "";
+            this.betterTextBox_currentstock.Rules = null;
+            this.betterTextBox_currentstock.Size = new System.Drawing.Size(210, 25);
             this.betterTextBox_currentstock.TabIndex = 7;
             this.betterTextBox_currentstock.textboxType = CustomControls.TextboxType.Text;
             // 
@@ -136,10 +148,38 @@
             this.materialButton1.UseVisualStyleBackColor = false;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(237, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 19);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "UNIT";
+            // 
+            // betterTextBox_unit
+            // 
+            this.betterTextBox_unit.append = "";
+            this.betterTextBox_unit.decVal = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.betterTextBox_unit.intVal = 0;
+            this.betterTextBox_unit.Location = new System.Drawing.Point(241, 179);
+            this.betterTextBox_unit.Name = "betterTextBox_unit";
+            this.betterTextBox_unit.prepend = "";
+            this.betterTextBox_unit.Rules = null;
+            this.betterTextBox_unit.Size = new System.Drawing.Size(183, 25);
+            this.betterTextBox_unit.TabIndex = 10;
+            this.betterTextBox_unit.textboxType = CustomControls.TextboxType.Text;
+            // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.ClientSize = new System.Drawing.Size(436, 248);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.betterTextBox_unit);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.betterTextBox_currentstock);
@@ -148,6 +188,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.betterTextBox_name);
             this.Name = "Add";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Controls.SetChildIndex(this.materialButton_close, 0);
             this.Controls.SetChildIndex(this.label_title, 0);
             this.Controls.SetChildIndex(this.panel_Divider, 0);
             this.Controls.SetChildIndex(this.betterTextBox_name, 0);
@@ -157,6 +199,8 @@
             this.Controls.SetChildIndex(this.betterTextBox_currentstock, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.materialButton1, 0);
+            this.Controls.SetChildIndex(this.betterTextBox_unit, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +215,7 @@
         private System.Windows.Forms.Label label3;
         private CustomControls.BetterTextBox betterTextBox_currentstock;
         private CustomControls.MaterialButton materialButton1;
+        private System.Windows.Forms.Label label4;
+        private CustomControls.BetterTextBox betterTextBox_unit;
     }
 }

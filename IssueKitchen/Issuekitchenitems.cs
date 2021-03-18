@@ -73,7 +73,8 @@ namespace RestaurantSystem.IssueKitchen
             foreach (ListViewItem item in betterListView1.Items)
             {
                 var quntity = Convert.ToDecimal(item.SubItems[3].Text);
-                var item_id = Convert.ToInt32(item.SubItems[4].Text);
+                var item_id = Convert.ToInt32(item.SubItems[5].Text);
+                var unit = item.SubItems[4].Text;
                 var issueitem = db.purchaseitems.Find(item_id);
                 issueitem.qty -= quntity;
                 db.Entry(issueitem).State = System.Data.Entity.EntityState.Modified;
@@ -81,6 +82,7 @@ namespace RestaurantSystem.IssueKitchen
                 {
                     purchaseitem_id = item_id,
                     quantity = quntity,
+                    units=unit,
                     issuedby = betterTextBox_issuebye.Text,
                     date=INFO.currentdate,
                     issuetime=DateTime.Now,
@@ -109,6 +111,7 @@ namespace RestaurantSystem.IssueKitchen
                 using (var db = DatabaseConfigure.getConfigure())
                 {
                     betterTextBox_cuuremtstock.decVal = db.purchaseitems.Find(sel.id).qty;
+                    betterTextBox_unit.Text = db.purchaseitems.Find(sel.id).unit;
 
                 }
                betterTextBox_quantity.Focus();

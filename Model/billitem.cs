@@ -27,6 +27,7 @@ namespace RestaurantSystem.Model
         public System.DateTime created_at { get; set; }
         public Nullable<int> sync_id { get; set; }
         public decimal nettotal { get; set; }
+        public string unit { get; set; }
     
         public virtual admin admin { get; set; }
         public virtual bill bill { get; set; }

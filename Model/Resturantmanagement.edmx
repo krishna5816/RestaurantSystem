@@ -54,6 +54,7 @@
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
           <Property Name="nettotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="unit" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="bills">
           <Key>
@@ -226,6 +227,8 @@
           <Property Name="admin_id" Type="int" />
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="updated_at" Type="datetime" Nullable="false" />
+          <Property Name="unit" Type="nvarchar(max)" />
+          <Property Name="units" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="manufactureditems">
           <Key>
@@ -240,6 +243,8 @@
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
           <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="nvarchar(max)" />
+          <Property Name="units" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="manufacturingestimations">
           <Key>
@@ -252,6 +257,7 @@
           <Property Name="updated_at" Type="datetime" Nullable="false" />
           <Property Name="admin_id" Type="int" />
           <Property Name="menuitem_id" Type="int" Nullable="false" />
+          <Property Name="unit" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="manufacturingitems">
           <Key>
@@ -295,6 +301,7 @@
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
           <Property Name="estimated_by" Type="varchar(max)" />
+          <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="order_items">
           <Key>
@@ -312,6 +319,7 @@
           <Property Name="updated_at" Type="datetime" Nullable="false" />
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
+          <Property Name="unit" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="order_tables">
           <Key>
@@ -391,6 +399,7 @@
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="updated_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
+          <Property Name="unit" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="purchasecategories">
           <Key>
@@ -504,7 +513,7 @@
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RMS.dbo.shadow_admins' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant.dbo.shadow_admins' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_admins">
           <Key>
             <PropertyRef Name="id" />
@@ -608,7 +617,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_admins' does not have a primary key
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RMS.dbo.shadow_categories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant.dbo.shadow_categories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_categories">
           <Key>
             <PropertyRef Name="id" />
@@ -760,7 +769,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_categories' does not have a primary
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RMS.dbo.shadow_customerpayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant.dbo.shadow_customerpayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_customerpayments">
           <Key>
             <PropertyRef Name="id" />
@@ -837,7 +846,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_customerpayments' does not have a p
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RMS.dbo.shadow_menuitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant.dbo.shadow_menuitems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_menuitems">
           <Key>
             <PropertyRef Name="id" />
@@ -893,7 +902,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_menuitems' does not have a primary 
           <Property Name="C_V" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="shadow_partypayments">
           <Key>
             <PropertyRef Name="id" />
@@ -2644,6 +2653,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
           <Property Name="nettotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__billitems__admin__31B762FC" FromRole="billitem" ToRole="admin" />
           <NavigationProperty Name="bill" Relationship="ResturantManagementModel.FK__billitems__bill___2EDAF651" FromRole="billitem" ToRole="bill" />
           <NavigationProperty Name="counter" Relationship="ResturantManagementModel.FK__billitems__count__30C33EC3" FromRole="billitem" ToRole="counter" />
@@ -2848,6 +2858,8 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <Property Name="admin_id" Type="Int32" />
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="units" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__issueitem__admin__1D7B6025" FromRole="issueitem" ToRole="admin" />
           <NavigationProperty Name="purchaseitem" Relationship="ResturantManagementModel.FK__issueitem__purch__1B9317B3" FromRole="issueitem" ToRole="purchaseitem" />
         </EntityType>
@@ -2864,6 +2876,8 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
           <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="units" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__manufactu__admin__2C3393D0" FromRole="manufactureditem" ToRole="admin" />
           <NavigationProperty Name="menuitem" Relationship="ResturantManagementModel.FK__manufactu__menui__2B3F6F97" FromRole="manufactureditem" ToRole="menuitem" />
           <NavigationProperty Name="manufaturedsubitems" Relationship="ResturantManagementModel.FK__manufatur__manuf__30F848ED" FromRole="manufactureditem" ToRole="manufaturedsubitem" />
@@ -2879,6 +2893,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="admin_id" Type="Int32" />
           <Property Name="menuitem_id" Type="Int32" Nullable="false" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__manufactu__admin__69C6B1F5" FromRole="manufacturingestimation" ToRole="admin" />
           <NavigationProperty Name="menuitem" Relationship="ResturantManagementModel.FK__manufactu__menui__6ABAD62E" FromRole="manufacturingestimation" ToRole="menuitem" />
           <NavigationProperty Name="purchaseitem" Relationship="ResturantManagementModel.FK__manufactu__purch__68D28DBC" FromRole="manufacturingestimation" ToRole="purchaseitem" />
@@ -2931,6 +2946,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
           <Property Name="estimated_by" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__menuitems__admin__1B0907CE" FromRole="menuitem" ToRole="admin" />
           <NavigationProperty Name="billitems" Relationship="ResturantManagementModel.FK__billitems__item___2FCF1A8A" FromRole="menuitem" ToRole="billitem" />
           <NavigationProperty Name="category" Relationship="ResturantManagementModel.FK__menuitems__categ__1A14E395" FromRole="menuitem" ToRole="category" />
@@ -2955,6 +2971,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__order_ite__admin__13BCEBC1" FromRole="order_items" ToRole="admin" />
           <NavigationProperty Name="menuitem" Relationship="ResturantManagementModel.FK__order_ite__menui__12C8C788" FromRole="order_items" ToRole="menuitem" />
           <NavigationProperty Name="order_tables" Relationship="ResturantManagementModel.FK__order_ite__order__11D4A34F" FromRole="order_items" ToRole="order_tables" />
@@ -3048,6 +3065,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__purchaseb__admin__11158940" FromRole="purchasebillitem" ToRole="admin" />
           <NavigationProperty Name="purchaseitem" Relationship="ResturantManagementModel.FK__purchaseb__purch__10216507" FromRole="purchasebillitem" ToRole="purchaseitem" />
         </EntityType>
@@ -4584,6 +4602,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <EntitySetMapping Name="billitems">
             <EntityTypeMapping TypeName="ResturantManagementModel.billitem">
               <MappingFragment StoreEntitySet="billitems">
+                <ScalarProperty Name="unit" ColumnName="unit" />
                 <ScalarProperty Name="nettotal" ColumnName="nettotal" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -4770,6 +4789,8 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <EntitySetMapping Name="issueitems">
             <EntityTypeMapping TypeName="ResturantManagementModel.issueitem">
               <MappingFragment StoreEntitySet="issueitems">
+                <ScalarProperty Name="units" ColumnName="units" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
                 <ScalarProperty Name="updated_at" ColumnName="updated_at" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />
                 <ScalarProperty Name="admin_id" ColumnName="admin_id" />
@@ -4785,6 +4806,8 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <EntitySetMapping Name="manufactureditems">
             <EntityTypeMapping TypeName="ResturantManagementModel.manufactureditem">
               <MappingFragment StoreEntitySet="manufactureditems">
+                <ScalarProperty Name="units" ColumnName="units" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
                 <ScalarProperty Name="qty" ColumnName="qty" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -4800,6 +4823,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <EntitySetMapping Name="manufacturingestimations">
             <EntityTypeMapping TypeName="ResturantManagementModel.manufacturingestimation">
               <MappingFragment StoreEntitySet="manufacturingestimations">
+                <ScalarProperty Name="unit" ColumnName="unit" />
                 <ScalarProperty Name="menuitem_id" ColumnName="menuitem_id" />
                 <ScalarProperty Name="admin_id" ColumnName="admin_id" />
                 <ScalarProperty Name="updated_at" ColumnName="updated_at" />
@@ -4842,6 +4866,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <EntitySetMapping Name="menuitems">
             <EntityTypeMapping TypeName="ResturantManagementModel.menuitem">
               <MappingFragment StoreEntitySet="menuitems">
+                <ScalarProperty Name="qty" ColumnName="qty" />
                 <ScalarProperty Name="estimated_by" ColumnName="estimated_by" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -4859,6 +4884,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <EntitySetMapping Name="order_items">
             <EntityTypeMapping TypeName="ResturantManagementModel.order_items">
               <MappingFragment StoreEntitySet="order_items">
+                <ScalarProperty Name="unit" ColumnName="unit" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />
                 <ScalarProperty Name="updated_at" ColumnName="updated_at" />
@@ -4947,6 +4973,7 @@ warning 6002: The table/view 'RMS.dbo.shadow_partypayments' does not have a prim
           <EntitySetMapping Name="purchasebillitems">
             <EntityTypeMapping TypeName="ResturantManagementModel.purchasebillitem">
               <MappingFragment StoreEntitySet="purchasebillitems">
+                <ScalarProperty Name="unit" ColumnName="unit" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="updated_at" ColumnName="updated_at" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />

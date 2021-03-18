@@ -60,6 +60,8 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.materialButton_reset = new CustomControls.MaterialButton();
@@ -89,17 +91,18 @@
             this.betterListView_Exp = new CustomControls.BetterListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label19 = new System.Windows.Forms.Label();
+            this.betterTextBox_unit = new CustomControls.BetterTextBox();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel_party.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,6 +158,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.betterTextBox_unit);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.materialButton_addcart);
             this.panel2.Controls.Add(this.label3);
@@ -169,6 +174,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(985, 108);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel5
             // 
@@ -185,6 +191,7 @@
             // 
             // betterTextBox_advance
             // 
+            this.betterTextBox_advance.append = "";
             this.betterTextBox_advance.decVal = new decimal(new int[] {
             0,
             0,
@@ -194,6 +201,8 @@
             this.betterTextBox_advance.intVal = 0;
             this.betterTextBox_advance.Location = new System.Drawing.Point(73, 17);
             this.betterTextBox_advance.Name = "betterTextBox_advance";
+            this.betterTextBox_advance.prepend = "";
+            this.betterTextBox_advance.Rules = null;
             this.betterTextBox_advance.Size = new System.Drawing.Size(97, 23);
             this.betterTextBox_advance.TabIndex = 12;
             this.betterTextBox_advance.Text = "0";
@@ -290,10 +299,10 @@
             this.materialButton_addcart.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_addcart.hoverforefont = null;
             this.materialButton_addcart.hoverimage = null;
-            this.materialButton_addcart.Location = new System.Drawing.Point(311, 60);
+            this.materialButton_addcart.Location = new System.Drawing.Point(338, 60);
             this.materialButton_addcart.Name = "materialButton_addcart";
             this.materialButton_addcart.role = 0;
-            this.materialButton_addcart.Size = new System.Drawing.Size(154, 40);
+            this.materialButton_addcart.Size = new System.Drawing.Size(127, 40);
             this.materialButton_addcart.TabIndex = 10;
             this.materialButton_addcart.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_addcart.tempforefont = null;
@@ -307,7 +316,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(164, 57);
+            this.label3.Location = new System.Drawing.Point(118, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 17);
             this.label3.TabIndex = 7;
@@ -315,6 +324,7 @@
             // 
             // betterTextBox_rate
             // 
+            this.betterTextBox_rate.append = "";
             this.betterTextBox_rate.decVal = new decimal(new int[] {
             0,
             0,
@@ -322,9 +332,11 @@
             0});
             this.betterTextBox_rate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox_rate.intVal = 0;
-            this.betterTextBox_rate.Location = new System.Drawing.Point(164, 77);
+            this.betterTextBox_rate.Location = new System.Drawing.Point(118, 77);
             this.betterTextBox_rate.Name = "betterTextBox_rate";
-            this.betterTextBox_rate.Size = new System.Drawing.Size(141, 23);
+            this.betterTextBox_rate.prepend = "";
+            this.betterTextBox_rate.Rules = null;
+            this.betterTextBox_rate.Size = new System.Drawing.Size(97, 23);
             this.betterTextBox_rate.TabIndex = 6;
             this.betterTextBox_rate.Text = "0";
             this.betterTextBox_rate.textboxType = CustomControls.TextboxType.Decimal;
@@ -342,6 +354,7 @@
             // 
             // betterTextBox_quantity
             // 
+            this.betterTextBox_quantity.append = "";
             this.betterTextBox_quantity.decVal = new decimal(new int[] {
             0,
             0,
@@ -351,7 +364,9 @@
             this.betterTextBox_quantity.intVal = 0;
             this.betterTextBox_quantity.Location = new System.Drawing.Point(15, 77);
             this.betterTextBox_quantity.Name = "betterTextBox_quantity";
-            this.betterTextBox_quantity.Size = new System.Drawing.Size(141, 23);
+            this.betterTextBox_quantity.prepend = "";
+            this.betterTextBox_quantity.Rules = null;
+            this.betterTextBox_quantity.Size = new System.Drawing.Size(97, 23);
             this.betterTextBox_quantity.TabIndex = 4;
             this.betterTextBox_quantity.Text = "0";
             this.betterTextBox_quantity.textboxType = CustomControls.TextboxType.Decimal;
@@ -384,6 +399,7 @@
             // 
             // betterTextBox_partypan
             // 
+            this.betterTextBox_partypan.append = "";
             this.betterTextBox_partypan.decVal = new decimal(new int[] {
             0,
             0,
@@ -393,6 +409,8 @@
             this.betterTextBox_partypan.intVal = 0;
             this.betterTextBox_partypan.Location = new System.Drawing.Point(258, 32);
             this.betterTextBox_partypan.Name = "betterTextBox_partypan";
+            this.betterTextBox_partypan.prepend = "";
+            this.betterTextBox_partypan.Rules = null;
             this.betterTextBox_partypan.Size = new System.Drawing.Size(162, 23);
             this.betterTextBox_partypan.TabIndex = 15;
             this.betterTextBox_partypan.textboxType = CustomControls.TextboxType.Decimal;
@@ -409,6 +427,7 @@
             // 
             // betterTextBox_partyphone
             // 
+            this.betterTextBox_partyphone.append = "";
             this.betterTextBox_partyphone.decVal = new decimal(new int[] {
             0,
             0,
@@ -418,6 +437,8 @@
             this.betterTextBox_partyphone.intVal = 0;
             this.betterTextBox_partyphone.Location = new System.Drawing.Point(79, 31);
             this.betterTextBox_partyphone.Name = "betterTextBox_partyphone";
+            this.betterTextBox_partyphone.prepend = "";
+            this.betterTextBox_partyphone.Rules = null;
             this.betterTextBox_partyphone.Size = new System.Drawing.Size(131, 23);
             this.betterTextBox_partyphone.TabIndex = 13;
             this.betterTextBox_partyphone.textboxType = CustomControls.TextboxType.Decimal;
@@ -470,7 +491,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader9});
             this.betterListView1.ContextMenuStrip = this.contextMenuStrip1;
             this.betterListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterListView1.FullRowSelect = true;
@@ -506,13 +528,27 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Purchase Rate";
+            this.columnHeader5.Text = "Unit";
             this.columnHeader5.Width = 107;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Total";
+            this.columnHeader6.Text = "Purchase Rate";
             this.columnHeader6.Width = 93;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 26);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // panel3
             // 
@@ -581,6 +617,7 @@
             // 
             // betterTextBox1
             // 
+            this.betterTextBox1.append = "";
             this.betterTextBox1.decVal = new decimal(new int[] {
             0,
             0,
@@ -590,6 +627,8 @@
             this.betterTextBox1.intVal = 0;
             this.betterTextBox1.Location = new System.Drawing.Point(-232, 302);
             this.betterTextBox1.Name = "betterTextBox1";
+            this.betterTextBox1.prepend = "";
+            this.betterTextBox1.Rules = null;
             this.betterTextBox1.Size = new System.Drawing.Size(165, 23);
             this.betterTextBox1.TabIndex = 11;
             this.betterTextBox1.Text = "0";
@@ -636,6 +675,7 @@
             // 
             // betterTextBox_Return
             // 
+            this.betterTextBox_Return.append = "";
             this.betterTextBox_Return.decVal = new decimal(new int[] {
             0,
             0,
@@ -645,6 +685,8 @@
             this.betterTextBox_Return.intVal = 0;
             this.betterTextBox_Return.Location = new System.Drawing.Point(3, 341);
             this.betterTextBox_Return.Name = "betterTextBox_Return";
+            this.betterTextBox_Return.prepend = "";
+            this.betterTextBox_Return.Rules = null;
             this.betterTextBox_Return.Size = new System.Drawing.Size(218, 29);
             this.betterTextBox_Return.TabIndex = 13;
             this.betterTextBox_Return.Text = "0";
@@ -663,6 +705,7 @@
             // 
             // betterTextBox_Due
             // 
+            this.betterTextBox_Due.append = "";
             this.betterTextBox_Due.decVal = new decimal(new int[] {
             0,
             0,
@@ -672,6 +715,8 @@
             this.betterTextBox_Due.intVal = 0;
             this.betterTextBox_Due.Location = new System.Drawing.Point(3, 288);
             this.betterTextBox_Due.Name = "betterTextBox_Due";
+            this.betterTextBox_Due.prepend = "";
+            this.betterTextBox_Due.Rules = null;
             this.betterTextBox_Due.Size = new System.Drawing.Size(218, 29);
             this.betterTextBox_Due.TabIndex = 11;
             this.betterTextBox_Due.Text = "0";
@@ -700,6 +745,7 @@
             // 
             // betterTextBox_paid
             // 
+            this.betterTextBox_paid.append = "";
             this.betterTextBox_paid.decVal = new decimal(new int[] {
             0,
             0,
@@ -709,6 +755,8 @@
             this.betterTextBox_paid.intVal = 0;
             this.betterTextBox_paid.Location = new System.Drawing.Point(3, 236);
             this.betterTextBox_paid.Name = "betterTextBox_paid";
+            this.betterTextBox_paid.prepend = "";
+            this.betterTextBox_paid.Rules = null;
             this.betterTextBox_paid.Size = new System.Drawing.Size(218, 29);
             this.betterTextBox_paid.TabIndex = 8;
             this.betterTextBox_paid.Text = "0";
@@ -727,6 +775,7 @@
             // 
             // betterTextBox_nettotal
             // 
+            this.betterTextBox_nettotal.append = "";
             this.betterTextBox_nettotal.decVal = new decimal(new int[] {
             0,
             0,
@@ -736,6 +785,8 @@
             this.betterTextBox_nettotal.intVal = 0;
             this.betterTextBox_nettotal.Location = new System.Drawing.Point(3, 184);
             this.betterTextBox_nettotal.Name = "betterTextBox_nettotal";
+            this.betterTextBox_nettotal.prepend = "";
+            this.betterTextBox_nettotal.Rules = null;
             this.betterTextBox_nettotal.Size = new System.Drawing.Size(218, 29);
             this.betterTextBox_nettotal.TabIndex = 6;
             this.betterTextBox_nettotal.Text = "0";
@@ -744,6 +795,7 @@
             // 
             // betterTextBox_Tax
             // 
+            this.betterTextBox_Tax.append = "";
             this.betterTextBox_Tax.decVal = new decimal(new int[] {
             0,
             0,
@@ -753,6 +805,8 @@
             this.betterTextBox_Tax.intVal = 0;
             this.betterTextBox_Tax.Location = new System.Drawing.Point(3, 130);
             this.betterTextBox_Tax.Name = "betterTextBox_Tax";
+            this.betterTextBox_Tax.prepend = "";
+            this.betterTextBox_Tax.Rules = null;
             this.betterTextBox_Tax.Size = new System.Drawing.Size(218, 29);
             this.betterTextBox_Tax.TabIndex = 4;
             this.betterTextBox_Tax.Text = "0";
@@ -771,6 +825,7 @@
             // 
             // betterTextBox_discount
             // 
+            this.betterTextBox_discount.append = "";
             this.betterTextBox_discount.decVal = new decimal(new int[] {
             0,
             0,
@@ -780,6 +835,8 @@
             this.betterTextBox_discount.intVal = 0;
             this.betterTextBox_discount.Location = new System.Drawing.Point(3, 77);
             this.betterTextBox_discount.Name = "betterTextBox_discount";
+            this.betterTextBox_discount.prepend = "";
+            this.betterTextBox_discount.Rules = null;
             this.betterTextBox_discount.Size = new System.Drawing.Size(218, 29);
             this.betterTextBox_discount.TabIndex = 2;
             this.betterTextBox_discount.Text = "0";
@@ -798,6 +855,7 @@
             // 
             // betterTextBox_grosstotal
             // 
+            this.betterTextBox_grosstotal.append = "";
             this.betterTextBox_grosstotal.decVal = new decimal(new int[] {
             0,
             0,
@@ -807,6 +865,8 @@
             this.betterTextBox_grosstotal.intVal = 0;
             this.betterTextBox_grosstotal.Location = new System.Drawing.Point(3, 24);
             this.betterTextBox_grosstotal.Name = "betterTextBox_grosstotal";
+            this.betterTextBox_grosstotal.prepend = "";
+            this.betterTextBox_grosstotal.Rules = null;
             this.betterTextBox_grosstotal.Size = new System.Drawing.Size(218, 29);
             this.betterTextBox_grosstotal.TabIndex = 0;
             this.betterTextBox_grosstotal.Text = "0";
@@ -850,6 +910,7 @@
             // 
             // betterTextBox_amount
             // 
+            this.betterTextBox_amount.append = "";
             this.betterTextBox_amount.decVal = new decimal(new int[] {
             0,
             0,
@@ -859,6 +920,8 @@
             this.betterTextBox_amount.intVal = 0;
             this.betterTextBox_amount.Location = new System.Drawing.Point(17, 74);
             this.betterTextBox_amount.Name = "betterTextBox_amount";
+            this.betterTextBox_amount.prepend = "";
+            this.betterTextBox_amount.Rules = null;
             this.betterTextBox_amount.Size = new System.Drawing.Size(225, 23);
             this.betterTextBox_amount.TabIndex = 16;
             this.betterTextBox_amount.textboxType = CustomControls.TextboxType.Decimal;
@@ -875,6 +938,7 @@
             // 
             // betterTextBox_name
             // 
+            this.betterTextBox_name.append = "";
             this.betterTextBox_name.decVal = new decimal(new int[] {
             0,
             0,
@@ -884,6 +948,8 @@
             this.betterTextBox_name.intVal = 0;
             this.betterTextBox_name.Location = new System.Drawing.Point(16, 27);
             this.betterTextBox_name.Name = "betterTextBox_name";
+            this.betterTextBox_name.prepend = "";
+            this.betterTextBox_name.Rules = null;
             this.betterTextBox_name.Size = new System.Drawing.Size(226, 23);
             this.betterTextBox_name.TabIndex = 14;
             this.betterTextBox_name.textboxType = CustomControls.TextboxType.Text;
@@ -944,20 +1010,6 @@
             this.columnHeader8.Text = "Amount";
             this.columnHeader8.Width = 154;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.removeToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 26);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
-            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
-            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -968,9 +1020,42 @@
             // removeToolStripMenuItem1
             // 
             this.removeToolStripMenuItem1.Name = "removeToolStripMenuItem1";
-            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem1.Text = "Remove";
             this.removeToolStripMenuItem1.Click += new System.EventHandler(this.removeToolStripMenuItem1_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(224, 57);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 17);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "Unit";
+            // 
+            // betterTextBox_unit
+            // 
+            this.betterTextBox_unit.append = "";
+            this.betterTextBox_unit.decVal = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.betterTextBox_unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betterTextBox_unit.intVal = 0;
+            this.betterTextBox_unit.Location = new System.Drawing.Point(224, 77);
+            this.betterTextBox_unit.Name = "betterTextBox_unit";
+            this.betterTextBox_unit.prepend = "";
+            this.betterTextBox_unit.ReadOnly = true;
+            this.betterTextBox_unit.Rules = null;
+            this.betterTextBox_unit.Size = new System.Drawing.Size(97, 23);
+            this.betterTextBox_unit.TabIndex = 12;
+            this.betterTextBox_unit.textboxType = CustomControls.TextboxType.Text;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Total";
             // 
             // AddKitchenStock
             // 
@@ -995,11 +1080,11 @@
             this.panel5.PerformLayout();
             this.panel_party.ResumeLayout(false);
             this.panel_party.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1071,5 +1156,8 @@
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem1;
+        private System.Windows.Forms.Label label19;
+        private CustomControls.BetterTextBox betterTextBox_unit;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }

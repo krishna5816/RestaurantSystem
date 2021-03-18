@@ -49,6 +49,9 @@
             this.materialButton1 = new CustomControls.MaterialButton();
             this.label3 = new System.Windows.Forms.Label();
             this.betterTextBox_cuuremtstock = new CustomControls.BetterTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.betterTextBox_unit = new CustomControls.BetterTextBox();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -116,10 +119,10 @@
             this.materialButton_addcart.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_addcart.hoverforefont = null;
             this.materialButton_addcart.hoverimage = null;
-            this.materialButton_addcart.Location = new System.Drawing.Point(766, 56);
+            this.materialButton_addcart.Location = new System.Drawing.Point(793, 56);
             this.materialButton_addcart.Name = "materialButton_addcart";
             this.materialButton_addcart.role = 0;
-            this.materialButton_addcart.Size = new System.Drawing.Size(154, 40);
+            this.materialButton_addcart.Size = new System.Drawing.Size(127, 40);
             this.materialButton_addcart.TabIndex = 17;
             this.materialButton_addcart.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_addcart.tempforefont = null;
@@ -134,7 +137,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(616, 50);
+            this.label2.Location = new System.Drawing.Point(528, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 14;
@@ -142,6 +145,7 @@
             // 
             // betterTextBox_quantity
             // 
+            this.betterTextBox_quantity.append = "";
             this.betterTextBox_quantity.decVal = new decimal(new int[] {
             0,
             0,
@@ -149,9 +153,11 @@
             0});
             this.betterTextBox_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox_quantity.intVal = 0;
-            this.betterTextBox_quantity.Location = new System.Drawing.Point(619, 70);
+            this.betterTextBox_quantity.Location = new System.Drawing.Point(531, 71);
             this.betterTextBox_quantity.Name = "betterTextBox_quantity";
-            this.betterTextBox_quantity.Size = new System.Drawing.Size(141, 26);
+            this.betterTextBox_quantity.prepend = "";
+            this.betterTextBox_quantity.Rules = null;
+            this.betterTextBox_quantity.Size = new System.Drawing.Size(120, 26);
             this.betterTextBox_quantity.TabIndex = 13;
             this.betterTextBox_quantity.Text = "0";
             this.betterTextBox_quantity.textboxType = CustomControls.TextboxType.Decimal;
@@ -173,7 +179,7 @@
             this.comboBox_itemlist.FormattingEnabled = true;
             this.comboBox_itemlist.Location = new System.Drawing.Point(8, 69);
             this.comboBox_itemlist.Name = "comboBox_itemlist";
-            this.comboBox_itemlist.Size = new System.Drawing.Size(474, 28);
+            this.comboBox_itemlist.Size = new System.Drawing.Size(403, 28);
             this.comboBox_itemlist.TabIndex = 11;
             this.comboBox_itemlist.SelectedIndexChanged += new System.EventHandler(this.comboBox_itemlist_SelectedIndexChanged);
             // 
@@ -183,7 +189,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.betterListView1.ContextMenuStrip = this.contextMenuStrip1;
             this.betterListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterListView1.FullRowSelect = true;
@@ -223,12 +230,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 26);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -245,6 +252,7 @@
             // 
             // betterTextBox_issuebye
             // 
+            this.betterTextBox_issuebye.append = "";
             this.betterTextBox_issuebye.decVal = new decimal(new int[] {
             0,
             0,
@@ -254,6 +262,8 @@
             this.betterTextBox_issuebye.intVal = 0;
             this.betterTextBox_issuebye.Location = new System.Drawing.Point(8, 505);
             this.betterTextBox_issuebye.Name = "betterTextBox_issuebye";
+            this.betterTextBox_issuebye.prepend = "";
+            this.betterTextBox_issuebye.Rules = null;
             this.betterTextBox_issuebye.Size = new System.Drawing.Size(577, 23);
             this.betterTextBox_issuebye.TabIndex = 19;
             this.betterTextBox_issuebye.textboxType = CustomControls.TextboxType.Text;
@@ -290,7 +300,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label3.Location = new System.Drawing.Point(485, 50);
+            this.label3.Location = new System.Drawing.Point(418, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 17);
             this.label3.TabIndex = 23;
@@ -298,6 +308,7 @@
             // 
             // betterTextBox_cuuremtstock
             // 
+            this.betterTextBox_cuuremtstock.append = "";
             this.betterTextBox_cuuremtstock.decVal = new decimal(new int[] {
             0,
             0,
@@ -306,12 +317,49 @@
             this.betterTextBox_cuuremtstock.Enabled = false;
             this.betterTextBox_cuuremtstock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox_cuuremtstock.intVal = 0;
-            this.betterTextBox_cuuremtstock.Location = new System.Drawing.Point(488, 70);
+            this.betterTextBox_cuuremtstock.Location = new System.Drawing.Point(421, 70);
             this.betterTextBox_cuuremtstock.Name = "betterTextBox_cuuremtstock";
-            this.betterTextBox_cuuremtstock.Size = new System.Drawing.Size(125, 26);
+            this.betterTextBox_cuuremtstock.prepend = "";
+            this.betterTextBox_cuuremtstock.Rules = null;
+            this.betterTextBox_cuuremtstock.Size = new System.Drawing.Size(104, 26);
             this.betterTextBox_cuuremtstock.TabIndex = 22;
             this.betterTextBox_cuuremtstock.Text = "0";
             this.betterTextBox_cuuremtstock.textboxType = CustomControls.TextboxType.Decimal;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label5.Location = new System.Drawing.Point(654, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 17);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Unit";
+            // 
+            // betterTextBox_unit
+            // 
+            this.betterTextBox_unit.append = "";
+            this.betterTextBox_unit.decVal = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.betterTextBox_unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betterTextBox_unit.intVal = 0;
+            this.betterTextBox_unit.Location = new System.Drawing.Point(657, 71);
+            this.betterTextBox_unit.Name = "betterTextBox_unit";
+            this.betterTextBox_unit.prepend = "";
+            this.betterTextBox_unit.Rules = null;
+            this.betterTextBox_unit.Size = new System.Drawing.Size(120, 26);
+            this.betterTextBox_unit.TabIndex = 24;
+            this.betterTextBox_unit.textboxType = CustomControls.TextboxType.Text;
+            this.betterTextBox_unit.Visible = false;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Unit";
+            this.columnHeader5.Width = 105;
             // 
             // Issuekitchenitems
             // 
@@ -319,6 +367,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(943, 550);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.betterTextBox_unit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.betterTextBox_cuuremtstock);
             this.Controls.Add(this.materialButton1);
@@ -365,5 +415,8 @@
         private CustomControls.BetterTextBox betterTextBox_cuuremtstock;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label5;
+        private CustomControls.BetterTextBox betterTextBox_unit;
     }
 }

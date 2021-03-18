@@ -26,7 +26,8 @@ namespace RestaurantSystem.PurchaseItems
         {
             var viwer = new PurchaseItems.Viwer();
             viwer.name = purchaseitem.name;
-            viwer.unit = purchaseitem.qty;
+            viwer.unit = purchaseitem.unit;
+            viwer.qty = purchaseitem.qty;
             viwer.category_id = purchaseitem.purchasecategory == null ? "":purchaseitem.purchasecategory.name;
             viwer.Dock = DockStyle.Top;
             panel_menuitem.Controls.Add(viwer);

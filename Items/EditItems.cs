@@ -47,8 +47,9 @@ namespace RestaurantSystem.Items
             var item = db.menuitems.Find(id);
             betterTextBox1_name.Text = item.name;
             betterTextBox1_price.Text = item.price.ToString();
-            betterTextBox1_unit.Text = item.unit;
+            betterTextBox1_qty.Text = item.unit;
             betterTextBox_Estimateby.Text = item.estimated_by;
+            betterTextBox_qty.decVal = item.qty.Value;
             comboBox1_category.Text = ((item.category as Model.category).name);
             foreach (var mc in db.manufacturingestimations.Where(o => o.menuitem_id == id).ToList())
             {
@@ -69,9 +70,10 @@ namespace RestaurantSystem.Items
             var editdata = db.menuitems.Find(id);
             editdata.name = betterTextBox1_name.Text;
             editdata.price = (betterTextBox1_price.decVal);
-            editdata.unit = betterTextBox1_unit.Text;
+            editdata.unit = betterTextBox_units.Text;
             editdata.category_id = ((comboBox1_category.SelectedItem as Model.category).id);
             editdata.admin_id = INFO.admin_id;
+                editdata.qty = betterTextBox1_qty.decVal;
             editdata.estimated_by = betterTextBox_Estimateby.Text;
             editdata.updated_at = DateTime.Now;
             db.Entry(editdata).State = System.Data.Entity.EntityState.Modified;
@@ -169,6 +171,11 @@ namespace RestaurantSystem.Items
                 betterListView1.Items.Add(loaddata);
 
             }
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

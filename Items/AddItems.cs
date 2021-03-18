@@ -66,15 +66,20 @@ namespace RestaurantSystem.Items
                 CustomControls.Alert.show("Categories", "select categories", 1200);
                 return;
             }
-
+            if (betterTextBox_unit.Text.Trim()=="")
+            {
+                CustomControls.Alert.show("Unit", "Please enter unit", 1200);
+                return;
+            }
             var db = Model.DatabaseConfigure.getConfigure();
             menuitem item = new menuitem()
             {
                 name = betterTextBox1_name.Text,
                 price = (betterTextBox1_price.decVal),
-                unit = betterTextBox1_unit.Text,
+                unit = betterTextBox_unit.Text,
                 category_id = ((comboBox1_category.SelectedItem as Model.category).id),
                 estimated_by=betterTextBox_Estimateby.Text,
+                qty=betterTextBox_qty.decVal,
                 admin_id = INFO.admin_id,
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now
@@ -167,6 +172,16 @@ namespace RestaurantSystem.Items
         }
 
         private void materialButton_loadestimate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
         {
 
         }

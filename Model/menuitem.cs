@@ -35,6 +35,7 @@ namespace RestaurantSystem.Model
         public System.DateTime created_at { get; set; }
         public Nullable<int> sync_id { get; set; }
         public string estimated_by { get; set; }
+        public Nullable<decimal> qty { get; set; }
     
         public virtual admin admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

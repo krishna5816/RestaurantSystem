@@ -34,16 +34,27 @@ namespace RestaurantSystem.PurchaseItems
                 lbl_name.Text = value;
             }
         }
-       
-        public decimal unit
+
+        public decimal qty
         {
             get
             {
-                return unit;
+                return Convert.ToDecimal(lbl_qty.Text);
             }
             set
             {
-                lbl_unit.Text = value.ToString();
+                lbl_qty.Text = value.ToString();
+            }
+        }
+        public string unit
+        {
+            get
+            {
+                return (lbl_unit.Text);
+            }
+            set
+            {
+                lbl_unit.Text = value;
             }
         }
         public string category_id
@@ -72,7 +83,8 @@ namespace RestaurantSystem.PurchaseItems
         {
             var viwer = new PurchaseItems.Viwer();
             viwer.name = purchaseitem.name;
-            viwer.unit = purchaseitem.qty;
+            viwer.unit = purchaseitem.unit;
+            viwer.qty = purchaseitem.qty;
             viwer.category_id = ((purchaseitem.purchasecategory as Model.purchasecategory).name);
         }
 

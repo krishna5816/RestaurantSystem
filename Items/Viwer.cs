@@ -46,6 +46,17 @@ namespace RestaurantSystem.Items
 ;
             }
         }
+        public decimal qty
+        {
+            get
+            {
+                return Convert.ToDecimal(lbl_qty.Text);
+            }
+            set
+            {
+                lbl_qty.Text = value.ToString();
+            }
+        }
         public string unit
         {
             get

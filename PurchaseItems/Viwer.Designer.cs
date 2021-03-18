@@ -30,9 +30,10 @@
         {
             this.materialButton_delete = new CustomControls.MaterialButton();
             this.materialButton_edit = new CustomControls.MaterialButton();
-            this.lbl_unit = new System.Windows.Forms.Label();
+            this.lbl_qty = new System.Windows.Forms.Label();
             this.lbl_category = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
+            this.lbl_unit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // materialButton_delete
@@ -91,19 +92,19 @@
             this.materialButton_edit.UseVisualStyleBackColor = false;
             this.materialButton_edit.Click += new System.EventHandler(this.materialButton_edit_Click);
             // 
-            // lbl_unit
+            // lbl_qty
             // 
-            this.lbl_unit.AutoSize = true;
-            this.lbl_unit.Location = new System.Drawing.Point(327, 5);
-            this.lbl_unit.Name = "lbl_unit";
-            this.lbl_unit.Size = new System.Drawing.Size(79, 19);
-            this.lbl_unit.TabIndex = 9;
-            this.lbl_unit.Text = "aaaaaaaaaa";
+            this.lbl_qty.AutoSize = true;
+            this.lbl_qty.Location = new System.Drawing.Point(327, 5);
+            this.lbl_qty.Name = "lbl_qty";
+            this.lbl_qty.Size = new System.Drawing.Size(79, 19);
+            this.lbl_qty.TabIndex = 9;
+            this.lbl_qty.Text = "aaaaaaaaaa";
             // 
             // lbl_category
             // 
             this.lbl_category.AutoSize = true;
-            this.lbl_category.Location = new System.Drawing.Point(412, 5);
+            this.lbl_category.Location = new System.Drawing.Point(521, 5);
             this.lbl_category.Name = "lbl_category";
             this.lbl_category.Size = new System.Drawing.Size(107, 19);
             this.lbl_category.TabIndex = 8;
@@ -118,15 +119,25 @@
             this.lbl_name.TabIndex = 6;
             this.lbl_name.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             // 
+            // lbl_unit
+            // 
+            this.lbl_unit.AutoSize = true;
+            this.lbl_unit.Location = new System.Drawing.Point(412, 5);
+            this.lbl_unit.Name = "lbl_unit";
+            this.lbl_unit.Size = new System.Drawing.Size(79, 19);
+            this.lbl_unit.TabIndex = 12;
+            this.lbl_unit.Text = "aaaaaaaaaa";
+            // 
             // Viwer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.lbl_unit);
             this.Controls.Add(this.materialButton_delete);
             this.Controls.Add(this.materialButton_edit);
-            this.Controls.Add(this.lbl_unit);
+            this.Controls.Add(this.lbl_qty);
             this.Controls.Add(this.lbl_category);
             this.Controls.Add(this.lbl_name);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,8 +154,9 @@
 
         private CustomControls.MaterialButton materialButton_delete;
         private CustomControls.MaterialButton materialButton_edit;
-        private System.Windows.Forms.Label lbl_unit;
+        private System.Windows.Forms.Label lbl_qty;
         private System.Windows.Forms.Label lbl_category;
         private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.Label lbl_unit;
     }
 }

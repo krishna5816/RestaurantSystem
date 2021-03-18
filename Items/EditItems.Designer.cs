@@ -35,21 +35,25 @@
             this.materialButton1_update = new CustomControls.MaterialButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1_category = new System.Windows.Forms.Label();
-            this.betterTextBox1_unit = new CustomControls.BetterTextBox();
+            this.betterTextBox1_qty = new CustomControls.BetterTextBox();
             this.label2_unit = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.betterTextBox1_price = new CustomControls.BetterTextBox();
             this.label1_price = new System.Windows.Forms.Label();
-            this.betterTextBox1_name = new CustomControls.BetterTextBox();
             this.label1_name = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.betterTextBox_units = new CustomControls.BetterTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.betterTextBox_unit = new CustomControls.BetterTextBox();
             this.materialButton_loadestimate = new CustomControls.MaterialButton();
             this.materialButton_newitem = new CustomControls.MaterialButton();
             this.materialButton_Addtocart = new CustomControls.MaterialButton();
@@ -62,11 +66,14 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.betterTextBox_Estimateby = new CustomControls.BetterTextBox();
+            this.betterTextBox1_name = new CustomControls.BetterTextBox();
             this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -161,7 +168,7 @@
             this.panel5.Location = new System.Drawing.Point(334, 97);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(162, 1);
+            this.panel5.Size = new System.Drawing.Size(77, 1);
             this.panel5.TabIndex = 98;
             // 
             // label1_category
@@ -174,26 +181,29 @@
             this.label1_category.TabIndex = 95;
             this.label1_category.Text = "Category";
             // 
-            // betterTextBox1_unit
+            // betterTextBox1_qty
             // 
-            this.betterTextBox1_unit.BackColor = System.Drawing.Color.White;
-            this.betterTextBox1_unit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.betterTextBox1_unit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.betterTextBox1_unit.decVal = new decimal(new int[] {
+            this.betterTextBox1_qty.append = "";
+            this.betterTextBox1_qty.BackColor = System.Drawing.Color.White;
+            this.betterTextBox1_qty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.betterTextBox1_qty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.betterTextBox1_qty.decVal = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.betterTextBox1_unit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betterTextBox1_unit.ForeColor = System.Drawing.Color.Black;
-            this.betterTextBox1_unit.intVal = 0;
-            this.betterTextBox1_unit.Location = new System.Drawing.Point(334, 77);
-            this.betterTextBox1_unit.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.betterTextBox1_unit.Name = "betterTextBox1_unit";
-            this.betterTextBox1_unit.Size = new System.Drawing.Size(162, 18);
-            this.betterTextBox1_unit.TabIndex = 97;
-            this.betterTextBox1_unit.textboxType = CustomControls.TextboxType.Text;
-            this.betterTextBox1_unit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox1_unit_KeyPress);
+            this.betterTextBox1_qty.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betterTextBox1_qty.ForeColor = System.Drawing.Color.Black;
+            this.betterTextBox1_qty.intVal = 0;
+            this.betterTextBox1_qty.Location = new System.Drawing.Point(334, 77);
+            this.betterTextBox1_qty.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.betterTextBox1_qty.Name = "betterTextBox1_qty";
+            this.betterTextBox1_qty.prepend = "";
+            this.betterTextBox1_qty.Rules = null;
+            this.betterTextBox1_qty.Size = new System.Drawing.Size(77, 18);
+            this.betterTextBox1_qty.TabIndex = 97;
+            this.betterTextBox1_qty.textboxType = CustomControls.TextboxType.Text;
+            this.betterTextBox1_qty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox1_unit_KeyPress);
             // 
             // label2_unit
             // 
@@ -201,18 +211,18 @@
             this.label2_unit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2_unit.Location = new System.Drawing.Point(286, 85);
             this.label2_unit.Name = "label2_unit";
-            this.label2_unit.Size = new System.Drawing.Size(34, 17);
+            this.label2_unit.Size = new System.Drawing.Size(33, 17);
             this.label2_unit.TabIndex = 96;
-            this.label2_unit.Text = "Unit";
+            this.label2_unit.Text = "QTY";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkCyan;
             this.panel3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.panel3.Location = new System.Drawing.Point(334, 64);
+            this.panel3.Location = new System.Drawing.Point(329, 64);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(162, 1);
+            this.panel3.Size = new System.Drawing.Size(204, 1);
             this.panel3.TabIndex = 94;
             // 
             // panel2
@@ -227,6 +237,7 @@
             // 
             // betterTextBox1_price
             // 
+            this.betterTextBox1_price.append = "";
             this.betterTextBox1_price.BackColor = System.Drawing.Color.White;
             this.betterTextBox1_price.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox1_price.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -238,10 +249,12 @@
             this.betterTextBox1_price.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox1_price.ForeColor = System.Drawing.Color.Black;
             this.betterTextBox1_price.intVal = 0;
-            this.betterTextBox1_price.Location = new System.Drawing.Point(334, 44);
+            this.betterTextBox1_price.Location = new System.Drawing.Point(330, 44);
             this.betterTextBox1_price.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.betterTextBox1_price.Name = "betterTextBox1_price";
-            this.betterTextBox1_price.Size = new System.Drawing.Size(162, 18);
+            this.betterTextBox1_price.prepend = "";
+            this.betterTextBox1_price.Rules = null;
+            this.betterTextBox1_price.Size = new System.Drawing.Size(201, 18);
             this.betterTextBox1_price.TabIndex = 93;
             this.betterTextBox1_price.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox1_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox1_price_KeyPress);
@@ -255,28 +268,6 @@
             this.label1_price.Size = new System.Drawing.Size(38, 17);
             this.label1_price.TabIndex = 92;
             this.label1_price.Text = "Price";
-            // 
-            // betterTextBox1_name
-            // 
-            this.betterTextBox1_name.BackColor = System.Drawing.Color.White;
-            this.betterTextBox1_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.betterTextBox1_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.betterTextBox1_name.decVal = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.betterTextBox1_name.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betterTextBox1_name.ForeColor = System.Drawing.Color.Black;
-            this.betterTextBox1_name.intVal = 0;
-            this.betterTextBox1_name.Location = new System.Drawing.Point(76, 47);
-            this.betterTextBox1_name.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.betterTextBox1_name.Name = "betterTextBox1_name";
-            this.betterTextBox1_name.Size = new System.Drawing.Size(187, 18);
-            this.betterTextBox1_name.TabIndex = 90;
-            this.betterTextBox1_name.textboxType = CustomControls.TextboxType.Text;
-            this.betterTextBox1_name.TextChanged += new System.EventHandler(this.betterTextBox1_name_TextChanged);
-            this.betterTextBox1_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox1_name_KeyPress);
             // 
             // label1_name
             // 
@@ -296,7 +287,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 38);
+            this.panel1.Size = new System.Drawing.Size(789, 38);
             this.panel1.TabIndex = 88;
             // 
             // panel4
@@ -322,11 +313,59 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.betterTextBox1_name);
+            this.panel7.Controls.Add(this.betterTextBox_units);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.panel11);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 38);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(684, 72);
+            this.panel7.Size = new System.Drawing.Size(789, 72);
             this.panel7.TabIndex = 104;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // betterTextBox_units
+            // 
+            this.betterTextBox_units.append = "";
+            this.betterTextBox_units.BackColor = System.Drawing.Color.White;
+            this.betterTextBox_units.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.betterTextBox_units.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.betterTextBox_units.decVal = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.betterTextBox_units.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betterTextBox_units.ForeColor = System.Drawing.Color.Black;
+            this.betterTextBox_units.intVal = 0;
+            this.betterTextBox_units.Location = new System.Drawing.Point(454, 38);
+            this.betterTextBox_units.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.betterTextBox_units.Name = "betterTextBox_units";
+            this.betterTextBox_units.prepend = "";
+            this.betterTextBox_units.Rules = null;
+            this.betterTextBox_units.Size = new System.Drawing.Size(77, 18);
+            this.betterTextBox_units.TabIndex = 110;
+            this.betterTextBox_units.textboxType = CustomControls.TextboxType.Text;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(417, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 17);
+            this.label4.TabIndex = 110;
+            this.label4.Text = "Unit";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel11.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.panel11.Location = new System.Drawing.Point(454, 58);
+            this.panel11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(78, 1);
+            this.panel11.TabIndex = 76;
             // 
             // panel8
             // 
@@ -335,7 +374,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 110);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(684, 39);
+            this.panel8.Size = new System.Drawing.Size(789, 39);
             this.panel8.TabIndex = 105;
             // 
             // label1
@@ -351,6 +390,8 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.label6);
+            this.panel9.Controls.Add(this.betterTextBox_unit);
             this.panel9.Controls.Add(this.materialButton_loadestimate);
             this.panel9.Controls.Add(this.materialButton_newitem);
             this.panel9.Controls.Add(this.materialButton_Addtocart);
@@ -361,8 +402,36 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 149);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(684, 71);
+            this.panel9.Size = new System.Drawing.Size(789, 71);
             this.panel9.TabIndex = 106;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(318, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 17);
+            this.label6.TabIndex = 99;
+            this.label6.Text = "Unit";
+            // 
+            // betterTextBox_unit
+            // 
+            this.betterTextBox_unit.append = "";
+            this.betterTextBox_unit.decVal = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.betterTextBox_unit.intVal = 0;
+            this.betterTextBox_unit.Location = new System.Drawing.Point(321, 37);
+            this.betterTextBox_unit.Multiline = true;
+            this.betterTextBox_unit.Name = "betterTextBox_unit";
+            this.betterTextBox_unit.prepend = "";
+            this.betterTextBox_unit.Rules = null;
+            this.betterTextBox_unit.Size = new System.Drawing.Size(100, 25);
+            this.betterTextBox_unit.TabIndex = 98;
+            this.betterTextBox_unit.textboxType = CustomControls.TextboxType.Decimal;
             // 
             // materialButton_loadestimate
             // 
@@ -377,7 +446,7 @@
             this.materialButton_loadestimate.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_loadestimate.hoverforefont = null;
             this.materialButton_loadestimate.hoverimage = null;
-            this.materialButton_loadestimate.Location = new System.Drawing.Point(425, 30);
+            this.materialButton_loadestimate.Location = new System.Drawing.Point(536, 31);
             this.materialButton_loadestimate.Name = "materialButton_loadestimate";
             this.materialButton_loadestimate.role = 0;
             this.materialButton_loadestimate.Size = new System.Drawing.Size(139, 31);
@@ -403,7 +472,7 @@
             this.materialButton_newitem.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_newitem.hoverforefont = null;
             this.materialButton_newitem.hoverimage = null;
-            this.materialButton_newitem.Location = new System.Drawing.Point(573, 30);
+            this.materialButton_newitem.Location = new System.Drawing.Point(684, 31);
             this.materialButton_newitem.Name = "materialButton_newitem";
             this.materialButton_newitem.role = 0;
             this.materialButton_newitem.Size = new System.Drawing.Size(98, 31);
@@ -429,7 +498,7 @@
             this.materialButton_Addtocart.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_Addtocart.hoverforefont = null;
             this.materialButton_Addtocart.hoverimage = null;
-            this.materialButton_Addtocart.Location = new System.Drawing.Point(323, 30);
+            this.materialButton_Addtocart.Location = new System.Drawing.Point(434, 31);
             this.materialButton_Addtocart.Name = "materialButton_Addtocart";
             this.materialButton_Addtocart.role = 0;
             this.materialButton_Addtocart.Size = new System.Drawing.Size(96, 31);
@@ -454,6 +523,7 @@
             // 
             // betterTextBox_qty
             // 
+            this.betterTextBox_qty.append = "";
             this.betterTextBox_qty.decVal = new decimal(new int[] {
             0,
             0,
@@ -463,6 +533,8 @@
             this.betterTextBox_qty.Location = new System.Drawing.Point(214, 37);
             this.betterTextBox_qty.Multiline = true;
             this.betterTextBox_qty.Name = "betterTextBox_qty";
+            this.betterTextBox_qty.prepend = "";
+            this.betterTextBox_qty.Rules = null;
             this.betterTextBox_qty.Size = new System.Drawing.Size(100, 25);
             this.betterTextBox_qty.TabIndex = 93;
             this.betterTextBox_qty.textboxType = CustomControls.TextboxType.Decimal;
@@ -492,7 +564,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 220);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(684, 226);
+            this.panel10.Size = new System.Drawing.Size(789, 226);
             this.panel10.TabIndex = 107;
             // 
             // betterListView1
@@ -500,7 +572,8 @@
             this.betterListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4});
             this.betterListView1.ContextMenuStrip = this.contextMenuStrip1;
             this.betterListView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.betterListView1.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -509,7 +582,7 @@
             this.betterListView1.HideSelection = false;
             this.betterListView1.Location = new System.Drawing.Point(0, 0);
             this.betterListView1.Name = "betterListView1";
-            this.betterListView1.Size = new System.Drawing.Size(684, 226);
+            this.betterListView1.Size = new System.Drawing.Size(789, 226);
             this.betterListView1.sortable = false;
             this.betterListView1.TabIndex = 1;
             this.betterListView1.UseCompatibleStateImageBehavior = false;
@@ -528,6 +601,11 @@
             // 
             this.columnHeader3.Text = "Quantity";
             this.columnHeader3.Width = 175;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Unit";
+            this.columnHeader4.Width = 105;
             // 
             // contextMenuStrip1
             // 
@@ -555,6 +633,7 @@
             // 
             // betterTextBox_Estimateby
             // 
+            this.betterTextBox_Estimateby.append = "";
             this.betterTextBox_Estimateby.decVal = new decimal(new int[] {
             0,
             0,
@@ -563,16 +642,41 @@
             this.betterTextBox_Estimateby.intVal = 0;
             this.betterTextBox_Estimateby.Location = new System.Drawing.Point(10, 474);
             this.betterTextBox_Estimateby.Name = "betterTextBox_Estimateby";
+            this.betterTextBox_Estimateby.prepend = "";
+            this.betterTextBox_Estimateby.Rules = null;
             this.betterTextBox_Estimateby.Size = new System.Drawing.Size(320, 20);
             this.betterTextBox_Estimateby.TabIndex = 108;
             this.betterTextBox_Estimateby.textboxType = CustomControls.TextboxType.Text;
+            // 
+            // betterTextBox1_name
+            // 
+            this.betterTextBox1_name.append = "";
+            this.betterTextBox1_name.BackColor = System.Drawing.Color.White;
+            this.betterTextBox1_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.betterTextBox1_name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.betterTextBox1_name.decVal = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.betterTextBox1_name.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betterTextBox1_name.ForeColor = System.Drawing.Color.Black;
+            this.betterTextBox1_name.intVal = 0;
+            this.betterTextBox1_name.Location = new System.Drawing.Point(74, 9);
+            this.betterTextBox1_name.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.betterTextBox1_name.Name = "betterTextBox1_name";
+            this.betterTextBox1_name.prepend = "";
+            this.betterTextBox1_name.Rules = null;
+            this.betterTextBox1_name.Size = new System.Drawing.Size(187, 18);
+            this.betterTextBox1_name.TabIndex = 111;
+            this.betterTextBox1_name.textboxType = CustomControls.TextboxType.Text;
             // 
             // EditItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(684, 506);
+            this.ClientSize = new System.Drawing.Size(789, 506);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.betterTextBox_Estimateby);
             this.Controls.Add(this.panel10);
@@ -584,13 +688,12 @@
             this.Controls.Add(this.materialButton1_update);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label1_category);
-            this.Controls.Add(this.betterTextBox1_unit);
+            this.Controls.Add(this.betterTextBox1_qty);
             this.Controls.Add(this.label2_unit);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.betterTextBox1_price);
             this.Controls.Add(this.label1_price);
-            this.Controls.Add(this.betterTextBox1_name);
             this.Controls.Add(this.label1_name);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel7);
@@ -602,6 +705,8 @@
             this.Load += new System.EventHandler(this.EditItems_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -621,13 +726,12 @@
         private CustomControls.MaterialButton materialButton1_update;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1_category;
-        private CustomControls.BetterTextBox betterTextBox1_unit;
+        private CustomControls.BetterTextBox betterTextBox1_qty;
         private System.Windows.Forms.Label label2_unit;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private CustomControls.BetterTextBox betterTextBox1_price;
         private System.Windows.Forms.Label label1_price;
-        private CustomControls.BetterTextBox betterTextBox1_name;
         private System.Windows.Forms.Label label1_name;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
@@ -652,5 +756,12 @@
         private CustomControls.MaterialButton materialButton_loadestimate;
         private System.Windows.Forms.Label label5;
         private CustomControls.BetterTextBox betterTextBox_Estimateby;
+        private CustomControls.BetterTextBox betterTextBox_units;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label6;
+        private CustomControls.BetterTextBox betterTextBox_unit;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private CustomControls.BetterTextBox betterTextBox1_name;
     }
 }

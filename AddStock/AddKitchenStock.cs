@@ -36,7 +36,17 @@ namespace RestaurantSystem.AddStock
         decimal total;
         private void comboBox_itemlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            betterTextBox_quantity.Focus();
+            if (comboBox_itemlist.SelectedIndex > -1)
+            {
+                var sel = (purchaseitem)comboBox_itemlist.SelectedItem;
+                using (var db = DatabaseConfigure.getConfigure())
+                {
+                    betterTextBox_unit.Text = db.purchaseitems.Find(sel.id).unit;
+                    betterTextBox_rate.decVal = db.purchaseitems.Find(sel.id).price.Value;
+                  
+                }
+                betterTextBox_quantity.Focus();
+            }
         }
         private void materialButton_cate_Click(object sender, EventArgs e)
         {
@@ -116,12 +126,13 @@ namespace RestaurantSystem.AddStock
 
             total = (betterTextBox_rate.decVal * betterTextBox_quantity.decVal);
             betterListView1.Items.Add(new ListViewItem(new string[]
-            { sn.ToString(), selitm.name, selitm.purchasecategory.name, betterTextBox_quantity.decVal.ToString(), betterTextBox_rate.decVal.ToString(), total.ToString(),selitm.id.ToString()
+            { sn.ToString(), selitm.name, selitm.purchasecategory.name, betterTextBox_quantity.decVal.ToString(), betterTextBox_rate.decVal.ToString(),betterTextBox_unit.Text, total.ToString(),selitm.id.ToString()
             }));
             sn += 1;
             betterTextBox_grosstotal.decVal += total;
             comboBox_itemlist.SelectedIndex = -1;
             betterTextBox_quantity.Clear();
+            betterTextBox_unit.Clear();
             betterTextBox_rate.Clear();
             refresstock();
         }
@@ -181,6 +192,7 @@ namespace RestaurantSystem.AddStock
                 nettotal = betterTextBox_nettotal.decVal,
                 due = betterTextBox_Due.decVal,
                 paid = betterTextBox_paid.decVal,
+                
                 fiscalyear_id = INFO.currentFiscalYear.id,
                 admin_id = INFO.admin_id,
                 created_at = DateTime.Now,
@@ -236,9 +248,10 @@ namespace RestaurantSystem.AddStock
             {
 
                 var quantity = Convert.ToDecimal(item.SubItems[3].Text);
-                var rate = Convert.ToInt32(item.SubItems[4].Text);
-                var total = Convert.ToInt32(item.SubItems[5].Text);
-                var item_id = Convert.ToInt32(item.SubItems[6].Text);
+                var rate = Convert.ToInt32(item.SubItems[5].Text);
+                var total = Convert.ToInt32(item.SubItems[6].Text);
+                var unit = item.SubItems[4].Text;
+                var item_id = Convert.ToInt32(item.SubItems[7].Text);
                 var purchase_item = db.purchaseitems.Find(item_id);
                 purchase_item.qty += quantity;
                 db.Entry(purchase_item).State = System.Data.Entity.EntityState.Modified;
@@ -247,6 +260,7 @@ namespace RestaurantSystem.AddStock
                     purchaseitems_id = item_id,
                     price = rate,
                     qty = quantity,
+                    unit=unit,
                     purchaseinvoice_id = purchase_id,
                     admin_id = INFO.admin_id,
                     updated_at = DateTime.Now,
@@ -341,6 +355,11 @@ namespace RestaurantSystem.AddStock
             {
                 betterListView_Exp.Items.Remove(sel);
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -35,6 +35,11 @@ namespace RestaurantSystem.PurchaseItems
                 CustomControls.Alert.show("", "please Select Category of Item", 1500);
                 return;
             }
+            if (betterTextBox_unit.Text.Trim() == "")
+            {
+                CustomControls.Alert.show("", "Please Enter unit", 1500);
+                return;
+            }
             using (var db = Model.DatabaseConfigure.getConfigure()) ;
             var newpitem = new Model.purchaseitem()
             {
@@ -42,6 +47,7 @@ namespace RestaurantSystem.PurchaseItems
                 price = betterTextBox_name.decVal,
                 purchase_Cat_id = ((comboBox_cate.SelectedItem as Model.purchasecategory).id),
                 qty = betterTextBox_currentstock.decVal,
+                unit=betterTextBox_unit.Text,
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now,
                 admin_id = INFO.admin_id,
@@ -50,6 +56,7 @@ namespace RestaurantSystem.PurchaseItems
             db.purchaseitems.Add(newpitem);
             db.SaveChanges();
             adddata?.Invoke(newpitem);
+            this.Close();
         }
     }
 }

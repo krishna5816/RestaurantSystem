@@ -30,11 +30,12 @@
         {
             this.materialButton_delete = new CustomControls.MaterialButton();
             this.materialButton_edit = new CustomControls.MaterialButton();
-            this.lbl_unit = new System.Windows.Forms.Label();
+            this.lbl_qty = new System.Windows.Forms.Label();
             this.lbl_category = new System.Windows.Forms.Label();
             this.lbl_price = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.materialButton_details = new CustomControls.MaterialButton();
+            this.lbl_unit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // materialButton_delete
@@ -51,7 +52,7 @@
             this.materialButton_delete.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_delete.hoverforefont = null;
             this.materialButton_delete.hoverimage = null;
-            this.materialButton_delete.Location = new System.Drawing.Point(697, 5);
+            this.materialButton_delete.Location = new System.Drawing.Point(743, 5);
             this.materialButton_delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.materialButton_delete.Name = "materialButton_delete";
             this.materialButton_delete.role = 0;
@@ -79,7 +80,7 @@
             this.materialButton_edit.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_edit.hoverforefont = null;
             this.materialButton_edit.hoverimage = null;
-            this.materialButton_edit.Location = new System.Drawing.Point(626, 5);
+            this.materialButton_edit.Location = new System.Drawing.Point(672, 5);
             this.materialButton_edit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.materialButton_edit.Name = "materialButton_edit";
             this.materialButton_edit.role = 0;
@@ -93,19 +94,19 @@
             this.materialButton_edit.UseVisualStyleBackColor = false;
             this.materialButton_edit.Click += new System.EventHandler(this.materialButton_edit_Click);
             // 
-            // lbl_unit
+            // lbl_qty
             // 
-            this.lbl_unit.AutoSize = true;
-            this.lbl_unit.Location = new System.Drawing.Point(327, 5);
-            this.lbl_unit.Name = "lbl_unit";
-            this.lbl_unit.Size = new System.Drawing.Size(79, 19);
-            this.lbl_unit.TabIndex = 9;
-            this.lbl_unit.Text = "aaaaaaaaaa";
+            this.lbl_qty.AutoSize = true;
+            this.lbl_qty.Location = new System.Drawing.Point(321, 5);
+            this.lbl_qty.Name = "lbl_qty";
+            this.lbl_qty.Size = new System.Drawing.Size(79, 19);
+            this.lbl_qty.TabIndex = 9;
+            this.lbl_qty.Text = "aaaaaaaaaa";
             // 
             // lbl_category
             // 
             this.lbl_category.AutoSize = true;
-            this.lbl_category.Location = new System.Drawing.Point(412, 5);
+            this.lbl_category.Location = new System.Drawing.Point(497, 5);
             this.lbl_category.Name = "lbl_category";
             this.lbl_category.Size = new System.Drawing.Size(107, 19);
             this.lbl_category.TabIndex = 8;
@@ -143,7 +144,7 @@
             this.materialButton_details.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_details.hoverforefont = null;
             this.materialButton_details.hoverimage = null;
-            this.materialButton_details.Location = new System.Drawing.Point(786, 5);
+            this.materialButton_details.Location = new System.Drawing.Point(832, 5);
             this.materialButton_details.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.materialButton_details.Name = "materialButton_details";
             this.materialButton_details.role = 0;
@@ -157,16 +158,26 @@
             this.materialButton_details.UseVisualStyleBackColor = false;
             this.materialButton_details.Click += new System.EventHandler(this.materialButton_details_Click);
             // 
+            // lbl_unit
+            // 
+            this.lbl_unit.AutoSize = true;
+            this.lbl_unit.Location = new System.Drawing.Point(406, 5);
+            this.lbl_unit.Name = "lbl_unit";
+            this.lbl_unit.Size = new System.Drawing.Size(79, 19);
+            this.lbl_unit.TabIndex = 13;
+            this.lbl_unit.Text = "aaaaaaaaaa";
+            // 
             // Viwer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.lbl_unit);
             this.Controls.Add(this.materialButton_details);
             this.Controls.Add(this.materialButton_delete);
             this.Controls.Add(this.materialButton_edit);
-            this.Controls.Add(this.lbl_unit);
+            this.Controls.Add(this.lbl_qty);
             this.Controls.Add(this.lbl_category);
             this.Controls.Add(this.lbl_price);
             this.Controls.Add(this.lbl_name);
@@ -184,10 +195,11 @@
 
         private CustomControls.MaterialButton materialButton_delete;
         private CustomControls.MaterialButton materialButton_edit;
-        private System.Windows.Forms.Label lbl_unit;
+        private System.Windows.Forms.Label lbl_qty;
         private System.Windows.Forms.Label lbl_category;
         private System.Windows.Forms.Label lbl_price;
         private System.Windows.Forms.Label lbl_name;
         private CustomControls.MaterialButton materialButton_details;
+        private System.Windows.Forms.Label lbl_unit;
     }
 }

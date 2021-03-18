@@ -32,6 +32,7 @@ namespace RestaurantSystem.Items
             var viwer = new Items.Viwer();
             viwer.id = menuitem.id;
             viwer.name = menuitem.name;
+            viwer.qty = menuitem.qty.Value;
             viwer.unit = menuitem.unit;
             viwer.price =(decimal)menuitem.price;
             viwer.category_id = menuitem.category == null ? "" :menuitem.category.name;
