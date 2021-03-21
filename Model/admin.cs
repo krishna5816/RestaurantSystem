@@ -45,6 +45,8 @@ namespace RestaurantSystem.Model
             this.purchaseitems = new HashSet<purchaseitem>();
             this.purchseexpenses = new HashSet<purchseexpens>();
             this.purchaseinvoiceitems = new HashSet<purchaseinvoiceitem>();
+            this.wastagefoods = new HashSet<wastagefood>();
+            this.wastagepurchaseitems = new HashSet<wastagepurchaseitem>();
         }
     
         public int id { get; set; }
@@ -112,5 +114,9 @@ namespace RestaurantSystem.Model
         public virtual ICollection<purchseexpens> purchseexpenses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<purchaseinvoiceitem> purchaseinvoiceitems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<wastagefood> wastagefoods { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<wastagepurchaseitem> wastagepurchaseitems { get; set; }
     }
 }

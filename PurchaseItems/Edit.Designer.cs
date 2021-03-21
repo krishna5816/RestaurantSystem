@@ -35,6 +35,8 @@
             this.comboBox_cate = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.betterTextBox_name = new CustomControls.BetterTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.betterTextBox_unit = new CustomControls.BetterTextBox();
             this.SuspendLayout();
             // 
             // label_title
@@ -45,6 +47,10 @@
             // panel_Divider
             // 
             this.panel_Divider.Size = new System.Drawing.Size(437, 2);
+            // 
+            // materialButton_close
+            // 
+            this.materialButton_close.FlatAppearance.BorderSize = 0;
             // 
             // materialButton_save
             // 
@@ -84,6 +90,7 @@
             // 
             // betterTextBox_currentstock
             // 
+            this.betterTextBox_currentstock.append = "";
             this.betterTextBox_currentstock.decVal = new decimal(new int[] {
             0,
             0,
@@ -92,9 +99,11 @@
             this.betterTextBox_currentstock.intVal = 0;
             this.betterTextBox_currentstock.Location = new System.Drawing.Point(12, 177);
             this.betterTextBox_currentstock.Name = "betterTextBox_currentstock";
-            this.betterTextBox_currentstock.Size = new System.Drawing.Size(412, 25);
+            this.betterTextBox_currentstock.prepend = "";
+            this.betterTextBox_currentstock.Rules = null;
+            this.betterTextBox_currentstock.Size = new System.Drawing.Size(211, 25);
             this.betterTextBox_currentstock.TabIndex = 14;
-            this.betterTextBox_currentstock.textboxType = CustomControls.TextboxType.Text;
+            this.betterTextBox_currentstock.textboxType = CustomControls.TextboxType.Decimal;
             // 
             // label2
             // 
@@ -124,6 +133,7 @@
             // 
             // betterTextBox_name
             // 
+            this.betterTextBox_name.append = "";
             this.betterTextBox_name.decVal = new decimal(new int[] {
             0,
             0,
@@ -132,14 +142,44 @@
             this.betterTextBox_name.intVal = 0;
             this.betterTextBox_name.Location = new System.Drawing.Point(12, 78);
             this.betterTextBox_name.Name = "betterTextBox_name";
+            this.betterTextBox_name.prepend = "";
+            this.betterTextBox_name.Rules = null;
             this.betterTextBox_name.Size = new System.Drawing.Size(412, 25);
             this.betterTextBox_name.TabIndex = 10;
             this.betterTextBox_name.textboxType = CustomControls.TextboxType.Text;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(237, 155);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 19);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "UNIT";
+            // 
+            // betterTextBox_unit
+            // 
+            this.betterTextBox_unit.append = "";
+            this.betterTextBox_unit.decVal = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.betterTextBox_unit.intVal = 0;
+            this.betterTextBox_unit.Location = new System.Drawing.Point(241, 177);
+            this.betterTextBox_unit.Name = "betterTextBox_unit";
+            this.betterTextBox_unit.prepend = "";
+            this.betterTextBox_unit.Rules = null;
+            this.betterTextBox_unit.Size = new System.Drawing.Size(183, 25);
+            this.betterTextBox_unit.TabIndex = 17;
+            this.betterTextBox_unit.textboxType = CustomControls.TextboxType.Text;
             // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.ClientSize = new System.Drawing.Size(438, 252);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.betterTextBox_unit);
             this.Controls.Add(this.materialButton_save);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.betterTextBox_currentstock);
@@ -148,6 +188,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.betterTextBox_name);
             this.Name = "Edit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Controls.SetChildIndex(this.materialButton_close, 0);
             this.Controls.SetChildIndex(this.label_title, 0);
             this.Controls.SetChildIndex(this.panel_Divider, 0);
             this.Controls.SetChildIndex(this.betterTextBox_name, 0);
@@ -157,6 +199,8 @@
             this.Controls.SetChildIndex(this.betterTextBox_currentstock, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.materialButton_save, 0);
+            this.Controls.SetChildIndex(this.betterTextBox_unit, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +215,7 @@
         private System.Windows.Forms.ComboBox comboBox_cate;
         private System.Windows.Forms.Label label1;
         private CustomControls.BetterTextBox betterTextBox_name;
+        private System.Windows.Forms.Label label4;
+        private CustomControls.BetterTextBox betterTextBox_unit;
     }
 }

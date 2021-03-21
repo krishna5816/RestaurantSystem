@@ -74,6 +74,8 @@ namespace RestaurantSystem.Model
         public virtual DbSet<shadow_purchaseitems> shadow_purchaseitems { get; set; }
         public virtual DbSet<shadow_systemsettings> shadow_systemsettings { get; set; }
         public virtual DbSet<systemsetting> systemsettings { get; set; }
+        public virtual DbSet<wastagefood> wastagefoods { get; set; }
+        public virtual DbSet<wastagepurchaseitem> wastagepurchaseitems { get; set; }
         public virtual DbSet<shadow_admins> shadow_admins { get; set; }
         public virtual DbSet<shadow_categories> shadow_categories { get; set; }
         public virtual DbSet<shadow_customerpayments> shadow_customerpayments { get; set; }

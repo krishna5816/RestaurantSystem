@@ -68,27 +68,36 @@ namespace RestaurantSystem.PurchaseItems
                 lbl_category.Text = value;
             }
         }
-
+        public void add(Model.purchaseitem purchaseitem)
+        {
+            var viwer = new PurchaseItems.Viwer();
+            viwer.id = purchaseitem.id;
+            viwer.name = purchaseitem.name;
+            viwer.unit = purchaseitem.unit;
+            viwer.qty = purchaseitem.qty;
+            viwer.category_id = purchaseitem.purchasecategory == null ? "" : purchaseitem.purchasecategory.name;
+            
+        }
         private void materialButton_edit_Click(object sender, EventArgs e)
         {
 
+
             var edititem = new PurchaseItems.Edit(id);
+            edititem.loaddata(this.id);
             edititem.editdata += Edititem_editdata;
             var trance = new CustomControls.Modal(edititem);
             trance.ShowDialog();
 
         }
 
-        private void Edititem_editdata(purchaseitem purchaseitem)
+        private void Edititem_editdata(Model.purchaseitem purchaseitem)
         {
-            var viwer = new PurchaseItems.Viwer();
-            viwer.name = purchaseitem.name;
-            viwer.unit = purchaseitem.unit;
-            viwer.qty = purchaseitem.qty;
-            viwer.category_id = ((purchaseitem.purchasecategory as Model.purchasecategory).name);
+
+            add(purchaseitem);
         }
 
-        
+       
+
         private void materialButton_delete_Click(object sender, EventArgs e)
         {
             try
@@ -117,5 +126,5 @@ namespace RestaurantSystem.PurchaseItems
         }
     }
 }
-    
+
 

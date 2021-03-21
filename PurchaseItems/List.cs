@@ -25,6 +25,7 @@ namespace RestaurantSystem.PurchaseItems
         public void add(Model.purchaseitem purchaseitem)
         {
             var viwer = new PurchaseItems.Viwer();
+            viwer.id = purchaseitem.id;
             viwer.name = purchaseitem.name;
             viwer.unit = purchaseitem.unit;
             viwer.qty = purchaseitem.qty;

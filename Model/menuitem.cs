@@ -22,6 +22,7 @@ namespace RestaurantSystem.Model
             this.manufacturingestimations = new HashSet<manufacturingestimation>();
             this.manufacturingitems = new HashSet<manufacturingitem>();
             this.order_items = new HashSet<order_items>();
+            this.wastagefoods = new HashSet<wastagefood>();
         }
     
         public int id { get; set; }
@@ -49,5 +50,7 @@ namespace RestaurantSystem.Model
         public virtual ICollection<manufacturingitem> manufacturingitems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order_items> order_items { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<wastagefood> wastagefoods { get; set; }
     }
 }

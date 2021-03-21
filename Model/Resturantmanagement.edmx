@@ -1133,6 +1133,36 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="dateopened" Type="bit" Nullable="false" />
           <Property Name="currentdate" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="wastagefoods">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menuitem_id" Type="int" />
+          <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="nvarchar(max)" />
+          <Property Name="upadated_at" Type="datetime" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="sync_id" Type="int" />
+          <Property Name="admins_id" Type="int" />
+          <Property Name="fiscalyear_id" Type="int" />
+          <Property Name="date" Type="int" />
+        </EntityType>
+        <EntityType Name="wastagepurchaseitems">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="purchaseinvoicesitem_id" Type="int" />
+          <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="nvarchar(max)" />
+          <Property Name="upadated_at" Type="datetime" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="sync_id" Type="int" />
+          <Property Name="admins_id" Type="int" />
+          <Property Name="fiscalyear_id" Type="int" />
+          <Property Name="date" Type="int" />
+        </EntityType>
         <Association Name="FK__accounts__admin___37A5467C">
           <End Role="admins" Type="Self.admins" Multiplicity="0..1" />
           <End Role="accounts" Type="Self.accounts" Multiplicity="*" />
@@ -1877,6 +1907,78 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__wastagefo__admin__56E8E7AB">
+          <End Role="admins" Type="Self.admins" Multiplicity="0..1" />
+          <End Role="wastagefoods" Type="Self.wastagefoods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="admins">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagefoods">
+              <PropertyRef Name="admins_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__wastagefo__fisca__57DD0BE4">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="wastagefoods" Type="Self.wastagefoods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagefoods">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__wastagefo__menui__55009F39">
+          <End Role="menuitems" Type="Self.menuitems" Multiplicity="0..1" />
+          <End Role="wastagefoods" Type="Self.wastagefoods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="menuitems">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagefoods">
+              <PropertyRef Name="menuitem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__wastagepu__admin__5CA1C101">
+          <End Role="admins" Type="Self.admins" Multiplicity="0..1" />
+          <End Role="wastagepurchaseitems" Type="Self.wastagepurchaseitems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="admins">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagepurchaseitems">
+              <PropertyRef Name="admins_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__wastagepu__fisca__5D95E53A">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="wastagepurchaseitems" Type="Self.wastagepurchaseitems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagepurchaseitems">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__wastagepu__purch__5BAD9CC8">
+          <End Role="purchasebillitems" Type="Self.purchasebillitems" Multiplicity="0..1" />
+          <End Role="wastagepurchaseitems" Type="Self.wastagepurchaseitems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchasebillitems">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagepurchaseitems">
+              <PropertyRef Name="purchaseinvoicesitem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ResturantManagementModelStoreContainer">
           <EntitySet Name="accounts" EntityType="Self.accounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="admins" EntityType="Self.admins" Schema="dbo" store:Type="Tables" />
@@ -1927,6 +2029,8 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySet Name="shadow_purchaseitems" EntityType="Self.shadow_purchaseitems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="shadow_systemsettings" EntityType="Self.shadow_systemsettings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="systemsettings" EntityType="Self.systemsettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wastagefoods" EntityType="Self.wastagefoods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wastagepurchaseitems" EntityType="Self.wastagepurchaseitems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="shadow_admins" EntityType="Self.shadow_admins" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [shadow_admins].[id] AS [id], 
@@ -2264,6 +2368,30 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="fiscalyears" EntitySet="fiscalyears" />
             <End Role="systemsettings" EntitySet="systemsettings" />
           </AssociationSet>
+          <AssociationSet Name="FK__wastagefo__admin__56E8E7AB" Association="Self.FK__wastagefo__admin__56E8E7AB">
+            <End Role="admins" EntitySet="admins" />
+            <End Role="wastagefoods" EntitySet="wastagefoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__wastagefo__fisca__57DD0BE4" Association="Self.FK__wastagefo__fisca__57DD0BE4">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
+            <End Role="wastagefoods" EntitySet="wastagefoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__wastagefo__menui__55009F39" Association="Self.FK__wastagefo__menui__55009F39">
+            <End Role="menuitems" EntitySet="menuitems" />
+            <End Role="wastagefoods" EntitySet="wastagefoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__wastagepu__admin__5CA1C101" Association="Self.FK__wastagepu__admin__5CA1C101">
+            <End Role="admins" EntitySet="admins" />
+            <End Role="wastagepurchaseitems" EntitySet="wastagepurchaseitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__wastagepu__fisca__5D95E53A" Association="Self.FK__wastagepu__fisca__5D95E53A">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
+            <End Role="wastagepurchaseitems" EntitySet="wastagepurchaseitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__wastagepu__purch__5BAD9CC8" Association="Self.FK__wastagepu__purch__5BAD9CC8">
+            <End Role="purchasebillitems" EntitySet="purchasebillitems" />
+            <End Role="wastagepurchaseitems" EntitySet="wastagepurchaseitems" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -2319,6 +2447,8 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySet Name="shadow_purchaseitems" EntityType="ResturantManagementModel.shadow_purchaseitems" />
           <EntitySet Name="shadow_systemsettings" EntityType="ResturantManagementModel.shadow_systemsettings" />
           <EntitySet Name="systemsettings" EntityType="ResturantManagementModel.systemsetting" />
+          <EntitySet Name="wastagefoods" EntityType="ResturantManagementModel.wastagefood" />
+          <EntitySet Name="wastagepurchaseitems" EntityType="ResturantManagementModel.wastagepurchaseitem" />
           <EntitySet Name="shadow_admins" EntityType="ResturantManagementModel.shadow_admins" />
           <EntitySet Name="shadow_categories" EntityType="ResturantManagementModel.shadow_categories" />
           <EntitySet Name="shadow_customerpayments" EntityType="ResturantManagementModel.shadow_customerpayments" />
@@ -2444,6 +2574,14 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="admin" EntitySet="admins" />
             <End Role="purchaseinvoiceitem" EntitySet="purchaseinvoiceitems" />
           </AssociationSet>
+          <AssociationSet Name="FK__wastagefo__admin__56E8E7AB" Association="ResturantManagementModel.FK__wastagefo__admin__56E8E7AB">
+            <End Role="admin" EntitySet="admins" />
+            <End Role="wastagefood" EntitySet="wastagefoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__wastagepu__admin__5CA1C101" Association="ResturantManagementModel.FK__wastagepu__admin__5CA1C101">
+            <End Role="admin" EntitySet="admins" />
+            <End Role="wastagepurchaseitem" EntitySet="wastagepurchaseitems" />
+          </AssociationSet>
           <AssociationSet Name="FK__billitems__bill___2EDAF651" Association="ResturantManagementModel.FK__billitems__bill___2EDAF651">
             <End Role="bill" EntitySet="bills" />
             <End Role="billitem" EntitySet="billitems" />
@@ -2492,6 +2630,14 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="fiscalyear" EntitySet="fiscalyears" />
             <End Role="systemsetting" EntitySet="systemsettings" />
           </AssociationSet>
+          <AssociationSet Name="FK__wastagefo__fisca__57DD0BE4" Association="ResturantManagementModel.FK__wastagefo__fisca__57DD0BE4">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="wastagefood" EntitySet="wastagefoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__wastagepu__fisca__5D95E53A" Association="ResturantManagementModel.FK__wastagepu__fisca__5D95E53A">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="wastagepurchaseitem" EntitySet="wastagepurchaseitems" />
+          </AssociationSet>
           <AssociationSet Name="FK__issueitem__purch__1B9317B3" Association="ResturantManagementModel.FK__issueitem__purch__1B9317B3">
             <End Role="purchaseitem" EntitySet="purchaseitems" />
             <End Role="issueitem" EntitySet="issueitems" />
@@ -2528,6 +2674,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="menuitem" EntitySet="menuitems" />
             <End Role="order_items" EntitySet="order_items" />
           </AssociationSet>
+          <AssociationSet Name="FK__wastagefo__menui__55009F39" Association="ResturantManagementModel.FK__wastagefo__menui__55009F39">
+            <End Role="menuitem" EntitySet="menuitems" />
+            <End Role="wastagefood" EntitySet="wastagefoods" />
+          </AssociationSet>
           <AssociationSet Name="FK__order_ite__order__11D4A34F" Association="ResturantManagementModel.FK__order_ite__order__11D4A34F">
             <End Role="order_tables" EntitySet="order_tables" />
             <End Role="order_items" EntitySet="order_items" />
@@ -2555,6 +2705,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <AssociationSet Name="FK__purchaseb__purch__10216507" Association="ResturantManagementModel.FK__purchaseb__purch__10216507">
             <End Role="purchaseitem" EntitySet="purchaseitems" />
             <End Role="purchasebillitem" EntitySet="purchasebillitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__wastagepu__purch__5BAD9CC8" Association="ResturantManagementModel.FK__wastagepu__purch__5BAD9CC8">
+            <End Role="purchasebillitem" EntitySet="purchasebillitems" />
+            <End Role="wastagepurchaseitem" EntitySet="wastagepurchaseitems" />
           </AssociationSet>
           <AssociationSet Name="FK__purchasei__purch__43D61337" Association="ResturantManagementModel.FK__purchasei__purch__43D61337">
             <End Role="purchasecategory" EntitySet="purchasecategories" />
@@ -2635,6 +2789,8 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <NavigationProperty Name="purchaseitems" Relationship="ResturantManagementModel.FK__purchasei__admin__44CA3770" FromRole="admin" ToRole="purchaseitem" />
           <NavigationProperty Name="purchseexpenses" Relationship="ResturantManagementModel.FK__purchseex__admin__1AD3FDA4" FromRole="admin" ToRole="purchseexpens" />
           <NavigationProperty Name="purchaseinvoiceitems" Relationship="ResturantManagementModel.FK__stockitem__admin__1FCDBCEB" FromRole="admin" ToRole="purchaseinvoiceitem" />
+          <NavigationProperty Name="wastagefoods" Relationship="ResturantManagementModel.FK__wastagefo__admin__56E8E7AB" FromRole="admin" ToRole="wastagefood" />
+          <NavigationProperty Name="wastagepurchaseitems" Relationship="ResturantManagementModel.FK__wastagepu__admin__5CA1C101" FromRole="admin" ToRole="wastagepurchaseitem" />
         </EntityType>
         <EntityType Name="billitem">
           <Key>
@@ -2844,6 +3000,8 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <NavigationProperty Name="bills" Relationship="ResturantManagementModel.FK__bills__fiscalyea__2BFE89A6" FromRole="fiscalyear" ToRole="bill" />
           <NavigationProperty Name="purchaseinvoices" Relationship="ResturantManagementModel.FK__purchasei__fisca__160F4887" FromRole="fiscalyear" ToRole="purchaseinvoice" />
           <NavigationProperty Name="systemsettings" Relationship="ResturantManagementModel.FK__systemset__fisca__534D60F1" FromRole="fiscalyear" ToRole="systemsetting" />
+          <NavigationProperty Name="wastagefoods" Relationship="ResturantManagementModel.FK__wastagefo__fisca__57DD0BE4" FromRole="fiscalyear" ToRole="wastagefood" />
+          <NavigationProperty Name="wastagepurchaseitems" Relationship="ResturantManagementModel.FK__wastagepu__fisca__5D95E53A" FromRole="fiscalyear" ToRole="wastagepurchaseitem" />
         </EntityType>
         <EntityType Name="issueitem">
           <Key>
@@ -2954,6 +3112,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <NavigationProperty Name="manufacturingestimations" Relationship="ResturantManagementModel.FK__manufactu__menui__6ABAD62E" FromRole="menuitem" ToRole="manufacturingestimation" />
           <NavigationProperty Name="manufacturingitems" Relationship="ResturantManagementModel.FK__manufactu__menui__24927208" FromRole="menuitem" ToRole="manufacturingitem" />
           <NavigationProperty Name="order_items" Relationship="ResturantManagementModel.FK__order_ite__menui__12C8C788" FromRole="menuitem" ToRole="order_items" />
+          <NavigationProperty Name="wastagefoods" Relationship="ResturantManagementModel.FK__wastagefo__menui__55009F39" FromRole="menuitem" ToRole="wastagefood" />
         </EntityType>
         <EntityType Name="order_items">
           <Key>
@@ -3068,6 +3227,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__purchaseb__admin__11158940" FromRole="purchasebillitem" ToRole="admin" />
           <NavigationProperty Name="purchaseitem" Relationship="ResturantManagementModel.FK__purchaseb__purch__10216507" FromRole="purchasebillitem" ToRole="purchaseitem" />
+          <NavigationProperty Name="wastagepurchaseitems" Relationship="ResturantManagementModel.FK__wastagepu__purch__5BAD9CC8" FromRole="purchasebillitem" ToRole="wastagepurchaseitem" />
         </EntityType>
         <EntityType Name="purchasecategory">
           <Key>
@@ -3686,6 +3846,42 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="currentdate" Type="Int32" Nullable="false" />
           <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__systemset__fisca__534D60F1" FromRole="systemsetting" ToRole="fiscalyear" />
         </EntityType>
+        <EntityType Name="wastagefood">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menuitem_id" Type="Int32" />
+          <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="upadated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sync_id" Type="Int32" />
+          <Property Name="admins_id" Type="Int32" />
+          <Property Name="fiscalyear_id" Type="Int32" />
+          <Property Name="date" Type="Int32" />
+          <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__wastagefo__admin__56E8E7AB" FromRole="wastagefood" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__wastagefo__fisca__57DD0BE4" FromRole="wastagefood" ToRole="fiscalyear" />
+          <NavigationProperty Name="menuitem" Relationship="ResturantManagementModel.FK__wastagefo__menui__55009F39" FromRole="wastagefood" ToRole="menuitem" />
+        </EntityType>
+        <EntityType Name="wastagepurchaseitem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="purchaseinvoicesitem_id" Type="Int32" />
+          <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="upadated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sync_id" Type="Int32" />
+          <Property Name="admins_id" Type="Int32" />
+          <Property Name="fiscalyear_id" Type="Int32" />
+          <Property Name="date" Type="Int32" />
+          <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__wastagepu__admin__5CA1C101" FromRole="wastagepurchaseitem" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__wastagepu__fisca__5D95E53A" FromRole="wastagepurchaseitem" ToRole="fiscalyear" />
+          <NavigationProperty Name="purchasebillitem" Relationship="ResturantManagementModel.FK__wastagepu__purch__5BAD9CC8" FromRole="wastagepurchaseitem" ToRole="purchasebillitem" />
+        </EntityType>
         <EntityType Name="shadow_admins">
           <Key>
             <PropertyRef Name="id" />
@@ -4175,6 +4371,30 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__wastagefo__admin__56E8E7AB">
+          <End Type="ResturantManagementModel.admin" Role="admin" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.wastagefood" Role="wastagefood" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="admin">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagefood">
+              <PropertyRef Name="admins_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__wastagepu__admin__5CA1C101">
+          <End Type="ResturantManagementModel.admin" Role="admin" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.wastagepurchaseitem" Role="wastagepurchaseitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="admin">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagepurchaseitem">
+              <PropertyRef Name="admins_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__billitems__bill___2EDAF651">
           <End Type="ResturantManagementModel.bill" Role="bill" Multiplicity="0..1" />
           <End Type="ResturantManagementModel.billitem" Role="billitem" Multiplicity="*" />
@@ -4319,6 +4539,30 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__wastagefo__fisca__57DD0BE4">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.wastagefood" Role="wastagefood" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagefood">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__wastagepu__fisca__5D95E53A">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.wastagepurchaseitem" Role="wastagepurchaseitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagepurchaseitem">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__issueitem__purch__1B9317B3">
           <End Type="ResturantManagementModel.purchaseitem" Role="purchaseitem" Multiplicity="0..1" />
           <End Type="ResturantManagementModel.issueitem" Role="issueitem" Multiplicity="*" />
@@ -4427,6 +4671,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__wastagefo__menui__55009F39">
+          <End Type="ResturantManagementModel.menuitem" Role="menuitem" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.wastagefood" Role="wastagefood" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="menuitem">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagefood">
+              <PropertyRef Name="menuitem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__order_ite__order__11D4A34F">
           <End Type="ResturantManagementModel.order_tables" Role="order_tables" Multiplicity="1" />
           <End Type="ResturantManagementModel.order_items" Role="order_items" Multiplicity="*" />
@@ -4508,6 +4764,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Principal>
             <Dependent Role="purchasebillitem">
               <PropertyRef Name="purchaseitem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__wastagepu__purch__5BAD9CC8">
+          <End Type="ResturantManagementModel.purchasebillitem" Role="purchasebillitem" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.wastagepurchaseitem" Role="wastagepurchaseitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchasebillitem">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="wastagepurchaseitem">
+              <PropertyRef Name="purchaseinvoicesitem_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5479,6 +5747,38 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
                 <ScalarProperty Name="dateopened" ColumnName="dateopened" />
                 <ScalarProperty Name="currentmode" ColumnName="currentmode" />
                 <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wastagefoods">
+            <EntityTypeMapping TypeName="ResturantManagementModel.wastagefood">
+              <MappingFragment StoreEntitySet="wastagefoods">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
+                <ScalarProperty Name="admins_id" ColumnName="admins_id" />
+                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="upadated_at" ColumnName="upadated_at" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="menuitem_id" ColumnName="menuitem_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wastagepurchaseitems">
+            <EntityTypeMapping TypeName="ResturantManagementModel.wastagepurchaseitem">
+              <MappingFragment StoreEntitySet="wastagepurchaseitems">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
+                <ScalarProperty Name="admins_id" ColumnName="admins_id" />
+                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="upadated_at" ColumnName="upadated_at" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="purchaseinvoicesitem_id" ColumnName="purchaseinvoicesitem_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

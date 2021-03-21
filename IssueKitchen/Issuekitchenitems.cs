@@ -47,7 +47,7 @@ namespace RestaurantSystem.IssueKitchen
             var item = (purchaseitem)comboBox_itemlist.SelectedItem;
             var load = new ListViewItem(new string[]
             {
-               sn.ToString(),item.purchasecategory.ToString(), item.name,betterTextBox_quantity.decVal.ToString(),item.id.ToString()
+               sn.ToString(),item.purchasecategory.ToString(), item.name.ToString(),betterTextBox_quantity.decVal.ToString(),betterTextBox_unit.Text.ToString(),item.id.ToString()
             });
             betterListView1.Items.Add(load);
             betterTextBox_quantity.Clear();

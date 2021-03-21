@@ -45,6 +45,8 @@
             this.materialButton_issuestock = new CustomControls.MaterialButton();
             this.materialButton_refresh = new CustomControls.MaterialButton();
             this.materialButton_addstock = new CustomControls.MaterialButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,9 +175,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
             this.label1.Location = new System.Drawing.Point(324, 601);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 19);
+            this.label1.Size = new System.Drawing.Size(33, 19);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Unit";
+            this.label1.Text = "Qty";
             // 
             // label2
             // 
@@ -185,9 +187,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
             this.label2.Location = new System.Drawing.Point(408, 601);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 19);
+            this.label2.Size = new System.Drawing.Size(36, 19);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Categories";
+            this.label2.Text = "Unit";
             // 
             // label4
             // 
@@ -208,9 +210,9 @@
             this.lbl_unit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
             this.lbl_unit.Location = new System.Drawing.Point(324, 89);
             this.lbl_unit.Name = "lbl_unit";
-            this.lbl_unit.Size = new System.Drawing.Size(36, 19);
+            this.lbl_unit.Size = new System.Drawing.Size(33, 19);
             this.lbl_unit.TabIndex = 23;
-            this.lbl_unit.Text = "Unit";
+            this.lbl_unit.Text = "Qty";
             // 
             // lbl_category
             // 
@@ -219,9 +221,9 @@
             this.lbl_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
             this.lbl_category.Location = new System.Drawing.Point(408, 89);
             this.lbl_category.Name = "lbl_category";
-            this.lbl_category.Size = new System.Drawing.Size(81, 19);
+            this.lbl_category.Size = new System.Drawing.Size(36, 19);
             this.lbl_category.TabIndex = 22;
-            this.lbl_category.Text = "Categories";
+            this.lbl_category.Text = "Unit";
             // 
             // lbl_name
             // 
@@ -340,12 +342,37 @@
             this.materialButton_addstock.UseVisualStyleBackColor = false;
             this.materialButton_addstock.Click += new System.EventHandler(this.materialButton_addstock_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.label3.Location = new System.Drawing.Point(523, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 19);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Categories";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.label5.Location = new System.Drawing.Point(523, 601);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 19);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Categories";
+            // 
             // List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1069, 621);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.materialButton_add);
             this.Controls.Add(this.materialButton_addstock);
             this.Controls.Add(this.materialButton_refresh);
@@ -391,5 +418,7 @@
         private CustomControls.MaterialButton materialButton_refresh;
         private CustomControls.MaterialButton materialButton_addstock;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }

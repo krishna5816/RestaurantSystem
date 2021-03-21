@@ -49,6 +49,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox_dashboardusermenu = new System.Windows.Forms.PictureBox();
             this.label_username = new System.Windows.Forms.Label();
+            this.btn_wastagemanu = new CustomControls.MaterialButton();
             this.panel1.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -75,6 +76,7 @@
             this.gradientPanel1.CausesValidation = false;
             this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(230)))));
             this.gradientPanel1.ColorTop = System.Drawing.Color.White;
+            this.gradientPanel1.Controls.Add(this.btn_wastagemanu);
             this.gradientPanel1.Controls.Add(this.materialButton_reportlist);
             this.gradientPanel1.Controls.Add(this.materialButton_customers);
             this.gradientPanel1.Controls.Add(this.materialButton_partiesmanage);
@@ -495,6 +497,41 @@
             this.label_username.TabIndex = 0;
             this.label_username.Text = "label1";
             // 
+            // btn_wastagemanu
+            // 
+            this.btn_wastagemanu.BackColor = System.Drawing.Color.Transparent;
+            this.btn_wastagemanu.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.btn_wastagemanu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_wastagemanu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_wastagemanu.FlatAppearance.BorderSize = 0;
+            this.btn_wastagemanu.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_wastagemanu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_wastagemanu.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_wastagemanu.fontIncrement = 1.5F;
+            this.btn_wastagemanu.FontStyle = null;
+            this.btn_wastagemanu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.btn_wastagemanu.hoverforecolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(126)))), ((int)(((byte)(196)))));
+            this.btn_wastagemanu.hoverforefont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_wastagemanu.hoverimage = null;
+            this.btn_wastagemanu.Image = global::RestaurantSystem.Properties.Resources.reports_20x20;
+            this.btn_wastagemanu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_wastagemanu.Location = new System.Drawing.Point(0, 342);
+            this.btn_wastagemanu.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_wastagemanu.Name = "btn_wastagemanu";
+            this.btn_wastagemanu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_wastagemanu.role = 0;
+            this.btn_wastagemanu.Size = new System.Drawing.Size(245, 28);
+            this.btn_wastagemanu.TabIndex = 19;
+            this.btn_wastagemanu.tempforecolor = System.Drawing.Color.Empty;
+            this.btn_wastagemanu.tempforefont = null;
+            this.btn_wastagemanu.Text = "Wastage Items";
+            this.btn_wastagemanu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_wastagemanu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_wastagemanu.Totext = null;
+            this.btn_wastagemanu.userole = false;
+            this.btn_wastagemanu.UseVisualStyleBackColor = false;
+            this.btn_wastagemanu.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -544,5 +581,6 @@
         private System.Windows.Forms.PictureBox pictureBox_dashboardusermenu;
         private System.Windows.Forms.Label label_username;
         public CustomControls.GradientPanel panel_menu;
+        private CustomControls.MaterialButton btn_wastagemanu;
     }
 }

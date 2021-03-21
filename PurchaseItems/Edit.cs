@@ -10,9 +10,9 @@ namespace RestaurantSystem.PurchaseItems
 {
     public partial class Edit : CustomControls.MaterialForm
     {
+        Model.ResturantManagementEntities db = new Model.ResturantManagementEntities();
         public delegate void edithandler(Model.purchaseitem purchaseitem);
         public event edithandler  editdata;
-        Model.ResturantManagementEntities db = new Model.ResturantManagementEntities();
         public Edit(int id)
         {
             InitializeComponent();
@@ -20,11 +20,16 @@ namespace RestaurantSystem.PurchaseItems
             {
                 comboBox_cate.Items.Add(item);
             }
+        }
+        public void loaddata(int id)
+        {
             var load = db.purchaseitems.Find(id);
             betterTextBox_name.Text = load.name;
             betterTextBox_currentstock.decVal = load.qty;
+            betterTextBox_unit.Text = load.unit;
             comboBox_cate.Text = ((load.purchasecategory as Model.purchasecategory).name);
             this.id = id;
+
         }
         int id;
         private void materialButton_save_Click(object sender, EventArgs e)
@@ -32,6 +37,7 @@ namespace RestaurantSystem.PurchaseItems
             var edit = db.purchaseitems.Find(id);
             edit.name = betterTextBox_name.Text;
             edit.qty = betterTextBox_currentstock.decVal;
+            edit.unit = betterTextBox_unit.Text;
             edit.purchasecategory = ((comboBox_cate.SelectedItem as Model.purchasecategory));
             db.Entry(edit).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();

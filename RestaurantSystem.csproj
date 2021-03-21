@@ -488,6 +488,12 @@
     <Compile Include="Model\systemsetting.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\wastagefood.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\wastagepurchaseitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Partys\AddParty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -652,6 +658,27 @@
     <Compile Include="Users\Viwer.Designer.cs">
       <DependentUpon>Viwer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wastage\Menuitems\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wastage\Menuitems\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wastage\Menuitems\Viewer.cs" />
+    <Compile Include="Wastage\Purchaseitems\AddItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wastage\Purchaseitems\AddItems.Designer.cs">
+      <DependentUpon>AddItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wastage\Manu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wastage\Manu.Designer.cs">
+      <DependentUpon>Manu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wastage\Purchaseitems\ItemNameViwer.cs" />
+    <Compile Include="Wastage\Purchaseitems\Viewer.cs" />
     <EmbeddedResource Include="Account\DaytoDay\CurrentRequests.resx">
       <DependentUpon>CurrentRequests.cs</DependentUpon>
     </EmbeddedResource>
@@ -827,6 +854,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users\Viwer.resx">
       <DependentUpon>Viwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wastage\Menuitems\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wastage\Purchaseitems\AddItems.resx">
+      <DependentUpon>AddItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wastage\Manu.resx">
+      <DependentUpon>Manu.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Resturantmanagement.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

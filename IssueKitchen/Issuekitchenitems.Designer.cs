@@ -42,6 +42,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.betterTextBox_cuuremtstock = new CustomControls.BetterTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.betterTextBox_unit = new CustomControls.BetterTextBox();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -225,6 +225,11 @@
             this.columnHeader4.Text = "Quntity";
             this.columnHeader4.Width = 152;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Unit";
+            this.columnHeader5.Width = 105;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -350,16 +355,11 @@
             this.betterTextBox_unit.Location = new System.Drawing.Point(657, 71);
             this.betterTextBox_unit.Name = "betterTextBox_unit";
             this.betterTextBox_unit.prepend = "";
+            this.betterTextBox_unit.ReadOnly = true;
             this.betterTextBox_unit.Rules = null;
             this.betterTextBox_unit.Size = new System.Drawing.Size(120, 26);
             this.betterTextBox_unit.TabIndex = 24;
             this.betterTextBox_unit.textboxType = CustomControls.TextboxType.Text;
-            this.betterTextBox_unit.Visible = false;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Unit";
-            this.columnHeader5.Width = 105;
             // 
             // Issuekitchenitems
             // 

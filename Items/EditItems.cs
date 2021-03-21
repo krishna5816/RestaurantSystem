@@ -47,7 +47,8 @@ namespace RestaurantSystem.Items
             var item = db.menuitems.Find(id);
             betterTextBox1_name.Text = item.name;
             betterTextBox1_price.Text = item.price.ToString();
-            betterTextBox1_qty.Text = item.unit;
+            betterTextBox1_qty.decVal = item.qty.Value;
+            betterTextBox_unit.Text = item.unit;
             betterTextBox_Estimateby.Text = item.estimated_by;
             betterTextBox_qty.decVal = item.qty.Value;
             comboBox1_category.Text = ((item.category as Model.category).name);
@@ -73,7 +74,7 @@ namespace RestaurantSystem.Items
             editdata.unit = betterTextBox_units.Text;
             editdata.category_id = ((comboBox1_category.SelectedItem as Model.category).id);
             editdata.admin_id = INFO.admin_id;
-                editdata.qty = betterTextBox1_qty.decVal;
+            editdata.qty = betterTextBox1_qty.decVal;
             editdata.estimated_by = betterTextBox_Estimateby.Text;
             editdata.updated_at = DateTime.Now;
             db.Entry(editdata).State = System.Data.Entity.EntityState.Modified;
@@ -143,6 +144,7 @@ namespace RestaurantSystem.Items
                     purchaseitem_id = selitem.id,
                     menuitem_id = id,
                     quantity = betterTextBox_qty.decVal,
+                    unit=betterTextBox_unit.Text,
                     updated_at = DateTime.Now,
                     created_at = DateTime.Now
                 };
