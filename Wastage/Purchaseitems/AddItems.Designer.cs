@@ -48,7 +48,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.materialButton2 = new CustomControls.MaterialButton();
+            this.materialButton_save = new CustomControls.MaterialButton();
             this.panel_top.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -190,6 +190,7 @@
             this.materialButton1.Totext = null;
             this.materialButton1.userole = false;
             this.materialButton1.UseVisualStyleBackColor = false;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // label3
             // 
@@ -218,6 +219,7 @@
             this.comboBox_itemlist.Name = "comboBox_itemlist";
             this.comboBox_itemlist.Size = new System.Drawing.Size(278, 21);
             this.comboBox_itemlist.TabIndex = 59;
+            this.comboBox_itemlist.SelectedIndexChanged += new System.EventHandler(this.comboBox_itemlist_SelectedIndexChanged);
             // 
             // betterTextBox_qty
             // 
@@ -293,40 +295,40 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.materialButton2);
+            this.panel3.Controls.Add(this.materialButton_save);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 406);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(637, 44);
             this.panel3.TabIndex = 69;
             // 
-            // materialButton2
+            // materialButton_save
             // 
-            this.materialButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.materialButton2.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
-            this.materialButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialButton2.FlatAppearance.BorderSize = 0;
-            this.materialButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialButton2.fontIncrement = 0F;
-            this.materialButton2.FontStyle = null;
-            this.materialButton2.ForeColor = System.Drawing.Color.White;
-            this.materialButton2.hoverforecolor = System.Drawing.Color.Empty;
-            this.materialButton2.hoverforefont = null;
-            this.materialButton2.hoverimage = null;
-            this.materialButton2.Location = new System.Drawing.Point(503, 6);
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.role = 0;
-            this.materialButton2.Size = new System.Drawing.Size(122, 30);
-            this.materialButton2.TabIndex = 67;
-            this.materialButton2.tempforecolor = System.Drawing.Color.Empty;
-            this.materialButton2.tempforefont = null;
-            this.materialButton2.Text = "Save";
-            this.materialButton2.Totext = null;
-            this.materialButton2.userole = false;
-            this.materialButton2.UseVisualStyleBackColor = false;
-            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
+            this.materialButton_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.materialButton_save.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.materialButton_save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton_save.FlatAppearance.BorderSize = 0;
+            this.materialButton_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton_save.fontIncrement = 0F;
+            this.materialButton_save.FontStyle = null;
+            this.materialButton_save.ForeColor = System.Drawing.Color.White;
+            this.materialButton_save.hoverforecolor = System.Drawing.Color.Empty;
+            this.materialButton_save.hoverforefont = null;
+            this.materialButton_save.hoverimage = null;
+            this.materialButton_save.Location = new System.Drawing.Point(503, 6);
+            this.materialButton_save.Name = "materialButton_save";
+            this.materialButton_save.role = 0;
+            this.materialButton_save.Size = new System.Drawing.Size(122, 30);
+            this.materialButton_save.TabIndex = 67;
+            this.materialButton_save.tempforecolor = System.Drawing.Color.Empty;
+            this.materialButton_save.tempforefont = null;
+            this.materialButton_save.Text = "Save";
+            this.materialButton_save.Totext = null;
+            this.materialButton_save.userole = false;
+            this.materialButton_save.UseVisualStyleBackColor = false;
+            this.materialButton_save.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // AddItems
             // 
@@ -374,6 +376,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Panel panel3;
-        private CustomControls.MaterialButton materialButton2;
+        private CustomControls.MaterialButton materialButton_save;
     }
 }

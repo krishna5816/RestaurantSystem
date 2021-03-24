@@ -8,6 +8,7 @@ namespace RestaurantSystem.Wastage.Purchaseitems
 {
   public  class Viewer:ListViewItem
     {
+        Model.ResturantManagementEntities db = new Model.ResturantManagementEntities();
         public int id { get; set; }
         public string name { get; set; }
         public decimal qty { get; set; }
@@ -16,8 +17,8 @@ namespace RestaurantSystem.Wastage.Purchaseitems
 
 
 
-        Model.purchaseinvoiceitem purchaseinvoiceitem;
-        public Viewer(Model.purchaseinvoiceitem _item, decimal _qty, string _unit,int _date)
+        Model.purchaseitem purchaseinvoiceitem;
+        public Viewer(Model.purchaseitem _item, decimal _qty, string _unit,int _date)
         {
             for (int i = 0; i < 9; i++)
             {
@@ -32,14 +33,34 @@ namespace RestaurantSystem.Wastage.Purchaseitems
         public void refresh()
         {
             id = purchaseinvoiceitem.id;
-            name = purchaseinvoiceitem.purchaseitem.name;
-           // SubItems[0].Text = sn.ToString();
-            SubItems[1].Text = name;
-            SubItems[2].Text = qty.ToString();
-            SubItems[3].Text = unit;
-            SubItems[4].Text = date.ToString();
-            SubItems[5].Text = id.ToString();
+            name = purchaseinvoiceitem.name;
+            SubItems[0].Text = name;
+            SubItems[1].Text = qty.ToString();
+            SubItems[2].Text = unit;
+            SubItems[3].Text = date.ToString();
+            SubItems[4].Text = id.ToString();
+
+        }
+        public void save()
+        {
+            var load = db.purchaseitems.Find(id);
+            load.qty -=qty;
+            db.Entry(load).State = System.Data.Entity.EntityState.Modified;
+            var billitem = new Model.wastagepurchaseitem()
+            {
+                purchaseitem_id = id,
+                qty = qty,
+                date = date,
+                unit = unit,
+                created_at = DateTime.Now,
+                upadated_at = DateTime.Now,
+                admins_id = INFO.admin_id,
+                fiscalyear_id = INFO.currentFiscalYear.id
+            };
+            db.wastagepurchaseitems.Add(billitem);
+            db.SaveChanges();
             
+
         }
     }
 }

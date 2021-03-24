@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CustomControls;
-namespace RestaurantSystem.Reports
+namespace RestaurantSystem.Wastage.Purchaseitems
 {
-    public partial class Purchase_Reports : Form
+    public partial class List : Form
     {
-        Model.ResturantManagementEntities db = Model.DatabaseConfigure.getConfigure();
-        public Purchase_Reports()
+        Model.ResturantManagementEntities db = new Model.ResturantManagementEntities();
+        public List()
         {
             InitializeComponent();
             rangeSelector.comboBox_fy.Items.AddRange(db.fiscalyears.Select(o => new RangeSelector.FYViwer()
@@ -25,9 +25,16 @@ namespace RestaurantSystem.Reports
             }).ToArray());
         }
 
+        private void button_wastagefood_Click(object sender, EventArgs e)
+        {
+            var add = new Wastage.AddItems();
+            var t = new CustomControls.Modal(add);
+            t.Show();
+        }
+
         private void button_load_Click(object sender, EventArgs e)
         {
-            var data = db.purchaseinvoices.Where(o => o.id > 0);
+            var data = db.wastagepurchaseitems.Where(o => o.id > 0);
             if (!rangeSelector.valid)
             {
                 Comformation.show(Text, "Please select a Duration", 1);
@@ -61,24 +68,24 @@ namespace RestaurantSystem.Reports
             }
 
             betterListView1.Clear();
+
             if (comboBox_grouping.SelectedIndex == 1)
             {
 
-                GroupByBill(data);
+                Getbyitem(data);
             }
-            else if (comboBox_grouping.SelectedIndex == 2)
-            {
-                GroupByItem(data.Select(o => o.id).ToList());
-            }
-            else if (comboBox_grouping.SelectedIndex == 3)
-            {
-                GroupByCategory(data.Select(o => o.id).ToList());
-            }
+           
         }
 
         private void materialButton_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void button_Reset_Click(object sender, EventArgs e)
+        {
+            betterListView1.Items.Clear();
+        }
     }
 }
+

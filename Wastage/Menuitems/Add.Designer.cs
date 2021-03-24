@@ -95,6 +95,7 @@
             this.materialButton2.Totext = null;
             this.materialButton2.userole = false;
             this.materialButton2.UseVisualStyleBackColor = false;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // panel3
             // 
@@ -130,6 +131,7 @@
             this.materialButton1.Totext = null;
             this.materialButton1.userole = false;
             this.materialButton1.UseVisualStyleBackColor = false;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click_1);
             // 
             // label5
             // 

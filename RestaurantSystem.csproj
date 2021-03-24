@@ -574,14 +574,14 @@
     <Compile Include="PurchaseItems\Viwer.Designer.cs">
       <DependentUpon>Viwer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Purchase_partial.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reports\Purchase_Reports.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Purchase_Reports.Designer.cs">
       <DependentUpon>Purchase_Reports.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\Purchase_Report_Partial.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\ReportsList.cs">
       <SubType>Form</SubType>
@@ -589,7 +589,7 @@
     <Compile Include="Reports\ReportsList.Designer.cs">
       <DependentUpon>ReportsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Sales_Report_Partial.cs">
+    <Compile Include="Reports\SalesReportpartial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Sales_Report.cs">
@@ -664,6 +664,17 @@
     <Compile Include="Wastage\Menuitems\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wastage\Menuitems\Data.cs" />
+    <Compile Include="Wastage\Menuitems\ItemNameViwer.cs" />
+    <Compile Include="Wastage\Menuitems\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wastage\Menuitems\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wastage\Menuitems\Menuitempartial.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Wastage\Menuitems\Viewer.cs" />
     <Compile Include="Wastage\Purchaseitems\AddItems.cs">
       <SubType>Form</SubType>
@@ -677,7 +688,17 @@
     <Compile Include="Wastage\Manu.Designer.cs">
       <DependentUpon>Manu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wastage\Purchaseitems\Data.cs" />
     <Compile Include="Wastage\Purchaseitems\ItemNameViwer.cs" />
+    <Compile Include="Wastage\Purchaseitems\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wastage\Purchaseitems\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wastage\Purchaseitems\Purchasepartial.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Wastage\Purchaseitems\Viewer.cs" />
     <EmbeddedResource Include="Account\DaytoDay\CurrentRequests.resx">
       <DependentUpon>CurrentRequests.cs</DependentUpon>
@@ -858,11 +879,17 @@
     <EmbeddedResource Include="Wastage\Menuitems\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Wastage\Menuitems\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Wastage\Purchaseitems\AddItems.resx">
       <DependentUpon>AddItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wastage\Manu.resx">
       <DependentUpon>Manu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wastage\Purchaseitems\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Resturantmanagement.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

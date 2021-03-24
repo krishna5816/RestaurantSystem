@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ using System.Drawing;
 
 namespace RestaurantSystem.Reports
 {
- public partial  class Purchase_Reports
+    public partial class Purchase_Reports
     {
         #region groub_by_bill
         private void GroupByBill(IQueryable<purchaseinvoice> purchaseinvoices)
@@ -80,7 +81,7 @@ namespace RestaurantSystem.Reports
                     {
                         id = p_itmes.purchaseitems_id.Value,
                         name = p_itmes.purchaseitem.name,
-                        
+
                         pricing = new Dictionary<decimal, decimal>(),
                         qty = p_itmes.qty.Value
 
@@ -140,12 +141,12 @@ namespace RestaurantSystem.Reports
                            p.id,
                            o.qty,
                            p.name,
-                          // o.nettotal
+                           // o.nettotal
                        }).GroupBy(o => o.id).Select(o => new RCategoryViwer()
                        {
                            Id = o.Key,
                            amount = o.Sum(x => x.qty).Value,
-                          // total = o.Sum(x => x.nettotal),
+                           // total = o.Sum(x => x.nettotal),
                            name = o.FirstOrDefault(x => x.id == o.Key).name
                        }).ToList();
 
@@ -164,8 +165,9 @@ namespace RestaurantSystem.Reports
 
 
         }
-        
-#endregion
+
+        #endregion
+
 
     }
 }

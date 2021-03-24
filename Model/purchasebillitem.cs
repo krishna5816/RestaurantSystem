@@ -14,12 +14,6 @@ namespace RestaurantSystem.Model
     
     public partial class purchasebillitem
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public purchasebillitem()
-        {
-            this.wastagepurchaseitems = new HashSet<wastagepurchaseitem>();
-        }
-    
         public int id { get; set; }
         public decimal quantity { get; set; }
         public decimal costprice { get; set; }
@@ -32,7 +26,5 @@ namespace RestaurantSystem.Model
     
         public virtual admin admin { get; set; }
         public virtual purchaseitem purchaseitem { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<wastagepurchaseitem> wastagepurchaseitems { get; set; }
     }
 }

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantSystem.Wastage.Purchaseitems
+namespace RestaurantSystem.Wastage.Menuitems
 {
     public class ItemNameViwer
     {
-        public Model.purchaseitem Item { get; set; }
-        public ItemNameViwer(Model.purchaseitem _item)
+        public Model.menuitem Item { get; set; }
+        public ItemNameViwer(Model.menuitem _item)
         {
             Item = _item;
         }

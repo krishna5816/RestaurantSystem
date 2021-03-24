@@ -15,7 +15,6 @@ namespace RestaurantSystem.Model
     public partial class wastagepurchaseitem
     {
         public int id { get; set; }
-        public Nullable<int> purchaseinvoicesitem_id { get; set; }
         public Nullable<decimal> qty { get; set; }
         public string unit { get; set; }
         public System.DateTime upadated_at { get; set; }
@@ -24,9 +23,10 @@ namespace RestaurantSystem.Model
         public Nullable<int> admins_id { get; set; }
         public Nullable<int> fiscalyear_id { get; set; }
         public Nullable<int> date { get; set; }
+        public Nullable<int> purchaseitem_id { get; set; }
     
         public virtual admin admin { get; set; }
         public virtual fiscalyear fiscalyear { get; set; }
-        public virtual purchasebillitem purchasebillitem { get; set; }
+        public virtual purchaseitem purchaseitem { get; set; }
     }
 }

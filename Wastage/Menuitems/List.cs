@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CustomControls;
-namespace RestaurantSystem.Reports
+namespace RestaurantSystem.Wastage.Menuitems
 {
-    public partial class Purchase_Reports : Form
+    public partial class List : Form
     {
         Model.ResturantManagementEntities db = Model.DatabaseConfigure.getConfigure();
-        public Purchase_Reports()
+        public List()
         {
             InitializeComponent();
             rangeSelector.comboBox_fy.Items.AddRange(db.fiscalyears.Select(o => new RangeSelector.FYViwer()
@@ -25,9 +25,16 @@ namespace RestaurantSystem.Reports
             }).ToArray());
         }
 
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            var add = new Wastage.Add();
+            var t = new CustomControls.Modal(add);
+            t.Show();
+        }
+
         private void button_load_Click(object sender, EventArgs e)
         {
-            var data = db.purchaseinvoices.Where(o => o.id > 0);
+            var data = db.wastagefoods.Where(o => o.id > 0);
             if (!rangeSelector.valid)
             {
                 Comformation.show(Text, "Please select a Duration", 1);
@@ -64,21 +71,65 @@ namespace RestaurantSystem.Reports
             if (comboBox_grouping.SelectedIndex == 1)
             {
 
-                GroupByBill(data);
+                GroupByitem(data);
             }
-            else if (comboBox_grouping.SelectedIndex == 2)
-            {
-                GroupByItem(data.Select(o => o.id).ToList());
-            }
-            else if (comboBox_grouping.SelectedIndex == 3)
-            {
-                GroupByCategory(data.Select(o => o.id).ToList());
-            }
+           
         }
 
         private void materialButton_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
+            var data = db.wastagefoods.Where(o => o.id > 0);
+            if (!rangeSelector.valid)
+            {
+                Comformation.show(Text, "Please select a Duration", 1);
+                return;
+            }
+            var r = rangeSelector.Range;
+            var r1 = r[0];
+            var r2 = r[1];
+
+            var d = rangeSelector.DurationType;
+            if (d == 1)
+            {
+                if (!rangeSelector.fyvalid)
+                {
+                    Comformation.show(Text, "Please select a Fiscalyear", 1);
+                    return;
+                }
+                var fyid = rangeSelector.fy.id;
+                data = data.Where(o => o.fiscalyear_id == fyid);
+
+            }
+            else if (d == 5)
+            {
+                data = data.Where(o => o.date == r1);
+
+            }
+            else
+            {
+                data = data.Where(o => o.date >= r1 && o.date <= r2);
+
+            }
+
+            betterListView1.Clear();
+            if (comboBox_grouping.SelectedIndex == 1)
+            {
+
+                GroupByitem(data);
+            }
+
+        }
+
+        private void button_Reset_Click(object sender, EventArgs e)
+        {
+            betterListView1.Items.Clear();
+        }
     }
+    
 }

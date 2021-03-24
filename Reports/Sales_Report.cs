@@ -12,7 +12,7 @@ namespace RestaurantSystem.Reports
 {
     public partial class Sales_Report : Form
     {
-        Model.ResturantManagementEntities db = Model.DatabaseConfigure.getConfigure();
+        Model.ResturantManagementEntities db =new Model.ResturantManagementEntities();
         public Sales_Report()
         {
             InitializeComponent();
@@ -71,7 +71,7 @@ namespace RestaurantSystem.Reports
             if (comboBox_grouping.SelectedIndex == 1)
             {
 
-               GroupByBill(data);
+                GroupByBill(data);
             }
             else if (comboBox_grouping.SelectedIndex == 2)
             {
@@ -83,7 +83,7 @@ namespace RestaurantSystem.Reports
             }
             //else if (comboBox_grouping.SelectedIndex == 4)
             //{
-            //   GroupByCounter(data);
+            //    GroupByCounter(data);
             //}
         }
 
