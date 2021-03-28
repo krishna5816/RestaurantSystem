@@ -112,7 +112,7 @@ namespace RestaurantSystem.Setting.DayManagement
 
                 if (this.Systemsetting.dateopened)
                 {
-                    if (CustomControls.Comformation.show("Day Management", "Are You Sure, you want To Close Day") == DialogResult.OK)
+                    if (CustomControls.Comformation.show("Day Management", "Are You Sure, you want To Close Day") == DialogResult.Yes)
                     {
                         this.Systemsetting.dateopened = false;
                     }
@@ -123,7 +123,7 @@ namespace RestaurantSystem.Setting.DayManagement
                 }
                 else
                 {
-                    if (CustomControls.Comformation.show("Day Management", "Check Following things-\n1.Date is Correct\nPress yes to Open Day ") == DialogResult.OK)
+                    if (CustomControls.Comformation.show("Day Management", "Check Following things-\n1.Date is Correct\nPress yes to Open Day ") == DialogResult.Yes)
                     {
                         this.Systemsetting.currentdate = nepaliCalender.Datestamp;
                         this.Systemsetting.dateopened = true;
