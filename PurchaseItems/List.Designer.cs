@@ -208,7 +208,7 @@
             this.lbl_unit.AutoSize = true;
             this.lbl_unit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_unit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.lbl_unit.Location = new System.Drawing.Point(324, 89);
+            this.lbl_unit.Location = new System.Drawing.Point(329, 89);
             this.lbl_unit.Name = "lbl_unit";
             this.lbl_unit.Size = new System.Drawing.Size(33, 19);
             this.lbl_unit.TabIndex = 23;
@@ -219,7 +219,7 @@
             this.lbl_category.AutoSize = true;
             this.lbl_category.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.lbl_category.Location = new System.Drawing.Point(408, 89);
+            this.lbl_category.Location = new System.Drawing.Point(413, 89);
             this.lbl_category.Name = "lbl_category";
             this.lbl_category.Size = new System.Drawing.Size(36, 19);
             this.lbl_category.TabIndex = 22;
@@ -283,7 +283,7 @@
             this.materialButton_issuestock.TabIndex = 28;
             this.materialButton_issuestock.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_issuestock.tempforefont = null;
-            this.materialButton_issuestock.Text = "Issue Stock ";
+            this.materialButton_issuestock.Text = "Issue Stock List";
             this.materialButton_issuestock.Totext = null;
             this.materialButton_issuestock.userole = false;
             this.materialButton_issuestock.UseVisualStyleBackColor = false;

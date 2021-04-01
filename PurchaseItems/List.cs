@@ -61,9 +61,8 @@ namespace RestaurantSystem.PurchaseItems
 
         private void materialButton_issuestock_Click(object sender, EventArgs e)
         {
-            var issed = new IssueKitchen.Issuekitchenitems();
-            var trance = new CustomControls.Modal(issed);
-            trance.Show();
+            var issed = new IssueKitchen.List();
+            issed.ShowDialog();
         }
 
         private void materialButton_refresh_Click(object sender, EventArgs e)

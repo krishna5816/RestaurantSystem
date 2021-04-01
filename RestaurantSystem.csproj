@@ -248,6 +248,15 @@
     <Compile Include="IssueKitchen\Issuekitchenitems.Designer.cs">
       <DependentUpon>Issuekitchenitems.cs</DependentUpon>
     </Compile>
+    <Compile Include="IssueKitchen\Issue_partial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueKitchen\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueKitchen\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Items\AddItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -759,6 +768,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IssueKitchen\Issuekitchenitems.resx">
       <DependentUpon>Issuekitchenitems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueKitchen\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Items\AddItems.resx">
       <DependentUpon>AddItems.cs</DependentUpon>
