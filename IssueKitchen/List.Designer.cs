@@ -41,10 +41,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label_totalamount = new System.Windows.Forms.Label();
             this.panel_top = new System.Windows.Forms.Panel();
+            this.materialButton_issuestock = new CustomControls.MaterialButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1_Add = new System.Windows.Forms.Label();
             this.materialButton_close = new CustomControls.MaterialButton();
-            this.materialButton_issuestock = new CustomControls.MaterialButton();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -102,11 +102,8 @@
             this.comboBox_grouping.FormattingEnabled = true;
             this.comboBox_grouping.Items.AddRange(new object[] {
             "none",
-            "Bill Wise Report",
             "Item Wise Report",
-            "Category Wise Report",
-            "Terminal Wise Report",
-            "User Wise Report"});
+            "Category Wise Report"});
             this.comboBox_grouping.Location = new System.Drawing.Point(8, 28);
             this.comboBox_grouping.Name = "comboBox_grouping";
             this.comboBox_grouping.Size = new System.Drawing.Size(365, 21);
@@ -147,6 +144,7 @@
             this.button_Reset.TabIndex = 1;
             this.button_Reset.Text = "Reset";
             this.button_Reset.UseVisualStyleBackColor = true;
+            this.button_Reset.Click += new System.EventHandler(this.button_Reset_Click);
             // 
             // button_load
             // 
@@ -214,6 +212,33 @@
             this.panel_top.Size = new System.Drawing.Size(820, 40);
             this.panel_top.TabIndex = 42;
             // 
+            // materialButton_issuestock
+            // 
+            this.materialButton_issuestock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton_issuestock.BackColor = System.Drawing.Color.Blue;
+            this.materialButton_issuestock.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.materialButton_issuestock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton_issuestock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_issuestock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton_issuestock.fontIncrement = 0F;
+            this.materialButton_issuestock.FontStyle = null;
+            this.materialButton_issuestock.ForeColor = System.Drawing.Color.White;
+            this.materialButton_issuestock.hoverforecolor = System.Drawing.Color.Empty;
+            this.materialButton_issuestock.hoverforefont = null;
+            this.materialButton_issuestock.hoverimage = null;
+            this.materialButton_issuestock.Location = new System.Drawing.Point(706, 6);
+            this.materialButton_issuestock.Name = "materialButton_issuestock";
+            this.materialButton_issuestock.role = 0;
+            this.materialButton_issuestock.Size = new System.Drawing.Size(102, 30);
+            this.materialButton_issuestock.TabIndex = 58;
+            this.materialButton_issuestock.tempforecolor = System.Drawing.Color.Empty;
+            this.materialButton_issuestock.tempforefont = null;
+            this.materialButton_issuestock.Text = "Issue Stock";
+            this.materialButton_issuestock.Totext = null;
+            this.materialButton_issuestock.userole = false;
+            this.materialButton_issuestock.UseVisualStyleBackColor = false;
+            this.materialButton_issuestock.Click += new System.EventHandler(this.materialButton_issuestock_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -230,9 +255,9 @@
             this.label1_Add.ForeColor = System.Drawing.Color.White;
             this.label1_Add.Location = new System.Drawing.Point(48, 12);
             this.label1_Add.Name = "label1_Add";
-            this.label1_Add.Size = new System.Drawing.Size(174, 17);
+            this.label1_Add.Size = new System.Drawing.Size(188, 17);
             this.label1_Add.TabIndex = 56;
-            this.label1_Add.Text = "Daily Items Issued Recored";
+            this.label1_Add.Text = "Kitchen Items Issued Recored";
             // 
             // materialButton_close
             // 
@@ -260,33 +285,6 @@
             this.materialButton_close.userole = false;
             this.materialButton_close.UseVisualStyleBackColor = true;
             this.materialButton_close.Click += new System.EventHandler(this.materialButton_close_Click);
-            // 
-            // materialButton_issuestock
-            // 
-            this.materialButton_issuestock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton_issuestock.BackColor = System.Drawing.Color.Blue;
-            this.materialButton_issuestock.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
-            this.materialButton_issuestock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialButton_issuestock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialButton_issuestock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialButton_issuestock.fontIncrement = 0F;
-            this.materialButton_issuestock.FontStyle = null;
-            this.materialButton_issuestock.ForeColor = System.Drawing.Color.White;
-            this.materialButton_issuestock.hoverforecolor = System.Drawing.Color.Empty;
-            this.materialButton_issuestock.hoverforefont = null;
-            this.materialButton_issuestock.hoverimage = null;
-            this.materialButton_issuestock.Location = new System.Drawing.Point(691, 6);
-            this.materialButton_issuestock.Name = "materialButton_issuestock";
-            this.materialButton_issuestock.role = 0;
-            this.materialButton_issuestock.Size = new System.Drawing.Size(124, 30);
-            this.materialButton_issuestock.TabIndex = 58;
-            this.materialButton_issuestock.tempforecolor = System.Drawing.Color.Empty;
-            this.materialButton_issuestock.tempforefont = null;
-            this.materialButton_issuestock.Text = "Issue Stock";
-            this.materialButton_issuestock.Totext = null;
-            this.materialButton_issuestock.userole = false;
-            this.materialButton_issuestock.UseVisualStyleBackColor = false;
-            this.materialButton_issuestock.Click += new System.EventHandler(this.materialButton_issuestock_Click);
             // 
             // List
             // 

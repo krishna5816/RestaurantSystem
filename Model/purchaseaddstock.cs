@@ -22,8 +22,10 @@ namespace RestaurantSystem.Model
         public Nullable<int> purchaseitem_id { get; set; }
         public Nullable<int> admin_id { get; set; }
         public Nullable<int> sync_id { get; set; }
+        public Nullable<int> fiscalyear_id { get; set; }
     
         public virtual admin admin { get; set; }
+        public virtual fiscalyear fiscalyear { get; set; }
         public virtual purchaseitem purchaseitem { get; set; }
     }
 }

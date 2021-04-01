@@ -29,8 +29,10 @@ namespace RestaurantSystem.Model
         public string depositername { get; set; }
         public Nullable<decimal> paidamount { get; set; }
         public Nullable<decimal> dueamount { get; set; }
+        public Nullable<int> fiscalyear_id { get; set; }
     
         public virtual admin admin { get; set; }
+        public virtual fiscalyear fiscalyear { get; set; }
         public virtual party party { get; set; }
     }
 }

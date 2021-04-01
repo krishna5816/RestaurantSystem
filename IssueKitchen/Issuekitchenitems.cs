@@ -53,6 +53,7 @@ namespace RestaurantSystem.IssueKitchen
             betterTextBox_quantity.Clear();
             comboBox_itemlist.SelectedIndex = -1;
             betterTextBox_cuuremtstock.Clear();
+            betterTextBox_unit.Clear();
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -89,6 +90,7 @@ namespace RestaurantSystem.IssueKitchen
                     created_at=DateTime.Now,
                     updated_at=DateTime.Now,
                     admin_id=INFO.admin_id,
+                    fiscalyear_id=INFO.currentFiscalYear.id
                    
                 };
                 db.issueitems.Add(issue);

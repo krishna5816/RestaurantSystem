@@ -97,17 +97,20 @@ namespace RestaurantSystem.IssueKitchen
 
             if (comboBox_grouping.SelectedIndex == 1)
             {
-
-                //GroupByBill(data);
+                GroupByItem(data.Select(o => o.id).ToList());
             }
             else if (comboBox_grouping.SelectedIndex == 2)
             {
-                GroupByItem(data.Select(o => o.id).ToList());
+                GroupByCategory(data.Select(o => o.id).ToList());
             }
             else if (comboBox_grouping.SelectedIndex == 3)
             {
-                GroupByCategory(data.Select(o => o.id).ToList());
             }
+        }
+
+        private void button_Reset_Click(object sender, EventArgs e)
+        {
+            betterListView1.Items.Clear();
         }
     }
 }

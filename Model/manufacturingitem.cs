@@ -23,8 +23,10 @@ namespace RestaurantSystem.Model
         public System.DateTime created_at { get; set; }
         public Nullable<int> sync_id { get; set; }
         public Nullable<decimal> qty { get; set; }
+        public Nullable<int> fiscalyear_id { get; set; }
     
         public virtual admin admin { get; set; }
+        public virtual fiscalyear fiscalyear { get; set; }
         public virtual menuitem menuitem { get; set; }
         public virtual purchaseinvoiceitem purchaseinvoiceitem { get; set; }
     }

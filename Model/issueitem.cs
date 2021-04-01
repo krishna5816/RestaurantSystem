@@ -25,8 +25,10 @@ namespace RestaurantSystem.Model
         public System.DateTime updated_at { get; set; }
         public string unit { get; set; }
         public string units { get; set; }
+        public Nullable<int> fiscalyear_id { get; set; }
     
         public virtual admin admin { get; set; }
+        public virtual fiscalyear fiscalyear { get; set; }
         public virtual purchaseitem purchaseitem { get; set; }
     }
 }

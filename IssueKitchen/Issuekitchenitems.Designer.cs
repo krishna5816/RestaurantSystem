@@ -325,6 +325,7 @@
             this.betterTextBox_cuuremtstock.Location = new System.Drawing.Point(421, 70);
             this.betterTextBox_cuuremtstock.Name = "betterTextBox_cuuremtstock";
             this.betterTextBox_cuuremtstock.prepend = "";
+            this.betterTextBox_cuuremtstock.ReadOnly = true;
             this.betterTextBox_cuuremtstock.Rules = null;
             this.betterTextBox_cuuremtstock.Size = new System.Drawing.Size(104, 26);
             this.betterTextBox_cuuremtstock.TabIndex = 22;

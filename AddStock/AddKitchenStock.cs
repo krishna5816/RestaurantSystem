@@ -191,8 +191,7 @@ namespace RestaurantSystem.AddStock
                 tax = betterTextBox_Tax.decVal,
                 nettotal = betterTextBox_nettotal.decVal,
                 due = betterTextBox_Due.decVal,
-                paid = betterTextBox_paid.decVal,
-                
+                paid = betterTextBox_paid.decVal,                
                 fiscalyear_id = INFO.currentFiscalYear.id,
                 admin_id = INFO.admin_id,
                 created_at = DateTime.Now,
@@ -283,7 +282,8 @@ namespace RestaurantSystem.AddStock
                     date = INFO.currentdate,
                     admin_id = INFO.admin_id,
                     updated_at = DateTime.Now,
-                    created_at = DateTime.Now
+                    created_at = DateTime.Now,
+                    fiscalyear_id=INFO.currentFiscalYear.id
                 };
                 db.purchseexpenses.Add(exp);
                 db.SaveChanges();

@@ -8,41 +8,21 @@ using RestaurantSystem.Model;
 using CustomControls;
 using System.Windows.Forms;
 using System.Drawing;
-
 namespace RestaurantSystem.IssueKitchen
 {
-   public partial class List
+    public partial class List
     {
-        #region groub_by_bill
-        private void GroupByBill(IQueryable<purchaseinvoice> purchaseinvoices)
-        {
-            betterListView1.AddColumns(new string[] { "Bill No", "Date", "G.Total", "Dis", "Paid", "Due" });
-            foreach (var item in purchaseinvoices.ToList())
-            {
-                var b_list = new List<string>();
-                b_list.Add(item.id.ToString());
-                b_list.Add(item.date.ToString());
-                b_list.Add(item.grosstotal.ToString());
-                b_list.Add(item.discount.ToString());
-                b_list.Add(item.paid.ToString());
-                b_list.Add(item.due.ToString());
-
-                betterListView1.Items.Add(new ListViewItem(b_list.ToArray()));
-            }
-        }
-        #endregion
         #region groub_by_itm
         public class RItemviwer
         {
-            
             public int id { get; set; }
             public string name { get; set; }
             public decimal qty { get; set; }
-            public  string unit { get; set; }
+            public string unit { get; set; }
             public int date { get; set; }
             public DateTime time { get; set; }
 
-           
+
             public ListViewItem getLV()
             {
 
@@ -74,9 +54,9 @@ namespace RestaurantSystem.IssueKitchen
                         id = p_itmes.purchaseitem_id.Value,
                         name = p_itmes.purchaseitem.name,
                         qty = p_itmes.quantity,
-                        unit=p_itmes.units,
-                        date=p_itmes.date.Value,
-                        time=p_itmes.issuetime
+                        unit = p_itmes.units,
+                        date = p_itmes.date.Value,
+                        time = p_itmes.issuetime
 
                     };
                     //viwer.pricing.Add(p_itmes.price.Value, p_itmes.qty.Value);
@@ -143,9 +123,6 @@ namespace RestaurantSystem.IssueKitchen
                            name = o.FirstOrDefault(x => x.id == o.Key).name
                        }).ToList();
 
-
-
-
             foreach (var bi in billitems)
             {
                 betterListView1.Add(new string[] { bi.name, bi.amount.ToString("0.###"), bi.total.ToString("0.##") });
@@ -156,7 +133,6 @@ namespace RestaurantSystem.IssueKitchen
                 ForeColor = Color.White
             });
 
-
         }
 
         #endregion
@@ -166,4 +142,3 @@ namespace RestaurantSystem.IssueKitchen
 }
 
 
-    

@@ -18,7 +18,14 @@ namespace RestaurantSystem.Model
         public fiscalyear()
         {
             this.bills = new HashSet<bill>();
+            this.issueitems = new HashSet<issueitem>();
+            this.manufactureditems = new HashSet<manufactureditem>();
+            this.manufacturingitems = new HashSet<manufacturingitem>();
+            this.partypayments = new HashSet<partypayment>();
+            this.purchaseaddstocks = new HashSet<purchaseaddstock>();
+            this.purchaseinvoiceitems = new HashSet<purchaseinvoiceitem>();
             this.purchaseinvoices = new HashSet<purchaseinvoice>();
+            this.purchseexpenses = new HashSet<purchseexpens>();
             this.systemsettings = new HashSet<systemsetting>();
             this.wastagefoods = new HashSet<wastagefood>();
             this.wastagepurchaseitems = new HashSet<wastagepurchaseitem>();
@@ -37,7 +44,21 @@ namespace RestaurantSystem.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<bill> bills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<issueitem> issueitems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<manufactureditem> manufactureditems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<manufacturingitem> manufacturingitems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<partypayment> partypayments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<purchaseaddstock> purchaseaddstocks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<purchaseinvoiceitem> purchaseinvoiceitems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<purchaseinvoice> purchaseinvoices { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<purchseexpens> purchseexpenses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<systemsetting> systemsettings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

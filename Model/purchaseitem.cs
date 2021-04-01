@@ -18,6 +18,7 @@ namespace RestaurantSystem.Model
         public purchaseitem()
         {
             this.issueitems = new HashSet<issueitem>();
+            this.manufactureditems = new HashSet<manufactureditem>();
             this.manufacturingestimations = new HashSet<manufacturingestimation>();
             this.purchaseaddstocks = new HashSet<purchaseaddstock>();
             this.purchasebillitems = new HashSet<purchasebillitem>();
@@ -39,6 +40,8 @@ namespace RestaurantSystem.Model
         public virtual admin admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<issueitem> issueitems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<manufactureditem> manufactureditems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<manufacturingestimation> manufacturingestimations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

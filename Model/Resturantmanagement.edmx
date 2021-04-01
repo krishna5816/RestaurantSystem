@@ -229,6 +229,7 @@
           <Property Name="updated_at" Type="datetime" Nullable="false" />
           <Property Name="unit" Type="nvarchar(max)" />
           <Property Name="units" Type="nvarchar(max)" />
+          <Property Name="fiscalyear_id" Type="int" />
         </EntityType>
         <EntityType Name="manufactureditems">
           <Key>
@@ -245,6 +246,8 @@
           <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
           <Property Name="unit" Type="nvarchar(max)" />
           <Property Name="units" Type="nvarchar(max)" />
+          <Property Name="purchaseitem_id" Type="int" />
+          <Property Name="fiscalyear_id" Type="int" />
         </EntityType>
         <EntityType Name="manufacturingestimations">
           <Key>
@@ -272,6 +275,7 @@
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
           <Property Name="qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="fiscalyear_id" Type="int" />
         </EntityType>
         <EntityType Name="manufaturedsubitems">
           <Key>
@@ -373,6 +377,7 @@
           <Property Name="depositername" Type="nvarchar(max)" />
           <Property Name="paidamount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="dueamount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="fiscalyear_id" Type="int" />
         </EntityType>
         <EntityType Name="purchaseaddstocks">
           <Key>
@@ -386,6 +391,7 @@
           <Property Name="purchaseitem_id" Type="int" />
           <Property Name="admin_id" Type="int" />
           <Property Name="sync_id" Type="int" />
+          <Property Name="fiscalyear_id" Type="int" />
         </EntityType>
         <EntityType Name="purchasebillitems">
           <Key>
@@ -430,6 +436,7 @@
           <Property Name="purchaseitems_id" Type="int" />
           <Property Name="purchaseinvoice_id" Type="int" />
           <Property Name="date" Type="int" />
+          <Property Name="fiscalyear_id" Type="int" />
         </EntityType>
         <EntityType Name="purchaseinvoices">
           <Key>
@@ -484,6 +491,7 @@
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
           <Property Name="purchaseinvoice_id" Type="int" />
+          <Property Name="fiscalyear_id" Type="int" />
         </EntityType>
         <EntityType Name="shadow_accounts">
           <Key>
@@ -1439,6 +1447,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__issueitem__fisca__078C1F06">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="issueitems" Type="Self.issueitems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="issueitems">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__issueitem__purch__1B9317B3">
           <End Role="purchaseitems" Type="Self.purchaseitems" Multiplicity="0..1" />
           <End Role="issueitems" Type="Self.issueitems" Multiplicity="*" />
@@ -1487,6 +1507,30 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__manufactu__fisca__0880433F">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="manufactureditems" Type="Self.manufactureditems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="manufactureditems">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__manufactu__fisca__09746778">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="manufacturingitems" Type="Self.manufacturingitems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="manufacturingitems">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__manufactu__menui__24927208">
           <End Role="menuitems" Type="Self.menuitems" Multiplicity="0..1" />
           <End Role="manufacturingitems" Type="Self.manufacturingitems" Multiplicity="*" />
@@ -1531,6 +1575,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="manufacturingestimations">
+              <PropertyRef Name="purchaseitem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__manufactu__purch__74794A92">
+          <End Role="purchaseitems" Type="Self.purchaseitems" Multiplicity="0..1" />
+          <End Role="manufactureditems" Type="Self.manufactureditems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseitems">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="manufactureditems">
               <PropertyRef Name="purchaseitem_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -1679,6 +1735,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__partypaym__fisca__0A688BB1">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="partypayments" Type="Self.partypayments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="partypayments">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__partypaym__party__373B3228">
           <End Role="parties" Type="Self.parties" Multiplicity="0..1" />
           <End Role="partypayments" Type="Self.partypayments" Multiplicity="*" />
@@ -1700,6 +1768,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Principal>
             <Dependent Role="purchaseaddstocks">
               <PropertyRef Name="admin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__purchasea__fisca__0B5CAFEA">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="purchaseaddstocks" Type="Self.purchaseaddstocks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchaseaddstocks">
+              <PropertyRef Name="fiscalyear_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1787,6 +1867,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__purchasei__fisca__0C50D423">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="purchaseinvoiceitems" Type="Self.purchaseinvoiceitems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchaseinvoiceitems">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__purchasei__fisca__160F4887">
           <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
           <End Role="purchaseinvoices" Type="Self.purchaseinvoices" Multiplicity="*" />
@@ -1868,6 +1960,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Principal>
             <Dependent Role="purchseexpenses">
               <PropertyRef Name="admin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__purchseex__fisca__0697FACD">
+          <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
+          <End Role="purchseexpenses" Type="Self.purchseexpenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyears">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchseexpenses">
+              <PropertyRef Name="fiscalyear_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2212,6 +2316,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="admins" EntitySet="admins" />
             <End Role="issueitems" EntitySet="issueitems" />
           </AssociationSet>
+          <AssociationSet Name="FK__issueitem__fisca__078C1F06" Association="Self.FK__issueitem__fisca__078C1F06">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
+            <End Role="issueitems" EntitySet="issueitems" />
+          </AssociationSet>
           <AssociationSet Name="FK__issueitem__purch__1B9317B3" Association="Self.FK__issueitem__purch__1B9317B3">
             <End Role="purchaseitems" EntitySet="purchaseitems" />
             <End Role="issueitems" EntitySet="issueitems" />
@@ -2228,6 +2336,14 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="admins" EntitySet="admins" />
             <End Role="manufacturingestimations" EntitySet="manufacturingestimations" />
           </AssociationSet>
+          <AssociationSet Name="FK__manufactu__fisca__0880433F" Association="Self.FK__manufactu__fisca__0880433F">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
+            <End Role="manufactureditems" EntitySet="manufactureditems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__manufactu__fisca__09746778" Association="Self.FK__manufactu__fisca__09746778">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
+            <End Role="manufacturingitems" EntitySet="manufacturingitems" />
+          </AssociationSet>
           <AssociationSet Name="FK__manufactu__menui__24927208" Association="Self.FK__manufactu__menui__24927208">
             <End Role="menuitems" EntitySet="menuitems" />
             <End Role="manufacturingitems" EntitySet="manufacturingitems" />
@@ -2243,6 +2359,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <AssociationSet Name="FK__manufactu__purch__68D28DBC" Association="Self.FK__manufactu__purch__68D28DBC">
             <End Role="purchaseitems" EntitySet="purchaseitems" />
             <End Role="manufacturingestimations" EntitySet="manufacturingestimations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__manufactu__purch__74794A92" Association="Self.FK__manufactu__purch__74794A92">
+            <End Role="purchaseitems" EntitySet="purchaseitems" />
+            <End Role="manufactureditems" EntitySet="manufactureditems" />
           </AssociationSet>
           <AssociationSet Name="FK__manufactu__stock__25869641" Association="Self.FK__manufactu__stock__25869641">
             <End Role="purchaseinvoiceitems" EntitySet="purchaseinvoiceitems" />
@@ -2292,12 +2412,20 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="admins" EntitySet="admins" />
             <End Role="partypayments" EntitySet="partypayments" />
           </AssociationSet>
+          <AssociationSet Name="FK__partypaym__fisca__0A688BB1" Association="Self.FK__partypaym__fisca__0A688BB1">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
+            <End Role="partypayments" EntitySet="partypayments" />
+          </AssociationSet>
           <AssociationSet Name="FK__partypaym__party__373B3228" Association="Self.FK__partypaym__party__373B3228">
             <End Role="parties" EntitySet="parties" />
             <End Role="partypayments" EntitySet="partypayments" />
           </AssociationSet>
           <AssociationSet Name="FK__purchasea__admin__634EBE90" Association="Self.FK__purchasea__admin__634EBE90">
             <End Role="admins" EntitySet="admins" />
+            <End Role="purchaseaddstocks" EntitySet="purchaseaddstocks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__purchasea__fisca__0B5CAFEA" Association="Self.FK__purchasea__fisca__0B5CAFEA">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
             <End Role="purchaseaddstocks" EntitySet="purchaseaddstocks" />
           </AssociationSet>
           <AssociationSet Name="FK__purchasea__purch__625A9A57" Association="Self.FK__purchasea__purch__625A9A57">
@@ -2328,6 +2456,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="admins" EntitySet="admins" />
             <End Role="purchaseitems" EntitySet="purchaseitems" />
           </AssociationSet>
+          <AssociationSet Name="FK__purchasei__fisca__0C50D423" Association="Self.FK__purchasei__fisca__0C50D423">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
+            <End Role="purchaseinvoiceitems" EntitySet="purchaseinvoiceitems" />
+          </AssociationSet>
           <AssociationSet Name="FK__purchasei__fisca__160F4887" Association="Self.FK__purchasei__fisca__160F4887">
             <End Role="fiscalyears" EntitySet="fiscalyears" />
             <End Role="purchaseinvoices" EntitySet="purchaseinvoices" />
@@ -2354,6 +2486,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           </AssociationSet>
           <AssociationSet Name="FK__purchseex__admin__1AD3FDA4" Association="Self.FK__purchseex__admin__1AD3FDA4">
             <End Role="admins" EntitySet="admins" />
+            <End Role="purchseexpenses" EntitySet="purchseexpenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__purchseex__fisca__0697FACD" Association="Self.FK__purchseex__fisca__0697FACD">
+            <End Role="fiscalyears" EntitySet="fiscalyears" />
             <End Role="purchseexpenses" EntitySet="purchseexpenses" />
           </AssociationSet>
           <AssociationSet Name="FK__purchseex__purch__1BC821DD" Association="Self.FK__purchseex__purch__1BC821DD">
@@ -2622,9 +2758,37 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="counter" EntitySet="counters" />
             <End Role="counterstock" EntitySet="counterstocks" />
           </AssociationSet>
+          <AssociationSet Name="FK__issueitem__fisca__078C1F06" Association="ResturantManagementModel.FK__issueitem__fisca__078C1F06">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="issueitem" EntitySet="issueitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__manufactu__fisca__0880433F" Association="ResturantManagementModel.FK__manufactu__fisca__0880433F">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="manufactureditem" EntitySet="manufactureditems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__manufactu__fisca__09746778" Association="ResturantManagementModel.FK__manufactu__fisca__09746778">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="manufacturingitem" EntitySet="manufacturingitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__partypaym__fisca__0A688BB1" Association="ResturantManagementModel.FK__partypaym__fisca__0A688BB1">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="partypayment" EntitySet="partypayments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__purchasea__fisca__0B5CAFEA" Association="ResturantManagementModel.FK__purchasea__fisca__0B5CAFEA">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="purchaseaddstock" EntitySet="purchaseaddstocks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__purchasei__fisca__0C50D423" Association="ResturantManagementModel.FK__purchasei__fisca__0C50D423">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="purchaseinvoiceitem" EntitySet="purchaseinvoiceitems" />
+          </AssociationSet>
           <AssociationSet Name="FK__purchasei__fisca__160F4887" Association="ResturantManagementModel.FK__purchasei__fisca__160F4887">
             <End Role="fiscalyear" EntitySet="fiscalyears" />
             <End Role="purchaseinvoice" EntitySet="purchaseinvoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__purchseex__fisca__0697FACD" Association="ResturantManagementModel.FK__purchseex__fisca__0697FACD">
+            <End Role="fiscalyear" EntitySet="fiscalyears" />
+            <End Role="purchseexpens" EntitySet="purchseexpenses" />
           </AssociationSet>
           <AssociationSet Name="FK__systemset__fisca__534D60F1" Association="ResturantManagementModel.FK__systemset__fisca__534D60F1">
             <End Role="fiscalyear" EntitySet="fiscalyears" />
@@ -2644,6 +2808,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           </AssociationSet>
           <AssociationSet Name="FK__manufactu__menui__2B3F6F97" Association="ResturantManagementModel.FK__manufactu__menui__2B3F6F97">
             <End Role="menuitem" EntitySet="menuitems" />
+            <End Role="manufactureditem" EntitySet="manufactureditems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__manufactu__purch__74794A92" Association="ResturantManagementModel.FK__manufactu__purch__74794A92">
+            <End Role="purchaseitem" EntitySet="purchaseitems" />
             <End Role="manufactureditem" EntitySet="manufactureditems" />
           </AssociationSet>
           <AssociationSet Name="FK__manufatur__manuf__30F848ED" Association="ResturantManagementModel.FK__manufatur__manuf__30F848ED">
@@ -2998,7 +3166,14 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="sync_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__fiscalyea__admin__49C3F6B7" FromRole="fiscalyear" ToRole="admin" />
           <NavigationProperty Name="bills" Relationship="ResturantManagementModel.FK__bills__fiscalyea__2BFE89A6" FromRole="fiscalyear" ToRole="bill" />
+          <NavigationProperty Name="issueitems" Relationship="ResturantManagementModel.FK__issueitem__fisca__078C1F06" FromRole="fiscalyear" ToRole="issueitem" />
+          <NavigationProperty Name="manufactureditems" Relationship="ResturantManagementModel.FK__manufactu__fisca__0880433F" FromRole="fiscalyear" ToRole="manufactureditem" />
+          <NavigationProperty Name="manufacturingitems" Relationship="ResturantManagementModel.FK__manufactu__fisca__09746778" FromRole="fiscalyear" ToRole="manufacturingitem" />
+          <NavigationProperty Name="partypayments" Relationship="ResturantManagementModel.FK__partypaym__fisca__0A688BB1" FromRole="fiscalyear" ToRole="partypayment" />
+          <NavigationProperty Name="purchaseaddstocks" Relationship="ResturantManagementModel.FK__purchasea__fisca__0B5CAFEA" FromRole="fiscalyear" ToRole="purchaseaddstock" />
+          <NavigationProperty Name="purchaseinvoiceitems" Relationship="ResturantManagementModel.FK__purchasei__fisca__0C50D423" FromRole="fiscalyear" ToRole="purchaseinvoiceitem" />
           <NavigationProperty Name="purchaseinvoices" Relationship="ResturantManagementModel.FK__purchasei__fisca__160F4887" FromRole="fiscalyear" ToRole="purchaseinvoice" />
+          <NavigationProperty Name="purchseexpenses" Relationship="ResturantManagementModel.FK__purchseex__fisca__0697FACD" FromRole="fiscalyear" ToRole="purchseexpens" />
           <NavigationProperty Name="systemsettings" Relationship="ResturantManagementModel.FK__systemset__fisca__534D60F1" FromRole="fiscalyear" ToRole="systemsetting" />
           <NavigationProperty Name="wastagefoods" Relationship="ResturantManagementModel.FK__wastagefo__fisca__57DD0BE4" FromRole="fiscalyear" ToRole="wastagefood" />
           <NavigationProperty Name="wastagepurchaseitems" Relationship="ResturantManagementModel.FK__wastagepu__fisca__5D95E53A" FromRole="fiscalyear" ToRole="wastagepurchaseitem" />
@@ -3018,7 +3193,9 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="units" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fiscalyear_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__issueitem__admin__1D7B6025" FromRole="issueitem" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__issueitem__fisca__078C1F06" FromRole="issueitem" ToRole="fiscalyear" />
           <NavigationProperty Name="purchaseitem" Relationship="ResturantManagementModel.FK__issueitem__purch__1B9317B3" FromRole="issueitem" ToRole="purchaseitem" />
         </EntityType>
         <EntityType Name="manufactureditem">
@@ -3036,8 +3213,12 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="units" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="purchaseitem_id" Type="Int32" />
+          <Property Name="fiscalyear_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__manufactu__admin__2C3393D0" FromRole="manufactureditem" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__manufactu__fisca__0880433F" FromRole="manufactureditem" ToRole="fiscalyear" />
           <NavigationProperty Name="menuitem" Relationship="ResturantManagementModel.FK__manufactu__menui__2B3F6F97" FromRole="manufactureditem" ToRole="menuitem" />
+          <NavigationProperty Name="purchaseitem" Relationship="ResturantManagementModel.FK__manufactu__purch__74794A92" FromRole="manufactureditem" ToRole="purchaseitem" />
           <NavigationProperty Name="manufaturedsubitems" Relationship="ResturantManagementModel.FK__manufatur__manuf__30F848ED" FromRole="manufactureditem" ToRole="manufaturedsubitem" />
         </EntityType>
         <EntityType Name="manufacturingestimation">
@@ -3069,7 +3250,9 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
           <Property Name="qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="fiscalyear_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__manufactu__admin__267ABA7A" FromRole="manufacturingitem" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__manufactu__fisca__09746778" FromRole="manufacturingitem" ToRole="fiscalyear" />
           <NavigationProperty Name="menuitem" Relationship="ResturantManagementModel.FK__manufactu__menui__24927208" FromRole="manufacturingitem" ToRole="menuitem" />
           <NavigationProperty Name="purchaseinvoiceitem" Relationship="ResturantManagementModel.FK__manufactu__stock__25869641" FromRole="manufacturingitem" ToRole="purchaseinvoiceitem" />
         </EntityType>
@@ -3194,7 +3377,9 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="depositername" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="paidamount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="dueamount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="fiscalyear_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__partypaym__admin__36470DEF" FromRole="partypayment" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__partypaym__fisca__0A688BB1" FromRole="partypayment" ToRole="fiscalyear" />
           <NavigationProperty Name="party" Relationship="ResturantManagementModel.FK__partypaym__party__373B3228" FromRole="partypayment" ToRole="party" />
         </EntityType>
         <EntityType Name="purchaseaddstock">
@@ -3209,7 +3394,9 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="purchaseitem_id" Type="Int32" />
           <Property Name="admin_id" Type="Int32" />
           <Property Name="sync_id" Type="Int32" />
+          <Property Name="fiscalyear_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__purchasea__admin__634EBE90" FromRole="purchaseaddstock" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__purchasea__fisca__0B5CAFEA" FromRole="purchaseaddstock" ToRole="fiscalyear" />
           <NavigationProperty Name="purchaseitem" Relationship="ResturantManagementModel.FK__purchasea__purch__625A9A57" FromRole="purchaseaddstock" ToRole="purchaseitem" />
         </EntityType>
         <EntityType Name="purchasebillitem">
@@ -3260,7 +3447,9 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="purchaseitems_id" Type="Int32" />
           <Property Name="purchaseinvoice_id" Type="Int32" />
           <Property Name="date" Type="Int32" />
+          <Property Name="fiscalyear_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__stockitem__admin__1FCDBCEB" FromRole="purchaseinvoiceitem" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__purchasei__fisca__0C50D423" FromRole="purchaseinvoiceitem" ToRole="fiscalyear" />
           <NavigationProperty Name="manufacturingitems" Relationship="ResturantManagementModel.FK__manufactu__stock__25869641" FromRole="purchaseinvoiceitem" ToRole="manufacturingitem" />
           <NavigationProperty Name="manufaturedsubitems" Relationship="ResturantManagementModel.FK__manufatur__stock__31EC6D26" FromRole="purchaseinvoiceitem" ToRole="manufaturedsubitem" />
           <NavigationProperty Name="party" Relationship="ResturantManagementModel.FK__purchasei__party__3F115E1A" FromRole="purchaseinvoiceitem" ToRole="party" />
@@ -3313,6 +3502,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="qty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__purchasei__admin__44CA3770" FromRole="purchaseitem" ToRole="admin" />
           <NavigationProperty Name="issueitems" Relationship="ResturantManagementModel.FK__issueitem__purch__1B9317B3" FromRole="purchaseitem" ToRole="issueitem" />
+          <NavigationProperty Name="manufactureditems" Relationship="ResturantManagementModel.FK__manufactu__purch__74794A92" FromRole="purchaseitem" ToRole="manufactureditem" />
           <NavigationProperty Name="manufacturingestimations" Relationship="ResturantManagementModel.FK__manufactu__purch__68D28DBC" FromRole="purchaseitem" ToRole="manufacturingestimation" />
           <NavigationProperty Name="purchaseaddstocks" Relationship="ResturantManagementModel.FK__purchasea__purch__625A9A57" FromRole="purchaseitem" ToRole="purchaseaddstock" />
           <NavigationProperty Name="purchasebillitems" Relationship="ResturantManagementModel.FK__purchaseb__purch__10216507" FromRole="purchaseitem" ToRole="purchasebillitem" />
@@ -3333,7 +3523,9 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
           <Property Name="purchaseinvoice_id" Type="Int32" />
+          <Property Name="fiscalyear_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__purchseex__admin__1AD3FDA4" FromRole="purchseexpens" ToRole="admin" />
+          <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__purchseex__fisca__0697FACD" FromRole="purchseexpens" ToRole="fiscalyear" />
           <NavigationProperty Name="purchaseinvoice" Relationship="ResturantManagementModel.FK__purchseex__purch__1BC821DD" FromRole="purchseexpens" ToRole="purchaseinvoice" />
         </EntityType>
         <EntityType Name="shadow_accounts">
@@ -4515,6 +4707,78 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__issueitem__fisca__078C1F06">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.issueitem" Role="issueitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="issueitem">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__manufactu__fisca__0880433F">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.manufactureditem" Role="manufactureditem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="manufactureditem">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__manufactu__fisca__09746778">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.manufacturingitem" Role="manufacturingitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="manufacturingitem">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__partypaym__fisca__0A688BB1">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.partypayment" Role="partypayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="partypayment">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__purchasea__fisca__0B5CAFEA">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.purchaseaddstock" Role="purchaseaddstock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchaseaddstock">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__purchasei__fisca__0C50D423">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.purchaseinvoiceitem" Role="purchaseinvoiceitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchaseinvoiceitem">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__purchasei__fisca__160F4887">
           <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
           <End Type="ResturantManagementModel.purchaseinvoice" Role="purchaseinvoice" Multiplicity="*" />
@@ -4523,6 +4787,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="purchaseinvoice">
+              <PropertyRef Name="fiscalyear_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__purchseex__fisca__0697FACD">
+          <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.purchseexpens" Role="purchseexpens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fiscalyear">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchseexpens">
               <PropertyRef Name="fiscalyear_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -4584,6 +4860,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Principal>
             <Dependent Role="manufactureditem">
               <PropertyRef Name="menuitem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__manufactu__purch__74794A92">
+          <End Type="ResturantManagementModel.purchaseitem" Role="purchaseitem" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.manufactureditem" Role="manufactureditem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="purchaseitem">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="manufactureditem">
+              <PropertyRef Name="purchaseitem_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5057,6 +5345,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="issueitems">
             <EntityTypeMapping TypeName="ResturantManagementModel.issueitem">
               <MappingFragment StoreEntitySet="issueitems">
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
                 <ScalarProperty Name="units" ColumnName="units" />
                 <ScalarProperty Name="unit" ColumnName="unit" />
                 <ScalarProperty Name="updated_at" ColumnName="updated_at" />
@@ -5074,6 +5363,8 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="manufactureditems">
             <EntityTypeMapping TypeName="ResturantManagementModel.manufactureditem">
               <MappingFragment StoreEntitySet="manufactureditems">
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
+                <ScalarProperty Name="purchaseitem_id" ColumnName="purchaseitem_id" />
                 <ScalarProperty Name="units" ColumnName="units" />
                 <ScalarProperty Name="unit" ColumnName="unit" />
                 <ScalarProperty Name="qty" ColumnName="qty" />
@@ -5105,6 +5396,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="manufacturingitems">
             <EntityTypeMapping TypeName="ResturantManagementModel.manufacturingitem">
               <MappingFragment StoreEntitySet="manufacturingitems">
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
                 <ScalarProperty Name="qty" ColumnName="qty" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -5206,6 +5498,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="partypayments">
             <EntityTypeMapping TypeName="ResturantManagementModel.partypayment">
               <MappingFragment StoreEntitySet="partypayments">
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
                 <ScalarProperty Name="dueamount" ColumnName="dueamount" />
                 <ScalarProperty Name="paidamount" ColumnName="paidamount" />
                 <ScalarProperty Name="depositername" ColumnName="depositername" />
@@ -5227,6 +5520,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="purchaseaddstocks">
             <EntityTypeMapping TypeName="ResturantManagementModel.purchaseaddstock">
               <MappingFragment StoreEntitySet="purchaseaddstocks">
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="admin_id" ColumnName="admin_id" />
                 <ScalarProperty Name="purchaseitem_id" ColumnName="purchaseitem_id" />
@@ -5269,6 +5563,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="purchaseinvoiceitems">
             <EntityTypeMapping TypeName="ResturantManagementModel.purchaseinvoiceitem">
               <MappingFragment StoreEntitySet="purchaseinvoiceitems">
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="purchaseinvoice_id" ColumnName="purchaseinvoice_id" />
                 <ScalarProperty Name="purchaseitems_id" ColumnName="purchaseitems_id" />
@@ -5330,6 +5625,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="purchseexpenses">
             <EntityTypeMapping TypeName="ResturantManagementModel.purchseexpens">
               <MappingFragment StoreEntitySet="purchseexpenses">
+                <ScalarProperty Name="fiscalyear_id" ColumnName="fiscalyear_id" />
                 <ScalarProperty Name="purchaseinvoice_id" ColumnName="purchaseinvoice_id" />
                 <ScalarProperty Name="sync_id" ColumnName="sync_id" />
                 <ScalarProperty Name="created_at" ColumnName="created_at" />

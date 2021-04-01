@@ -31,9 +31,13 @@ namespace RestaurantSystem.Model
         public Nullable<decimal> qty { get; set; }
         public string unit { get; set; }
         public string units { get; set; }
+        public Nullable<int> purchaseitem_id { get; set; }
+        public Nullable<int> fiscalyear_id { get; set; }
     
         public virtual admin admin { get; set; }
+        public virtual fiscalyear fiscalyear { get; set; }
         public virtual menuitem menuitem { get; set; }
+        public virtual purchaseitem purchaseitem { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<manufaturedsubitem> manufaturedsubitems { get; set; }
     }
