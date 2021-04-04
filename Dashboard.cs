@@ -155,5 +155,15 @@ namespace RestaurantSystem
             i.Show();
             i.BringToFront();
         }
+
+        private void materialButton_menufactureditems_Click(object sender, EventArgs e)
+        {
+            var i = new ManifacturedMenuitems.List();
+            i.TopLevel = false;
+            i.Dock = DockStyle.Fill;
+            panel_menu.Controls.Add(i);
+            i.Show();
+            i.BringToFront();
+        }
     }
 }

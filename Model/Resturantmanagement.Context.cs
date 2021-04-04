@@ -41,6 +41,7 @@ namespace RestaurantSystem.Model
         public virtual DbSet<manufactureditem> manufactureditems { get; set; }
         public virtual DbSet<manufacturingestimation> manufacturingestimations { get; set; }
         public virtual DbSet<manufacturingitem> manufacturingitems { get; set; }
+        public virtual DbSet<manufacureduseitem> manufacureduseitems { get; set; }
         public virtual DbSet<manufaturedsubitem> manufaturedsubitems { get; set; }
         public virtual DbSet<menuitem> menuitems { get; set; }
         public virtual DbSet<order_items> order_items { get; set; }

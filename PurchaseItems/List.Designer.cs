@@ -47,6 +47,7 @@
             this.materialButton_addstock = new CustomControls.MaterialButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_useisseditems = new CustomControls.MaterialButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +149,7 @@
             this.materialButton_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialButton_add.FlatAppearance.BorderSize = 0;
             this.materialButton_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_add.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton_add.fontIncrement = 0F;
             this.materialButton_add.FontStyle = null;
             this.materialButton_add.ForeColor = System.Drawing.Color.White;
@@ -161,7 +163,7 @@
             this.materialButton_add.TabIndex = 1;
             this.materialButton_add.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_add.tempforefont = null;
-            this.materialButton_add.Text = "Add New";
+            this.materialButton_add.Text = "Add New Items";
             this.materialButton_add.Totext = null;
             this.materialButton_add.userole = false;
             this.materialButton_add.UseVisualStyleBackColor = false;
@@ -243,6 +245,7 @@
             this.materialButton_cate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialButton_cate.FlatAppearance.BorderSize = 0;
             this.materialButton_cate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_cate.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton_cate.fontIncrement = 0F;
             this.materialButton_cate.FontStyle = null;
             this.materialButton_cate.ForeColor = System.Drawing.Color.White;
@@ -303,7 +306,7 @@
             this.materialButton_refresh.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_refresh.hoverforefont = null;
             this.materialButton_refresh.hoverimage = null;
-            this.materialButton_refresh.Location = new System.Drawing.Point(653, 57);
+            this.materialButton_refresh.Location = new System.Drawing.Point(816, 56);
             this.materialButton_refresh.Name = "materialButton_refresh";
             this.materialButton_refresh.role = 0;
             this.materialButton_refresh.Size = new System.Drawing.Size(157, 30);
@@ -323,6 +326,7 @@
             this.materialButton_addstock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialButton_addstock.FlatAppearance.BorderSize = 0;
             this.materialButton_addstock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_addstock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton_addstock.fontIncrement = 0F;
             this.materialButton_addstock.FontStyle = null;
             this.materialButton_addstock.ForeColor = System.Drawing.Color.White;
@@ -365,12 +369,40 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Categories";
             // 
+            // btn_useisseditems
+            // 
+            this.btn_useisseditems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.btn_useisseditems.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.btn_useisseditems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_useisseditems.FlatAppearance.BorderSize = 0;
+            this.btn_useisseditems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_useisseditems.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_useisseditems.fontIncrement = 0F;
+            this.btn_useisseditems.FontStyle = null;
+            this.btn_useisseditems.ForeColor = System.Drawing.Color.White;
+            this.btn_useisseditems.hoverforecolor = System.Drawing.Color.Empty;
+            this.btn_useisseditems.hoverforefont = null;
+            this.btn_useisseditems.hoverimage = null;
+            this.btn_useisseditems.Location = new System.Drawing.Point(653, 56);
+            this.btn_useisseditems.Name = "btn_useisseditems";
+            this.btn_useisseditems.role = 0;
+            this.btn_useisseditems.Size = new System.Drawing.Size(157, 30);
+            this.btn_useisseditems.TabIndex = 33;
+            this.btn_useisseditems.tempforecolor = System.Drawing.Color.Empty;
+            this.btn_useisseditems.tempforefont = null;
+            this.btn_useisseditems.Text = "Use Purchased Items";
+            this.btn_useisseditems.Totext = null;
+            this.btn_useisseditems.userole = false;
+            this.btn_useisseditems.UseVisualStyleBackColor = false;
+            this.btn_useisseditems.Click += new System.EventHandler(this.btn_useisseditems_Click);
+            // 
             // List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1069, 621);
+            this.Controls.Add(this.btn_useisseditems);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.materialButton_add);
@@ -420,5 +452,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private CustomControls.MaterialButton btn_useisseditems;
     }
 }

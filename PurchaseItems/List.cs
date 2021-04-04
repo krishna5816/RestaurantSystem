@@ -100,5 +100,11 @@ namespace RestaurantSystem.PurchaseItems
                 }
             }
         }
+
+        private void btn_useisseditems_Click(object sender, EventArgs e)
+        {
+            var list = new Issueduseitems.List();
+            list.Show();
+        }
     }
 }

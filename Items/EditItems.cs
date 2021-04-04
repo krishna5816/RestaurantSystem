@@ -47,15 +47,14 @@ namespace RestaurantSystem.Items
             var item = db.menuitems.Find(id);
             betterTextBox1_name.Text = item.name;
             betterTextBox1_price.Text = item.price.ToString();
-            betterTextBox1_qty.decVal = item.qty.Value;
-            betterTextBox_unit.Text = item.unit;
+            betterTextBox_units.Text = item.unit;
             betterTextBox_Estimateby.Text = item.estimated_by;
-            betterTextBox_qty.decVal = item.qty.Value;
+            betterTextBox1_qty.decVal = item.qty.Value;
             comboBox1_category.Text = ((item.category as Model.category).name);
             foreach (var mc in db.manufacturingestimations.Where(o => o.menuitem_id == id).ToList())
             {
 
-                var loaddata = new ListViewItem(new string[]{ sn.ToString(), mc.purchaseitem.name, mc.quantity.ToString(),mc.id.ToString() });
+                var loaddata = new ListViewItem(new string[]{ sn.ToString(), mc.purchaseitem.name, mc.quantity.ToString(),mc.unit, mc.id.ToString() });
                 sn = sn + 1;
                 betterListView1.Items.Add(loaddata);
 
@@ -128,7 +127,7 @@ namespace RestaurantSystem.Items
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
                 var sel = betterListView1.SelectedItems[0];
-                int id =Convert.ToInt32(sel.SubItems[3].Text);
+                int id =Convert.ToInt32(sel.SubItems[4].Text);
                 var d = db.manufacturingestimations.Where(o => o.id ==id).First();
                 db.Entry(d).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
@@ -144,7 +143,7 @@ namespace RestaurantSystem.Items
                     purchaseitem_id = selitem.id,
                     menuitem_id = id,
                     quantity = betterTextBox_qty.decVal,
-                    unit=betterTextBox_unit.Text,
+                    unit=betterTextBox_unitforestimate.Text,
                     updated_at = DateTime.Now,
                     created_at = DateTime.Now
                 };
@@ -167,8 +166,7 @@ namespace RestaurantSystem.Items
             betterListView1.Items.Clear();
             foreach (var mc in db.manufacturingestimations.Where(o => o.menuitem_id == id).ToList())
             {
-
-                var loaddata = new ListViewItem(new string[] { sn.ToString(), mc.purchaseitem.name, mc.quantity.ToString(), mc.id.ToString() });
+                var loaddata = new ListViewItem(new string[] { sn.ToString(), mc.purchaseitem.name, mc.quantity.ToString(),mc.unit, mc.id.ToString() });
                 sn = sn + 1;
                 betterListView1.Items.Add(loaddata);
 
@@ -177,7 +175,21 @@ namespace RestaurantSystem.Items
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
+        }
 
+        private void comboBox_pitems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_pitems.SelectedIndex > -1)
+            {
+                var p_items = comboBox_pitems.SelectedItem as Model.purchaseitem;
+                betterTextBox_unitforestimate.Text = p_items.unit;
+            }
+
+        }
+
+        private void materialButton_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

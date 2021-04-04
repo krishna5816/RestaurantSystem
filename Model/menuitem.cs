@@ -21,6 +21,7 @@ namespace RestaurantSystem.Model
             this.manufactureditems = new HashSet<manufactureditem>();
             this.manufacturingestimations = new HashSet<manufacturingestimation>();
             this.manufacturingitems = new HashSet<manufacturingitem>();
+            this.manufacureduseitems = new HashSet<manufacureduseitem>();
             this.order_items = new HashSet<order_items>();
             this.wastagefoods = new HashSet<wastagefood>();
         }
@@ -48,6 +49,8 @@ namespace RestaurantSystem.Model
         public virtual ICollection<manufacturingestimation> manufacturingestimations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<manufacturingitem> manufacturingitems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<manufacureduseitem> manufacureduseitems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order_items> order_items { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -97,6 +97,7 @@ namespace RestaurantSystem.Items
                     purchaseitem_id=purchaseitem_id,
                     menuitem_id = item.id,
                     quantity = qty,
+                    unit=item.unit,
                     updated_at = DateTime.Now,
                     created_at = DateTime.Now
                 };
@@ -168,7 +169,11 @@ namespace RestaurantSystem.Items
 
         private void comboBox_pitems_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox_pitems.SelectedIndex > -1)
+            {
+                var p_items = comboBox_pitems.SelectedItem as Model.purchaseitem;
+                betterTextBox_unitforestimate.Text = p_items.unit;
+            }
         }
 
         private void materialButton_loadestimate_Click(object sender, EventArgs e)
@@ -184,6 +189,11 @@ namespace RestaurantSystem.Items
         private void panel9_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void materialButton_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

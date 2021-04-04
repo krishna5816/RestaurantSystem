@@ -5,35 +5,36 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="96f6a2cf0c8e4f20a701987a03a01513" Name="Diagram1" ZoomLevel="33">
-        <EntityTypeShape EntityType="ResturantManagementModel.account" Width="1.5" PointX="3" PointY="71.5" />
-        <EntityTypeShape EntityType="ResturantManagementModel.admin" Width="1.5" PointX="0.75" PointY="49.25" />
-        <EntityTypeShape EntityType="ResturantManagementModel.billitem" Width="1.5" PointX="16.5" PointY="47.375" />
-        <EntityTypeShape EntityType="ResturantManagementModel.bill" Width="1.5" PointX="11.25" PointY="46.875" />
-        <EntityTypeShape EntityType="ResturantManagementModel.category" Width="1.5" PointX="3" PointY="56.625" />
-        <EntityTypeShape EntityType="ResturantManagementModel.countercloseing" Width="1.5" PointX="5.25" PointY="41.75" />
-        <EntityTypeShape EntityType="ResturantManagementModel.counteropening" Width="1.5" PointX="5.25" PointY="51.75" />
-        <EntityTypeShape EntityType="ResturantManagementModel.counter" Width="1.5" PointX="3" PointY="39.5" />
-        <EntityTypeShape EntityType="ResturantManagementModel.counterstatus" Width="1.5" PointX="8.25" PointY="46.625" />
-        <EntityTypeShape EntityType="ResturantManagementModel.counterstock" Width="1.5" PointX="5.25" PointY="46.875" />
-        <EntityTypeShape EntityType="ResturantManagementModel.customerpayment" Width="1.5" PointX="5.25" PointY="68.375" />
-        <EntityTypeShape EntityType="ResturantManagementModel.fiscalyear" Width="1.5" PointX="3" PointY="59.875" />
-        <EntityTypeShape EntityType="ResturantManagementModel.issueitem" Width="1.5" PointX="5.25" PointY="56.125" />
-        <EntityTypeShape EntityType="ResturantManagementModel.manufactureditem" Width="1.5" PointX="16.5" PointY="54.875" />
-        <EntityTypeShape EntityType="ResturantManagementModel.manufacturingestimation" Width="1.5" PointX="13.5" PointY="51.875" />
-        <EntityTypeShape EntityType="ResturantManagementModel.manufacturingitem" Width="1.5" PointX="13.5" PointY="56.25" />
-        <EntityTypeShape EntityType="ResturantManagementModel.manufaturedsubitem" Width="1.5" PointX="18.75" PointY="51.875" />
-        <EntityTypeShape EntityType="ResturantManagementModel.menuitem" Width="1.5" PointX="8.25" PointY="52.75" />
-        <EntityTypeShape EntityType="ResturantManagementModel.order_items" Width="1.5" PointX="13.5" PointY="46.125" />
-        <EntityTypeShape EntityType="ResturantManagementModel.order_tables" Width="1.5" PointX="3" PointY="48.875" />
-        <EntityTypeShape EntityType="ResturantManagementModel.party" Width="1.5" PointX="3" PointY="65.75" />
-        <EntityTypeShape EntityType="ResturantManagementModel.partypayment" Width="1.5" PointX="8.25" PointY="64.625" />
-        <EntityTypeShape EntityType="ResturantManagementModel.purchaseaddstock" Width="1.5" PointX="11.25" PointY="55.375" />
-        <EntityTypeShape EntityType="ResturantManagementModel.purchasebillitem" Width="1.5" PointX="21.75" PointY="53.625" />
-        <EntityTypeShape EntityType="ResturantManagementModel.purchasecategory" Width="1.5" PointX="11.25" PointY="65.5" />
-        <EntityTypeShape EntityType="ResturantManagementModel.purchaseinvoiceitem" Width="1.5" PointX="8.25" PointY="58.5" />
-        <EntityTypeShape EntityType="ResturantManagementModel.purchaseinvoice" Width="1.5" PointX="5.25" PointY="61.125" />
-        <EntityTypeShape EntityType="ResturantManagementModel.purchaseitem" Width="1.5" PointX="19.5" PointY="56.5" />
-        <EntityTypeShape EntityType="ResturantManagementModel.purchseexpens" Width="1.5" PointX="16.5" PointY="60.375" />
+        <EntityTypeShape EntityType="ResturantManagementModel.account" Width="1.5" PointX="3" PointY="73" />
+        <EntityTypeShape EntityType="ResturantManagementModel.admin" Width="1.5" PointX="0.75" PointY="50.75" />
+        <EntityTypeShape EntityType="ResturantManagementModel.billitem" Width="1.5" PointX="19.5" PointY="56.625" />
+        <EntityTypeShape EntityType="ResturantManagementModel.bill" Width="1.5" PointX="13.25" PointY="51" />
+        <EntityTypeShape EntityType="ResturantManagementModel.category" Width="1.5" PointX="3" PointY="41" />
+        <EntityTypeShape EntityType="ResturantManagementModel.countercloseing" Width="1.5" PointX="5.25" PointY="62.75" />
+        <EntityTypeShape EntityType="ResturantManagementModel.counteropening" Width="1.5" PointX="8.25" PointY="61.75" />
+        <EntityTypeShape EntityType="ResturantManagementModel.counter" Width="1.5" PointX="3" PointY="68" />
+        <EntityTypeShape EntityType="ResturantManagementModel.counterstatus" Width="1.5" PointX="11.25" PointY="59.5" />
+        <EntityTypeShape EntityType="ResturantManagementModel.counterstock" Width="1.5" PointX="11.25" PointY="64.875" />
+        <EntityTypeShape EntityType="ResturantManagementModel.customerpayment" Width="1.5" PointX="8.25" PointY="66.875" />
+        <EntityTypeShape EntityType="ResturantManagementModel.fiscalyear" Width="1.5" PointX="3" PointY="44.375" />
+        <EntityTypeShape EntityType="ResturantManagementModel.issueitem" Width="1.5" PointX="11.25" PointY="44.75" />
+        <EntityTypeShape EntityType="ResturantManagementModel.manufactureditem" Width="1.5" PointX="15.5" PointY="51.5" />
+        <EntityTypeShape EntityType="ResturantManagementModel.manufacturingestimation" Width="1.5" PointX="13.5" PointY="46.75" />
+        <EntityTypeShape EntityType="ResturantManagementModel.manufacturingitem" Width="1.5" PointX="15.75" PointY="46.875" />
+        <EntityTypeShape EntityType="ResturantManagementModel.manufacureduseitem" Width="1.5" PointX="18.75" PointY="52.25" />
+        <EntityTypeShape EntityType="ResturantManagementModel.manufaturedsubitem" Width="1.5" PointX="21.75" PointY="52.875" />
+        <EntityTypeShape EntityType="ResturantManagementModel.menuitem" Width="1.5" PointX="5.25" PointY="47.5" />
+        <EntityTypeShape EntityType="ResturantManagementModel.order_items" Width="1.5" PointX="13.5" PointY="59.375" />
+        <EntityTypeShape EntityType="ResturantManagementModel.order_tables" Width="1.5" PointX="3" PointY="64.5" />
+        <EntityTypeShape EntityType="ResturantManagementModel.party" Width="1.5" PointX="3" PointY="50.125" />
+        <EntityTypeShape EntityType="ResturantManagementModel.partypayment" Width="1.5" PointX="8.25" PointY="49.375" />
+        <EntityTypeShape EntityType="ResturantManagementModel.purchaseaddstock" Width="1.5" PointX="5.25" PointY="54" />
+        <EntityTypeShape EntityType="ResturantManagementModel.purchasebillitem" Width="1.5" PointX="21.75" PointY="57" />
+        <EntityTypeShape EntityType="ResturantManagementModel.purchasecategory" Width="1.5" PointX="5.25" PointY="58.125" />
+        <EntityTypeShape EntityType="ResturantManagementModel.purchaseinvoiceitem" Width="1.5" PointX="10.5" PointY="50" />
+        <EntityTypeShape EntityType="ResturantManagementModel.purchaseinvoice" Width="1.5" PointX="8.25" PointY="54.75" />
+        <EntityTypeShape EntityType="ResturantManagementModel.purchaseitem" Width="1.5" PointX="16.5" PointY="61.5" />
+        <EntityTypeShape EntityType="ResturantManagementModel.purchseexpens" Width="1.5" PointX="16.5" PointY="56.75" />
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_accounts" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_bills" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_billsitems" Width="1.5" PointX="4.75" PointY="0.75" />
@@ -53,9 +54,9 @@
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_purchaseinvoices" Width="1.5" PointX="12.75" PointY="5.75" />
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_purchaseitems" Width="1.5" PointX="12.75" PointY="12.75" />
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_systemsettings" Width="1.5" PointX="14.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ResturantManagementModel.systemsetting" Width="1.5" PointX="5.25" PointY="92.125" />
-        <EntityTypeShape EntityType="ResturantManagementModel.wastagefood" Width="1.5" PointX="13.5" PointY="61.375" />
-        <EntityTypeShape EntityType="ResturantManagementModel.wastagepurchaseitem" Width="1.5" PointX="11.25" PointY="60.375" />
+        <EntityTypeShape EntityType="ResturantManagementModel.systemsetting" Width="1.5" PointX="5.25" PointY="76.625" />
+        <EntityTypeShape EntityType="ResturantManagementModel.wastagefood" Width="1.5" PointX="13.5" PointY="42" />
+        <EntityTypeShape EntityType="ResturantManagementModel.wastagepurchaseitem" Width="1.5" PointX="8.25" PointY="45" />
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_admins" Width="1.5" PointX="14.75" PointY="4.75" />
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_categories" Width="1.5" PointX="4.75" PointY="14.75" />
         <EntityTypeShape EntityType="ResturantManagementModel.shadow_customerpayments" Width="1.5" PointX="14.75" PointY="8.75" />
@@ -117,11 +118,14 @@
         <AssociationConnector Association="ResturantManagementModel.FK__issueitem__purch__1B9317B3" />
         <AssociationConnector Association="ResturantManagementModel.FK__manufactu__menui__2B3F6F97" />
         <AssociationConnector Association="ResturantManagementModel.FK__manufactu__purch__74794A92" />
+        <AssociationConnector Association="ResturantManagementModel.FK__manufacur__manuf__1C873BEC" />
         <AssociationConnector Association="ResturantManagementModel.FK__manufatur__manuf__30F848ED" />
         <AssociationConnector Association="ResturantManagementModel.FK__manufactu__menui__6ABAD62E" />
         <AssociationConnector Association="ResturantManagementModel.FK__manufactu__purch__68D28DBC" />
         <AssociationConnector Association="ResturantManagementModel.FK__manufactu__menui__24927208" />
         <AssociationConnector Association="ResturantManagementModel.FK__manufactu__stock__25869641" />
+        <AssociationConnector Association="ResturantManagementModel.FK__manufacur__manui__1B9317B3" />
+        <AssociationConnector Association="ResturantManagementModel.FK__manufacur__purch__1D7B6025" />
         <AssociationConnector Association="ResturantManagementModel.FK__manufatur__stock__31EC6D26" />
         <AssociationConnector Association="ResturantManagementModel.FK__order_ite__menui__12C8C788" />
         <AssociationConnector Association="ResturantManagementModel.FK__wastagefo__menui__55009F39" />

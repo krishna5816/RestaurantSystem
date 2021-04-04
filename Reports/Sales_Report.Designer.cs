@@ -187,7 +187,7 @@
             this.betterListView1.HideSelection = false;
             this.betterListView1.Location = new System.Drawing.Point(380, 40);
             this.betterListView1.Name = "betterListView1";
-            this.betterListView1.Size = new System.Drawing.Size(566, 410);
+            this.betterListView1.Size = new System.Drawing.Size(430, 410);
             this.betterListView1.sortable = false;
             this.betterListView1.TabIndex = 36;
             this.betterListView1.UseCompatibleStateImageBehavior = false;
@@ -204,7 +204,7 @@
             this.panel_top.ForeColor = System.Drawing.Color.White;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(946, 40);
+            this.panel_top.Size = new System.Drawing.Size(810, 40);
             this.panel_top.TabIndex = 37;
             // 
             // panel1
@@ -213,7 +213,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(946, 1);
+            this.panel1.Size = new System.Drawing.Size(810, 1);
             this.panel1.TabIndex = 57;
             // 
             // label1_Add
@@ -259,7 +259,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(946, 450);
+            this.ClientSize = new System.Drawing.Size(810, 450);
             this.Controls.Add(this.betterListView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);

@@ -242,6 +242,15 @@
       <DependentUpon>Viwer.cs</DependentUpon>
     </Compile>
     <Compile Include="INFO.cs" />
+    <Compile Include="Issueduseitems\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Issueduseitems\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Issueduseitems\partial.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IssueKitchen\Issuekitchenitems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +303,15 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageKeys\Manage.cs" />
+    <Compile Include="ManifacturedMenuitems\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManifacturedMenuitems\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManifacturedMenuitems\Menufactured_partial.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Manufacture\Manage\Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +378,9 @@
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\manufacturingitem.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\manufacureduseitem.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\manufaturedsubitem.cs">
@@ -766,6 +787,9 @@
     <EmbeddedResource Include="FiscalYear\Viwer.resx">
       <DependentUpon>Viwer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Issueduseitems\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IssueKitchen\Issuekitchenitems.resx">
       <DependentUpon>Issuekitchenitems.cs</DependentUpon>
     </EmbeddedResource>
@@ -789,6 +813,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManifacturedMenuitems\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manufacture\Manage\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>

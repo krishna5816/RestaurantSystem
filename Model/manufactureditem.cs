@@ -17,6 +17,7 @@ namespace RestaurantSystem.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public manufactureditem()
         {
+            this.manufacureduseitems = new HashSet<manufacureduseitem>();
             this.manufaturedsubitems = new HashSet<manufaturedsubitem>();
         }
     
@@ -30,7 +31,6 @@ namespace RestaurantSystem.Model
         public Nullable<int> sync_id { get; set; }
         public Nullable<decimal> qty { get; set; }
         public string unit { get; set; }
-        public string units { get; set; }
         public Nullable<int> purchaseitem_id { get; set; }
         public Nullable<int> fiscalyear_id { get; set; }
     
@@ -38,6 +38,8 @@ namespace RestaurantSystem.Model
         public virtual fiscalyear fiscalyear { get; set; }
         public virtual menuitem menuitem { get; set; }
         public virtual purchaseitem purchaseitem { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<manufacureduseitem> manufacureduseitems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<manufaturedsubitem> manufaturedsubitems { get; set; }
     }
