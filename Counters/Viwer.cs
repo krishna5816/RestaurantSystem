@@ -15,6 +15,7 @@ namespace RestaurantSystem.Counters
        
         Model.ResturantManagementEntities db;
         Model.counter Counter;
+        int id;
         public Viwer(int id)
         {
             InitializeComponent();
@@ -36,8 +37,11 @@ namespace RestaurantSystem.Counters
             }
 
             refreshdailydata();
-            
+            this.id = id;
         }
+       
+      
+    
 
         void refreshdailydata()
         {
@@ -129,6 +133,14 @@ namespace RestaurantSystem.Counters
                 }
                 CustomControls.Modal.Show(edit);
             }
+        }
+
+        private void materialButton_daily_detail_Click(object sender, EventArgs e)
+        {
+           var trasaction= new Counters.Transaction(id, nepaliCalender.Datestamp);
+            var t = new CustomControls.Modal(trasaction);
+            t.Show();
+
         }
     }
 }

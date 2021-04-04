@@ -31,7 +31,6 @@
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.materialButton_Edit = new CustomControls.MaterialButton();
             this.label_counter = new System.Windows.Forms.Label();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label_dailyclosingamount = new System.Windows.Forms.Label();
             this.label_dailystockamount = new System.Windows.Forms.Label();
@@ -44,6 +43,8 @@
             this.label_dailystatus = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.nepaliCalender = new CustomControls.NepaliCalender();
+            this.materialButton_daily_detail = new CustomControls.MaterialButton();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -69,6 +70,7 @@
             // 
             // splitContainer.Panel2
             // 
+            this.splitContainer.Panel2.Controls.Add(this.materialButton_daily_detail);
             this.splitContainer.Panel2.Controls.Add(this.label_dailyclosingamount);
             this.splitContainer.Panel2.Controls.Add(this.label_dailystockamount);
             this.splitContainer.Panel2.Controls.Add(this.label_dailyopeningamount);
@@ -80,7 +82,7 @@
             this.splitContainer.Panel2.Controls.Add(this.label_dailystatus);
             this.splitContainer.Panel2.Controls.Add(this.label6);
             this.splitContainer.Panel2.Controls.Add(this.nepaliCalender);
-            this.splitContainer.Size = new System.Drawing.Size(240, 473);
+            this.splitContainer.Size = new System.Drawing.Size(325, 473);
             this.splitContainer.SplitterDistance = 106;
             this.splitContainer.TabIndex = 0;
             // 
@@ -98,10 +100,10 @@
             this.materialButton_Edit.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_Edit.hoverforefont = null;
             this.materialButton_Edit.hoverimage = null;
-            this.materialButton_Edit.Location = new System.Drawing.Point(10, 64);
+            this.materialButton_Edit.Location = new System.Drawing.Point(12, 62);
             this.materialButton_Edit.Name = "materialButton_Edit";
             this.materialButton_Edit.role = 0;
-            this.materialButton_Edit.Size = new System.Drawing.Size(219, 29);
+            this.materialButton_Edit.Size = new System.Drawing.Size(109, 29);
             this.materialButton_Edit.TabIndex = 9;
             this.materialButton_Edit.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_Edit.tempforefont = null;
@@ -121,17 +123,6 @@
             this.label_counter.Size = new System.Drawing.Size(82, 19);
             this.label_counter.TabIndex = 2;
             this.label_counter.Text = "CounterNo";
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.Image = global::RestaurantSystem.Properties.Resources.Rms_Connection_off;
-            this.pictureBox.Location = new System.Drawing.Point(190, 12);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox.TabIndex = 1;
-            this.pictureBox.TabStop = false;
             // 
             // label1
             // 
@@ -273,6 +264,44 @@
             this.nepaliCalender.TabIndex = 0;
             this.nepaliCalender.dateChange += new CustomControls.NepaliCalender.dateChangeHandler(this.nepaliCalender_dateChange);
             // 
+            // materialButton_daily_detail
+            // 
+            this.materialButton_daily_detail.BackColor = System.Drawing.Color.White;
+            this.materialButton_daily_detail.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.materialButton_daily_detail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton_daily_detail.FlatAppearance.BorderSize = 0;
+            this.materialButton_daily_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_daily_detail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton_daily_detail.fontIncrement = 0F;
+            this.materialButton_daily_detail.FontStyle = null;
+            this.materialButton_daily_detail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.materialButton_daily_detail.hoverforecolor = System.Drawing.Color.Empty;
+            this.materialButton_daily_detail.hoverforefont = null;
+            this.materialButton_daily_detail.hoverimage = null;
+            this.materialButton_daily_detail.Location = new System.Drawing.Point(237, 8);
+            this.materialButton_daily_detail.Name = "materialButton_daily_detail";
+            this.materialButton_daily_detail.role = 0;
+            this.materialButton_daily_detail.Size = new System.Drawing.Size(80, 29);
+            this.materialButton_daily_detail.TabIndex = 16;
+            this.materialButton_daily_detail.tempforecolor = System.Drawing.Color.Empty;
+            this.materialButton_daily_detail.tempforefont = null;
+            this.materialButton_daily_detail.Text = "View Bills";
+            this.materialButton_daily_detail.Totext = null;
+            this.materialButton_daily_detail.userole = false;
+            this.materialButton_daily_detail.UseVisualStyleBackColor = false;
+            this.materialButton_daily_detail.Click += new System.EventHandler(this.materialButton_daily_detail_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Image = global::RestaurantSystem.Properties.Resources.Rms_Connection_off;
+            this.pictureBox.Location = new System.Drawing.Point(275, 12);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox.TabIndex = 1;
+            this.pictureBox.TabStop = false;
+            // 
             // Viwer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -282,7 +311,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Viwer";
-            this.Size = new System.Drawing.Size(240, 473);
+            this.Size = new System.Drawing.Size(325, 473);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();
             this.splitContainer.Panel2.ResumeLayout(false);
@@ -312,5 +341,6 @@
         private CustomControls.NepaliCalender nepaliCalender;
         private System.Windows.Forms.Label label_dailyrequestedAmount;
         private System.Windows.Forms.Label label4;
+        private CustomControls.MaterialButton materialButton_daily_detail;
     }
 }

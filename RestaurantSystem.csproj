@@ -169,6 +169,12 @@
     <Compile Include="Counters\Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Counters\Transaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Counters\Transaction.Designer.cs">
+      <DependentUpon>Transaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Counters\Viwer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -750,6 +756,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Counters\Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Counters\Transaction.resx">
+      <DependentUpon>Transaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Counters\Viwer.resx">
       <DependentUpon>Viwer.cs</DependentUpon>
