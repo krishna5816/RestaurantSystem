@@ -165,6 +165,10 @@
           <Property Name="crated_at" Type="datetime" Nullable="false" />
           <Property Name="updated_at" Type="datetime" Nullable="false" />
           <Property Name="admin_id" Type="int" />
+          <Property Name="closingdue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="approvedamount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="closingnettotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="currentstock" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="counterstocks">
           <Key>
@@ -3185,6 +3189,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="crated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="admin_id" Type="Int32" />
+          <Property Name="closingdue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="approvedamount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="closingnettotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="currentstock" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__counterst__admin__5070F446" FromRole="counterstatus" ToRole="admin" />
           <NavigationProperty Name="counter" Relationship="ResturantManagementModel.FK__counterst__count__4F7CD00D" FromRole="counterstatus" ToRole="counter" />
         </EntityType>
@@ -5405,6 +5413,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="counterstatuses">
             <EntityTypeMapping TypeName="ResturantManagementModel.counterstatus">
               <MappingFragment StoreEntitySet="counterstatuses">
+                <ScalarProperty Name="currentstock" ColumnName="currentstock" />
+                <ScalarProperty Name="closingnettotal" ColumnName="closingnettotal" />
+                <ScalarProperty Name="approvedamount" ColumnName="approvedamount" />
+                <ScalarProperty Name="closingdue" ColumnName="closingdue" />
                 <ScalarProperty Name="admin_id" ColumnName="admin_id" />
                 <ScalarProperty Name="updated_at" ColumnName="updated_at" />
                 <ScalarProperty Name="crated_at" ColumnName="crated_at" />

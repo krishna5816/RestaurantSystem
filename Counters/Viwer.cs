@@ -12,7 +12,7 @@ namespace RestaurantSystem.Counters
 {
     public partial class Viwer : UserControl
     {
-       
+
         Model.ResturantManagementEntities db;
         Model.counter Counter;
         int id;
@@ -22,8 +22,8 @@ namespace RestaurantSystem.Counters
             db = Model.DatabaseConfigure.getConfigure();
             using (var db = Model.DatabaseConfigure.getConfigure())
             {
-            this.Counter = db.counters.Find(id);
-            label_counter.Text = this.Counter.name;
+                this.Counter = db.counters.Find(id);
+                label_counter.Text = this.Counter.name;
 
             }
             nepaliCalender.Datestamp = INFO.currentdate;
@@ -39,60 +39,32 @@ namespace RestaurantSystem.Counters
             refreshdailydata();
             this.id = id;
         }
-       
-      
-    
-
         void refreshdailydata()
         {
             var date = nepaliCalender.Datestamp;
             var counter_id = this.Counter.id;
-           
-            if(db.counterstatuses.Count(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id) > 0)
+
+            if (db.counterstatuses.Count(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id) > 0)
             {
-                var counterstatus= db.counterstatuses.First(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id);
+                var counterstatus = db.counterstatuses.First(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id);
                 label_dailystatus.Text = INFO.counterstatuses[counterstatus.status];
-                label_dailyrequestedAmount.Text = counterstatus.requestedamount.Value.ToString();
-
-                if(db.counteropenings.Count(o=>o.date==nepaliCalender.Datestamp && o.counter_id == counter_id) > 0)
-                {
-                    var counteropening = db.counteropenings.First(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id);
-                    label_dailyopeningamount.Text = counteropening.amount.Value.ToString();
-                }
-                else
-                {
-                    label_dailyopeningamount.Text = "---";
-                }
-
-                if (db.counterstocks.Count(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id) > 0)
-                {
-                    var counterstock = db.counterstocks.First(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id);
-                    label_dailystockamount.Text = counterstock.amount.Value.ToString();
-                }
-                else
-                {
-                    label_dailystockamount.Text = "---";
-                }
-                if (db.counteropenings.Count(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id) > 0)
-                {
-                    var counterclosing = db.counteropenings.First(o => o.date == nepaliCalender.Datestamp && o.counter_id == counter_id);
-                    label_dailyclosingamount.Text = counterclosing.amount.Value.ToString();
-                }
-                else
-                {
-                    label_dailystockamount.Text = "---";
-                }
-
+                label_dailyrequestedAmount.Text = counterstatus.requestedamount.HasValue ? counterstatus.requestedamount.Value.ToString("0.##") : "---";
+                label_dailyopeningamount.Text = counterstatus.approvedamount.HasValue ? counterstatus.approvedamount.Value.ToString("0.##") : "---";
+                lbl_approvedamount.Text = counterstatus.approvedamount.HasValue? counterstatus.approvedamount.Value.ToString("0.##"):"---";
+                label_dailystockamount.Text = counterstatus.currentstock.HasValue ? counterstatus.currentstock.Value.ToString("0.##") : "---";
+                label_dailyclosingamount.Text = counterstatus.closeingamount.HasValue ? counterstatus.closeingamount.Value.ToString("0.##") : "---";
             }
             else
             {
-                label_dailystatus.Text = "---";
+                label_dailystatus.Text = "NOT IN USE";
                 label_dailyrequestedAmount.Text = "---";
+                label_dailyopeningamount.Text = "---";
+                lbl_approvedamount.Text = "---";
+                label_dailystockamount.Text = "---";
+                label_dailyclosingamount.Text = "---";
             }
-
-            
         }
-
+                  
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -118,7 +90,8 @@ namespace RestaurantSystem.Counters
             else
             {
                 var edit = new Edit(this.Counter.id);
-                edit.edit += (counter)=>{
+                edit.edit += (counter) =>
+                {
                     db.Entry(this.Counter).Reload();
 
                 };
@@ -137,7 +110,7 @@ namespace RestaurantSystem.Counters
 
         private void materialButton_daily_detail_Click(object sender, EventArgs e)
         {
-           var trasaction= new Counters.Transaction(id, nepaliCalender.Datestamp);
+            var trasaction = new Counters.Transaction(id, nepaliCalender.Datestamp);
             var t = new CustomControls.Modal(trasaction);
             t.Show();
 

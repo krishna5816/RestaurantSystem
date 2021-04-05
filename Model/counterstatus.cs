@@ -22,11 +22,15 @@ namespace RestaurantSystem.Model
         public int status { get; set; }
         public int state { get; set; }
         public string ip { get; set; }
-        public decimal closeingamount { get; set; }
+        public Nullable<decimal> closeingamount { get; set; }
         public Nullable<int> sync_id { get; set; }
         public System.DateTime crated_at { get; set; }
         public System.DateTime updated_at { get; set; }
         public Nullable<int> admin_id { get; set; }
+        public Nullable<decimal> closingdue { get; set; }
+        public Nullable<decimal> approvedamount { get; set; }
+        public Nullable<decimal> closingnettotal { get; set; }
+        public Nullable<decimal> currentstock { get; set; }
     
         public virtual admin admin { get; set; }
         public virtual counter counter { get; set; }

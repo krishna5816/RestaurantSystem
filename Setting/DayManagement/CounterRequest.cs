@@ -33,44 +33,63 @@ namespace RestaurantSystem.Setting.DayManagement
                 CustomControls.Alert.show("Counter Management", "Accecpted Value Cannot Be Zero", 5000);
                 return;
             }
-            if(CustomControls.Comformation.show("Counter Management", "Please Check Following Detail are Correct:\n" +
+            if (CustomControls.Comformation.show("Counter Management", "Please Check Following Detail are Correct:\n" +
                 "1. Counter Number is " + label_counterno.Text + "\n" +
-                "2. Requested Amount is " + label_amount.Text+"\n" +
-                "3. Accecpted Amount is"+betterTextBox_accecpted.Text)== DialogResult.Yes)
+                "2. Requested Amount is " + label_amount.Text + "\n" +
+                "3. Accecpted Amount is " + betterTextBox_accecpted.Text) == DialogResult.Yes)
             {
                 this.Counterstatus.approved = true;
                 this.Counterstatus.status = 1;
+                this.Counterstatus.approvedamount = betterTextBox_accecpted.decVal;
+                this.Counterstatus.currentstock = betterTextBox_accecpted.decVal;
+                this.Counterstatus.updated_at = DateTime.Now;
                 db.Entry(this.Counterstatus).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-
-                var dayopen = new Model.counteropening()
-                {
-                    date = this.Counterstatus.date,
-                    admin_id = INFO.admin_id,
-                    state = 1,
-                    updated_at=DateTime.Now,
-                    created_at=DateTime.Now,
-                    amount = betterTextBox_accecpted.decVal,
-                    counter_id=this.Counterstatus.counter_id
-                };
-
-                var counterstock = new Model.counterstock()
-                {
-                    date = this.Counterstatus.date,
-                    admin_id = INFO.admin_id,
-                    state = 1,
-                    updated_at = DateTime.Now,
-                    created_at = DateTime.Now,
-                    amount = betterTextBox_accecpted.decVal,
-                    counter_id = this.Counterstatus.counter_id,
-                    
-                };
-                db.counteropenings.Add(dayopen);
-                db.counterstocks.Add(counterstock);
-                db.SaveChanges();
-
                 this.Parent.Controls.Remove(this);
             }
+            //if (betterTextBox_accecpted.decVal == 0)
+            //{
+            //    CustomControls.Alert.show("Counter Management", "Accecpted Value Cannot Be Zero", 5000);
+            //    return;
+            //}
+            //if(CustomControls.Comformation.show("Counter Management", "Please Check Following Detail are Correct:\n" +
+            //    "1. Counter Number is " + label_counterno.Text + "\n" +
+            //    "2. Requested Amount is " + label_amount.Text+"\n" +
+            //    "3. Accecpted Amount is"+betterTextBox_accecpted.Text)== DialogResult.Yes)
+            //{
+            //    this.Counterstatus.approved = true;
+            //    this.Counterstatus.status = 1;
+            //    db.Entry(this.Counterstatus).State = System.Data.Entity.EntityState.Modified;
+            //    db.SaveChanges();
+
+            //    var dayopen = new Model.counteropening()
+            //    {
+            //        date = this.Counterstatus.date,
+            //        admin_id = INFO.admin_id,
+            //        state = 1,
+            //        updated_at=DateTime.Now,
+            //        created_at=DateTime.Now,
+            //        amount = betterTextBox_accecpted.decVal,
+            //        counter_id=this.Counterstatus.counter_id
+            //    };
+
+            //    var counterstock = new Model.counterstock()
+            //    {
+            //        date = this.Counterstatus.date,
+            //        admin_id = INFO.admin_id,
+            //        state = 1,
+            //        updated_at = DateTime.Now,
+            //        created_at = DateTime.Now,
+            //        amount = betterTextBox_accecpted.decVal,
+            //        counter_id = this.Counterstatus.counter_id,
+
+            //    };
+            //    db.counteropenings.Add(dayopen);
+            //    db.counterstocks.Add(counterstock);
+            //    db.SaveChanges();
+
+            //    this.Parent.Controls.Remove(this);
+            //}
 
         }
 
