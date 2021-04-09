@@ -17,10 +17,12 @@ namespace RestaurantSystem.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public fiscalyear()
         {
+            this.accounttransactions = new HashSet<accounttransaction>();
             this.bills = new HashSet<bill>();
             this.issueitems = new HashSet<issueitem>();
             this.manufactureditems = new HashSet<manufactureditem>();
             this.manufacturingitems = new HashSet<manufacturingitem>();
+            this.party_payments = new HashSet<party_payments>();
             this.partypayments = new HashSet<partypayment>();
             this.purchaseaddstocks = new HashSet<purchaseaddstock>();
             this.purchaseinvoiceitems = new HashSet<purchaseinvoiceitem>();
@@ -40,6 +42,8 @@ namespace RestaurantSystem.Model
         public System.DateTime created_at { get; set; }
         public Nullable<int> sync_id { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<accounttransaction> accounttransactions { get; set; }
         public virtual admin admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<bill> bills { get; set; }
@@ -49,6 +53,8 @@ namespace RestaurantSystem.Model
         public virtual ICollection<manufactureditem> manufactureditems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<manufacturingitem> manufacturingitems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<party_payments> party_payments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<partypayment> partypayments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -27,6 +27,7 @@ namespace RestaurantSystem.Model
             this.counterstatuses = new HashSet<counterstatus>();
             this.counterstocks = new HashSet<counterstock>();
             this.customerpayments = new HashSet<customerpayment>();
+            this.customers = new HashSet<customer>();
             this.fiscalyears = new HashSet<fiscalyear>();
             this.issueitems = new HashSet<issueitem>();
             this.manufacturingitems = new HashSet<manufacturingitem>();
@@ -78,6 +79,8 @@ namespace RestaurantSystem.Model
         public virtual ICollection<counterstock> counterstocks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customerpayment> customerpayments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<customer> customers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<fiscalyear> fiscalyears { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

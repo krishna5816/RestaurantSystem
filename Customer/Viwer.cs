@@ -44,17 +44,7 @@ namespace RestaurantSystem.Customer
             }
         }
        
-        public string panno
-        {
-            get
-            {
-                return label_panno.Text;
-            }
-            set
-            {
-                label_panno.Text = value;
-            }
-        }
+       
         public string phone
         {
             get
@@ -114,7 +104,7 @@ namespace RestaurantSystem.Customer
 
         }
 
-        private void Edititem_editdata(account account)
+        private void Edititem_editdata(customer account)
         {
             var viwer = new  Customer.Viwer();
             viwer.id = account.id;

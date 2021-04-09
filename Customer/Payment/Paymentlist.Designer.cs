@@ -29,14 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label_due = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label_items = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label_fytransactions = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label_totaltransaction = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.materialButton_AddPayment = new CustomControls.MaterialButton();
             this.label1_Add = new System.Windows.Forms.Label();
             this.materialButton_Close = new CustomControls.MaterialButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.materialButton_refresh = new CustomControls.MaterialButton();
-            this.materialButton_paymentmode = new CustomControls.MaterialButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.betterTextBox_dueamount = new CustomControls.BetterTextBox();
             this.label_dueamount = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label_Email = new System.Windows.Forms.Label();
@@ -49,26 +55,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.betterListView1 = new CustomControls.BetterListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label_dueamount);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label_Email);
@@ -84,20 +82,154 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(910, 200);
+            this.panel1.Size = new System.Drawing.Size(737, 200);
             this.panel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panel4.Controls.Add(this.label_due);
+            this.panel4.Controls.Add(this.label17);
+            this.panel4.Controls.Add(this.label_items);
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.label_fytransactions);
+            this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.label_totaltransaction);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.label23);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
+            this.panel4.Location = new System.Drawing.Point(0, 144);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(735, 54);
+            this.panel4.TabIndex = 16;
+            // 
+            // label_due
+            // 
+            this.label_due.AutoSize = true;
+            this.label_due.Location = new System.Drawing.Point(601, 27);
+            this.label_due.Name = "label_due";
+            this.label_due.Size = new System.Drawing.Size(35, 13);
+            this.label_due.TabIndex = 10;
+            this.label_due.Text = "Name";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(511, 27);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(89, 19);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Current Due";
+            // 
+            // label_items
+            // 
+            this.label_items.AutoSize = true;
+            this.label_items.Location = new System.Drawing.Point(153, 27);
+            this.label_items.Name = "label_items";
+            this.label_items.Size = new System.Drawing.Size(35, 13);
+            this.label_items.TabIndex = 8;
+            this.label_items.Text = "Name";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(70, 27);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 19);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Total Items";
+            // 
+            // label_fytransactions
+            // 
+            this.label_fytransactions.AutoSize = true;
+            this.label_fytransactions.Location = new System.Drawing.Point(601, 8);
+            this.label_fytransactions.Name = "label_fytransactions";
+            this.label_fytransactions.Size = new System.Drawing.Size(35, 13);
+            this.label_fytransactions.TabIndex = 6;
+            this.label_fytransactions.Text = "Name";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(441, 8);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(159, 19);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Fiscal Year Transaction";
+            // 
+            // label_totaltransaction
+            // 
+            this.label_totaltransaction.AutoSize = true;
+            this.label_totaltransaction.Location = new System.Drawing.Point(153, 8);
+            this.label_totaltransaction.Name = "label_totaltransaction";
+            this.label_totaltransaction.Size = new System.Drawing.Size(35, 13);
+            this.label_totaltransaction.TabIndex = 4;
+            this.label_totaltransaction.Text = "Name";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 52);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(735, 2);
+            this.panel5.TabIndex = 3;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(30, 8);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(122, 19);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Total Transaction";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.materialButton_AddPayment);
             this.panel3.Controls.Add(this.label1_Add);
             this.panel3.Controls.Add(this.materialButton_Close);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(908, 40);
+            this.panel3.Size = new System.Drawing.Size(735, 40);
             this.panel3.TabIndex = 13;
+            // 
+            // materialButton_AddPayment
+            // 
+            this.materialButton_AddPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton_AddPayment.BackColor = System.Drawing.Color.Transparent;
+            this.materialButton_AddPayment.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.materialButton_AddPayment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton_AddPayment.FlatAppearance.BorderSize = 0;
+            this.materialButton_AddPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_AddPayment.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton_AddPayment.fontIncrement = 0F;
+            this.materialButton_AddPayment.FontStyle = null;
+            this.materialButton_AddPayment.ForeColor = System.Drawing.Color.White;
+            this.materialButton_AddPayment.hoverforecolor = System.Drawing.Color.Empty;
+            this.materialButton_AddPayment.hoverforefont = null;
+            this.materialButton_AddPayment.hoverimage = null;
+            this.materialButton_AddPayment.Location = new System.Drawing.Point(598, 5);
+            this.materialButton_AddPayment.Name = "materialButton_AddPayment";
+            this.materialButton_AddPayment.role = 0;
+            this.materialButton_AddPayment.Size = new System.Drawing.Size(133, 30);
+            this.materialButton_AddPayment.TabIndex = 55;
+            this.materialButton_AddPayment.tempforecolor = System.Drawing.Color.Empty;
+            this.materialButton_AddPayment.tempforefont = null;
+            this.materialButton_AddPayment.Text = "Add Payment";
+            this.materialButton_AddPayment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.materialButton_AddPayment.Totext = null;
+            this.materialButton_AddPayment.userole = false;
+            this.materialButton_AddPayment.UseVisualStyleBackColor = false;
+            this.materialButton_AddPayment.Click += new System.EventHandler(this.materialButton_AddPayment_Click);
             // 
             // label1_Add
             // 
@@ -136,98 +268,6 @@
             this.materialButton_Close.userole = false;
             this.materialButton_Close.UseVisualStyleBackColor = true;
             this.materialButton_Close.Click += new System.EventHandler(this.materialButton_Close_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.materialButton_refresh);
-            this.panel2.Controls.Add(this.materialButton_paymentmode);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.betterTextBox_dueamount);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 142);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(908, 56);
-            this.panel2.TabIndex = 12;
-            // 
-            // materialButton_refresh
-            // 
-            this.materialButton_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.materialButton_refresh.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
-            this.materialButton_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialButton_refresh.FlatAppearance.BorderSize = 0;
-            this.materialButton_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialButton_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialButton_refresh.fontIncrement = 0F;
-            this.materialButton_refresh.FontStyle = null;
-            this.materialButton_refresh.ForeColor = System.Drawing.Color.White;
-            this.materialButton_refresh.hoverforecolor = System.Drawing.Color.Empty;
-            this.materialButton_refresh.hoverforefont = null;
-            this.materialButton_refresh.hoverimage = null;
-            this.materialButton_refresh.Location = new System.Drawing.Point(372, 17);
-            this.materialButton_refresh.Name = "materialButton_refresh";
-            this.materialButton_refresh.role = 0;
-            this.materialButton_refresh.Size = new System.Drawing.Size(145, 30);
-            this.materialButton_refresh.TabIndex = 16;
-            this.materialButton_refresh.tempforecolor = System.Drawing.Color.Empty;
-            this.materialButton_refresh.tempforefont = null;
-            this.materialButton_refresh.Text = "Refresh";
-            this.materialButton_refresh.Totext = null;
-            this.materialButton_refresh.userole = false;
-            this.materialButton_refresh.UseVisualStyleBackColor = false;
-            this.materialButton_refresh.Click += new System.EventHandler(this.materialButton_refresh_Click);
-            // 
-            // materialButton_paymentmode
-            // 
-            this.materialButton_paymentmode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.materialButton_paymentmode.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
-            this.materialButton_paymentmode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialButton_paymentmode.FlatAppearance.BorderSize = 0;
-            this.materialButton_paymentmode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialButton_paymentmode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialButton_paymentmode.fontIncrement = 0F;
-            this.materialButton_paymentmode.FontStyle = null;
-            this.materialButton_paymentmode.ForeColor = System.Drawing.Color.White;
-            this.materialButton_paymentmode.hoverforecolor = System.Drawing.Color.Empty;
-            this.materialButton_paymentmode.hoverforefont = null;
-            this.materialButton_paymentmode.hoverimage = null;
-            this.materialButton_paymentmode.Location = new System.Drawing.Point(192, 17);
-            this.materialButton_paymentmode.Name = "materialButton_paymentmode";
-            this.materialButton_paymentmode.role = 0;
-            this.materialButton_paymentmode.Size = new System.Drawing.Size(145, 30);
-            this.materialButton_paymentmode.TabIndex = 15;
-            this.materialButton_paymentmode.tempforecolor = System.Drawing.Color.Empty;
-            this.materialButton_paymentmode.tempforefont = null;
-            this.materialButton_paymentmode.Text = "Payment Mode";
-            this.materialButton_paymentmode.Totext = null;
-            this.materialButton_paymentmode.userole = false;
-            this.materialButton_paymentmode.UseVisualStyleBackColor = false;
-            this.materialButton_paymentmode.Click += new System.EventHandler(this.materialButton_paymentmode_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 17);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Due Amount";
-            // 
-            // betterTextBox_dueamount
-            // 
-            this.betterTextBox_dueamount.decVal = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.betterTextBox_dueamount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betterTextBox_dueamount.intVal = 0;
-            this.betterTextBox_dueamount.Location = new System.Drawing.Point(10, 21);
-            this.betterTextBox_dueamount.Name = "betterTextBox_dueamount";
-            this.betterTextBox_dueamount.Size = new System.Drawing.Size(166, 26);
-            this.betterTextBox_dueamount.TabIndex = 0;
-            this.betterTextBox_dueamount.textboxType = CustomControls.TextboxType.Decimal;
             // 
             // label_dueamount
             // 
@@ -283,6 +323,7 @@
             this.label_pan.Size = new System.Drawing.Size(216, 17);
             this.label_pan.TabIndex = 7;
             this.label_pan.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label_pan.Visible = false;
             // 
             // label7
             // 
@@ -294,6 +335,7 @@
             this.label7.Size = new System.Drawing.Size(39, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "PAN";
+            this.label7.Visible = false;
             // 
             // label_phone
             // 
@@ -361,76 +403,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // betterListView1
+            // dataGridView1
             // 
-            this.betterListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.betterListView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.betterListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betterListView1.FullRowSelect = true;
-            this.betterListView1.GridLines = true;
-            this.betterListView1.HideSelection = false;
-            this.betterListView1.Location = new System.Drawing.Point(0, 200);
-            this.betterListView1.Name = "betterListView1";
-            this.betterListView1.Size = new System.Drawing.Size(910, 400);
-            this.betterListView1.sortable = false;
-            this.betterListView1.TabIndex = 1;
-            this.betterListView1.UseCompatibleStateImageBehavior = false;
-            this.betterListView1.View = System.Windows.Forms.View.Details;
-            this.betterListView1.DoubleClick += new System.EventHandler(this.betterListView1_DoubleClick);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "SN";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Bill Id";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Gross Total";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Discount";
-            this.columnHeader4.Width = 152;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Tax";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Net Total";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Paid";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Due";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Transaction Date";
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 200);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(737, 248);
+            this.dataGridView1.TabIndex = 17;
             // 
             // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(910, 600);
-            this.Controls.Add(this.betterListView1);
+            this.ClientSize = new System.Drawing.Size(737, 448);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Details";
@@ -438,10 +429,11 @@
             this.Text = "Details";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,8 +441,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private CustomControls.BetterListView betterListView1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label_dueamount;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label_Email;
@@ -463,21 +453,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.Panel panel3;
         private CustomControls.MaterialButton materialButton_Close;
-        private CustomControls.MaterialButton materialButton_refresh;
-        private CustomControls.MaterialButton materialButton_paymentmode;
-        private System.Windows.Forms.Label label2;
-        private CustomControls.BetterTextBox betterTextBox_dueamount;
         private System.Windows.Forms.Label label1_Add;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label_due;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label_items;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label_fytransactions;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label_totaltransaction;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CustomControls.MaterialButton materialButton_AddPayment;
     }
 }

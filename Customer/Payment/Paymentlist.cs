@@ -18,28 +18,20 @@ namespace RestaurantSystem.Customer
         {
             InitializeComponent(); using (var db = Model.DatabaseConfigure.getConfigure())
             {
-                var load = db.accounts.Find(id);
+                var load = db.customers.Find(id);
                 id = load.id;
                 name = load.name;
                 address = load.address;
                 phone = load.phone;
                 email = load.email;
-                pannumber = load.panno;
+                //pannumber = load.panno;
                 dueamount = load.currentdue.Value;
-                betterTextBox_dueamount.decVal = load.currentdue.Value;
+                
                 this.id = id;
             }
             using (var db = Model.DatabaseConfigure.getConfigure())
             {
-                foreach (Model.bill listdata in db.bills.Where(o => o.cusotomer_id == id).ToList())
-                {
-                    var loaddata = new ListViewItem(new string[]
-                     { sn.ToString(),listdata.id.ToString(), listdata.grosstotal.ToString(),listdata.discount.ToString(),listdata.tax_amount.ToString(),listdata.nettotal.ToString(),listdata.paidamount.ToString(),listdata.dueamount.ToString(),listdata.date.ToString()
-                    });
-                    betterListView1.Items.Add(loaddata);
-                    sn += 1;
-                    salesitem_id = listdata.id;
-                }
+               
             }
         }
         
@@ -115,15 +107,15 @@ namespace RestaurantSystem.Customer
         {
             using (var db = Model.DatabaseConfigure.getConfigure())
             {
-                var load = db.accounts.Find(id);
+                var load = db.customers.Find(id);
                 id = load.id;
                 name = load.name;
                 address = load.address;
                 phone = load.phone;
                 email = load.email;
-                pannumber = load.panno;
+               // pannumber = load.panno;
                 dueamount = load.currentdue.Value;
-                betterTextBox_dueamount.decVal = load.currentdue.Value;
+               
             }
         }
 
@@ -154,13 +146,14 @@ namespace RestaurantSystem.Customer
 
         private void betterListView1_DoubleClick(object sender, EventArgs e)
         {
-            if (betterListView1.SelectedItems.Count > 0)
-            {
+           
+        }
 
-                var listbillitem = new Customer.CustomerSalesItemlist(Convert.ToInt32(betterListView1.SelectedItems[0].SubItems[1] .Text));
-                var trance = new CustomControls.Modal(listbillitem);
-                trance.Show();
-            }
+        private void materialButton_AddPayment_Click(object sender, EventArgs e)
+        {
+            var payment = new Customer.PaymentMode(id);
+            var t =new CustomControls.Modal(payment);
+            t.Show();
         }
     }
 }

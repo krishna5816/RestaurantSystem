@@ -35,12 +35,16 @@
             // 
             // label_title
             // 
-            this.label_title.Size = new System.Drawing.Size(94, 19);
-            this.label_title.Text = "Add Counter";
+            this.label_title.Size = new System.Drawing.Size(107, 19);
+            this.label_title.Text = "    Edit Counter";
             // 
             // panel_Divider
             // 
-            this.panel_Divider.Size = new System.Drawing.Size(212, 2);
+            this.panel_Divider.Size = new System.Drawing.Size(339, 2);
+            // 
+            // materialButton_close
+            // 
+            this.materialButton_close.FlatAppearance.BorderSize = 0;
             // 
             // label1
             // 
@@ -48,12 +52,13 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
+            this.label1.Size = new System.Drawing.Size(106, 19);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Counter No";
+            this.label1.Text = "Counter Name";
             // 
             // betterTextBox_counterno
             // 
+            this.betterTextBox_counterno.append = "";
             this.betterTextBox_counterno.decVal = new decimal(new int[] {
             0,
             0,
@@ -62,7 +67,9 @@
             this.betterTextBox_counterno.intVal = 0;
             this.betterTextBox_counterno.Location = new System.Drawing.Point(6, 81);
             this.betterTextBox_counterno.Name = "betterTextBox_counterno";
-            this.betterTextBox_counterno.Size = new System.Drawing.Size(193, 25);
+            this.betterTextBox_counterno.prepend = "";
+            this.betterTextBox_counterno.Rules = null;
+            this.betterTextBox_counterno.Size = new System.Drawing.Size(322, 25);
             this.betterTextBox_counterno.TabIndex = 4;
             this.betterTextBox_counterno.textboxType = CustomControls.TextboxType.Text;
             // 
@@ -80,14 +87,14 @@
             this.materialButton_addnew.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_addnew.hoverforefont = null;
             this.materialButton_addnew.hoverimage = null;
-            this.materialButton_addnew.Location = new System.Drawing.Point(86, 112);
+            this.materialButton_addnew.Location = new System.Drawing.Point(213, 112);
             this.materialButton_addnew.Name = "materialButton_addnew";
             this.materialButton_addnew.role = 0;
             this.materialButton_addnew.Size = new System.Drawing.Size(113, 29);
             this.materialButton_addnew.TabIndex = 8;
             this.materialButton_addnew.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_addnew.tempforefont = null;
-            this.materialButton_addnew.Text = "Add";
+            this.materialButton_addnew.Text = "Update";
             this.materialButton_addnew.Totext = null;
             this.materialButton_addnew.userole = false;
             this.materialButton_addnew.UseVisualStyleBackColor = false;
@@ -96,7 +103,7 @@
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.ClientSize = new System.Drawing.Size(213, 150);
+            this.ClientSize = new System.Drawing.Size(340, 154);
             this.Controls.Add(this.materialButton_addnew);
             this.Controls.Add(this.betterTextBox_counterno);
             this.Controls.Add(this.label1);
@@ -104,6 +111,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Counter";
             this.Save += new CustomControls.MaterialForm.Actions(this.AddCounter_Save);
+            this.Controls.SetChildIndex(this.materialButton_close, 0);
             this.Controls.SetChildIndex(this.label_title, 0);
             this.Controls.SetChildIndex(this.panel_Divider, 0);
             this.Controls.SetChildIndex(this.label1, 0);

@@ -30,7 +30,6 @@
         {
             this.label_name = new System.Windows.Forms.Label();
             this.label_address = new System.Windows.Forms.Label();
-            this.label_panno = new System.Windows.Forms.Label();
             this.label_phone = new System.Windows.Forms.Label();
             this.materialButton_Edit = new CustomControls.MaterialButton();
             this.materialButton_delete = new CustomControls.MaterialButton();
@@ -56,15 +55,6 @@
             this.label_address.Size = new System.Drawing.Size(163, 19);
             this.label_address.TabIndex = 1;
             this.label_address.Text = "aaaaaaaaaaaaaaaaaaaaaa";
-            // 
-            // label_panno
-            // 
-            this.label_panno.AutoSize = true;
-            this.label_panno.Location = new System.Drawing.Point(384, 4);
-            this.label_panno.Name = "label_panno";
-            this.label_panno.Size = new System.Drawing.Size(93, 19);
-            this.label_panno.TabIndex = 2;
-            this.label_panno.Text = "aaaaaaaaaaaa";
             // 
             // label_phone
             // 
@@ -92,7 +82,7 @@
             this.materialButton_Edit.Location = new System.Drawing.Point(748, 5);
             this.materialButton_Edit.Name = "materialButton_Edit";
             this.materialButton_Edit.role = 0;
-            this.materialButton_Edit.Size = new System.Drawing.Size(72, 20);
+            this.materialButton_Edit.Size = new System.Drawing.Size(62, 20);
             this.materialButton_Edit.TabIndex = 5;
             this.materialButton_Edit.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_Edit.tempforefont = null;
@@ -116,10 +106,10 @@
             this.materialButton_delete.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_delete.hoverforefont = null;
             this.materialButton_delete.hoverimage = null;
-            this.materialButton_delete.Location = new System.Drawing.Point(925, 5);
+            this.materialButton_delete.Location = new System.Drawing.Point(954, 5);
             this.materialButton_delete.Name = "materialButton_delete";
             this.materialButton_delete.role = 0;
-            this.materialButton_delete.Size = new System.Drawing.Size(76, 20);
+            this.materialButton_delete.Size = new System.Drawing.Size(66, 20);
             this.materialButton_delete.TabIndex = 6;
             this.materialButton_delete.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_delete.tempforefont = null;
@@ -161,14 +151,14 @@
             this.materialButton_details.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_details.hoverforefont = null;
             this.materialButton_details.hoverimage = null;
-            this.materialButton_details.Location = new System.Drawing.Point(836, 5);
+            this.materialButton_details.Location = new System.Drawing.Point(816, 5);
             this.materialButton_details.Name = "materialButton_details";
             this.materialButton_details.role = 0;
-            this.materialButton_details.Size = new System.Drawing.Size(76, 20);
+            this.materialButton_details.Size = new System.Drawing.Size(132, 20);
             this.materialButton_details.TabIndex = 9;
             this.materialButton_details.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_details.tempforefont = null;
-            this.materialButton_details.Text = "Details";
+            this.materialButton_details.Text = "Details and Payment";
             this.materialButton_details.Totext = null;
             this.materialButton_details.userole = false;
             this.materialButton_details.UseVisualStyleBackColor = false;
@@ -186,7 +176,6 @@
             this.Controls.Add(this.materialButton_delete);
             this.Controls.Add(this.materialButton_Edit);
             this.Controls.Add(this.label_phone);
-            this.Controls.Add(this.label_panno);
             this.Controls.Add(this.label_address);
             this.Controls.Add(this.label_name);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,7 +192,6 @@
 
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Label label_address;
-        private System.Windows.Forms.Label label_panno;
         private System.Windows.Forms.Label label_phone;
         private CustomControls.MaterialButton materialButton_Edit;
         private CustomControls.MaterialButton materialButton_delete;

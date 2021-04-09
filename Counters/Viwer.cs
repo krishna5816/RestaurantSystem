@@ -93,7 +93,6 @@ namespace RestaurantSystem.Counters
                 edit.edit += (counter) =>
                 {
                     db.Entry(this.Counter).Reload();
-
                 };
                 label_counter.Text = this.Counter.name;
                 if (this.Counter.counterstatus == 1)

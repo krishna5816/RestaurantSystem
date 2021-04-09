@@ -38,13 +38,11 @@
             this.label_advance = new System.Windows.Forms.Label();
             this.label_due = new System.Windows.Forms.Label();
             this.label_phone = new System.Windows.Forms.Label();
-            this.label_panno = new System.Windows.Forms.Label();
             this.label_address = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -76,6 +74,7 @@
             // betterTextBox_search
             // 
             this.betterTextBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.betterTextBox_search.append = "";
             this.betterTextBox_search.decVal = new decimal(new int[] {
             0,
             0,
@@ -84,6 +83,8 @@
             this.betterTextBox_search.intVal = 0;
             this.betterTextBox_search.Location = new System.Drawing.Point(722, 14);
             this.betterTextBox_search.Name = "betterTextBox_search";
+            this.betterTextBox_search.prepend = "";
+            this.betterTextBox_search.Rules = null;
             this.betterTextBox_search.Size = new System.Drawing.Size(217, 26);
             this.betterTextBox_search.TabIndex = 55;
             this.betterTextBox_search.textboxType = CustomControls.TextboxType.Text;
@@ -102,6 +103,7 @@
             // 
             // materialButton1
             // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
             this.materialButton1.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
             this.materialButton1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -199,17 +201,6 @@
             this.label_phone.TabIndex = 12;
             this.label_phone.Text = "PHONE";
             // 
-            // label_panno
-            // 
-            this.label_panno.AutoSize = true;
-            this.label_panno.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_panno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label_panno.Location = new System.Drawing.Point(385, 53);
-            this.label_panno.Name = "label_panno";
-            this.label_panno.Size = new System.Drawing.Size(69, 19);
-            this.label_panno.TabIndex = 11;
-            this.label_panno.Text = "PAN/VAT";
-            // 
             // label_address
             // 
             this.label_address.AutoSize = true;
@@ -268,18 +259,6 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "PHONE";
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label4.Location = new System.Drawing.Point(385, 512);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 19);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "PAN/VAT";
-            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -313,13 +292,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label_advance);
             this.Controls.Add(this.label_due);
             this.Controls.Add(this.label_phone);
-            this.Controls.Add(this.label_panno);
             this.Controls.Add(this.label_address);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -345,13 +322,11 @@
         private System.Windows.Forms.Label label_advance;
         private System.Windows.Forms.Label label_due;
         private System.Windows.Forms.Label label_phone;
-        private System.Windows.Forms.Label label_panno;
         private System.Windows.Forms.Label label_address;
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1_Add;

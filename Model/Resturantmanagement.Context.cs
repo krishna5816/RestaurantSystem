@@ -26,6 +26,7 @@ namespace RestaurantSystem.Model
         }
     
         public virtual DbSet<account> accounts { get; set; }
+        public virtual DbSet<accounttransaction> accounttransactions { get; set; }
         public virtual DbSet<admin> admins { get; set; }
         public virtual DbSet<billitem> billitems { get; set; }
         public virtual DbSet<bill> bills { get; set; }
@@ -35,7 +36,9 @@ namespace RestaurantSystem.Model
         public virtual DbSet<counter> counters { get; set; }
         public virtual DbSet<counterstatus> counterstatuses { get; set; }
         public virtual DbSet<counterstock> counterstocks { get; set; }
+        public virtual DbSet<customer_ledgers> customer_ledgers { get; set; }
         public virtual DbSet<customerpayment> customerpayments { get; set; }
+        public virtual DbSet<customer> customers { get; set; }
         public virtual DbSet<fiscalyear> fiscalyears { get; set; }
         public virtual DbSet<issueitem> issueitems { get; set; }
         public virtual DbSet<manufactureditem> manufactureditems { get; set; }
@@ -47,6 +50,7 @@ namespace RestaurantSystem.Model
         public virtual DbSet<order_items> order_items { get; set; }
         public virtual DbSet<order_tables> order_tables { get; set; }
         public virtual DbSet<party> parties { get; set; }
+        public virtual DbSet<party_payments> party_payments { get; set; }
         public virtual DbSet<partypayment> partypayments { get; set; }
         public virtual DbSet<purchaseaddstock> purchaseaddstocks { get; set; }
         public virtual DbSet<purchasebillitem> purchasebillitems { get; set; }

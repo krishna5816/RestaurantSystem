@@ -42,18 +42,23 @@
             // 
             this.panel_Divider.Size = new System.Drawing.Size(290, 2);
             // 
+            // materialButton_close
+            // 
+            this.materialButton_close.FlatAppearance.BorderSize = 0;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
+            this.label1.Size = new System.Drawing.Size(106, 19);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Counter No";
+            this.label1.Text = "Counter Name";
             // 
             // betterTextBox_counterno
             // 
+            this.betterTextBox_counterno.append = "";
             this.betterTextBox_counterno.decVal = new decimal(new int[] {
             0,
             0,
@@ -62,6 +67,8 @@
             this.betterTextBox_counterno.intVal = 0;
             this.betterTextBox_counterno.Location = new System.Drawing.Point(6, 81);
             this.betterTextBox_counterno.Name = "betterTextBox_counterno";
+            this.betterTextBox_counterno.prepend = "";
+            this.betterTextBox_counterno.Rules = null;
             this.betterTextBox_counterno.Size = new System.Drawing.Size(272, 25);
             this.betterTextBox_counterno.TabIndex = 4;
             this.betterTextBox_counterno.textboxType = CustomControls.TextboxType.Text;
@@ -104,6 +111,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Counter";
             this.Save += new CustomControls.MaterialForm.Actions(this.AddCounter_Save);
+            this.Controls.SetChildIndex(this.materialButton_close, 0);
             this.Controls.SetChildIndex(this.label_title, 0);
             this.Controls.SetChildIndex(this.panel_Divider, 0);
             this.Controls.SetChildIndex(this.label1, 0);

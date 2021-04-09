@@ -15,7 +15,7 @@ namespace RestaurantSystem.Customer
 {
     public partial class Edit : Form
     {
-        public delegate void edithandler(Model.account account);
+        public delegate void edithandler(Model.customer account);
         public event edithandler edit;
         Model.ResturantManagementEntities db;
         int id;
@@ -32,16 +32,16 @@ namespace RestaurantSystem.Customer
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            var editcustomer = db.accounts.Find(id);
+            var editcustomer = db.customers.Find(id);
             editcustomer.name = betterTextBox_name.Text;
             editcustomer.address = betterTextBox_address.Text;
-            editcustomer.panno=betterTextBox_panno.Text;
+           // editcustomer.panno=betterTextBox_panno.Text;
             editcustomer.phone=betterTextBox_phone.Text;
             editcustomer.email = betterTextBox_email.Text;
             editcustomer.currentdue=betterTextBox_currentDue.decVal;
             editcustomer.currentadvance=betterTextBox_currentAdvance.decVal;
-            editcustomer.nationlity=betterTextBox_nationality.Text;
-            editcustomer.created_at = DateTime.Now;
+            editcustomer.nationality=betterTextBox_nationality.Text;
+            editcustomer.creadted_at = DateTime.Now;
             editcustomer.updated_at = DateTime.Now;
             editcustomer.admin_id = INFO.admin_id;
             db.Entry(editcustomer).State = System.Data.Entity.EntityState.Modified;
@@ -52,15 +52,15 @@ namespace RestaurantSystem.Customer
         }
         public void loaddata(int id)
         {
-            account item = db.accounts.Find(id);
+            customer item = db.customers.Find(id);
             betterTextBox_name.Text = item.name;
             betterTextBox_address.Text = item.address;
-            betterTextBox_panno.Text = item.panno;
+           // betterTextBox_panno.Text = item.panno;
             betterTextBox_phone.Text = item.phone;
             betterTextBox_email.Text = item.email;
             betterTextBox_currentAdvance.Text = item.currentadvance.ToString();
             betterTextBox_currentDue.Text = item.currentdue.ToString();
-            betterTextBox_nationality.Text = item.nationlity;
+            betterTextBox_nationality.Text = item.nationality;
             this.id = id;
         }
 

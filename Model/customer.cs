@@ -12,31 +12,30 @@ namespace RestaurantSystem.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class account
+    public partial class customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public account()
+        public customer()
         {
-            this.accounttransactions = new HashSet<accounttransaction>();
-            this.bills = new HashSet<bill>();
-            this.customerpayments = new HashSet<customerpayment>();
+            this.customer_ledgers = new HashSet<customer_ledgers>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
+        public string address { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
+        public Nullable<decimal> totaltransacion { get; set; }
+        public Nullable<decimal> currentdue { get; set; }
+        public Nullable<decimal> currentadvance { get; set; }
+        public string nationality { get; set; }
         public Nullable<int> admin_id { get; set; }
         public System.DateTime updated_at { get; set; }
-        public System.DateTime created_at { get; set; }
+        public System.DateTime creadted_at { get; set; }
         public Nullable<int> sync_id { get; set; }
-        public Nullable<int> acctype { get; set; }
-        public string identifier { get; set; }
     
         public virtual admin admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<accounttransaction> accounttransactions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<bill> bills { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<customerpayment> customerpayments { get; set; }
+        public virtual ICollection<customer_ledgers> customer_ledgers { get; set; }
     }
 }

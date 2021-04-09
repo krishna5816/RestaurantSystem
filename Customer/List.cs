@@ -18,18 +18,18 @@ namespace RestaurantSystem.Customer
         {
             InitializeComponent();
             db = Model.DatabaseConfigure.getConfigure();
-            foreach(var item in db.accounts.ToList())
+            foreach(var item in db.customers.ToList())
             {
                 add(item);
             }
         }
-        private void add(Model.account account)
+        private void add(Model.customer account)
         {
             var viwer = new Customer.Viwer();
             viwer.id = account.id;
             viwer.name = account.name;
             viwer.address = account.address;
-            viwer.panno = account.panno;
+            //viwer.panno = account.panno;
             viwer.phone = account.phone;
             viwer.due = account.currentdue.Value;
             viwer.advance = account.currentadvance.Value;
@@ -45,7 +45,7 @@ namespace RestaurantSystem.Customer
             trans.Show();
             
         }
-        private void Newitem_savedata(Model.account account)
+        private void Newitem_savedata(Model.customer account)
         {
             add(account);
         }

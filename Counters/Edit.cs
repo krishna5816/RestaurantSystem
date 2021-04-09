@@ -27,33 +27,26 @@ namespace RestaurantSystem.Counters
         {
             if (betterTextBox_counterno.Text.Trim() == "")
             {
-                INFO.ShowAlert(Text, "Please Enter Counter No", 3000);
+                INFO.ShowAlert(Text, "Please Enter Counter Name", 3000);
                 betterTextBox_counterno.Focus();
                 return;
-            }
-
-            
-            try
-            {
+            }           
+            //try
+            //{
 
             this.Counter.name = betterTextBox_counterno.Text;
             this.Counter.updated_at = DateTime.Now;
-
-
-
+            this.Counter.created_at = DateTime.Now;
             db.Entry(this.Counter).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            edit?.Invoke(Counter);
-
-           
-        
+            edit?.Invoke(Counter);        
             this.Close();
-            }
-            catch (Exception)
-            {
+            //}
+            ////catch (Exception)
+            //{
 
-                CustomControls.Alert.show("Error", "data is not edited", 1500);
-            }
+            //    CustomControls.Alert.show("Error", "data is not edited", 1500);
+            //}
 
 
         }

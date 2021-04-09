@@ -17,6 +17,7 @@ namespace RestaurantSystem.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public purchaseinvoice()
         {
+            this.party_payments = new HashSet<party_payments>();
             this.purchaseinvoiceitems = new HashSet<purchaseinvoiceitem>();
             this.purchseexpenses = new HashSet<purchseexpens>();
         }
@@ -45,6 +46,8 @@ namespace RestaurantSystem.Model
         public virtual admin admin { get; set; }
         public virtual fiscalyear fiscalyear { get; set; }
         public virtual party party { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<party_payments> party_payments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<purchaseinvoiceitem> purchaseinvoiceitems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

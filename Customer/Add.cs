@@ -14,7 +14,7 @@ namespace RestaurantSystem.Customer
 {
     public partial class Add : Form
     {
-        public delegate void addhandler(Model.account account);
+        public delegate void addhandler(Model.customer customer);
         public event addhandler add;
         Model.ResturantManagementEntities db;
 
@@ -64,19 +64,18 @@ namespace RestaurantSystem.Customer
                 CustomControls.Alert.show("nationality", "enter nationality", 1500);
                 return;
             }
-            account customer = new account();
+             var customer = new customer();
             customer.name = betterTextBox_name.Text;
             customer.address = betterTextBox_address.Text;
             customer.email = betterTextBox_email.Text;
-            customer.panno = betterTextBox_panno.Text;
             customer.phone = betterTextBox_phone.Text;
             customer.currentadvance = (betterTextBox_currentAdvance.decVal);
             customer.currentdue = (betterTextBox_currentdue.decVal);
-            customer.nationlity = betterTextBox_nationality.Text;
+            customer.nationality = betterTextBox_nationality.Text;
             customer.admin_id = INFO.admin_id;
-            customer.created_at = DateTime.Now;
+            customer.creadted_at = DateTime.Now;
             customer.updated_at = DateTime.Now;
-            db.accounts.Add(customer);
+            db.customers.Add(customer);
             db.SaveChanges();
             add?.Invoke(customer);
             this.Close();

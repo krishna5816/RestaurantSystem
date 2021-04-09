@@ -193,11 +193,11 @@
     <Compile Include="Customer\CustomerSalesItemlist.Designer.cs">
       <DependentUpon>CustomerSalesItemlist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\Details.cs">
+    <Compile Include="Customer\Payment\Paymentlist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\Details.Designer.cs">
-      <DependentUpon>Details.cs</DependentUpon>
+    <Compile Include="Customer\Payment\Paymentlist.Designer.cs">
+      <DependentUpon>Paymentlist.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\Edit.cs">
       <SubType>Form</SubType>
@@ -211,10 +211,10 @@
     <Compile Include="Customer\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\PaymentMode.cs">
+    <Compile Include="Customer\Payment\PaymentMode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\PaymentMode.Designer.cs">
+    <Compile Include="Customer\Payment\PaymentMode.Designer.cs">
       <DependentUpon>PaymentMode.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\Viwer.cs">
@@ -339,6 +339,9 @@
     <Compile Include="Model\account.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\accounttransaction.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\admin.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
@@ -366,8 +369,14 @@
     <Compile Include="Model\counterstock.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\customer.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\CustomerPartial.cs" />
     <Compile Include="Model\customerpayment.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\customer_ledgers.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DatabaseConfigure.cs" />
@@ -408,6 +417,9 @@
     </Compile>
     <Compile Include="Model\PartyPartialclass.cs" />
     <Compile Include="Model\partypayment.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\party_payments.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\purchaseaddstock.cs">
@@ -769,8 +781,8 @@
     <EmbeddedResource Include="Customer\CustomerSalesItemlist.resx">
       <DependentUpon>CustomerSalesItemlist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Details.resx">
-      <DependentUpon>Details.cs</DependentUpon>
+    <EmbeddedResource Include="Customer\Payment\Paymentlist.resx">
+      <DependentUpon>Paymentlist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
@@ -778,7 +790,7 @@
     <EmbeddedResource Include="Customer\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\PaymentMode.resx">
+    <EmbeddedResource Include="Customer\Payment\PaymentMode.resx">
       <DependentUpon>PaymentMode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Viwer.resx">
@@ -1049,7 +1061,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Account\Accounts\" />
     <Folder Include="Image\" />
+    <Folder Include="Partys\Payment\" />
     <Folder Include="Setting\OnlineKeyManagement\" />
   </ItemGroup>
   <ItemGroup>
