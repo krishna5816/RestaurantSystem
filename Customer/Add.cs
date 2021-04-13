@@ -69,8 +69,8 @@ namespace RestaurantSystem.Customer
             customer.address = betterTextBox_address.Text;
             customer.email = betterTextBox_email.Text;
             customer.phone = betterTextBox_phone.Text;
-            customer.currentadvance = (betterTextBox_currentAdvance.decVal);
-            customer.currentdue = (betterTextBox_currentdue.decVal);
+            //customer.currentadvance = (betterTextBox_currentAdvance.decVal);
+            //customer.currentdue = (betterTextBox_currentdue.decVal);
             customer.nationality = betterTextBox_nationality.Text;
             customer.admin_id = INFO.admin_id;
             customer.creadted_at = DateTime.Now;
@@ -78,6 +78,39 @@ namespace RestaurantSystem.Customer
             db.customers.Add(customer);
             db.SaveChanges();
             add?.Invoke(customer);
+            if (betterTextBox_currentdue.decVal > 0)
+            {
+                var cuspayment = new customer_ledgers()
+                {
+                    customer_id = customer.id,
+                    date = INFO.currentdate,
+                    amount = betterTextBox_currentdue.decVal,
+                    billnumber = "unknown",
+                    returnamount = 0,
+                    updated_at = DateTime.Now,
+                    created_at = DateTime.Now,
+                    type = "DR",
+                };
+                db.customer_ledgers.Add(cuspayment);
+                db.SaveChanges();
+           
+            }
+            else if (betterTextBox_currentAdvance.decVal > 0)
+            {
+                var cuspayment = new customer_ledgers()
+                {
+                    customer_id = customer.id,
+                    date = INFO.currentdate,
+                    amount = betterTextBox_currentAdvance.decVal,
+                    billnumber = "unknown",
+                    returnamount = 0,
+                    updated_at = DateTime.Now,
+                    created_at = DateTime.Now,
+                    type = "CR",
+                };
+                db.customer_ledgers.Add(cuspayment);
+                db.SaveChanges();
+            }
             this.Close();
         }
 

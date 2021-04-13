@@ -35,7 +35,6 @@
             this.lbl_phone = new System.Windows.Forms.Label();
             this.btn_edit = new CustomControls.MaterialButton();
             this.label_pan = new System.Windows.Forms.Label();
-            this.label_due = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_delete
@@ -86,7 +85,7 @@
             this.materialButton_details.TabIndex = 7;
             this.materialButton_details.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_details.tempforefont = null;
-            this.materialButton_details.Text = "DETAILS\r\n";
+            this.materialButton_details.Text = "LEDGER";
             this.materialButton_details.Totext = null;
             this.materialButton_details.userole = false;
             this.materialButton_details.UseVisualStyleBackColor = false;
@@ -164,24 +163,12 @@
             this.label_pan.TabIndex = 8;
             this.label_pan.Text = "999999999999999";
             // 
-            // label_due
-            // 
-            this.label_due.AutoSize = true;
-            this.label_due.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_due.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label_due.Location = new System.Drawing.Point(595, 5);
-            this.label_due.Name = "label_due";
-            this.label_due.Size = new System.Drawing.Size(91, 15);
-            this.label_due.TabIndex = 9;
-            this.label_due.Text = "999999999999";
-            // 
             // party_viwer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.label_due);
             this.Controls.Add(this.label_pan);
             this.Controls.Add(this.materialButton_details);
             this.Controls.Add(this.btn_delete);
@@ -204,6 +191,5 @@
         private System.Windows.Forms.Label lbl_phone;
         private CustomControls.MaterialButton btn_edit;
         private System.Windows.Forms.Label label_pan;
-        private System.Windows.Forms.Label label_due;
     }
 }

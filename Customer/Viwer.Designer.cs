@@ -33,9 +33,9 @@
             this.label_phone = new System.Windows.Forms.Label();
             this.materialButton_Edit = new CustomControls.MaterialButton();
             this.materialButton_delete = new CustomControls.MaterialButton();
+            this.materialButton_details = new CustomControls.MaterialButton();
             this.label_due = new System.Windows.Forms.Label();
             this.label_advance = new System.Windows.Forms.Label();
-            this.materialButton_details = new CustomControls.MaterialButton();
             this.SuspendLayout();
             // 
             // label_name
@@ -119,24 +119,6 @@
             this.materialButton_delete.UseVisualStyleBackColor = false;
             this.materialButton_delete.Click += new System.EventHandler(this.materialButton2_Click);
             // 
-            // label_due
-            // 
-            this.label_due.AutoSize = true;
-            this.label_due.Location = new System.Drawing.Point(582, 3);
-            this.label_due.Name = "label_due";
-            this.label_due.Size = new System.Drawing.Size(72, 19);
-            this.label_due.TabIndex = 7;
-            this.label_due.Text = "aaaaaaaaa";
-            // 
-            // label_advance
-            // 
-            this.label_advance.AutoSize = true;
-            this.label_advance.Location = new System.Drawing.Point(660, 3);
-            this.label_advance.Name = "label_advance";
-            this.label_advance.Size = new System.Drawing.Size(72, 19);
-            this.label_advance.TabIndex = 8;
-            this.label_advance.Text = "aaaaaaaaa";
-            // 
             // materialButton_details
             // 
             this.materialButton_details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
@@ -163,6 +145,26 @@
             this.materialButton_details.userole = false;
             this.materialButton_details.UseVisualStyleBackColor = false;
             this.materialButton_details.Click += new System.EventHandler(this.materialButton_details_Click);
+            // 
+            // label_due
+            // 
+            this.label_due.AutoSize = true;
+            this.label_due.Location = new System.Drawing.Point(582, 3);
+            this.label_due.Name = "label_due";
+            this.label_due.Size = new System.Drawing.Size(72, 19);
+            this.label_due.TabIndex = 7;
+            this.label_due.Text = "aaaaaaaaa";
+            this.label_due.Visible = false;
+            // 
+            // label_advance
+            // 
+            this.label_advance.AutoSize = true;
+            this.label_advance.Location = new System.Drawing.Point(660, 3);
+            this.label_advance.Name = "label_advance";
+            this.label_advance.Size = new System.Drawing.Size(72, 19);
+            this.label_advance.TabIndex = 8;
+            this.label_advance.Text = "aaaaaaaaa";
+            this.label_advance.Visible = false;
             // 
             // Viwer
             // 
@@ -195,8 +197,8 @@
         private System.Windows.Forms.Label label_phone;
         private CustomControls.MaterialButton materialButton_Edit;
         private CustomControls.MaterialButton materialButton_delete;
+        private CustomControls.MaterialButton materialButton_details;
         private System.Windows.Forms.Label label_due;
         private System.Windows.Forms.Label label_advance;
-        private CustomControls.MaterialButton materialButton_details;
     }
 }

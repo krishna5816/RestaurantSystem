@@ -49,6 +49,7 @@ namespace RestaurantSystem.Model
         public Nullable<decimal> grosstotal { get; set; }
         public decimal dueamount { get; set; }
         public decimal returnamount { get; set; }
+        public Nullable<int> customer_id { get; set; }
     
         public virtual account account { get; set; }
         public virtual admin admin { get; set; }
@@ -56,5 +57,6 @@ namespace RestaurantSystem.Model
         public virtual ICollection<billitem> billitems { get; set; }
         public virtual counter counter { get; set; }
         public virtual fiscalyear fiscalyear { get; set; }
+        public virtual customer customer { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace RestaurantSystem.Model
         public int status { get; set; }
         public int state { get; set; }
         public string ip { get; set; }
-        public Nullable<decimal> closeingamount { get; set; }
+        public Nullable< decimal> closeingamount { get; set; }
         public Nullable<int> sync_id { get; set; }
         public System.DateTime crated_at { get; set; }
         public System.DateTime updated_at { get; set; }

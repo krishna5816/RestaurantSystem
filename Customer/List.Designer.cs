@@ -35,13 +35,9 @@
             this.materialButton1 = new CustomControls.MaterialButton();
             this.materialButton_close = new CustomControls.MaterialButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label_advance = new System.Windows.Forms.Label();
-            this.label_due = new System.Windows.Forms.Label();
             this.label_phone = new System.Windows.Forms.Label();
             this.label_address = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -168,28 +164,6 @@
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // label_advance
-            // 
-            this.label_advance.AutoSize = true;
-            this.label_advance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_advance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label_advance.Location = new System.Drawing.Point(661, 52);
-            this.label_advance.Name = "label_advance";
-            this.label_advance.Size = new System.Drawing.Size(74, 19);
-            this.label_advance.TabIndex = 14;
-            this.label_advance.Text = "ADVANCE";
-            // 
-            // label_due
-            // 
-            this.label_due.AutoSize = true;
-            this.label_due.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_due.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label_due.Location = new System.Drawing.Point(583, 52);
-            this.label_due.Name = "label_due";
-            this.label_due.Size = new System.Drawing.Size(36, 19);
-            this.label_due.TabIndex = 13;
-            this.label_due.Text = "DUE";
-            // 
             // label_phone
             // 
             this.label_phone.AutoSize = true;
@@ -222,30 +196,6 @@
             this.label_name.Size = new System.Drawing.Size(50, 19);
             this.label_name.TabIndex = 9;
             this.label_name.Text = "NAME";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(661, 511);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "ADVANCE";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(583, 511);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 19);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "DUE";
             // 
             // label3
             // 
@@ -289,13 +239,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(951, 544);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label_advance);
-            this.Controls.Add(this.label_due);
             this.Controls.Add(this.label_phone);
             this.Controls.Add(this.label_address);
             this.Controls.Add(this.label_name);
@@ -319,13 +265,9 @@
         private CustomControls.MaterialButton materialButton1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private CustomControls.MaterialButton materialButton_close;
-        private System.Windows.Forms.Label label_advance;
-        private System.Windows.Forms.Label label_due;
         private System.Windows.Forms.Label label_phone;
         private System.Windows.Forms.Label label_address;
         private System.Windows.Forms.Label label_name;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

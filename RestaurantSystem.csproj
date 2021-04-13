@@ -419,6 +419,9 @@
     <Compile Include="Model\partypayment.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\party_ledgers.cs">
+      <DependentUpon>Resturantmanagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\party_payments.cs">
       <DependentUpon>Resturantmanagement.tt</DependentUpon>
     </Compile>
@@ -583,6 +586,18 @@
     </Compile>
     <Compile Include="Partys\PaymentMode.Designer.cs">
       <DependentUpon>PaymentMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\Payment\AddPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partys\Payment\AddPayment.Designer.cs">
+      <DependentUpon>AddPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partys\Payment\Paymentlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partys\Payment\Paymentlist.Designer.cs">
+      <DependentUpon>Paymentlist.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -868,6 +883,12 @@
     <EmbeddedResource Include="Partys\PaymentMode.resx">
       <DependentUpon>PaymentMode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Partys\Payment\AddPayment.resx">
+      <DependentUpon>AddPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partys\Payment\Paymentlist.resx">
+      <DependentUpon>Paymentlist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1063,7 +1084,6 @@
   <ItemGroup>
     <Folder Include="Account\Accounts\" />
     <Folder Include="Image\" />
-    <Folder Include="Partys\Payment\" />
     <Folder Include="Setting\OnlineKeyManagement\" />
   </ItemGroup>
   <ItemGroup>

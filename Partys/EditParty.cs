@@ -131,13 +131,7 @@ namespace RestaurantSystem.Parties
             if (betterTextBox3_email.Text.Trim() == "")
             {
                 CustomControls.Alert.show("Email", "Enter Email", 1500);
-            }
-            if (comboBox_gender.Text.Trim() == "")
-            {
-                CustomControls.Alert.show("Gender", "Select Gender", 1500);
-            }
-
-           
+            } 
                using(var db= new ResturantManagementEntities())
             {
 
@@ -145,13 +139,11 @@ namespace RestaurantSystem.Parties
                 ptr.name = betterTextBox1_name.Text;
                 ptr.address = betterTextBox1_address.Text;
                 ptr.phone = betterTextBox2_phone.Text;
-                ptr.nationality = betterTextBox4_nationality.Text;
                 ptr.pannumber = betterTextBox11_panNumber.Text;
                 ptr.postalcode = betterTextBox10_postalcode.Text;
                 ptr.email = betterTextBox3_email.Text;
                 ptr.due = Convert.ToDecimal(betterTextBox12_deu.Text);
-                ptr.advance = Convert.ToDecimal(betterTextBox13_advance.Text);
-                ptr.gender = Convert.ToInt32(comboBox_gender.Text);
+                ptr.advance = Convert.ToDecimal(betterTextBox13_advance.Text);            
                 db.Entry(ptr).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
@@ -165,13 +157,12 @@ namespace RestaurantSystem.Parties
             betterTextBox1_name.Text = prt.name;
             betterTextBox1_address.Text = prt.address;
             betterTextBox2_phone.Text = prt.phone;
-            betterTextBox3_email.Text = prt.email;
-            betterTextBox4_nationality.Text = prt.nationality;
+            betterTextBox3_email.Text = prt.email;       
             betterTextBox10_postalcode.Text = prt.postalcode;
             betterTextBox11_panNumber.Text = prt.pannumber;
             betterTextBox12_deu.Text = prt.due.ToString();
             betterTextBox13_advance.Text = prt.advance.ToString();
-            comboBox_gender.Text = prt.gender.ToString();
+           
             this.id = id;
 
             }

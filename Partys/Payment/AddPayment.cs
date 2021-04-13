@@ -8,17 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RestaurantSystem.Model;
-namespace RestaurantSystem.Customer
+namespace RestaurantSystem.Partys.Payment
 {
-    public partial class PaymentMode : Form
+    public partial class AddPayment : Form
     {
-        int id;
-        public PaymentMode(int id)
+        public int id { get; set; }
+        public AddPayment(int id)
         {
             InitializeComponent();
-           using(var db= Model.DatabaseConfigure.getConfigure())
+            using (var db = Model.DatabaseConfigure.getConfigure())
             {
-                var loaddata = db.customers.Find(id);
+                var loaddata = db.parties.Find(id);
                 name = loaddata.name;
                 address = loaddata.address;
                 phone = loaddata.phone;
@@ -48,7 +48,7 @@ namespace RestaurantSystem.Customer
                 label_address.Text = value;
             }
         }
-        
+
         public string phone
         {
             get
@@ -60,46 +60,22 @@ namespace RestaurantSystem.Customer
                 label_phone.Text = value;
             }
         }
-       
-        private void materialButton_save_Click(object sender, EventArgs e)
-        {
-
-        }
-           
-        private void materialButton_cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void betterTextBox_paid_TextChanged(object sender, EventArgs e)
-        {
-           // refresh();
-        }
-
-        private void betterTextBox_retrun_TextChanged(object sender, EventArgs e)
-        {
-            //refresh();
-        }
-
-        private void checkBo_bank_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
 
         private void materialButton_add_Click(object sender, EventArgs e)
         {
-            using(var db= Model.DatabaseConfigure.getConfigure())
+            using (var db = Model.DatabaseConfigure.getConfigure())
             {
-                customer_ledgers ledger = new customer_ledgers()
+
+                party_ledgers ledger = new party_ledgers()
                 {
                     date = INFO.currentdate,
                     amount = betterTextBox_amount.decVal,
-                    type="CR",
-                    customer_id=id,
+                    type = "DR",
+                    party_id = id,
                     created_at = DateTime.Now,
                     updated_at = DateTime.Now,
                 };
-                db.customer_ledgers.Add(ledger);
+                db.party_ledgers.Add(ledger);
                 db.SaveChanges();
                 this.Close();
             }
@@ -111,3 +87,5 @@ namespace RestaurantSystem.Customer
         }
     }
 }
+
+

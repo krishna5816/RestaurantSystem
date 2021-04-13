@@ -50,6 +50,7 @@ namespace RestaurantSystem.Model
         public virtual DbSet<order_items> order_items { get; set; }
         public virtual DbSet<order_tables> order_tables { get; set; }
         public virtual DbSet<party> parties { get; set; }
+        public virtual DbSet<party_ledgers> party_ledgers { get; set; }
         public virtual DbSet<party_payments> party_payments { get; set; }
         public virtual DbSet<partypayment> partypayments { get; set; }
         public virtual DbSet<purchaseaddstock> purchaseaddstocks { get; set; }

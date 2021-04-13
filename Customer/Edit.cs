@@ -38,8 +38,8 @@ namespace RestaurantSystem.Customer
            // editcustomer.panno=betterTextBox_panno.Text;
             editcustomer.phone=betterTextBox_phone.Text;
             editcustomer.email = betterTextBox_email.Text;
-            editcustomer.currentdue=betterTextBox_currentDue.decVal;
-            editcustomer.currentadvance=betterTextBox_currentAdvance.decVal;
+           // editcustomer.currentdue=betterTextBox_currentDue.decVal;
+           //editcustomer.currentadvance=betterTextBox_currentAdvance.decVal;
             editcustomer.nationality=betterTextBox_nationality.Text;
             editcustomer.creadted_at = DateTime.Now;
             editcustomer.updated_at = DateTime.Now;
@@ -58,8 +58,8 @@ namespace RestaurantSystem.Customer
            // betterTextBox_panno.Text = item.panno;
             betterTextBox_phone.Text = item.phone;
             betterTextBox_email.Text = item.email;
-            betterTextBox_currentAdvance.Text = item.currentadvance.ToString();
-            betterTextBox_currentDue.Text = item.currentdue.ToString();
+            //betterTextBox_currentAdvance.Text = item.currentadvance.ToString();
+            //betterTextBox_currentDue.Text = item.currentdue.ToString();
             betterTextBox_nationality.Text = item.nationality;
             this.id = id;
         }

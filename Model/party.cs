@@ -22,6 +22,7 @@ namespace RestaurantSystem.Model
             this.purchasecategories = new HashSet<purchasecategory>();
             this.purchaseinvoices = new HashSet<purchaseinvoice>();
             this.purchaseinvoiceitems = new HashSet<purchaseinvoiceitem>();
+            this.party_ledgers = new HashSet<party_ledgers>();
         }
     
         public int id { get; set; }
@@ -52,5 +53,7 @@ namespace RestaurantSystem.Model
         public virtual ICollection<purchaseinvoice> purchaseinvoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<purchaseinvoiceitem> purchaseinvoiceitems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<party_ledgers> party_ledgers { get; set; }
     }
 }

@@ -57,7 +57,6 @@ namespace RestaurantSystem.Parties
             viwer.addre = party.address;
             viwer.phone = party.phone;
             viwer.pan = party.pannumber;
-            viwer.due = party.due.Value;
             viwer.Dock = DockStyle.Top;
             panel_menu.Controls.Add(viwer);
         }

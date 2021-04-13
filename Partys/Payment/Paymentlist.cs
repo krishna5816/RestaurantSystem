@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RestaurantSystem.Customer
+namespace RestaurantSystem.Partys.Payment
 {
-    public partial class Details : Form
+    public partial class Paymentlist : Form
     {
-        Model.customer Customer;
-        public class CustomerLedgerViwer
+        Model.ResturantManagementEntities db = new Model.ResturantManagementEntities();
+        public class PartyLedgerViwer
         {
             public int ID { get; set; }
             public string Date { get; set; }
@@ -22,35 +22,34 @@ namespace RestaurantSystem.Customer
             public Decimal? Dr { get; set; }
             public string Balance { get; set; }
         }
-        List<CustomerLedgerViwer> customerLedgerViwers;
+        List<PartyLedgerViwer> partyLedgerViwers;
         public int cu_id { get; set; }
 
         public int id;
-        public Details(int id)
+        public Paymentlist(int id)
         {
-            InitializeComponent(); 
-            using (var db = Model.DatabaseConfigure.getConfigure())
-            {
-                customerLedgerViwers = new List<CustomerLedgerViwer>();
-                var load = db.customers.Find(id);
+            InitializeComponent();
+            
+                partyLedgerViwers = new List<PartyLedgerViwer>();
+                var load = db.parties.Find(id);
                 id = load.id;
                 name = load.name;
                 address = load.address;
                 phone = load.phone;
                 email = load.email;
                 //pannumber = load.panno;
-               // dueamount = load.currentdue.Value;
-                
+               
+
                 this.id = id;
-            }
+            
             using (var db = Model.DatabaseConfigure.getConfigure())
             {
-                var ledgers = db.customer_ledgers.Where(o => o.customer_id == id).ToList();
+                var ledgers = db.party_ledgers.Where(o => o.party_id == id).ToList();
                 decimal balance = 0;
 
                 foreach (var ledger in ledgers)
                 {
-                    var clv = new CustomerLedgerViwer();
+                    var clv = new PartyLedgerViwer();
                     clv.ID = ledger.id;
                     clv.Date = ledger.date.ToString();
                     if (ledger.type == "DR")
@@ -66,11 +65,11 @@ namespace RestaurantSystem.Customer
 
                     if (balance < 0)
                     {
-                        clv.Balance = (-1 * balance).ToString() + "CR";
+                        clv.Balance = (-1 * balance).ToString() + " CR";
                     }
                     else if (balance > 0)
                     {
-                        clv.Balance = (balance).ToString() + "DR";
+                        clv.Balance = (balance).ToString() + " DR";
 
                     }
                     else
@@ -78,14 +77,13 @@ namespace RestaurantSystem.Customer
                         clv.Balance = "---";
                     }
 
-                    customerLedgerViwers.Add(clv);
+                    partyLedgerViwers.Add(clv);
                 }
 
-                dataGridView1.DataSource = customerLedgerViwers;
+                dataGridView1.DataSource = partyLedgerViwers;
 
             }
         }
-        
         public string name
         {
             get
@@ -108,7 +106,7 @@ namespace RestaurantSystem.Customer
                 label_address.Text = value;
             }
         }
-       
+
         public string phone
         {
             get
@@ -132,58 +130,24 @@ namespace RestaurantSystem.Customer
                 label_Email.Text = value;
             }
         }
-        
+       
 
-        public void loadata(int id)
+        private void materialButton_AddPayment_Click(object sender, EventArgs e)
         {
-            using (var db = Model.DatabaseConfigure.getConfigure())
-            {
-                var load = db.customers.Find(id);
-                id = load.id;
-                name = load.name;
-                address = load.address;
-                phone = load.phone;
-                email = load.email;
-              
-               
-            }
+            var payment = new Partys.Payment.AddPayment(id);
+            var trace = new CustomControls.Modal(payment);
+            trace.Show();
         }
 
         private void materialButton_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        int sn = 1;
-        private void materialButton_refresh_Click(object sender, EventArgs e)
-        {
-            using (var db = Model.DatabaseConfigure.getConfigure())
-            {
-                var list = db.bills.Find(id);
-                var loaddata = new ListViewItem(new string[]
-                {
-                    sn.ToString(),list.grosstotal.ToString(),list.discount.ToString(),list.tax_amount.ToString(),list.nettotal.ToString(),
-                    list.paidamount.ToString(),list.dueamount.ToString(),//list.bill_Date
-                });
-            }
-        }
 
-        private void materialButton_paymentmode_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            var payment = new Customer.PaymentMode(id);
-            var trance = new CustomControls.Modal(payment);
-            trance.Show();
-        }
 
-        private void betterListView1_DoubleClick(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void materialButton_AddPayment_Click(object sender, EventArgs e)
-        {
-            var payment = new Customer.PaymentMode(id);
-            var t =new CustomControls.Modal(payment);
-            t.Show();
         }
     }
 }
+

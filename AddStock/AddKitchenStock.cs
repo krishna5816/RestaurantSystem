@@ -43,7 +43,7 @@ namespace RestaurantSystem.AddStock
                 {
                     betterTextBox_unit.Text = db.purchaseitems.Find(sel.id).unit;
                     betterTextBox_rate.decVal = db.purchaseitems.Find(sel.id).price.Value;
-                  
+
                 }
                 betterTextBox_quantity.Focus();
             }
@@ -64,14 +64,14 @@ namespace RestaurantSystem.AddStock
 
         private void checkBox_party_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_party.Checked == true)
-            {
-                panel_party.Enabled = true;
-            }
-            else
-            {
-                panel_party.Enabled = false;
-            }
+            //if (checkBox_party.Checked == true)
+            //{
+            //    panel_party.Enabled = true;
+            //}
+            //else
+            //{
+            //    panel_party.Enabled = false;
+            //}
         }
 
         private void comboBox_party_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace RestaurantSystem.AddStock
                 {
                     betterTextBox_partyphone.Text = db.parties.Find(sel.id).phone;
                     betterTextBox_partypan.Text = db.parties.Find(sel.id).pannumber;
-                    betterTextBox_advance.decVal = db.parties.Find(sel.id).advance.Value;
+                    //betterTextBox_advance.decVal = db.parties.Find(sel.id).advance.Value;
                 }
                 betterTextBox_quantity.Focus();
             }
@@ -126,7 +126,7 @@ namespace RestaurantSystem.AddStock
 
             total = (betterTextBox_rate.decVal * betterTextBox_quantity.decVal);
             betterListView1.Items.Add(new ListViewItem(new string[]
-            { sn.ToString(), selitm.name, selitm.purchasecategory.name, betterTextBox_quantity.decVal.ToString(), betterTextBox_rate.decVal.ToString(),betterTextBox_unit.Text, total.ToString(),selitm.id.ToString()
+            { sn.ToString(), selitm.name, selitm.purchasecategory.name, betterTextBox_quantity.decVal.ToString(),betterTextBox_unit.Text, betterTextBox_rate.decVal.ToString(), total.ToString(),selitm.id.ToString()
             }));
             sn += 1;
             betterTextBox_grosstotal.decVal += total;
@@ -183,7 +183,11 @@ namespace RestaurantSystem.AddStock
                 CustomControls.Alert.show("Empty Items", "Please selcet item and enter price and quantity", 3000);
                 return;
             }
-
+            if (comboBox_party.SelectedIndex == -1)
+            {
+                CustomControls.Alert.show("Empty Items", "Please selcet Party in parties list", 3000);
+                return;
+            }
             Model.purchaseinvoice addnew = new Model.purchaseinvoice()
             {
                 grosstotal = betterTextBox_grosstotal.decVal,
@@ -191,55 +195,69 @@ namespace RestaurantSystem.AddStock
                 tax = betterTextBox_Tax.decVal,
                 nettotal = betterTextBox_nettotal.decVal,
                 due = betterTextBox_Due.decVal,
-                paid = betterTextBox_paid.decVal,                
+                paid = betterTextBox_paid.decVal,
                 fiscalyear_id = INFO.currentFiscalYear.id,
                 admin_id = INFO.admin_id,
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now,
-                date = INFO.currentdate
+                date = INFO.currentdate,
+                parties_id = (comboBox_party.SelectedItem as Model.party).id
 
             };
-
-            if (checkBox_party.Checked)
+            Model.party_ledgers party_Ledger = new party_ledgers()
             {
-                if (comboBox_party.SelectedIndex < 0)
-                {
-                    CustomControls.Alert.show("", "select party", 2000);
-                    return;
-                }
-                var venderdata = (party)comboBox_party.SelectedItem;
-                addnew.parties_id = venderdata.id;
-                var vender = db.parties.Where(o => o.id == venderdata.id).First();
-                if (checkBox_advance.Checked)
-                {
-                    if (betterTextBox_advance.decVal > vender.advance)
-                    {
-                        vender.advance = 0;
-                    }
-                    else
-                    {
-                        vender.advance -= betterTextBox_advance.decVal;
-                    }
-                }
-                if (betterTextBox_Due.decVal > 0)
-                {
-                    if (checkBox_advance.Checked)
-                    {
-                        if (betterTextBox_advance.decVal >= betterTextBox_Due.decVal)
-                        {
-                            betterTextBox_Due.decVal = 0;
-                        }
-                        else
-                        {
-                            betterTextBox_Due.decVal -= betterTextBox_advance.decVal;
-                        }
-                    }
-                    vender.due += betterTextBox_Due.decVal;
-                    db.Entry(vender).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
-                }
 
-            }
+                date = INFO.currentdate,
+                amount = betterTextBox_Due.decVal,
+                due = 0,
+                returnamount = 0,
+                type = "CR",
+                party_id = (comboBox_party.SelectedItem as Model.party).id,
+                created_at = DateTime.Now,
+                updated_at = DateTime.Now,
+            };
+            db.party_ledgers.Add(party_Ledger);
+
+            //if (checkBox_party.Checked)
+            //{
+            //    if (comboBox_party.SelectedIndex< 0)
+            //    {
+            //        CustomControls.Alert.show("", "select party", 2000);
+            //        return;
+            //    }
+            //var venderdata = (party)comboBox_party.SelectedItem;
+            //addnew.parties_id = venderdata.id;
+            //var vender = db.parties.Where(o => o.id == venderdata.id).First();
+            //if (checkBox_advance.Checked)
+            //{
+            //    if (betterTextBox_advance.decVal > vender.advance)
+            //    {
+            //        vender.advance = 0;
+            //    }
+            //    else
+            //    {
+            //        vender.advance -= betterTextBox_advance.decVal;
+            //    }
+            //}
+            //if (betterTextBox_Due.decVal > 0)
+            //{
+            //    if (checkBox_advance.Checked)
+            //    {
+            //        if (betterTextBox_advance.decVal >= betterTextBox_Due.decVal)
+            //        {
+            //            betterTextBox_Due.decVal = 0;
+            //        }
+            //        else
+            //        {
+            //            betterTextBox_Due.decVal -= betterTextBox_advance.decVal;
+            //        }
+            //    }
+            //    vender.due += betterTextBox_Due.decVal;
+            //    db.Entry(vender).State = System.Data.Entity.EntityState.Modified;
+            //    db.SaveChanges();
+            //}
+
+
             db.purchaseinvoices.Add(addnew);
             db.SaveChanges();
             purchase_id = addnew.id;
@@ -247,9 +265,9 @@ namespace RestaurantSystem.AddStock
             {
 
                 var quantity = Convert.ToDecimal(item.SubItems[3].Text);
-                var rate = Convert.ToInt32(item.SubItems[5].Text);
-                var total = Convert.ToInt32(item.SubItems[6].Text);
                 var unit = item.SubItems[4].Text;
+                var rate = Convert.ToDecimal(item.SubItems[5].Text);
+                var total = Convert.ToInt32(item.SubItems[6].Text);
                 var item_id = Convert.ToInt32(item.SubItems[7].Text);
                 var purchase_item = db.purchaseitems.Find(item_id);
                 purchase_item.qty += quantity;
@@ -259,7 +277,7 @@ namespace RestaurantSystem.AddStock
                     purchaseitems_id = item_id,
                     price = rate,
                     qty = quantity,
-                    unit=unit,
+                    unit = unit,
                     purchaseinvoice_id = purchase_id,
                     admin_id = INFO.admin_id,
                     updated_at = DateTime.Now,
@@ -283,17 +301,17 @@ namespace RestaurantSystem.AddStock
                     admin_id = INFO.admin_id,
                     updated_at = DateTime.Now,
                     created_at = DateTime.Now,
-                    fiscalyear_id=INFO.currentFiscalYear.id
+                    fiscalyear_id = INFO.currentFiscalYear.id
                 };
                 db.purchseexpenses.Add(exp);
                 db.SaveChanges();
             }
             betterListView1.Items.Clear();
             betterListView_Exp.Items.Clear();
-            if (checkBox_party.Checked)
-            {
-                comboBox_party.SelectedIndex = -1;
-            }
+            //if (checkBox_party.Checked)
+            //{
+            //    comboBox_party.SelectedIndex = -1;
+            //}
             betterTextBox_rate.Clear();
             betterTextBox_quantity.Clear();
             betterTextBox_grosstotal.Clear();

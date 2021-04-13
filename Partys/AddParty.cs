@@ -12,14 +12,14 @@ namespace RestaurantSystem.Parties
 {
     public partial class AddParty : Form
     {
-        public delegate void addHandler(Model.party party );
+        public delegate void addHandler(Model.party party);
         public event addHandler adddata;
         public AddParty()
         {
             InitializeComponent();
-            
+
         }
-        
+
         private void materialButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -27,55 +27,88 @@ namespace RestaurantSystem.Parties
         Model.ResturantManagementEntities db = new ResturantManagementEntities();
         private void materialButton1_save_Click(object sender, EventArgs e)
         {
-            if(betterTextBox1_name.Text.Trim()=="")
+            if (betterTextBox1_name.Text.Trim() == "")
             {
-                CustomControls.Alert.show(" Name", "Enter Party Name ",1500);
+                CustomControls.Alert.show(" Name", "Enter Party Name ", 1500);
                 return;
             }
-            if(betterTextBox1_address.Text.Trim()=="")
+            if (betterTextBox1_address.Text.Trim() == "")
             {
                 CustomControls.Alert.show("Address", "Enter Party Address", 1500);
                 return;
             }
-            if(betterTextBox2_phone.Text.Trim()=="")
+            if (betterTextBox2_phone.Text.Trim() == "")
             {
                 CustomControls.Alert.show("Phone", "Enter Party Phone", 1500);
                 return;
             }
-            if(betterTextBox11_panNumber.Text.Trim() == "")
+            if (betterTextBox11_panNumber.Text.Trim() == "")
             {
                 CustomControls.Alert.show("Pan Number", "Enter Pan Number", 1500);
                 return;
-            }         
-           
-         
+            }
+
+
             try
-            { 
-            party i = new party()
             {
-                name = betterTextBox1_name.Text,
-                address = betterTextBox1_address.Text,
-                phone = betterTextBox2_phone.Text,
-                email = betterTextBox3_email.Text,
-                postalcode = betterTextBox10_postalcode.Text,
-                pannumber = betterTextBox11_panNumber.Text,
-                advance = betterTextBox13_advance.decVal,
-                due =betterTextBox12_deu.decVal,
-                created_at = DateTime.Now,
-                updated_at = DateTime.Now
+                party i = new party()
+                {
+                    name = betterTextBox1_name.Text,
+                    address = betterTextBox1_address.Text,
+                    phone = betterTextBox2_phone.Text,
+                    email = betterTextBox3_email.Text,
+                    postalcode = betterTextBox10_postalcode.Text,
+                    pannumber = betterTextBox11_panNumber.Text,
+                    //advance = betterTextBox13_advance.decVal,
+                    //due = betterTextBox12_deu.decVal,
+                    created_at = DateTime.Now,
+                    updated_at = DateTime.Now
+                };
+                db.parties.Add(i);
+                db.SaveChanges();
+                adddata?.Invoke(i);
+                if (betterTextBox12_deu.decVal > 0)
+                {
+                    var party_payment = new party_ledgers()
+                    {
+                        party_id = i.id,
+                        date = INFO.currentdate,
+                        amount = betterTextBox12_deu.decVal,
+                        billnumber = "unknown",
+                        returnamount = 0,
+                        updated_at = DateTime.Now,
+                        created_at = DateTime.Now,
+                        type = "CR",
                     };
-            db.parties.Add(i);
-            db.SaveChanges();
-            adddata?.Invoke(i);
-            this.Close();
-             }
-               
-            
-            catch(Exception ex)
+                    db.party_ledgers.Add(party_payment);
+                    db.SaveChanges();
+
+                }
+                else if (betterTextBox13_advance.decVal > 0)
+                {
+                    var P_payment = new party_ledgers()
+                    {
+                        party_id = i.id,
+                        date = INFO.currentdate,
+                        amount = betterTextBox13_advance.decVal,
+                        billnumber = "unknown",
+                        returnamount = 0,
+                        updated_at = DateTime.Now,
+                        created_at = DateTime.Now,
+                        type = "DR",
+                    };
+                    db.party_ledgers.Add(P_payment);
+                    db.SaveChanges();
+                }
+                this.Close();
+            }
+
+
+            catch (Exception ex)
             {
                 MessageBox.Show("error");
             };
-           
+
         }
 
         private void materialButton2_cancel_Click(object sender, EventArgs e)
@@ -124,7 +157,7 @@ namespace RestaurantSystem.Parties
 
         private void betterTextBox2_email_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
         private void betterTextBox2_nationality_KeyPress(object sender, KeyPressEventArgs e)

@@ -102,6 +102,7 @@
           <Property Name="grosstotal" Type="decimal" Precision="18" Scale="2" />
           <Property Name="dueamount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="returnamount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="customer_id" Type="int" />
         </EntityType>
         <EntityType Name="categories">
           <Key>
@@ -421,6 +422,24 @@
           <Property Name="created_at" Type="datetime" Nullable="false" />
           <Property Name="updated_at" Type="datetime" Nullable="false" />
           <Property Name="sync_id" Type="int" />
+        </EntityType>
+        <EntityType Name="party_ledgers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="billnumber" Type="nvarchar" MaxLength="30" />
+          <Property Name="type" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="updated_at" Type="datetime" Nullable="false" />
+          <Property Name="due" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="paid" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="sync_id" Type="int" />
+          <Property Name="returnamount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="party_id" Type="int" />
         </EntityType>
         <EntityType Name="party_payments">
           <Key>
@@ -1362,15 +1381,15 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__bills__cusotomer__2A164134">
-          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+        <Association Name="FK__bills__customer___52E34C9D">
+          <End Role="customers" Type="Self.customers" Multiplicity="0..1" />
           <End Role="bills" Type="Self.bills" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="accounts">
+            <Principal Role="customers">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="bills">
-              <PropertyRef Name="cusotomer_id" />
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1890,6 +1909,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__party_led__party__477199F1">
+          <End Role="parties" Type="Self.parties" Multiplicity="0..1" />
+          <End Role="party_ledgers" Type="Self.party_ledgers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="parties">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="party_ledgers">
+              <PropertyRef Name="party_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__party_pay__fisca__373B3228">
           <End Role="fiscalyears" Type="Self.fiscalyears" Multiplicity="0..1" />
           <End Role="party_payments" Type="Self.party_payments" Multiplicity="*" />
@@ -2312,6 +2343,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySet Name="order_items" EntityType="Self.order_items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="order_tables" EntityType="Self.order_tables" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="parties" EntityType="Self.parties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="party_ledgers" EntityType="Self.party_ledgers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="party_payments" EntityType="Self.party_payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="partypayments" EntityType="Self.partypayments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="purchaseaddstocks" EntityType="Self.purchaseaddstocks" Schema="dbo" store:Type="Tables" />
@@ -2468,8 +2500,8 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="counters" EntitySet="counters" />
             <End Role="bills" EntitySet="bills" />
           </AssociationSet>
-          <AssociationSet Name="FK__bills__cusotomer__2A164134" Association="Self.FK__bills__cusotomer__2A164134">
-            <End Role="accounts" EntitySet="accounts" />
+          <AssociationSet Name="FK__bills__customer___52E34C9D" Association="Self.FK__bills__customer___52E34C9D">
+            <End Role="customers" EntitySet="customers" />
             <End Role="bills" EntitySet="bills" />
           </AssociationSet>
           <AssociationSet Name="FK__bills__fiscalyea__2BFE89A6" Association="Self.FK__bills__fiscalyea__2BFE89A6">
@@ -2644,6 +2676,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="admins" EntitySet="admins" />
             <End Role="parties" EntitySet="parties" />
           </AssociationSet>
+          <AssociationSet Name="FK__party_led__party__477199F1" Association="Self.FK__party_led__party__477199F1">
+            <End Role="parties" EntitySet="parties" />
+            <End Role="party_ledgers" EntitySet="party_ledgers" />
+          </AssociationSet>
           <AssociationSet Name="FK__party_pay__fisca__373B3228" Association="Self.FK__party_pay__fisca__373B3228">
             <End Role="fiscalyears" EntitySet="fiscalyears" />
             <End Role="party_payments" EntitySet="party_payments" />
@@ -2807,6 +2843,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySet Name="order_items" EntityType="ResturantManagementModel.order_items" />
           <EntitySet Name="order_tables" EntityType="ResturantManagementModel.order_tables" />
           <EntitySet Name="parties" EntityType="ResturantManagementModel.party" />
+          <EntitySet Name="party_ledgers" EntityType="ResturantManagementModel.party_ledgers" />
           <EntitySet Name="party_payments" EntityType="ResturantManagementModel.party_payments" />
           <EntitySet Name="partypayments" EntityType="ResturantManagementModel.partypayment" />
           <EntitySet Name="purchaseaddstocks" EntityType="ResturantManagementModel.purchaseaddstock" />
@@ -3027,6 +3064,10 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="customer" EntitySet="customers" />
             <End Role="customer_ledgers" EntitySet="customer_ledgers" />
           </AssociationSet>
+          <AssociationSet Name="FK__party_led__custo__44952D46" Association="ResturantManagementModel.FK__party_led__custo__44952D46">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="party_ledgers" EntitySet="party_ledgers" />
+          </AssociationSet>
           <AssociationSet Name="FK__issueitem__fisca__078C1F06" Association="ResturantManagementModel.FK__issueitem__fisca__078C1F06">
             <End Role="fiscalyear" EntitySet="fiscalyears" />
             <End Role="issueitem" EntitySet="issueitems" />
@@ -3187,6 +3228,14 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             <End Role="purchaseitem" EntitySet="purchaseitems" />
             <End Role="wastagepurchaseitem" EntitySet="wastagepurchaseitems" />
           </AssociationSet>
+          <AssociationSet Name="FK__party_led__party__477199F1" Association="ResturantManagementModel.FK__party_led__party__477199F1">
+            <End Role="party" EntitySet="parties" />
+            <End Role="party_ledgers" EntitySet="party_ledgers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__bills__customer___52E34C9D" Association="ResturantManagementModel.FK__bills__customer___52E34C9D">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="bill" EntitySet="bills" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="account">
           <Key>
@@ -3331,6 +3380,8 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <NavigationProperty Name="billitems" Relationship="ResturantManagementModel.FK__billitems__bill___2EDAF651" FromRole="bill" ToRole="billitem" />
           <NavigationProperty Name="counter" Relationship="ResturantManagementModel.FK__bills__counter_i__29221CFB" FromRole="bill" ToRole="counter" />
           <NavigationProperty Name="fiscalyear" Relationship="ResturantManagementModel.FK__bills__fiscalyea__2BFE89A6" FromRole="bill" ToRole="fiscalyear" />
+          <Property Name="customer_id" Type="Int32" />
+          <NavigationProperty Name="customer" Relationship="ResturantManagementModel.FK__bills__customer___52E34C9D" FromRole="bill" ToRole="customer" />
         </EntityType>
         <EntityType Name="category">
           <Key>
@@ -3457,9 +3508,9 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="sync_id" Type="Int32" />
-          <NavigationProperty Name="customer" Relationship="ResturantManagementModel.FK__customer___custo__41B8C09B" FromRole="customer_ledgers" ToRole="customer" />
           <Property Name="due" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="returnamount" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="customer" Relationship="ResturantManagementModel.FK__customer___custo__41B8C09B" FromRole="customer_ledgers" ToRole="customer" />
         </EntityType>
         <EntityType Name="customerpayment">
           <Key>
@@ -3502,6 +3553,8 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <Property Name="sync_id" Type="Int32" />
           <NavigationProperty Name="admin" Relationship="ResturantManagementModel.FK__customers__admin__2EA5EC27" FromRole="customer" ToRole="admin" />
           <NavigationProperty Name="customer_ledgers" Relationship="ResturantManagementModel.FK__customer___custo__41B8C09B" FromRole="customer" ToRole="customer_ledgers" />
+          <NavigationProperty Name="party_ledgers" Relationship="ResturantManagementModel.FK__party_led__custo__44952D46" FromRole="customer" ToRole="party_ledgers" />
+          <NavigationProperty Name="bills" Relationship="ResturantManagementModel.FK__bills__customer___52E34C9D" FromRole="customer" ToRole="bill" />
         </EntityType>
         <EntityType Name="fiscalyear">
           <Key>
@@ -3729,6 +3782,27 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <NavigationProperty Name="purchasecategories" Relationship="ResturantManagementModel.FK__purchasec__party__45BE5BA9" FromRole="party" ToRole="purchasecategory" />
           <NavigationProperty Name="purchaseinvoices" Relationship="ResturantManagementModel.FK__purchasei__parti__17F790F9" FromRole="party" ToRole="purchaseinvoice" />
           <NavigationProperty Name="purchaseinvoiceitems" Relationship="ResturantManagementModel.FK__purchasei__party__3F115E1A" FromRole="party" ToRole="purchaseinvoiceitem" />
+          <NavigationProperty Name="party_ledgers" Relationship="ResturantManagementModel.FK__party_led__party__477199F1" FromRole="party" ToRole="party_ledgers" />
+        </EntityType>
+        <EntityType Name="party_ledgers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="billnumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="due" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="paid" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sync_id" Type="Int32" />
+          <NavigationProperty Name="customer" Relationship="ResturantManagementModel.FK__party_led__custo__44952D46" FromRole="party_ledgers" ToRole="customer" />
+          <Property Name="returnamount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="party_id" Type="Int32" />
+          <NavigationProperty Name="party" Relationship="ResturantManagementModel.FK__party_led__party__477199F1" FromRole="party_ledgers" ToRole="party" />
         </EntityType>
         <EntityType Name="party_payments">
           <Key>
@@ -5151,6 +5225,18 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__party_led__custo__44952D46">
+          <End Type="ResturantManagementModel.customer" Role="customer" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.party_ledgers" Role="party_ledgers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="party_ledgers">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__issueitem__fisca__078C1F06">
           <End Type="ResturantManagementModel.fiscalyear" Role="fiscalyear" Multiplicity="0..1" />
           <End Type="ResturantManagementModel.issueitem" Role="issueitem" Multiplicity="*" />
@@ -5631,6 +5717,30 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__party_led__party__477199F1">
+          <End Type="ResturantManagementModel.party" Role="party" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.party_ledgers" Role="party_ledgers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="party">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="party_ledgers">
+              <PropertyRef Name="party_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__bills__customer___52E34C9D">
+          <End Type="ResturantManagementModel.customer" Role="customer" Multiplicity="0..1" />
+          <End Type="ResturantManagementModel.bill" Role="bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bill">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5708,6 +5818,7 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
           <EntitySetMapping Name="bills">
             <EntityTypeMapping TypeName="ResturantManagementModel.bill">
               <MappingFragment StoreEntitySet="bills">
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
                 <ScalarProperty Name="returnamount" ColumnName="returnamount" />
                 <ScalarProperty Name="dueamount" ColumnName="dueamount" />
                 <ScalarProperty Name="grosstotal" ColumnName="grosstotal" />
@@ -6075,6 +6186,25 @@ warning 6002: The table/view 'Restaurant.dbo.shadow_partypayments' does not have
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="party_ledgers">
+            <EntityTypeMapping TypeName="ResturantManagementModel.party_ledgers">
+              <MappingFragment StoreEntitySet="party_ledgers">
+                <ScalarProperty Name="party_id" ColumnName="party_id" />
+                <ScalarProperty Name="returnamount" ColumnName="returnamount" />
+                <ScalarProperty Name="sync_id" ColumnName="sync_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="paid" ColumnName="paid" />
+                <ScalarProperty Name="due" ColumnName="due" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="billnumber" ColumnName="billnumber" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

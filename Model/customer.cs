@@ -18,6 +18,8 @@ namespace RestaurantSystem.Model
         public customer()
         {
             this.customer_ledgers = new HashSet<customer_ledgers>();
+            this.party_ledgers = new HashSet<party_ledgers>();
+            this.bills = new HashSet<bill>();
         }
     
         public int id { get; set; }
@@ -37,5 +39,9 @@ namespace RestaurantSystem.Model
         public virtual admin admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_ledgers> customer_ledgers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<party_ledgers> party_ledgers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<bill> bills { get; set; }
     }
 }

@@ -39,8 +39,6 @@
             this.betterTextBox11_panNumber = new CustomControls.BetterTextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.betterTextBox10_postalcode = new CustomControls.BetterTextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.betterTextBox4_nationality = new CustomControls.BetterTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.betterTextBox3_email = new CustomControls.BetterTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,9 +49,7 @@
             this.betterTextBox1_name = new CustomControls.BetterTextBox();
             this.label6_due = new System.Windows.Forms.Label();
             this.label7_advance = new System.Windows.Forms.Label();
-            this.label8_nationality = new System.Windows.Forms.Label();
             this.label9_postalcode = new System.Windows.Forms.Label();
-            this.label10_gender = new System.Windows.Forms.Label();
             this.label5_panNumber = new System.Windows.Forms.Label();
             this.label4_email = new System.Windows.Forms.Label();
             this.label3_Phone = new System.Windows.Forms.Label();
@@ -61,8 +57,6 @@
             this.label1_name = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialButton1 = new CustomControls.MaterialButton();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.comboBox_gender = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +88,7 @@
             this.materialButton2_cancel.hoverforecolor = System.Drawing.Color.White;
             this.materialButton2_cancel.hoverforefont = null;
             this.materialButton2_cancel.hoverimage = null;
-            this.materialButton2_cancel.Location = new System.Drawing.Point(383, 254);
+            this.materialButton2_cancel.Location = new System.Drawing.Point(382, 230);
             this.materialButton2_cancel.Name = "materialButton2_cancel";
             this.materialButton2_cancel.role = 0;
             this.materialButton2_cancel.Size = new System.Drawing.Size(100, 28);
@@ -122,7 +116,7 @@
             this.materialButton1_update.hoverforecolor = System.Drawing.Color.White;
             this.materialButton1_update.hoverforefont = null;
             this.materialButton1_update.hoverimage = null;
-            this.materialButton1_update.Location = new System.Drawing.Point(93, 254);
+            this.materialButton1_update.Location = new System.Drawing.Point(92, 230);
             this.materialButton1_update.Name = "materialButton1_update";
             this.materialButton1_update.role = 0;
             this.materialButton1_update.Size = new System.Drawing.Size(100, 28);
@@ -138,13 +132,14 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel10.Location = new System.Drawing.Point(93, 247);
+            this.panel10.Location = new System.Drawing.Point(92, 199);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(124, 1);
             this.panel10.TabIndex = 116;
             // 
             // betterTextBox13_advance
             // 
+            this.betterTextBox13_advance.append = "";
             this.betterTextBox13_advance.BackColor = System.Drawing.Color.White;
             this.betterTextBox13_advance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox13_advance.decVal = new decimal(new int[] {
@@ -154,9 +149,11 @@
             0});
             this.betterTextBox13_advance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox13_advance.intVal = 0;
-            this.betterTextBox13_advance.Location = new System.Drawing.Point(93, 227);
+            this.betterTextBox13_advance.Location = new System.Drawing.Point(92, 179);
             this.betterTextBox13_advance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.betterTextBox13_advance.Name = "betterTextBox13_advance";
+            this.betterTextBox13_advance.prepend = "";
+            this.betterTextBox13_advance.Rules = null;
             this.betterTextBox13_advance.Size = new System.Drawing.Size(124, 18);
             this.betterTextBox13_advance.TabIndex = 112;
             this.betterTextBox13_advance.textboxType = CustomControls.TextboxType.Text;
@@ -165,13 +162,14 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel9.Location = new System.Drawing.Point(288, 247);
+            this.panel9.Location = new System.Drawing.Point(287, 199);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(193, 1);
             this.panel9.TabIndex = 115;
             // 
             // betterTextBox12_deu
             // 
+            this.betterTextBox12_deu.append = "";
             this.betterTextBox12_deu.BackColor = System.Drawing.Color.White;
             this.betterTextBox12_deu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox12_deu.decVal = new decimal(new int[] {
@@ -181,9 +179,11 @@
             0});
             this.betterTextBox12_deu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox12_deu.intVal = 0;
-            this.betterTextBox12_deu.Location = new System.Drawing.Point(288, 227);
+            this.betterTextBox12_deu.Location = new System.Drawing.Point(287, 179);
             this.betterTextBox12_deu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.betterTextBox12_deu.Name = "betterTextBox12_deu";
+            this.betterTextBox12_deu.prepend = "";
+            this.betterTextBox12_deu.Rules = null;
             this.betterTextBox12_deu.Size = new System.Drawing.Size(193, 18);
             this.betterTextBox12_deu.TabIndex = 111;
             this.betterTextBox12_deu.textboxType = CustomControls.TextboxType.Text;
@@ -192,13 +192,14 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel8.Location = new System.Drawing.Point(288, 221);
+            this.panel8.Location = new System.Drawing.Point(287, 173);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(193, 1);
             this.panel8.TabIndex = 114;
             // 
             // betterTextBox11_panNumber
             // 
+            this.betterTextBox11_panNumber.append = "";
             this.betterTextBox11_panNumber.BackColor = System.Drawing.Color.White;
             this.betterTextBox11_panNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox11_panNumber.decVal = new decimal(new int[] {
@@ -208,9 +209,11 @@
             0});
             this.betterTextBox11_panNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox11_panNumber.intVal = 0;
-            this.betterTextBox11_panNumber.Location = new System.Drawing.Point(288, 201);
+            this.betterTextBox11_panNumber.Location = new System.Drawing.Point(287, 153);
             this.betterTextBox11_panNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.betterTextBox11_panNumber.Name = "betterTextBox11_panNumber";
+            this.betterTextBox11_panNumber.prepend = "";
+            this.betterTextBox11_panNumber.Rules = null;
             this.betterTextBox11_panNumber.Size = new System.Drawing.Size(193, 18);
             this.betterTextBox11_panNumber.TabIndex = 110;
             this.betterTextBox11_panNumber.textboxType = CustomControls.TextboxType.Text;
@@ -219,13 +222,14 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel7.Location = new System.Drawing.Point(93, 221);
+            this.panel7.Location = new System.Drawing.Point(92, 173);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(124, 1);
             this.panel7.TabIndex = 113;
             // 
             // betterTextBox10_postalcode
             // 
+            this.betterTextBox10_postalcode.append = "";
             this.betterTextBox10_postalcode.BackColor = System.Drawing.Color.White;
             this.betterTextBox10_postalcode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox10_postalcode.decVal = new decimal(new int[] {
@@ -235,40 +239,15 @@
             0});
             this.betterTextBox10_postalcode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox10_postalcode.intVal = 0;
-            this.betterTextBox10_postalcode.Location = new System.Drawing.Point(93, 201);
+            this.betterTextBox10_postalcode.Location = new System.Drawing.Point(92, 153);
             this.betterTextBox10_postalcode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.betterTextBox10_postalcode.Name = "betterTextBox10_postalcode";
+            this.betterTextBox10_postalcode.prepend = "";
+            this.betterTextBox10_postalcode.Rules = null;
             this.betterTextBox10_postalcode.Size = new System.Drawing.Size(124, 18);
             this.betterTextBox10_postalcode.TabIndex = 109;
             this.betterTextBox10_postalcode.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox10_postalcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox10_postalcode_KeyPress);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel6.Location = new System.Drawing.Point(93, 195);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(390, 1);
-            this.panel6.TabIndex = 108;
-            // 
-            // betterTextBox4_nationality
-            // 
-            this.betterTextBox4_nationality.BackColor = System.Drawing.Color.White;
-            this.betterTextBox4_nationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.betterTextBox4_nationality.decVal = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.betterTextBox4_nationality.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betterTextBox4_nationality.intVal = 0;
-            this.betterTextBox4_nationality.Location = new System.Drawing.Point(92, 178);
-            this.betterTextBox4_nationality.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.betterTextBox4_nationality.Name = "betterTextBox4_nationality";
-            this.betterTextBox4_nationality.Size = new System.Drawing.Size(390, 18);
-            this.betterTextBox4_nationality.TabIndex = 107;
-            this.betterTextBox4_nationality.textboxType = CustomControls.TextboxType.Text;
-            this.betterTextBox4_nationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox4_nationality_KeyPress);
             // 
             // panel5
             // 
@@ -280,6 +259,7 @@
             // 
             // betterTextBox3_email
             // 
+            this.betterTextBox3_email.append = "";
             this.betterTextBox3_email.BackColor = System.Drawing.Color.White;
             this.betterTextBox3_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox3_email.decVal = new decimal(new int[] {
@@ -292,6 +272,8 @@
             this.betterTextBox3_email.Location = new System.Drawing.Point(92, 126);
             this.betterTextBox3_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.betterTextBox3_email.Name = "betterTextBox3_email";
+            this.betterTextBox3_email.prepend = "";
+            this.betterTextBox3_email.Rules = null;
             this.betterTextBox3_email.Size = new System.Drawing.Size(390, 18);
             this.betterTextBox3_email.TabIndex = 101;
             this.betterTextBox3_email.textboxType = CustomControls.TextboxType.Text;
@@ -307,6 +289,7 @@
             // 
             // betterTextBox2_phone
             // 
+            this.betterTextBox2_phone.append = "";
             this.betterTextBox2_phone.BackColor = System.Drawing.Color.White;
             this.betterTextBox2_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox2_phone.decVal = new decimal(new int[] {
@@ -319,6 +302,8 @@
             this.betterTextBox2_phone.Location = new System.Drawing.Point(92, 100);
             this.betterTextBox2_phone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.betterTextBox2_phone.Name = "betterTextBox2_phone";
+            this.betterTextBox2_phone.prepend = "";
+            this.betterTextBox2_phone.Rules = null;
             this.betterTextBox2_phone.Size = new System.Drawing.Size(390, 18);
             this.betterTextBox2_phone.TabIndex = 102;
             this.betterTextBox2_phone.textboxType = CustomControls.TextboxType.Text;
@@ -334,6 +319,7 @@
             // 
             // betterTextBox1_address
             // 
+            this.betterTextBox1_address.append = "";
             this.betterTextBox1_address.BackColor = System.Drawing.Color.White;
             this.betterTextBox1_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox1_address.decVal = new decimal(new int[] {
@@ -346,6 +332,8 @@
             this.betterTextBox1_address.Location = new System.Drawing.Point(92, 76);
             this.betterTextBox1_address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.betterTextBox1_address.Name = "betterTextBox1_address";
+            this.betterTextBox1_address.prepend = "";
+            this.betterTextBox1_address.Rules = null;
             this.betterTextBox1_address.Size = new System.Drawing.Size(390, 18);
             this.betterTextBox1_address.TabIndex = 103;
             this.betterTextBox1_address.textboxType = CustomControls.TextboxType.Text;
@@ -361,6 +349,7 @@
             // 
             // betterTextBox1_name
             // 
+            this.betterTextBox1_name.append = "";
             this.betterTextBox1_name.BackColor = System.Drawing.Color.White;
             this.betterTextBox1_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox1_name.decVal = new decimal(new int[] {
@@ -373,6 +362,8 @@
             this.betterTextBox1_name.Location = new System.Drawing.Point(92, 52);
             this.betterTextBox1_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.betterTextBox1_name.Name = "betterTextBox1_name";
+            this.betterTextBox1_name.prepend = "";
+            this.betterTextBox1_name.Rules = null;
             this.betterTextBox1_name.Size = new System.Drawing.Size(390, 18);
             this.betterTextBox1_name.TabIndex = 96;
             this.betterTextBox1_name.textboxType = CustomControls.TextboxType.Text;
@@ -384,7 +375,7 @@
             // 
             this.label6_due.AutoSize = true;
             this.label6_due.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6_due.Location = new System.Drawing.Point(250, 227);
+            this.label6_due.Location = new System.Drawing.Point(249, 179);
             this.label6_due.Name = "label6_due";
             this.label6_due.Size = new System.Drawing.Size(33, 17);
             this.label6_due.TabIndex = 91;
@@ -394,47 +385,27 @@
             // 
             this.label7_advance.AutoSize = true;
             this.label7_advance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7_advance.Location = new System.Drawing.Point(26, 230);
+            this.label7_advance.Location = new System.Drawing.Point(25, 182);
             this.label7_advance.Name = "label7_advance";
             this.label7_advance.Size = new System.Drawing.Size(60, 17);
             this.label7_advance.TabIndex = 92;
             this.label7_advance.Text = "Advance";
             // 
-            // label8_nationality
-            // 
-            this.label8_nationality.AutoSize = true;
-            this.label8_nationality.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8_nationality.Location = new System.Drawing.Point(9, 178);
-            this.label8_nationality.Name = "label8_nationality";
-            this.label8_nationality.Size = new System.Drawing.Size(77, 17);
-            this.label8_nationality.TabIndex = 93;
-            this.label8_nationality.Text = "Nationality";
-            // 
             // label9_postalcode
             // 
             this.label9_postalcode.AutoSize = true;
             this.label9_postalcode.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9_postalcode.Location = new System.Drawing.Point(5, 204);
+            this.label9_postalcode.Location = new System.Drawing.Point(4, 156);
             this.label9_postalcode.Name = "label9_postalcode";
             this.label9_postalcode.Size = new System.Drawing.Size(81, 17);
             this.label9_postalcode.TabIndex = 94;
             this.label9_postalcode.Text = "Postal Code";
             // 
-            // label10_gender
-            // 
-            this.label10_gender.AutoSize = true;
-            this.label10_gender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10_gender.Location = new System.Drawing.Point(34, 155);
-            this.label10_gender.Name = "label10_gender";
-            this.label10_gender.Size = new System.Drawing.Size(52, 17);
-            this.label10_gender.TabIndex = 95;
-            this.label10_gender.Text = "Gender";
-            // 
             // label5_panNumber
             // 
             this.label5_panNumber.AutoSize = true;
             this.label5_panNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5_panNumber.Location = new System.Drawing.Point(226, 201);
+            this.label5_panNumber.Location = new System.Drawing.Point(225, 153);
             this.label5_panNumber.Name = "label5_panNumber";
             this.label5_panNumber.Size = new System.Drawing.Size(57, 17);
             this.label5_panNumber.TabIndex = 89;
@@ -514,36 +485,12 @@
             this.materialButton1.userole = false;
             this.materialButton1.UseVisualStyleBackColor = true;
             // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Teal;
-            this.panel11.Location = new System.Drawing.Point(92, 172);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(390, 1);
-            this.panel11.TabIndex = 120;
-            // 
-            // comboBox_gender
-            // 
-            this.comboBox_gender.BackColor = System.Drawing.Color.White;
-            this.comboBox_gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_gender.FormattingEnabled = true;
-            this.comboBox_gender.Items.AddRange(new object[] {
-            "Male ",
-            "Female",
-            "Other"});
-            this.comboBox_gender.Location = new System.Drawing.Point(92, 151);
-            this.comboBox_gender.Name = "comboBox_gender";
-            this.comboBox_gender.Size = new System.Drawing.Size(390, 21);
-            this.comboBox_gender.TabIndex = 119;
-            // 
             // EditParty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(499, 292);
-            this.Controls.Add(this.panel11);
-            this.Controls.Add(this.comboBox_gender);
+            this.ClientSize = new System.Drawing.Size(499, 271);
             this.Controls.Add(this.materialButton2_cancel);
             this.Controls.Add(this.materialButton1_update);
             this.Controls.Add(this.panel10);
@@ -554,8 +501,6 @@
             this.Controls.Add(this.betterTextBox11_panNumber);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.betterTextBox10_postalcode);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.betterTextBox4_nationality);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.betterTextBox3_email);
             this.Controls.Add(this.panel4);
@@ -566,9 +511,7 @@
             this.Controls.Add(this.betterTextBox1_name);
             this.Controls.Add(this.label6_due);
             this.Controls.Add(this.label7_advance);
-            this.Controls.Add(this.label8_nationality);
             this.Controls.Add(this.label9_postalcode);
-            this.Controls.Add(this.label10_gender);
             this.Controls.Add(this.label5_panNumber);
             this.Controls.Add(this.label4_email);
             this.Controls.Add(this.label3_Phone);
@@ -600,8 +543,6 @@
         private CustomControls.BetterTextBox betterTextBox11_panNumber;
         private System.Windows.Forms.Panel panel7;
         private CustomControls.BetterTextBox betterTextBox10_postalcode;
-        private System.Windows.Forms.Panel panel6;
-        private CustomControls.BetterTextBox betterTextBox4_nationality;
         private System.Windows.Forms.Panel panel5;
         private CustomControls.BetterTextBox betterTextBox3_email;
         private System.Windows.Forms.Panel panel4;
@@ -612,9 +553,7 @@
         private CustomControls.BetterTextBox betterTextBox1_name;
         private System.Windows.Forms.Label label6_due;
         private System.Windows.Forms.Label label7_advance;
-        private System.Windows.Forms.Label label8_nationality;
         private System.Windows.Forms.Label label9_postalcode;
-        private System.Windows.Forms.Label label10_gender;
         private System.Windows.Forms.Label label5_panNumber;
         private System.Windows.Forms.Label label4_email;
         private System.Windows.Forms.Label label3_Phone;
@@ -622,7 +561,5 @@
         private System.Windows.Forms.Label label1_name;
         private System.Windows.Forms.Panel panel1;
         private CustomControls.MaterialButton materialButton1;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.ComboBox comboBox_gender;
     }
 }

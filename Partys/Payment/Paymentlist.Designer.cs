@@ -1,6 +1,6 @@
-﻿namespace RestaurantSystem.Customer
+﻿namespace RestaurantSystem.Partys.Payment
 {
-    partial class Details
+    partial class Paymentlist
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1_Add = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label_due = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -39,10 +39,11 @@
             this.label_totaltransaction = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.materialButton_AddPayment = new CustomControls.MaterialButton();
-            this.label1_Add = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.materialButton_Close = new CustomControls.MaterialButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label_Email = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label_phone = new System.Windows.Forms.Label();
@@ -51,31 +52,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // label1_Add
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label_Email);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label_phone);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label_address);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label_name);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(737, 200);
-            this.panel1.TabIndex = 0;
+            this.label1_Add.AutoSize = true;
+            this.label1_Add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1_Add.ForeColor = System.Drawing.Color.White;
+            this.label1_Add.Location = new System.Drawing.Point(37, 10);
+            this.label1_Add.Name = "label1_Add";
+            this.label1_Add.Size = new System.Drawing.Size(86, 17);
+            this.label1_Add.TabIndex = 54;
+            this.label1_Add.Text = "Party Ledger";
             // 
             // panel4
             // 
@@ -93,7 +85,7 @@
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
             this.panel4.Location = new System.Drawing.Point(0, 144);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(735, 54);
+            this.panel4.Size = new System.Drawing.Size(798, 54);
             this.panel4.TabIndex = 16;
             // 
             // label_due
@@ -168,7 +160,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 52);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(735, 2);
+            this.panel5.Size = new System.Drawing.Size(798, 2);
             this.panel5.TabIndex = 3;
             // 
             // label23
@@ -180,19 +172,6 @@
             this.label23.Size = new System.Drawing.Size(122, 19);
             this.label23.TabIndex = 1;
             this.label23.Text = "Total Transaction";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.materialButton_AddPayment);
-            this.panel3.Controls.Add(this.label1_Add);
-            this.panel3.Controls.Add(this.materialButton_Close);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(735, 40);
-            this.panel3.TabIndex = 13;
             // 
             // materialButton_AddPayment
             // 
@@ -209,7 +188,7 @@
             this.materialButton_AddPayment.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_AddPayment.hoverforefont = null;
             this.materialButton_AddPayment.hoverimage = null;
-            this.materialButton_AddPayment.Location = new System.Drawing.Point(598, 5);
+            this.materialButton_AddPayment.Location = new System.Drawing.Point(661, 5);
             this.materialButton_AddPayment.Name = "materialButton_AddPayment";
             this.materialButton_AddPayment.role = 0;
             this.materialButton_AddPayment.Size = new System.Drawing.Size(133, 30);
@@ -223,16 +202,18 @@
             this.materialButton_AddPayment.UseVisualStyleBackColor = false;
             this.materialButton_AddPayment.Click += new System.EventHandler(this.materialButton_AddPayment_Click);
             // 
-            // label1_Add
+            // panel3
             // 
-            this.label1_Add.AutoSize = true;
-            this.label1_Add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1_Add.ForeColor = System.Drawing.Color.White;
-            this.label1_Add.Location = new System.Drawing.Point(37, 10);
-            this.label1_Add.Name = "label1_Add";
-            this.label1_Add.Size = new System.Drawing.Size(131, 17);
-            this.label1_Add.TabIndex = 54;
-            this.label1_Add.Text = "Details of Customer";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.materialButton_AddPayment);
+            this.panel3.Controls.Add(this.label1_Add);
+            this.panel3.Controls.Add(this.materialButton_Close);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(798, 40);
+            this.panel3.TabIndex = 13;
             // 
             // materialButton_Close
             // 
@@ -260,6 +241,38 @@
             this.materialButton_Close.userole = false;
             this.materialButton_Close.UseVisualStyleBackColor = true;
             this.materialButton_Close.Click += new System.EventHandler(this.materialButton_Close_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 200);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 250);
+            this.dataGridView1.TabIndex = 19;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.label_Email);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label_phone);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label_address);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label_name);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 200);
+            this.panel1.TabIndex = 18;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label_Email
             // 
@@ -349,55 +362,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 200);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(737, 248);
-            this.dataGridView1.TabIndex = 17;
-            // 
-            // Details
+            // Paymentlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(737, 448);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Details";
+            this.Name = "Paymentlist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Details";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "Paymentlist";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_Email;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label_phone;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label_address;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label_name;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private CustomControls.MaterialButton materialButton_Close;
         private System.Windows.Forms.Label label1_Add;
+        private CustomControls.MaterialButton materialButton_Close;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label_due;
         private System.Windows.Forms.Label label17;
@@ -408,7 +399,17 @@
         private System.Windows.Forms.Label label_totaltransaction;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private CustomControls.MaterialButton materialButton_AddPayment;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label_Email;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_phone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_address;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label label1;
     }
 }

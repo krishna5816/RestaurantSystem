@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Model
 {
-  partial  class account
+  partial  class customer
     {
         public override string ToString()
         {
-            return name;
+            return name+"("+phone+")";
         }
     }
 }

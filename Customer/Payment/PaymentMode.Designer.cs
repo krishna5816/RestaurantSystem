@@ -42,10 +42,6 @@
             this.label_phone = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.betterTextBox_Due = new CustomControls.BetterTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.betterTextBox_return = new CustomControls.BetterTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +82,7 @@
             this.btn_close.hoverforecolor = System.Drawing.Color.Empty;
             this.btn_close.hoverforefont = null;
             this.btn_close.hoverimage = null;
-            this.btn_close.Location = new System.Drawing.Point(209, 211);
+            this.btn_close.Location = new System.Drawing.Point(210, 152);
             this.btn_close.Name = "btn_close";
             this.btn_close.role = 0;
             this.btn_close.Size = new System.Drawing.Size(75, 30);
@@ -109,7 +105,7 @@
             0});
             this.betterTextBox_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betterTextBox_amount.intVal = 0;
-            this.betterTextBox_amount.Location = new System.Drawing.Point(127, 153);
+            this.betterTextBox_amount.Location = new System.Drawing.Point(128, 123);
             this.betterTextBox_amount.Name = "betterTextBox_amount";
             this.betterTextBox_amount.prepend = "";
             this.betterTextBox_amount.Rules = null;
@@ -132,7 +128,7 @@
             this.materialButton_add.hoverforecolor = System.Drawing.Color.Empty;
             this.materialButton_add.hoverforefont = null;
             this.materialButton_add.hoverimage = null;
-            this.materialButton_add.Location = new System.Drawing.Point(128, 211);
+            this.materialButton_add.Location = new System.Drawing.Point(129, 152);
             this.materialButton_add.Name = "materialButton_add";
             this.materialButton_add.role = 0;
             this.materialButton_add.Size = new System.Drawing.Size(75, 30);
@@ -232,80 +228,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 157);
+            this.label3.Location = new System.Drawing.Point(28, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 19);
             this.label3.TabIndex = 20;
             this.label3.Text = "Paid Amount";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 19);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Due Amount";
-            // 
-            // betterTextBox_Due
-            // 
-            this.betterTextBox_Due.append = "";
-            this.betterTextBox_Due.decVal = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.betterTextBox_Due.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betterTextBox_Due.intVal = 0;
-            this.betterTextBox_Due.Location = new System.Drawing.Point(127, 124);
-            this.betterTextBox_Due.Name = "betterTextBox_Due";
-            this.betterTextBox_Due.prepend = "";
-            this.betterTextBox_Due.Rules = null;
-            this.betterTextBox_Due.Size = new System.Drawing.Size(157, 23);
-            this.betterTextBox_Due.TabIndex = 27;
-            this.betterTextBox_Due.Text = "0";
-            this.betterTextBox_Due.textboxType = CustomControls.TextboxType.Decimal;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 186);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 19);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Return Amount";
-            // 
-            // betterTextBox_return
-            // 
-            this.betterTextBox_return.append = "";
-            this.betterTextBox_return.decVal = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.betterTextBox_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betterTextBox_return.intVal = 0;
-            this.betterTextBox_return.Location = new System.Drawing.Point(127, 182);
-            this.betterTextBox_return.Name = "betterTextBox_return";
-            this.betterTextBox_return.prepend = "";
-            this.betterTextBox_return.Rules = null;
-            this.betterTextBox_return.Size = new System.Drawing.Size(157, 23);
-            this.betterTextBox_return.TabIndex = 29;
-            this.betterTextBox_return.Text = "0";
-            this.betterTextBox_return.textboxType = CustomControls.TextboxType.Decimal;
             // 
             // PaymentMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(296, 258);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.betterTextBox_return);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.betterTextBox_Due);
+            this.ClientSize = new System.Drawing.Size(296, 192);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
@@ -340,9 +274,5 @@
         private System.Windows.Forms.Label label_phone;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private CustomControls.BetterTextBox betterTextBox_Due;
-        private System.Windows.Forms.Label label6;
-        private CustomControls.BetterTextBox betterTextBox_return;
     }
 }

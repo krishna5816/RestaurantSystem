@@ -55,17 +55,7 @@ namespace RestaurantSystem.Party
                 lbl_phone.Text = value;
             }
         }
-        public  decimal due
-        {
-            get
-            {
-                return Convert.ToDecimal(label_due.Text);
-            }
-            set
-            {
-                label_due.Text = value.ToString();
-            }
-        }
+      
         public string pan
         {
             get
@@ -96,7 +86,7 @@ namespace RestaurantSystem.Party
             viwer.partyname = party.name;
             viwer.addre = party.address;
             viwer.pan = party.pannumber;
-            viwer.due = party.due.Value;
+           
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -119,7 +109,7 @@ namespace RestaurantSystem.Party
 
         private void materialButton_details_Click(object sender, EventArgs e)
         {
-            var details = new Party.Details(id);
+            var details = new Partys.Payment.Paymentlist(id);
             var trace = new CustomControls.Modal(details);
             trace.Show();
         }

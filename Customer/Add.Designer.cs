@@ -133,6 +133,7 @@
             // 
             // betterTextBox_name
             // 
+            this.betterTextBox_name.append = "";
             this.betterTextBox_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox_name.decVal = new decimal(new int[] {
             0,
@@ -140,8 +141,10 @@
             0,
             0});
             this.betterTextBox_name.intVal = 0;
-            this.betterTextBox_name.Location = new System.Drawing.Point(114, 47);
+            this.betterTextBox_name.Location = new System.Drawing.Point(114, 50);
             this.betterTextBox_name.Name = "betterTextBox_name";
+            this.betterTextBox_name.prepend = "";
+            this.betterTextBox_name.Rules = null;
             this.betterTextBox_name.Size = new System.Drawing.Size(415, 19);
             this.betterTextBox_name.TabIndex = 9;
             this.betterTextBox_name.textboxType = CustomControls.TextboxType.Text;
@@ -149,6 +152,7 @@
             // 
             // betterTextBox_address
             // 
+            this.betterTextBox_address.append = "";
             this.betterTextBox_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox_address.decVal = new decimal(new int[] {
             0,
@@ -156,14 +160,17 @@
             0,
             0});
             this.betterTextBox_address.intVal = 0;
-            this.betterTextBox_address.Location = new System.Drawing.Point(114, 77);
+            this.betterTextBox_address.Location = new System.Drawing.Point(114, 79);
             this.betterTextBox_address.Name = "betterTextBox_address";
+            this.betterTextBox_address.prepend = "";
+            this.betterTextBox_address.Rules = null;
             this.betterTextBox_address.Size = new System.Drawing.Size(415, 19);
             this.betterTextBox_address.TabIndex = 10;
             this.betterTextBox_address.textboxType = CustomControls.TextboxType.Text;
             // 
             // betterTextBox_phone
             // 
+            this.betterTextBox_phone.append = "";
             this.betterTextBox_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox_phone.decVal = new decimal(new int[] {
             0,
@@ -171,8 +178,10 @@
             0,
             0});
             this.betterTextBox_phone.intVal = 0;
-            this.betterTextBox_phone.Location = new System.Drawing.Point(114, 137);
+            this.betterTextBox_phone.Location = new System.Drawing.Point(114, 140);
             this.betterTextBox_phone.Name = "betterTextBox_phone";
+            this.betterTextBox_phone.prepend = "";
+            this.betterTextBox_phone.Rules = null;
             this.betterTextBox_phone.Size = new System.Drawing.Size(415, 19);
             this.betterTextBox_phone.TabIndex = 12;
             this.betterTextBox_phone.textboxType = CustomControls.TextboxType.Text;
@@ -180,6 +189,7 @@
             // 
             // betterTextBox_panno
             // 
+            this.betterTextBox_panno.append = "";
             this.betterTextBox_panno.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox_panno.decVal = new decimal(new int[] {
             0,
@@ -187,8 +197,10 @@
             0,
             0});
             this.betterTextBox_panno.intVal = 0;
-            this.betterTextBox_panno.Location = new System.Drawing.Point(114, 107);
+            this.betterTextBox_panno.Location = new System.Drawing.Point(114, 109);
             this.betterTextBox_panno.Name = "betterTextBox_panno";
+            this.betterTextBox_panno.prepend = "";
+            this.betterTextBox_panno.Rules = null;
             this.betterTextBox_panno.Size = new System.Drawing.Size(415, 19);
             this.betterTextBox_panno.TabIndex = 11;
             this.betterTextBox_panno.textboxType = CustomControls.TextboxType.Text;
@@ -196,6 +208,7 @@
             // 
             // betterTextBox_email
             // 
+            this.betterTextBox_email.append = "";
             this.betterTextBox_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox_email.decVal = new decimal(new int[] {
             0,
@@ -203,14 +216,17 @@
             0,
             0});
             this.betterTextBox_email.intVal = 0;
-            this.betterTextBox_email.Location = new System.Drawing.Point(114, 167);
+            this.betterTextBox_email.Location = new System.Drawing.Point(114, 170);
             this.betterTextBox_email.Name = "betterTextBox_email";
+            this.betterTextBox_email.prepend = "";
+            this.betterTextBox_email.Rules = null;
             this.betterTextBox_email.Size = new System.Drawing.Size(415, 19);
             this.betterTextBox_email.TabIndex = 13;
             this.betterTextBox_email.textboxType = CustomControls.TextboxType.Text;
             // 
             // betterTextBox_currentAdvance
             // 
+            this.betterTextBox_currentAdvance.append = "";
             this.betterTextBox_currentAdvance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox_currentAdvance.decVal = new decimal(new int[] {
             0,
@@ -218,15 +234,18 @@
             0,
             0});
             this.betterTextBox_currentAdvance.intVal = 0;
-            this.betterTextBox_currentAdvance.Location = new System.Drawing.Point(390, 228);
+            this.betterTextBox_currentAdvance.Location = new System.Drawing.Point(390, 232);
             this.betterTextBox_currentAdvance.Name = "betterTextBox_currentAdvance";
+            this.betterTextBox_currentAdvance.prepend = "";
+            this.betterTextBox_currentAdvance.Rules = null;
             this.betterTextBox_currentAdvance.Size = new System.Drawing.Size(139, 19);
             this.betterTextBox_currentAdvance.TabIndex = 16;
-            this.betterTextBox_currentAdvance.textboxType = CustomControls.TextboxType.Text;
+            this.betterTextBox_currentAdvance.textboxType = CustomControls.TextboxType.Decimal;
             this.betterTextBox_currentAdvance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox_currentAdvance_KeyPress);
             // 
             // betterTextBox_currentdue
             // 
+            this.betterTextBox_currentdue.append = "";
             this.betterTextBox_currentdue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox_currentdue.decVal = new decimal(new int[] {
             0,
@@ -234,15 +253,18 @@
             0,
             0});
             this.betterTextBox_currentdue.intVal = 0;
-            this.betterTextBox_currentdue.Location = new System.Drawing.Point(114, 228);
+            this.betterTextBox_currentdue.Location = new System.Drawing.Point(114, 233);
             this.betterTextBox_currentdue.Name = "betterTextBox_currentdue";
+            this.betterTextBox_currentdue.prepend = "";
+            this.betterTextBox_currentdue.Rules = null;
             this.betterTextBox_currentdue.Size = new System.Drawing.Size(131, 19);
             this.betterTextBox_currentdue.TabIndex = 15;
-            this.betterTextBox_currentdue.textboxType = CustomControls.TextboxType.Text;
+            this.betterTextBox_currentdue.textboxType = CustomControls.TextboxType.Decimal;
             this.betterTextBox_currentdue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox_currentdue_KeyPress);
             // 
             // betterTextBox_nationality
             // 
+            this.betterTextBox_nationality.append = "";
             this.betterTextBox_nationality.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.betterTextBox_nationality.decVal = new decimal(new int[] {
             0,
@@ -250,8 +272,10 @@
             0,
             0});
             this.betterTextBox_nationality.intVal = 0;
-            this.betterTextBox_nationality.Location = new System.Drawing.Point(114, 197);
+            this.betterTextBox_nationality.Location = new System.Drawing.Point(114, 201);
             this.betterTextBox_nationality.Name = "betterTextBox_nationality";
+            this.betterTextBox_nationality.prepend = "";
+            this.betterTextBox_nationality.Rules = null;
             this.betterTextBox_nationality.Size = new System.Drawing.Size(415, 19);
             this.betterTextBox_nationality.TabIndex = 17;
             this.betterTextBox_nationality.textboxType = CustomControls.TextboxType.Text;

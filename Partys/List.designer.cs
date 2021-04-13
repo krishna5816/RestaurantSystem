@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.betterTextBox_search = new CustomControls.BetterTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_add = new CustomControls.MaterialButton();
@@ -38,13 +39,10 @@
             this.lbl_phone = new System.Windows.Forms.Label();
             this.lbl_address = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.betterTextBox_search = new CustomControls.BetterTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +59,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1002, 40);
             this.panel1.TabIndex = 0;
+            // 
+            // betterTextBox_search
+            // 
+            this.betterTextBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.betterTextBox_search.append = "";
+            this.betterTextBox_search.decVal = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.betterTextBox_search.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betterTextBox_search.intVal = 0;
+            this.betterTextBox_search.Location = new System.Drawing.Point(775, 8);
+            this.betterTextBox_search.Name = "betterTextBox_search";
+            this.betterTextBox_search.prepend = "";
+            this.betterTextBox_search.Rules = null;
+            this.betterTextBox_search.Size = new System.Drawing.Size(215, 25);
+            this.betterTextBox_search.TabIndex = 21;
+            this.betterTextBox_search.textboxType = CustomControls.TextboxType.Text;
+            this.betterTextBox_search.TextChanged += new System.EventHandler(this.betterTextBox_search_TextChanged);
             // 
             // panel2
             // 
@@ -195,29 +213,6 @@
             this.lbl_name.TabIndex = 9;
             this.lbl_name.Text = "Name";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.label9.Location = new System.Drawing.Point(595, 54);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 17);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Due";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(105)))), ((int)(((byte)(168)))));
-            this.label10.Location = new System.Drawing.Point(595, 468);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 17);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Due";
-            // 
             // label11
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -267,31 +262,12 @@
             this.label14.TabIndex = 18;
             this.label14.Text = "Name";
             // 
-            // betterTextBox_search
-            // 
-            this.betterTextBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.betterTextBox_search.decVal = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.betterTextBox_search.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betterTextBox_search.intVal = 0;
-            this.betterTextBox_search.Location = new System.Drawing.Point(775, 8);
-            this.betterTextBox_search.Name = "betterTextBox_search";
-            this.betterTextBox_search.Size = new System.Drawing.Size(215, 25);
-            this.betterTextBox_search.TabIndex = 21;
-            this.betterTextBox_search.textboxType = CustomControls.TextboxType.Text;
-            this.betterTextBox_search.TextChanged += new System.EventHandler(this.betterTextBox_search_TextChanged);
-            // 
             // List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1002, 497);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label12);
@@ -323,8 +299,6 @@
         private System.Windows.Forms.Label lbl_phone;
         private System.Windows.Forms.Label lbl_address;
         private System.Windows.Forms.Label lbl_name;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
