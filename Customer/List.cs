@@ -31,8 +31,8 @@ namespace RestaurantSystem.Customer
             viwer.address = account.address;
             //viwer.panno = account.panno;
             viwer.phone = account.phone;
-            viwer.due = account.currentdue.Value;
-            viwer.advance = account.currentadvance.Value;
+            //viwer.due = account.currentdue.Value;
+            //viwer.advance = account.currentadvance.Value;
             viwer.Dock = DockStyle.Top;
             flowLayoutPanel1.Controls.Add(viwer);
         }

@@ -42,6 +42,7 @@
             this.label1_price = new System.Windows.Forms.Label();
             this.label1_name = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.materialButton_close = new CustomControls.MaterialButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -71,7 +72,6 @@
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.betterTextBox_Estimateby = new CustomControls.BetterTextBox();
-            this.materialButton_close = new CustomControls.MaterialButton();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -101,7 +101,7 @@
             this.comboBox1_category.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1_category.Name = "comboBox1_category";
             this.comboBox1_category.Size = new System.Drawing.Size(187, 21);
-            this.comboBox1_category.TabIndex = 103;
+            this.comboBox1_category.TabIndex = 1;
             // 
             // materialButton1_update
             // 
@@ -123,7 +123,7 @@
             this.materialButton1_update.Name = "materialButton1_update";
             this.materialButton1_update.role = 0;
             this.materialButton1_update.Size = new System.Drawing.Size(173, 30);
-            this.materialButton1_update.TabIndex = 101;
+            this.materialButton1_update.TabIndex = 4;
             this.materialButton1_update.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton1_update.tempforefont = null;
             this.materialButton1_update.Text = "Update";
@@ -172,7 +172,7 @@
             this.betterTextBox1_qty.prepend = "";
             this.betterTextBox1_qty.Rules = null;
             this.betterTextBox1_qty.Size = new System.Drawing.Size(77, 18);
-            this.betterTextBox1_qty.TabIndex = 97;
+            this.betterTextBox1_qty.TabIndex = 2;
             this.betterTextBox1_qty.textboxType = CustomControls.TextboxType.Decimal;
             this.betterTextBox1_qty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox1_unit_KeyPress);
             // 
@@ -226,7 +226,7 @@
             this.betterTextBox1_price.prepend = "";
             this.betterTextBox1_price.Rules = null;
             this.betterTextBox1_price.Size = new System.Drawing.Size(201, 18);
-            this.betterTextBox1_price.TabIndex = 93;
+            this.betterTextBox1_price.TabIndex = 0;
             this.betterTextBox1_price.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox1_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox1_price_KeyPress);
             // 
@@ -262,6 +262,33 @@
             this.panel1.Size = new System.Drawing.Size(789, 38);
             this.panel1.TabIndex = 88;
             // 
+            // materialButton_close
+            // 
+            this.materialButton_close.BackgroundImage = global::RestaurantSystem.Properties.Resources.back_64x64;
+            this.materialButton_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.materialButton_close.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
+            this.materialButton_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton_close.FlatAppearance.BorderSize = 0;
+            this.materialButton_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton_close.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton_close.fontIncrement = 0F;
+            this.materialButton_close.FontStyle = null;
+            this.materialButton_close.ForeColor = System.Drawing.Color.White;
+            this.materialButton_close.hoverforecolor = System.Drawing.Color.Empty;
+            this.materialButton_close.hoverforefont = null;
+            this.materialButton_close.hoverimage = null;
+            this.materialButton_close.Location = new System.Drawing.Point(3, 5);
+            this.materialButton_close.Name = "materialButton_close";
+            this.materialButton_close.role = 0;
+            this.materialButton_close.Size = new System.Drawing.Size(30, 30);
+            this.materialButton_close.TabIndex = 53;
+            this.materialButton_close.tempforecolor = System.Drawing.Color.Empty;
+            this.materialButton_close.tempforefont = null;
+            this.materialButton_close.Totext = null;
+            this.materialButton_close.userole = false;
+            this.materialButton_close.UseVisualStyleBackColor = true;
+            this.materialButton_close.Click += new System.EventHandler(this.materialButton_close_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkCyan;
@@ -293,7 +320,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 38);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(789, 72);
-            this.panel7.TabIndex = 104;
+            this.panel7.TabIndex = 3;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // betterTextBox1_name
@@ -316,7 +343,7 @@
             this.betterTextBox1_name.prepend = "";
             this.betterTextBox1_name.Rules = null;
             this.betterTextBox1_name.Size = new System.Drawing.Size(187, 18);
-            this.betterTextBox1_name.TabIndex = 111;
+            this.betterTextBox1_name.TabIndex = 0;
             this.betterTextBox1_name.textboxType = CustomControls.TextboxType.Text;
             // 
             // betterTextBox_units
@@ -425,7 +452,7 @@
             this.betterTextBox_unitforestimate.prepend = "";
             this.betterTextBox_unitforestimate.Rules = null;
             this.betterTextBox_unitforestimate.Size = new System.Drawing.Size(100, 25);
-            this.betterTextBox_unitforestimate.TabIndex = 98;
+            this.betterTextBox_unitforestimate.TabIndex = 2;
             this.betterTextBox_unitforestimate.textboxType = CustomControls.TextboxType.Text;
             // 
             // materialButton_loadestimate
@@ -497,7 +524,7 @@
             this.materialButton_Addtocart.Name = "materialButton_Addtocart";
             this.materialButton_Addtocart.role = 0;
             this.materialButton_Addtocart.Size = new System.Drawing.Size(96, 31);
-            this.materialButton_Addtocart.TabIndex = 95;
+            this.materialButton_Addtocart.TabIndex = 3;
             this.materialButton_Addtocart.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_Addtocart.tempforefont = null;
             this.materialButton_Addtocart.Text = "Save ";
@@ -531,7 +558,7 @@
             this.betterTextBox_qty.prepend = "";
             this.betterTextBox_qty.Rules = null;
             this.betterTextBox_qty.Size = new System.Drawing.Size(100, 25);
-            this.betterTextBox_qty.TabIndex = 93;
+            this.betterTextBox_qty.TabIndex = 1;
             this.betterTextBox_qty.textboxType = CustomControls.TextboxType.Decimal;
             // 
             // comboBox_pitems
@@ -541,7 +568,7 @@
             this.comboBox_pitems.Location = new System.Drawing.Point(9, 37);
             this.comboBox_pitems.Name = "comboBox_pitems";
             this.comboBox_pitems.Size = new System.Drawing.Size(199, 25);
-            this.comboBox_pitems.TabIndex = 92;
+            this.comboBox_pitems.TabIndex = 0;
             this.comboBox_pitems.SelectedIndexChanged += new System.EventHandler(this.comboBox_pitems_SelectedIndexChanged);
             // 
             // label2
@@ -643,33 +670,6 @@
             this.betterTextBox_Estimateby.Size = new System.Drawing.Size(320, 20);
             this.betterTextBox_Estimateby.TabIndex = 108;
             this.betterTextBox_Estimateby.textboxType = CustomControls.TextboxType.Text;
-            // 
-            // materialButton_close
-            // 
-            this.materialButton_close.BackgroundImage = global::RestaurantSystem.Properties.Resources.back_64x64;
-            this.materialButton_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.materialButton_close.ButtonSizeIncrement = new System.Drawing.Size(0, 0);
-            this.materialButton_close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialButton_close.FlatAppearance.BorderSize = 0;
-            this.materialButton_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialButton_close.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialButton_close.fontIncrement = 0F;
-            this.materialButton_close.FontStyle = null;
-            this.materialButton_close.ForeColor = System.Drawing.Color.White;
-            this.materialButton_close.hoverforecolor = System.Drawing.Color.Empty;
-            this.materialButton_close.hoverforefont = null;
-            this.materialButton_close.hoverimage = null;
-            this.materialButton_close.Location = new System.Drawing.Point(3, 5);
-            this.materialButton_close.Name = "materialButton_close";
-            this.materialButton_close.role = 0;
-            this.materialButton_close.Size = new System.Drawing.Size(30, 30);
-            this.materialButton_close.TabIndex = 53;
-            this.materialButton_close.tempforecolor = System.Drawing.Color.Empty;
-            this.materialButton_close.tempforefont = null;
-            this.materialButton_close.Totext = null;
-            this.materialButton_close.userole = false;
-            this.materialButton_close.UseVisualStyleBackColor = true;
-            this.materialButton_close.Click += new System.EventHandler(this.materialButton_close_Click);
             // 
             // EditItems
             // 

@@ -92,7 +92,7 @@
             this.materialButton2_cancel.Name = "materialButton2_cancel";
             this.materialButton2_cancel.role = 0;
             this.materialButton2_cancel.Size = new System.Drawing.Size(100, 28);
-            this.materialButton2_cancel.TabIndex = 118;
+            this.materialButton2_cancel.TabIndex = 9;
             this.materialButton2_cancel.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton2_cancel.tempforefont = null;
             this.materialButton2_cancel.Text = "Cancel";
@@ -120,7 +120,7 @@
             this.materialButton1_update.Name = "materialButton1_update";
             this.materialButton1_update.role = 0;
             this.materialButton1_update.Size = new System.Drawing.Size(100, 28);
-            this.materialButton1_update.TabIndex = 117;
+            this.materialButton1_update.TabIndex = 8;
             this.materialButton1_update.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton1_update.tempforefont = null;
             this.materialButton1_update.Text = "Update";
@@ -155,7 +155,7 @@
             this.betterTextBox13_advance.prepend = "";
             this.betterTextBox13_advance.Rules = null;
             this.betterTextBox13_advance.Size = new System.Drawing.Size(124, 18);
-            this.betterTextBox13_advance.TabIndex = 112;
+            this.betterTextBox13_advance.TabIndex = 6;
             this.betterTextBox13_advance.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox13_advance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox13_advance_KeyPress);
             // 
@@ -185,7 +185,7 @@
             this.betterTextBox12_deu.prepend = "";
             this.betterTextBox12_deu.Rules = null;
             this.betterTextBox12_deu.Size = new System.Drawing.Size(193, 18);
-            this.betterTextBox12_deu.TabIndex = 111;
+            this.betterTextBox12_deu.TabIndex = 7;
             this.betterTextBox12_deu.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox12_deu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox12_deu_KeyPress);
             // 
@@ -215,7 +215,7 @@
             this.betterTextBox11_panNumber.prepend = "";
             this.betterTextBox11_panNumber.Rules = null;
             this.betterTextBox11_panNumber.Size = new System.Drawing.Size(193, 18);
-            this.betterTextBox11_panNumber.TabIndex = 110;
+            this.betterTextBox11_panNumber.TabIndex = 5;
             this.betterTextBox11_panNumber.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox11_panNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox11_panNumber_KeyPress);
             // 
@@ -245,7 +245,7 @@
             this.betterTextBox10_postalcode.prepend = "";
             this.betterTextBox10_postalcode.Rules = null;
             this.betterTextBox10_postalcode.Size = new System.Drawing.Size(124, 18);
-            this.betterTextBox10_postalcode.TabIndex = 109;
+            this.betterTextBox10_postalcode.TabIndex = 4;
             this.betterTextBox10_postalcode.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox10_postalcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox10_postalcode_KeyPress);
             // 
@@ -275,7 +275,7 @@
             this.betterTextBox3_email.prepend = "";
             this.betterTextBox3_email.Rules = null;
             this.betterTextBox3_email.Size = new System.Drawing.Size(390, 18);
-            this.betterTextBox3_email.TabIndex = 101;
+            this.betterTextBox3_email.TabIndex = 3;
             this.betterTextBox3_email.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox3_email.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox3_email_KeyPress);
             // 
@@ -305,7 +305,7 @@
             this.betterTextBox2_phone.prepend = "";
             this.betterTextBox2_phone.Rules = null;
             this.betterTextBox2_phone.Size = new System.Drawing.Size(390, 18);
-            this.betterTextBox2_phone.TabIndex = 102;
+            this.betterTextBox2_phone.TabIndex = 2;
             this.betterTextBox2_phone.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox2_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox2_phone_KeyPress);
             // 
@@ -335,7 +335,7 @@
             this.betterTextBox1_address.prepend = "";
             this.betterTextBox1_address.Rules = null;
             this.betterTextBox1_address.Size = new System.Drawing.Size(390, 18);
-            this.betterTextBox1_address.TabIndex = 103;
+            this.betterTextBox1_address.TabIndex = 1;
             this.betterTextBox1_address.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox1_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.betterTextBox1_address_KeyPress);
             // 
@@ -365,7 +365,7 @@
             this.betterTextBox1_name.prepend = "";
             this.betterTextBox1_name.Rules = null;
             this.betterTextBox1_name.Size = new System.Drawing.Size(390, 18);
-            this.betterTextBox1_name.TabIndex = 96;
+            this.betterTextBox1_name.TabIndex = 0;
             this.betterTextBox1_name.textboxType = CustomControls.TextboxType.Text;
             this.betterTextBox1_name.TextChanged += new System.EventHandler(this.betterTextBox1_name_TextChanged);
             this.betterTextBox1_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.betterTextBox1_name_KeyPress);

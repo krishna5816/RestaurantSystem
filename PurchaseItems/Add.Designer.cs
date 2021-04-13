@@ -66,7 +66,7 @@
             this.betterTextBox_name.prepend = "";
             this.betterTextBox_name.Rules = null;
             this.betterTextBox_name.Size = new System.Drawing.Size(412, 25);
-            this.betterTextBox_name.TabIndex = 3;
+            this.betterTextBox_name.TabIndex = 0;
             this.betterTextBox_name.textboxType = CustomControls.TextboxType.Text;
             // 
             // label1
@@ -84,7 +84,7 @@
             this.comboBox_cate.Location = new System.Drawing.Point(12, 131);
             this.comboBox_cate.Name = "comboBox_cate";
             this.comboBox_cate.Size = new System.Drawing.Size(412, 25);
-            this.comboBox_cate.TabIndex = 5;
+            this.comboBox_cate.TabIndex = 1;
             // 
             // label2
             // 
@@ -118,7 +118,7 @@
             this.betterTextBox_currentstock.prepend = "";
             this.betterTextBox_currentstock.Rules = null;
             this.betterTextBox_currentstock.Size = new System.Drawing.Size(210, 25);
-            this.betterTextBox_currentstock.TabIndex = 7;
+            this.betterTextBox_currentstock.TabIndex = 2;
             this.betterTextBox_currentstock.textboxType = CustomControls.TextboxType.Text;
             // 
             // materialButton1
@@ -139,7 +139,7 @@
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.role = 0;
             this.materialButton1.Size = new System.Drawing.Size(90, 30);
-            this.materialButton1.TabIndex = 9;
+            this.materialButton1.TabIndex = 4;
             this.materialButton1.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton1.tempforefont = null;
             this.materialButton1.Text = "SAVE";
@@ -171,7 +171,7 @@
             this.betterTextBox_unit.prepend = "";
             this.betterTextBox_unit.Rules = null;
             this.betterTextBox_unit.Size = new System.Drawing.Size(183, 25);
-            this.betterTextBox_unit.TabIndex = 10;
+            this.betterTextBox_unit.TabIndex = 3;
             this.betterTextBox_unit.textboxType = CustomControls.TextboxType.Text;
             // 
             // Add

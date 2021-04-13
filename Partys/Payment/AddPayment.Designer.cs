@@ -157,7 +157,7 @@
             this.btn_close.Name = "btn_close";
             this.btn_close.role = 0;
             this.btn_close.Size = new System.Drawing.Size(75, 30);
-            this.btn_close.TabIndex = 35;
+            this.btn_close.TabIndex = 2;
             this.btn_close.tempforecolor = System.Drawing.Color.Empty;
             this.btn_close.tempforefont = null;
             this.btn_close.Text = "Cancel";
@@ -184,7 +184,7 @@
             this.materialButton_add.Name = "materialButton_add";
             this.materialButton_add.role = 0;
             this.materialButton_add.Size = new System.Drawing.Size(75, 30);
-            this.materialButton_add.TabIndex = 34;
+            this.materialButton_add.TabIndex = 1;
             this.materialButton_add.tempforecolor = System.Drawing.Color.Empty;
             this.materialButton_add.tempforefont = null;
             this.materialButton_add.Text = "Save";
@@ -208,7 +208,7 @@
             this.betterTextBox_amount.prepend = "";
             this.betterTextBox_amount.Rules = null;
             this.betterTextBox_amount.Size = new System.Drawing.Size(157, 23);
-            this.betterTextBox_amount.TabIndex = 33;
+            this.betterTextBox_amount.TabIndex = 0;
             this.betterTextBox_amount.Text = "0";
             this.betterTextBox_amount.textboxType = CustomControls.TextboxType.Decimal;
             // 
