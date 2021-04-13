@@ -68,5 +68,10 @@ namespace RestaurantSystem.Customer
         {
 
         }
+
+        private void materialButton_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

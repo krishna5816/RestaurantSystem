@@ -23,6 +23,7 @@ namespace RestaurantSystem.Customer
         {
             InitializeComponent();
             db = Model.DatabaseConfigure.getConfigure();
+            betterTextBox_name.Focus();
         }
 
         private void Add_Load(object sender, EventArgs e)
