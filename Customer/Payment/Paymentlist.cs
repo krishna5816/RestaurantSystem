@@ -53,6 +53,7 @@ namespace RestaurantSystem.Customer
                     var clv = new CustomerLedgerViwer();
                     clv.ID = ledger.id;
                     clv.Date = ledger.date.ToString();
+                    clv.InvoiceNo = ledger.id.ToString();
                     if (ledger.type == "DR")
                     {
                         clv.Dr = ledger.amount;
